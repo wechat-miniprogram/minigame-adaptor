@@ -27,11 +27,9 @@
 
 ## 更多资料
 
-`docs`目录为本项目汇总 [文档](/blob/master/docs/README.md)
+`docs`目录为本项目汇总 [文档](./docs/README.md)
 
-`unity-plugin` 目录为 Unity 导出插件，插件的安装使用参考 [文档](/blob/master/docs/README.md)
-
-`js-adaptor`目录为 Unity 代码导出方案 js 桥接插件，adaptor 介绍请参考 [文档](/blob/master/docs/README.md)
+`js-adaptor`目录为 Unity 代码导出方案 js 桥接插件，adaptor 介绍请参考 [文档](./docs/README.md)
 
 `examples`目录为示例
 
@@ -44,5 +42,5 @@
 ![扫码联系](./docs/image/qrcode.png)
 
 ## 名词
-微信小游戏性能优化方案：该方案是整个工具链的核心，后续简称"微信方案"，详见 [该文档](https://git.weixin.qq.com/wechat-minigame/BeefBallEngine)
-微信小游戏性能优化方案工具：微信小游戏性能优化方案提供的开发者工具，后续简称"微信方案工具"。 [该文档](https://git.weixin.qq.com/wechat-minigame/BeefBallEngine)
+微信小游戏性能优化方案：该方案是整个工具链的核心，后续简称"微信方案"，详见 [该文档](https://developers.weixin.qq.com/minigame/dev/game-engine/
+微信小游戏性能优化方案工具：微信小游戏性能优化方案提供的开发者工具，后续简称"微信方案工具"。 [该文档](https://developers.weixin.qq.com/minigame/dev/game-engine/)
