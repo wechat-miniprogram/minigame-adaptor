@@ -4,10 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     mode: 'none',
     entry:{
-       "./minigame-adaptor.js" : "./src/index",
-        "../../minigame-physx-demo/minigame-template/assets/minigame-adaptor.js": "./src/index",
-        "../../minigame-physx-demo/minigame-template/minigame/assets/minigame-adaptor.js": "./src/index",
-        "../../minigame-physx-demo/minigame-template/assets/unity/WXScripts.mgepackage/minigame-adaptor.js": "./src/index"
+       "./minigame-adaptor.js" : "./src/index"
     },
     output:{
         path: path.resolve(__dirname, ""),

@@ -33,6 +33,8 @@
 
 `examples`目录为示例
 
+Unity插件下载链接: [点我下载](https://dldir1.qq.com/WechatWebDev/plugins/BeefBallEngine-unitytool/1.0.0/UnityTool.unitypackage)
+
 ## 更新日志
 详见 [CHANGELOG](./CHANGELOG.md)；
 
@@ -42,5 +44,5 @@
 ![扫码联系](./docs/image/qrcode.png)
 
 ## 名词
-微信小游戏性能优化方案：该方案是整个工具链的核心，后续简称"微信方案"，详见 [该文档](https://developers.weixin.qq.com/minigame/dev/game-engine/
+微信小游戏性能优化方案：该方案是整个工具链的核心，后续简称"微信方案"，详见 [该文档](https://developers.weixin.qq.com/minigame/dev/game-engine/)
 微信小游戏性能优化方案工具：微信小游戏性能优化方案提供的开发者工具，后续简称"微信方案工具"。 [该文档](https://developers.weixin.qq.com/minigame/dev/game-engine/)
