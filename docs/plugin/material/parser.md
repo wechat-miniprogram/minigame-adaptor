@@ -1,18 +1,18 @@
 # 自己实现MaterialParser
 
 ## 一个将Standard parse为@system/blinnPhongNew的例子
-比如说场景里有一些材质使用了Unity *Standard* Shader。  
+比如说场景里有一些材质使用了Unity *Standard* Shader。
 我要将所有使用了*Standard*的材质在导出时替换成*WXBBShader/BlinnPhong*。
 
-1. 在任意editor目录下下新建一个C# Script，起名MyMaterialParser(例)。  
+1. 在任意editor目录下下新建一个C# Script，起名MyMaterialParser(例)。
    这个脚本主要是为了选择Effect，以及填充material参数。
-   
-   <img src="./image/parser_file.png" width="100">  
+
+   <img src="./image/parser_file.png" width="100">
 
 2. 点开C#脚本编写代码：
     ```cs
     using System;
-    using UnityEngine;  
+    using UnityEngine;
 
     namespace WeChat
     {
