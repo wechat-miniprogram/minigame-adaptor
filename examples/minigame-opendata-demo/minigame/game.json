@@ -1,0 +1,21 @@
+{
+  "openDataContext":"sub",
+  "deviceOrientation":"portrait",
+  "engine":true,
+  "plugins":{
+      "WXEngine":{
+          "version":"0.6.1",
+          "provider":"wx20afc706a711eefc",
+          "contexts":[
+              {
+                  "type":"isolatedContext"
+              }
+          ]
+      },
+      "Layout": {
+        "version": "0.0.3",
+        "provider": "wx7a727ff7d940bb3f",
+        "contexts":[{"type":"openDataContext"}]
+      }
+  }
+}

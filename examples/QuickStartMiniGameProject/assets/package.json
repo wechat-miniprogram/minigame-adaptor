@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "scripts": {},
+  "dependencies": {
+    "engine": "^0.0.1",
+    "eventemitter3": "^3.1.2",
+    "tslib": "^1.11.1"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

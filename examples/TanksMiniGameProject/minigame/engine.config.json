@@ -1,0 +1,11 @@
+{
+  "globalSetting": {
+    "baseURL": "file:///assets/",
+    "designWidth": 1280,
+    "designHeight": 720,
+    "renderWidth": 1920,
+    "renderHeight": 1080,
+    "logFilter": "",
+    "logLevel": 3
+  }
+}

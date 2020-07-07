@@ -1,0 +1,1 @@
+{"shaderProperties":[{"key":"_MainTex_ST","type":"Vector4","default":[1,1,0,0]},{"key":"_InvFade","type":"Float","default":[0]}],"textures":[{"key":"_MainTex","type":"Texture2D","default":"white"}],"defaultRenderQueue":2000,"passes":[{"macros":{},"lightMode":"ForwardBase","useMaterialRenderStates":false,"renderStates":{},"variants":{"0":"627880R-84a47eE-3b0f41S-6bebfdR"}}]}

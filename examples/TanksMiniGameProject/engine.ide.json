@@ -1,0 +1,9 @@
+{
+  "resourceDirs": {
+    "buildIn": [],
+    "idePack": [
+      "assets/Assets"
+    ]
+  },
+  "engineVersion": "1.0.0"
+}
