@@ -15,7 +15,7 @@
 	* [材质导出](./plugin/material/index.md)
 		* [导出简述](./plugin/material/index.md)
 		* [编写MaterialParser](./plugin/material/index.md)
-	* NGUI导出
+	* NGUI导出
 		* [NGUI节点导出](./plugin/ngui-tree.md)
 		* [图集导出](./plugin/ngui-spriteframe.md)
 * 完整项目迁移方案参考
