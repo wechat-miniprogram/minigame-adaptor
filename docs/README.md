@@ -8,7 +8,6 @@
 		* [快速上手](./fullproject/quickstart.md)
 		* 案例
 			* [坦克大战](./fullproject/examples/tank.md)
-			* [神庙逃亡](./fullproject/image/templerun.jpg)
 	
 * [Unity 插件安装](./plugin/install.md)
 * 资源导出方案参考
