@@ -621,9 +621,6 @@ MigrationBackup/
 
 # End of https://www.gitignore.io/api/web,rider,unity,intellij,intellij+all,visualstudio,visualstudiocode
 
-# unity meta
-**/*.meta
-
 !unity-plugin/script-export/res\~
 !unity-plugin/script-export/sdk/System\~
 .DS_Store
