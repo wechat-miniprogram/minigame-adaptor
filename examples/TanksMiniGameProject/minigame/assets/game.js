@@ -8,6 +8,8 @@
     }
   })
 
+  
+
   /**
    * Read a json file and return the object.
    * Null will be returned if error occurs when parsing JSON.
@@ -16,9 +18,7 @@
   function readJSONSync(path) {
     var manager = wx.getFileSystemManager();
     var res = null;
-    try {
-      res = JSON.parse(manager.readFileSync(path, "utf8"));
-    } catch (error) { }
+    res = JSON.parse(manager.readFileSync(path, "utf8"));
     return res;
   }
 
@@ -27,6 +27,7 @@
    */
   var canvas = GameGlobal.canvas ? GameGlobal.canvas : (GameGlobal.canvas = wx.createCanvas());
 
+function main() {
   /**
    * Try to get the url prefix in configure file.
    */
@@ -52,6 +53,7 @@
     throw Error("不支持getGroupPlatform接口，请更新小游戏优化方案版本，否则无法使用");
   }
   var platform = engine.device.getGroupPlatform();
+  platform = ''
   console.log("Platform:", platform || "Devtool");
 
   /**
@@ -66,10 +68,9 @@
        * Register groups.
        */
       var groupId = groupInfo.group.id;
-      engine.loader.registerGroup({
-        ...groupInfo.group,
-        url: urlPrefix + groupInfo.group.url,
-      });
+      var newGroupInfo = JSON.parse(JSON.stringify(groupInfo.group))
+      newGroupInfo.url = urlPrefix + groupInfo.group.url,
+      engine.loader.registerGroup(newGroupInfo);
       /**
        * Register assets.
        */
@@ -94,27 +95,59 @@
   /**
    * Register ide packed groups.
    */
-  var packGroupJson = readJSONSync("assets/IDEPack/register" + (platform ? "_" + platform : "") + ".json");
-  if (packGroupJson) {
-    registGroup(packGroupJson, urlPrefix);
+  try {
+    var packGroupJson = readJSONSync("assets/IDEPack/register" + (platform ? "_" + platform : "") + ".json");
+    if (packGroupJson) {
+      registGroup(packGroupJson, urlPrefix);
+    }
+  } catch (error) {
+    /**
+     * local fail ,try CDN file
+     */
+    wx.request({
+      url: urlPrefix + "IDEPack/register" + (platform ? "_" + platform : "") + ".json",
+      dataType: 'json',
+      success: function fn(res) {
+        if (res.statusCode === 200) {
+          registGroup(res.data, urlPrefix);
+        } else {
+          console.warn('Error:加载失败', urlPrefix + "IDEPack/register" + (platform ? "_" + platform : "") + ".json");
+        }
+      },
+      fail: function fn(error) {
+        console.warn('Error:加载失败', urlPrefix + "IDEPack/register" + (platform ? "_" + platform : "") + ".json", error);
+      },
+      complete: function fn(){
+        runGame();
+      }
+    })
+    return
   }
+  runGame();
+}
 
-  /**
-   * Create global game.
-   */
-  var game = GameGlobal.game = new engine.Game(720, 1280);
+  function runGame() {
+    /**
+     * Create global game.
+     */
+    var game = GameGlobal.game = new engine.Game(720, 1280);
 
-  /**
-   * Load entry scenes.
-   */
-  
+    /**
+     * Load entry scenes.
+     */
+    
 engine.loader.load("Assets/_Complete-Game.scene").promise.then(function (scene) {
   game.playScene(scene);
+}).catch(function (error){
+  console.error(error);
 });
 
 
-  /**
-   * Run the game.
-   */
-  game.run();
+    /**
+     * Run the game.
+     */
+    game.run();
+  }
+
+  main()
   

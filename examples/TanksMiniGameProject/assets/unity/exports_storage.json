@@ -1,843 +1,11 @@
 {
-	"files":{
-		"Assets_Models_Cliff-Cliff.mesh.bin":{
-			"MD5":"bd60ca3f8fceccc1d877aa87a473fa92636803299790000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Cliff-Cliff.mesh.bin"
-		},
-		"Assets/Models/Cliff-Cliff.mesh":{
-			"MD5":"mesh_aa51db45c0b8e55e4613a5e0fee483f19b3411d2812eceb6de37c13f57825a76",
-			"filetype":"json",
-			"path":"Assets/Models/Cliff-Cliff.mesh"
-		},
-		"Assets/Materials/YellowDark.mat":{
-			"MD5":"material_440dcc5e7cb19f85d7012ee0e9d12e92",
-			"filetype":"json",
-			"path":"Assets/Materials/YellowDark.mat"
-		},
-		"Assets_Models_Terrain-GroundPlane.mesh.bin":{
-			"MD5":"8e67bc1087e842a618a53e82f284e9c1636803299780000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Terrain-GroundPlane.mesh.bin"
-		},
-		"Assets/Models/Terrain-GroundPlane.mesh":{
-			"MD5":"mesh_ce3e208cc2bdee517fc63346dbff542f65a1649706ada274bfaee78f9dfe34a7",
-			"filetype":"json",
-			"path":"Assets/Models/Terrain-GroundPlane.mesh"
-		},
-		"Assets/Materials/YellowLight.mat":{
-			"MD5":"material_ac01b1fe64a2537e1cd8f724d2a91470",
-			"filetype":"json",
-			"path":"Assets/Materials/YellowLight.mat"
-		},
-		"Assets_Models_Concrete-Tarmac.mesh.bin":{
-			"MD5":"e415cde2eecdb82cf1264240c8e439d1636803300750000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Concrete-Tarmac.mesh.bin"
-		},
-		"Assets/Models/Concrete-Tarmac.mesh":{
-			"MD5":"mesh_fb6f841de924df0bce211de1df41fc0a6b60f1c0a353ec4a9c1463cf419a434a",
-			"filetype":"json",
-			"path":"Assets/Models/Concrete-Tarmac.mesh"
-		},
-		"Assets/Materials/BuildingStone.mat":{
-			"MD5":"material_c3d5296348cc497ecb8aec25d838a773",
-			"filetype":"json",
-			"path":"Assets/Materials/BuildingStone.mat"
-		},
-		"Assets_Models_Dunes01-Dunes01.mesh.bin":{
-			"MD5":"3f9a2f36857ccd5acbeb473d8130709d636803299850000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Dunes01-Dunes01.mesh.bin"
-		},
-		"Assets/Models/Dunes01-Dunes01.mesh":{
-			"MD5":"mesh_1fc485d86480b1e6e4856c60d02463cea529d85ae69a611599889a33dd85e7d1",
-			"filetype":"json",
-			"path":"Assets/Models/Dunes01-Dunes01.mesh"
-		},
-		"Assets_Models_Dunes02-Dunes02.mesh.bin":{
-			"MD5":"5ddae612e69be8745541e36c458b8786636803300050000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Dunes02-Dunes02.mesh.bin"
-		},
-		"Assets/Models/Dunes02-Dunes02.mesh":{
-			"MD5":"mesh_f833621ab5c9dff655dd46e0ddf015c206ac6729841fa79b0fde3222842a2cfc",
-			"filetype":"json",
-			"path":"Assets/Models/Dunes02-Dunes02.mesh"
-		},
-		"Assets_Models_Cow-Cow.mesh.bin":{
-			"MD5":"f554b509da415e293022d9163c518b92636803300660000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Cow-Cow.mesh.bin"
-		},
-		"Assets/Models/Cow-Cow.mesh":{
-			"MD5":"mesh_1138917c345d1d76c4f2363292d79e09fe0707cc476fa27a17508867b2b95d14",
-			"filetype":"json",
-			"path":"Assets/Models/Cow-Cow.mesh"
-		},
-		"Assets/Materials/BuildingWhite.mat":{
-			"MD5":"material_f5b6dea7e25dc8da774aa9e8bc4e290f",
-			"filetype":"json",
-			"path":"Assets/Materials/BuildingWhite.mat"
-		},
-		"Assets_Models_Rocks01-Rocks01.mesh.bin":{
-			"MD5":"ec00a69373ecee0ea45fbc47f7211f26636803299900000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Rocks01-Rocks01.mesh.bin"
-		},
-		"Assets/Models/Rocks01-Rocks01.mesh":{
-			"MD5":"mesh_5d0ad59a479fd4b03b17e1c5977085dbafb098512ea94ab745e408abdfa510a1",
-			"filetype":"json",
-			"path":"Assets/Models/Rocks01-Rocks01.mesh"
-		},
-		"Assets_Models_Rocks03-Rocks03.mesh.bin":{
-			"MD5":"2697c3f3d53aeb1084acffd73fe6826b636803301240000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Rocks03-Rocks03.mesh.bin"
-		},
-		"Assets/Models/Rocks03-Rocks03.mesh":{
-			"MD5":"mesh_aadd9ae32e018fab538c58cf2b480aa285590de0ddc89bd27b2ba6e4db2a68a8",
-			"filetype":"json",
-			"path":"Assets/Models/Rocks03-Rocks03.mesh"
-		},
-		"Assets_Models_Rocks02-Rocks02.mesh.bin":{
-			"MD5":"449106aae2c2eaaf623688c3a10a2b08636803300650000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Rocks02-Rocks02.mesh.bin"
-		},
-		"Assets/Models/Rocks02-Rocks02.mesh":{
-			"MD5":"mesh_f1985dc9fe40955fd300ecfd2aa7b909f849143bd6b3b4a14a3257004aa26283",
-			"filetype":"json",
-			"path":"Assets/Models/Rocks02-Rocks02.mesh"
-		},
-		"Assets_Models_Column01-Column01.mesh.bin":{
-			"MD5":"b8513b3b16ce8bb8da51e0f5ab99a1fe636803300610000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Column01-Column01.mesh.bin"
-		},
-		"Assets/Models/Column01-Column01.mesh":{
-			"MD5":"mesh_28f5daee1f3434632dfa434143478c85effae77734327a3f9c3e0b50f3d16165",
-			"filetype":"json",
-			"path":"Assets/Models/Column01-Column01.mesh"
-		},
-		"Assets/Models/Column01-Column01.lav":{
-			"MD5":"avatar_28f5daee1f3434632dfa434143478c85",
-			"filetype":"json",
-			"path":"Assets/Models/Column01-Column01.lav"
-		},
-		"Assets/Models/Column01-Column01__(1).lav":{
-			"MD5":"avatar_28f5daee1f3434632dfa434143478c85",
-			"filetype":"json",
-			"path":"Assets/Models/Column01-Column01__(1).lav"
-		},
-		"Assets/Models/Column01-Column01__(2).lav":{
-			"MD5":"avatar_28f5daee1f3434632dfa434143478c85",
-			"filetype":"json",
-			"path":"Assets/Models/Column01-Column01__(2).lav"
-		},
-		"Assets_Models_Column02-Column02.mesh.bin":{
-			"MD5":"3556e8404f999bc3fde5c8597abc4d3d636803300450000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Column02-Column02.mesh.bin"
-		},
-		"Assets/Models/Column02-Column02.mesh":{
-			"MD5":"mesh_b9b225321130a6e2e0777713c84ebbc941fce5e20b991eb6c2089ca6a08a2310",
-			"filetype":"json",
-			"path":"Assets/Models/Column02-Column02.mesh"
-		},
-		"Assets_Models_Cactus-Cactus.mesh.bin":{
-			"MD5":"6d9af6fffea301c5c54daf5e8410a1d5636803299710000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Cactus-Cactus.mesh.bin"
-		},
-		"Assets/Models/Cactus-Cactus.mesh":{
-			"MD5":"mesh_a9074460e9c05311c22d32161ed6c933fb860a9b61e2a0b687a4c5b2da78eb85",
-			"filetype":"json",
-			"path":"Assets/Models/Cactus-Cactus.mesh"
-		},
-		"Assets/Materials/Green.mat":{
-			"MD5":"material_4fc61abd068e119fff45740a32525bb4",
-			"filetype":"json",
-			"path":"Assets/Materials/Green.mat"
-		},
-		"Assets_Models_Tree-Tree.mesh.bin":{
-			"MD5":"07a3e3799f2783e668f0bae93cb3198f636803300220000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Tree-Tree.mesh.bin"
-		},
-		"Assets/Models/Tree-Tree.mesh":{
-			"MD5":"mesh_dadbbd7803ce6a2a0bcff29ad0b4f0c33b0c14770e6bd663518496da60f524da",
-			"filetype":"json",
-			"path":"Assets/Models/Tree-Tree.mesh"
-		},
-		"Assets/Materials/Brown.mat":{
-			"MD5":"material_400065ce2b99e3584e1c49dea2fd6b0c",
-			"filetype":"json",
-			"path":"Assets/Materials/Brown.mat"
-		},
-		"Assets_Models_PalmTree-PalmTree01.mesh.bin":{
-			"MD5":"15a7000a2951722458329e1ea7f42963636803300710000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_PalmTree-PalmTree01.mesh.bin"
-		},
-		"Assets/Models/PalmTree-PalmTree01.mesh":{
-			"MD5":"mesh_6b81ab693c4eb2f85bbca7d3804c3414708f18ddceb6d3763ccd3de6e4de917e",
-			"filetype":"json",
-			"path":"Assets/Models/PalmTree-PalmTree01.mesh"
-		},
-		"Assets_Models_Building01-Building01.mesh.bin":{
-			"MD5":"5d01b03dc5faaac84b2ffc90fcbcb3c8636803301220000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Building01-Building01.mesh.bin"
-		},
-		"Assets/Models/Building01-Building01.mesh":{
-			"MD5":"mesh_85666480ad196a516aa40759d26c9670d3019e40758b4383f4eb6f7c5b0ef2a9",
-			"filetype":"json",
-			"path":"Assets/Models/Building01-Building01.mesh"
-		},
-		"Assets/Materials/BuildingGrey.mat":{
-			"MD5":"material_3c23162901c5e0f8a095e8e7f7e4dbeb",
-			"filetype":"json",
-			"path":"Assets/Materials/BuildingGrey.mat"
-		},
-		"Assets/Materials/BuildingMetal.mat":{
-			"MD5":"material_4a6269e2078694b7acadf1182a79df07",
-			"filetype":"json",
-			"path":"Assets/Materials/BuildingMetal.mat"
-		},
-		"Assets/Materials/BuildingGlass.mat":{
-			"MD5":"material_5409a2cd9f3b66b249bcf2a092e473b3",
-			"filetype":"json",
-			"path":"Assets/Materials/BuildingGlass.mat"
-		},
-		"Assets_Models_Building02-Barracks.mesh.bin":{
-			"MD5":"fe79190ee9f9a08bdd9e53749e8c6c7d636803300500000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Building02-Barracks.mesh.bin"
-		},
-		"Assets/Models/Building02-Barracks.mesh":{
-			"MD5":"mesh_24d26d30d31cec1ee30e61488349d77d5bef4b9467f4039984dbb3e68df9f0b0",
-			"filetype":"json",
-			"path":"Assets/Models/Building02-Barracks.mesh"
-		},
-		"Assets/Materials/OilDrums.mat":{
-			"MD5":"material_63884ab37a8a05ab66c3a53d1922ad3c",
-			"filetype":"json",
-			"path":"Assets/Materials/OilDrums.mat"
-		},
-		"Assets/Models/Building02-Building02.lav":{
-			"MD5":"avatar_24d26d30d31cec1ee30e61488349d77d",
-			"filetype":"json",
-			"path":"Assets/Models/Building02-Building02.lav"
-		},
-		"Assets/Models/Building02-Building02__(1).lav":{
-			"MD5":"avatar_24d26d30d31cec1ee30e61488349d77d",
-			"filetype":"json",
-			"path":"Assets/Models/Building02-Building02__(1).lav"
-		},
-		"Assets/Models/Building02-Building02__(2).lav":{
-			"MD5":"avatar_24d26d30d31cec1ee30e61488349d77d",
-			"filetype":"json",
-			"path":"Assets/Models/Building02-Building02__(2).lav"
-		},
-		"Assets_Models_Radar-RadarSphere.mesh.bin":{
-			"MD5":"1fbc74022b02d45d8f1d7797e4e43c8c636803300800000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Radar-RadarSphere.mesh.bin"
-		},
-		"Assets/Models/Radar-RadarSphere.mesh":{
-			"MD5":"mesh_516e5c8dccc9a79e0876a7e3ac637f6bc34e5baa969bd65c23cfe81e6960e71d",
-			"filetype":"json",
-			"path":"Assets/Models/Radar-RadarSphere.mesh"
-		},
-		"Assets_Models_OilStorage-OilStorage.mesh.bin":{
-			"MD5":"678f94da901cf5d5c4c626ca29cfaec9636803301130000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_OilStorage-OilStorage.mesh.bin"
-		},
-		"Assets/Models/OilStorage-OilStorage.mesh":{
-			"MD5":"mesh_e9f80274f73c77422db559fb904646eb8384d12f80b9fbc12be5391f8d7315e2",
-			"filetype":"json",
-			"path":"Assets/Models/OilStorage-OilStorage.mesh"
-		},
-		"Assets/Models/OilStorage-OilStorage.lav":{
-			"MD5":"avatar_e9f80274f73c77422db559fb904646eb",
-			"filetype":"json",
-			"path":"Assets/Models/OilStorage-OilStorage.lav"
-		},
-		"Assets/Models/OilStorage-OilStorage__(1).lav":{
-			"MD5":"avatar_e9f80274f73c77422db559fb904646eb",
-			"filetype":"json",
-			"path":"Assets/Models/OilStorage-OilStorage__(1).lav"
-		},
-		"Assets/Models/PumpJack-PumpJack.lav":{
-			"MD5":"avatar_1c29304460b8c17e76efb02884dfab11",
-			"filetype":"json",
-			"path":"Assets/Models/PumpJack-PumpJack.lav"
-		},
-		"Assets/Models/PumpJack-Take 001.animationclip.bin":{
-			"MD5":"8151648cfff737a6d664979f0e810c8e636803301040000000",
-			"filetype":"arraybuffer",
-			"path":"Assets/Models/PumpJack-Take 001.animationclip.bin"
-		},
-		"Assets/Models/PumpJack-Take__001.animationclip":{
-			"MD5":"animationclip_1c29304460b8c17e76efb02884dfab11",
-			"filetype":"json",
-			"path":"Assets/Models/PumpJack-Take__001.animationclip"
-		},
-		"Assets/_Completed-Assets/Animators/CompletePumpjack.controller":{
-			"MD5":"animatorcontroller_367eeeba7c06023f91329305b81da702",
-			"filetype":"json",
-			"path":"Assets/_Completed-Assets/Animators/CompletePumpjack.controller"
-		},
-		"Assets_Models_PumpJack-Pumpjack.mesh.bin":{
-			"MD5":"0615b7e0d61400274e0009343401a750636803301040000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_PumpJack-Pumpjack.mesh.bin"
-		},
-		"Assets_Models_PumpJack-Pumpjack.mesh":{
-			"MD5":"mesh_1c29304460b8c17e76efb02884dfab114fc497eb0c53731fee56319712346e03",
-			"filetype":"json",
-			"path":"Assets_Models_PumpJack-Pumpjack.mesh"
-		},
-		"Assets/Models/PumpJack-PumpJack__(1).lav":{
-			"MD5":"avatar_1c29304460b8c17e76efb02884dfab11",
-			"filetype":"json",
-			"path":"Assets/Models/PumpJack-PumpJack__(1).lav"
-		},
-		"Assets/Models/PumpJack-PumpJack__(2).lav":{
-			"MD5":"avatar_1c29304460b8c17e76efb02884dfab11",
-			"filetype":"json",
-			"path":"Assets/Models/PumpJack-PumpJack__(2).lav"
-		},
-		"Assets_Models_Refinery-Refinery.mesh.bin":{
-			"MD5":"017bdd66d158072f4b6e8a222c608cae636803300390000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Refinery-Refinery.mesh.bin"
-		},
-		"Assets/Models/Refinery-Refinery.mesh":{
-			"MD5":"mesh_c2461be1232e0a57f2d91822160cca1da7a49e134b1aa7245707794ce21b7725",
-			"filetype":"json",
-			"path":"Assets/Models/Refinery-Refinery.mesh"
-		},
-		"Assets_Models_BustedTank-BustedTank.mesh.bin":{
-			"MD5":"3ee0839b81cb211de7b49c167052a0d1636803300590000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_BustedTank-BustedTank.mesh.bin"
-		},
-		"Assets/Models/BustedTank-BustedTank.mesh":{
-			"MD5":"mesh_1f087f216c41d5beb1a1bf632a5204437c1146b57696328d2a9448714cb741c2",
-			"filetype":"json",
-			"path":"Assets/Models/BustedTank-BustedTank.mesh"
-		},
-		"Assets/Materials/TankGrey.mat":{
-			"MD5":"material_155f0e594db90dbe213b1a64c1116232",
-			"filetype":"json",
-			"path":"Assets/Materials/TankGrey.mat"
-		},
-		"Assets_Models_Crater01-Crater01.mesh.bin":{
-			"MD5":"674c150385fe8f8cb9b477fe637d8580636803300790000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Crater01-Crater01.mesh.bin"
-		},
-		"Assets/Models/Crater01-Crater01.mesh":{
-			"MD5":"mesh_d53784ea41c710285314ff4a5665edac8e48f58321d129f8874bae8fb6e9a2aa",
-			"filetype":"json",
-			"path":"Assets/Models/Crater01-Crater01.mesh"
-		},
-		"Assets_Models_Ruins01-Ruins01.mesh.bin":{
-			"MD5":"1f171a67edbc2d68917c4990a4e8426b636803300590000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Ruins01-Ruins01.mesh.bin"
-		},
-		"Assets/Models/Ruins01-Ruins01.mesh":{
-			"MD5":"mesh_65ee84c12200dcd203566da3566be49c7a2cba2a7a388d8be69b4da759406a95",
-			"filetype":"json",
-			"path":"Assets/Models/Ruins01-Ruins01.mesh"
-		},
-		"Assets_Models_Helipad-Helipad.mesh.bin":{
-			"MD5":"a21823fcbea90356554dcd4eace70ea0636803300300000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Helipad-Helipad.mesh.bin"
-		},
-		"Assets/Models/Helipad-Helipad.mesh":{
-			"MD5":"mesh_a2fa543b0481b8cbf2e8e90e89f9378d2f8f711c854ce08e746d4393bdfe5c9e",
-			"filetype":"json",
-			"path":"Assets/Models/Helipad-Helipad.mesh"
-		},
-		"Resources/unity_builtin_extra.vertex.hlsl":{
-			"MD5":"a0cd027de9da4e91aa4e6fcb0ddbaf43504911520000000000",
-			"filetype":"text",
-			"path":"Resources/unity_builtin_extra.vertex.hlsl"
-		},
-		"Resources/unity_builtin_extra.pixel.hlsl":{
-			"MD5":"38afa32769f0b4efe3a98417898bbc46504911520000000000",
-			"filetype":"text",
-			"path":"Resources/unity_builtin_extra.pixel.hlsl"
-		},
-		"Resources/unity_builtin_extra.png":{
-			"MD5":"8a63f718b8e15f00ac719beb0fee7a37504911520000000000",
-			"filetype":"image",
-			"path":"Resources/unity_builtin_extra.png"
-		},
-		"Assets/AudioClips/TankExplosion.wav":{
-			"MD5":"85ed28e98b503a5ecf9cf124ee567771636803300270000000",
-			"filetype":"url",
-			"path":"Assets/AudioClips/TankExplosion.wav"
-		},
-		"Assets/AudioClips/TankExplosion.wav.raw":{
-			"MD5":"raw_5b167cf550965a6bd695c506f6ff85a1",
-			"filetype":"json",
-			"path":"Assets/AudioClips/TankExplosion.wav.raw"
-		},
-		"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab":{
-			"MD5":"prefab_oquom0yiovezropggcmdvsere0rsovvj",
-			"filetype":"json",
-			"path":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab"
-		},
-		"Assets_Models_Shell-Shell.mesh.bin":{
-			"MD5":"8b55f2895b25b189cb4e774ec4c7682f636803300690000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Shell-Shell.mesh.bin"
-		},
-		"Assets/Models/Shell-Shell.mesh":{
-			"MD5":"mesh_0527e8f6ec5822398d8e462728126b89ea89b68c34ce4a63c0f77e17413c6e30",
-			"filetype":"json",
-			"path":"Assets/Models/Shell-Shell.mesh"
-		},
-		"Assets/Materials/Gold.mat":{
-			"MD5":"material_87c36fb4dfad06350bfca20f5e8f8bf2",
-			"filetype":"json",
-			"path":"Assets/Materials/Gold.mat"
-		},
-		"Assets/Sprites/Smoke.png":{
-			"MD5":"99799ae534c8c6889cc55d8bf3e7db10636803300620000000",
-			"filetype":"image",
-			"path":"Assets/Sprites/Smoke.png"
-		},
-		"Assets/Sprites/Smoke.texture2d":{
-			"MD5":"texture2d_5568b384f8c852a7ec40bcb0814b5821",
-			"filetype":"json",
-			"path":"Assets/Sprites/Smoke.texture2d"
-		},
-		"Assets/Materials/Explosion.mat":{
-			"MD5":"material_19567e0bbaca874efba8d1f00a1e9906",
-			"filetype":"json",
-			"path":"Assets/Materials/Explosion.mat"
-		},
-		"Assets/AudioClips/ShellExplosion.wav":{
-			"MD5":"9d82712f073b6a9114aeb7106404549b636803300060000000",
-			"filetype":"url",
-			"path":"Assets/AudioClips/ShellExplosion.wav"
-		},
-		"Assets/AudioClips/ShellExplosion.wav.raw":{
-			"MD5":"raw_106f7901e46939f9407f9eaedca4d9a0",
-			"filetype":"json",
-			"path":"Assets/AudioClips/ShellExplosion.wav.raw"
-		},
-		"Resources/unity_builtin_extra.effect":{
-			"MD5":"effect_0.6796643",
-			"filetype":"json",
-			"path":"Resources/unity_builtin_extra.effect"
-		},
-		"Resources/unity_builtin_extra.texture2d":{
-			"MD5":"texture2d_0.4313738",
-			"filetype":"json",
-			"path":"Resources/unity_builtin_extra.texture2d"
-		},
-		"Resources/unity_builtin_extra.mat":{
-			"MD5":"material_0.4709947",
-			"filetype":"json",
-			"path":"Resources/unity_builtin_extra.mat"
-		},
-		"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab":{
-			"MD5":"prefab_wojjrgqmdx20ezpi0pmq0euhxjkcvzkk",
-			"filetype":"json",
-			"path":"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab"
-		},
-		"Assets_Models_Tank-TankChassis.mesh.bin":{
-			"MD5":"9e56997f95253e31ba2d37b17c56e227636803299690000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Tank-TankChassis.mesh.bin"
-		},
-		"Assets/Models/Tank-TankChassis.mesh":{
-			"MD5":"mesh_0f84289c5864c5cf27c16343358d10f50ee7d0c5737e3e130bedcf21e7be4f96",
-			"filetype":"json",
-			"path":"Assets/Models/Tank-TankChassis.mesh"
-		},
-		"Assets/Materials/TankColour.mat":{
-			"MD5":"material_115f488c87f2754b556374c453cf3a1f",
-			"filetype":"json",
-			"path":"Assets/Materials/TankColour.mat"
-		},
-		"Assets/Materials/TankLights.mat":{
-			"MD5":"material_ca9893f56abc09a8c3b6171135734ff5",
-			"filetype":"json",
-			"path":"Assets/Materials/TankLights.mat"
-		},
-		"Assets_Models_Tank-TankTracksLeft.mesh.bin":{
-			"MD5":"3cda494e1847e4b27504b847e757d427636803299690000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Tank-TankTracksLeft.mesh.bin"
-		},
-		"Assets/Models/Tank-TankTracksLeft.mesh":{
-			"MD5":"mesh_0f84289c5864c5cf27c16343358d10f524455cecd610bd1c4ac6b8dfc217cc5b",
-			"filetype":"json",
-			"path":"Assets/Models/Tank-TankTracksLeft.mesh"
-		},
-		"Assets_Models_Tank-TankTracksRight.mesh.bin":{
-			"MD5":"9fb3febd15af61c5d8abd9dbc1432ff0636803299690000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Tank-TankTracksRight.mesh.bin"
-		},
-		"Assets/Models/Tank-TankTracksRight.mesh":{
-			"MD5":"mesh_0f84289c5864c5cf27c16343358d10f50e3c9812dccdb63b76dd0b43ea37df38",
-			"filetype":"json",
-			"path":"Assets/Models/Tank-TankTracksRight.mesh"
-		},
-		"Assets_Models_Tank-TankTurret.mesh.bin":{
-			"MD5":"096d0f1213811d0eab98fc65cbfdc19c636803299690000000",
-			"filetype":"arraybuffer",
-			"path":"Assets_Models_Tank-TankTurret.mesh.bin"
-		},
-		"Assets/Models/Tank-TankTurret.mesh":{
-			"MD5":"mesh_0f84289c5864c5cf27c16343358d10f5dc5b59574384bf05df75abe4caceca2c",
-			"filetype":"json",
-			"path":"Assets/Models/Tank-TankTurret.mesh"
-		},
-		"Assets/Materials/Dust.mat":{
-			"MD5":"material_4836a423d1d7130fddf591a5d134197f",
-			"filetype":"json",
-			"path":"Assets/Materials/Dust.mat"
-		},
-		"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab":{
-			"MD5":"prefab_2rqgjr0n2cvk3qteqzksm2tfwffge0wf",
-			"filetype":"json",
-			"path":"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab"
-		},
-		"Assets/AudioClips/BackgroundMusic.wav":{
-			"MD5":"0a6e37b66d8bd6a9609efbc7fa02d692637266375340000000",
-			"filetype":"url",
-			"path":"Assets/AudioClips/BackgroundMusic.wav"
-		},
-		"Assets/AudioClips/BackgroundMusic.wav.raw":{
-			"MD5":"raw_ec53afc39b4c9548a62c78b0f154c538",
-			"filetype":"json",
-			"path":"Assets/AudioClips/BackgroundMusic.wav.raw"
-		},
-		"Assets/_Complete-Game.scene":{
-			"MD5":"scene_jpvri0p1orl3jvpngqroe3lwiy2iitom",
-			"filetype":"json",
-			"path":"Assets/_Complete-Game.scene"
-		},
-		"minigame-adaptor-lib-patch.js":{
-			"MD5":"8c518719fa587f924ef13f274cf26376",
-			"filetype":"text",
-			"path":"minigame-adaptor-lib-patch.js"
-		},
-		"minigame-adaptor-lib.js":{
-			"MD5":"046b44d99fe44a72e11a056aed6dd41a",
-			"filetype":"text",
-			"path":"minigame-adaptor-lib.js"
-		},
-		"minigame-adaptor-lib.meta.js":{
-			"MD5":"e2bec174ba142a450e7786c52b4f82d9",
-			"filetype":"text",
-			"path":"minigame-adaptor-lib.meta.js"
-		},
-		"minigame-adaptor-project.js":{
-			"MD5":"71c475d983fc352a8f419301d0bafe8a",
-			"filetype":"text",
-			"path":"minigame-adaptor-project.js"
-		},
-		"minigame-adaptor-project.meta.js":{
-			"MD5":"6947916974d33ad7c520131a211eeaca",
-			"filetype":"text",
-			"path":"minigame-adaptor-project.meta.js"
-		},
-		"bindings/Complete.CameraControl.binding.js":{
-			"MD5":"c74e554b795395d3e07a703485039d7f",
-			"filetype":"text",
-			"path":"bindings/Complete.CameraControl.binding.js"
-		},
-		"bindings/Complete.GameManager.binding.js":{
-			"MD5":"8d0e0fab07b43601f8495e66a528760a",
-			"filetype":"text",
-			"path":"bindings/Complete.GameManager.binding.js"
-		},
-		"bindings/Complete.ShellExplosion.binding.js":{
-			"MD5":"75c0c5f2b9dd169ae44d5d606eb56a3f",
-			"filetype":"text",
-			"path":"bindings/Complete.ShellExplosion.binding.js"
-		},
-		"bindings/Complete.TankHealth.binding.js":{
-			"MD5":"1f84c076d1b3d694cd5425f288325724",
-			"filetype":"text",
-			"path":"bindings/Complete.TankHealth.binding.js"
-		},
-		"bindings/Complete.TankManager.binding.js":{
-			"MD5":"93c71d40bb53a2cd65db9ddca005abc4",
-			"filetype":"text",
-			"path":"bindings/Complete.TankManager.binding.js"
-		},
-		"bindings/Complete.TankMovement.binding.js":{
-			"MD5":"32d7fe086757abd62d9a44347542bb42",
-			"filetype":"text",
-			"path":"bindings/Complete.TankMovement.binding.js"
-		},
-		"bindings/Complete.TankShooting.binding.js":{
-			"MD5":"f923b067d582a825fa50e18041d5656a",
-			"filetype":"text",
-			"path":"bindings/Complete.TankShooting.binding.js"
-		},
-		"bindings/Complete.UIDirectionControl.binding.js":{
-			"MD5":"3a479f6eac36d7e51bb56db0d92d881a",
-			"filetype":"text",
-			"path":"bindings/Complete.UIDirectionControl.binding.js"
-		},
-		"bindings/PhyWorld.binding.js":{
-			"MD5":"45dba8a59b6173c8edbdfd7a0824adc5",
-			"filetype":"text",
-			"path":"bindings/PhyWorld.binding.js"
-		},
-		"src/PhyWorld.js":{
-			"MD5":"66a144a1939bb10cdb5aad7ff350ee13",
-			"filetype":"text",
-			"path":"src/PhyWorld.js"
-		},
-		"src/ShellPool.js":{
-			"MD5":"45307110bd14ff35ad6b1cf292c96405",
-			"filetype":"text",
-			"path":"src/ShellPool.js"
-		},
-		"src/Complete/CameraControl.js":{
-			"MD5":"3d5f0994ba5bc34aa3364755b1bc6381",
-			"filetype":"text",
-			"path":"src/Complete/CameraControl.js"
-		},
-		"src/Complete/GameManager.js":{
-			"MD5":"9bdaba4fa4f0003d4a1a59057206bce2",
-			"filetype":"text",
-			"path":"src/Complete/GameManager.js"
-		},
-		"src/Complete/ShellExplosion.js":{
-			"MD5":"e30132606366dcca9edd43bfba8362e7",
-			"filetype":"text",
-			"path":"src/Complete/ShellExplosion.js"
-		},
-		"src/Complete/TankHealth.js":{
-			"MD5":"0100ee30c05306abb9085be45cf08606",
-			"filetype":"text",
-			"path":"src/Complete/TankHealth.js"
-		},
-		"src/Complete/TankManager.js":{
-			"MD5":"5484952ee5514a72e9f0f6fb3b7eb05b",
-			"filetype":"text",
-			"path":"src/Complete/TankManager.js"
-		},
-		"src/Complete/TankMovement.js":{
-			"MD5":"09181446640c3df54c28b4d69919d7ea",
-			"filetype":"text",
-			"path":"src/Complete/TankMovement.js"
-		},
-		"src/Complete/TankShooting.js":{
-			"MD5":"d83d893ce3ed7193bf76c82b9c409c92",
-			"filetype":"text",
-			"path":"src/Complete/TankShooting.js"
-		},
-		"src/Complete/UIDirectionControl.js":{
-			"MD5":"1d6f4d56e3fbab00a97e9d1f9923c0c0",
-			"filetype":"text",
-			"path":"src/Complete/UIDirectionControl.js"
-		},
-		"src/PhyWorld/AABBInfo.js":{
-			"MD5":"f07b7d2dfd7471e66582f072f5d26282",
-			"filetype":"text",
-			"path":"src/PhyWorld/AABBInfo.js"
-		},
-		"src/PhyWorld/BoxEntity.js":{
-			"MD5":"9b73f41525313d7daef3a4fcd33cd74d",
-			"filetype":"text",
-			"path":"src/PhyWorld/BoxEntity.js"
-		},
-		"src/System/TimeZone.js":{
-			"MD5":"20504495d775f3eb86dc42718c800280",
-			"filetype":"text",
-			"path":"src/System/TimeZone.js"
-		},
-		"src/System/Globalization/GregorianCalendar.js":{
-			"MD5":"4efe8dc1979e2d518e3a53c87f736593",
-			"filetype":"text",
-			"path":"src/System/Globalization/GregorianCalendar.js"
-		},
-		"src/System/IO/BinaryReader.js":{
-			"MD5":"10adc26ab3d4665e4aa7b07cf8e71fe4",
-			"filetype":"text",
-			"path":"src/System/IO/BinaryReader.js"
-		},
-		"src/System/IO/BinaryWriter.js":{
-			"MD5":"89f101a283f20cfb1f43e087a8400de8",
-			"filetype":"text",
-			"path":"src/System/IO/BinaryWriter.js"
-		},
-		"src/System/IO/BufferedStream.js":{
-			"MD5":"be411bb736291a22e1b7ceeb54fcf840",
-			"filetype":"text",
-			"path":"src/System/IO/BufferedStream.js"
-		},
-		"src/System/IO/Directory.js":{
-			"MD5":"60bb73d5454d0df60c5e9fc6ec9e3311",
-			"filetype":"text",
-			"path":"src/System/IO/Directory.js"
-		},
-		"src/System/IO/DirectoryInfo.js":{
-			"MD5":"b5487da7d08e365f28021bbb8b7a7e7a",
-			"filetype":"text",
-			"path":"src/System/IO/DirectoryInfo.js"
-		},
-		"src/System/IO/DirectoryNotFoundException.js":{
-			"MD5":"45add7c913f185781146db39fe495ec2",
-			"filetype":"text",
-			"path":"src/System/IO/DirectoryNotFoundException.js"
-		},
-		"src/System/IO/FileAccess.js":{
-			"MD5":"1ffec835bddfab1cf83fa60cf3fd1459",
-			"filetype":"text",
-			"path":"src/System/IO/FileAccess.js"
-		},
-		"src/System/IO/FileNotFoundException.js":{
-			"MD5":"bbccbe2b88b9877c4708fcceac2ffc95",
-			"filetype":"text",
-			"path":"src/System/IO/FileNotFoundException.js"
-		},
-		"src/System/IO/Iterator.js":{
-			"MD5":"9e7000804cefeef50f9e1a98b05c12d1",
-			"filetype":"text",
-			"path":"src/System/IO/Iterator.js"
-		},
-		"src/System/IO/MemoryStream.js":{
-			"MD5":"11d22106e0a2ff37c354e7bc1c0fcbf3",
-			"filetype":"text",
-			"path":"src/System/IO/MemoryStream.js"
-		},
-		"src/System/IO/Path.js":{
-			"MD5":"799f3b3be645267342020efe5cb2f863",
-			"filetype":"text",
-			"path":"src/System/IO/Path.js"
-		},
-		"src/System/IO/ReadLinesIterator.js":{
-			"MD5":"0f036d19b42ecb2fedfee535ef0af355",
-			"filetype":"text",
-			"path":"src/System/IO/ReadLinesIterator.js"
-		},
-		"src/System/IO/SearchOption.js":{
-			"MD5":"b135d41df320a8cf801bd66734d0c629",
-			"filetype":"text",
-			"path":"src/System/IO/SearchOption.js"
-		},
-		"src/System/IO/StreamReader.js":{
-			"MD5":"d1ca9b92f0fac474e2e4bdc5978dd910",
-			"filetype":"text",
-			"path":"src/System/IO/StreamReader.js"
-		},
-		"src/System/IO/StreamWriter.js":{
-			"MD5":"84ba5abc6455154af1a16ca017e2bbd0",
-			"filetype":"text",
-			"path":"src/System/IO/StreamWriter.js"
-		},
-		"src/System/IO/StringReader.js":{
-			"MD5":"2d704d6a9f64c1a18acf0eeada00e956",
-			"filetype":"text",
-			"path":"src/System/IO/StringReader.js"
-		},
-		"src/System/IO/StringWriter.js":{
-			"MD5":"800b92e2393bd07a540edf52799a31da",
-			"filetype":"text",
-			"path":"src/System/IO/StringWriter.js"
-		},
-		"src/System/IO/TextReader.js":{
-			"MD5":"fdcd2d75914d509176460da1f1c2e042",
-			"filetype":"text",
-			"path":"src/System/IO/TextReader.js"
-		},
-		"src/System/IO/TextWriter.js":{
-			"MD5":"cac1614a5411a5982c3e3a1859bafe16",
-			"filetype":"text",
-			"path":"src/System/IO/TextWriter.js"
-		},
-		"src/System/IO/StreamReader/NullStreamReader.js":{
-			"MD5":"91b905a2a66776bf38d256703c8cc264",
-			"filetype":"text",
-			"path":"src/System/IO/StreamReader/NullStreamReader.js"
-		},
-		"src/System/IO/TextReader/NullTextReader.js":{
-			"MD5":"ee3c31c3e65791853510fe03a7b8e1c1",
-			"filetype":"text",
-			"path":"src/System/IO/TextReader/NullTextReader.js"
-		},
-		"src/System/IO/TextWriter/NullTextWriter.js":{
-			"MD5":"17b59e3d8cd9e33a25eb9c1e050e1d4d",
-			"filetype":"text",
-			"path":"src/System/IO/TextWriter/NullTextWriter.js"
-		},
-		"src/System/Runtime/Serialization/IFormatter.js":{
-			"MD5":"62ee3a87ec9c685ef232fd02e9b31380",
-			"filetype":"text",
-			"path":"src/System/Runtime/Serialization/IFormatter.js"
-		},
-		"src/System/Runtime/Serialization/Formatters/Binary/BinaryFormatter.js":{
-			"MD5":"d7b88ed3fffd040b01aa1e7c081b6b5b",
-			"filetype":"text",
-			"path":"src/System/Runtime/Serialization/Formatters/Binary/BinaryFormatter.js"
-		},
-		"src/System/Security/Cryptography/MD5.js":{
-			"MD5":"319ab6ebd460781262e2414510c9b0f0",
-			"filetype":"text",
-			"path":"src/System/Security/Cryptography/MD5.js"
-		},
-		"src/System/Security/Cryptography/MD5CryptoServiceProvider.js":{
-			"MD5":"ffd8e2efd8218b813a6074484b82f0fe",
-			"filetype":"text",
-			"path":"src/System/Security/Cryptography/MD5CryptoServiceProvider.js"
-		},
-		"src/System/Text/DecoderFallbackException.js":{
-			"MD5":"d57f677b56f52e02bd82cb18ce1164c4",
-			"filetype":"text",
-			"path":"src/System/Text/DecoderFallbackException.js"
-		},
-		"src/System/Text/EncoderFallbackException.js":{
-			"MD5":"14946496394f7c4a54f935f132ffabad",
-			"filetype":"text",
-			"path":"src/System/Text/EncoderFallbackException.js"
-		},
-		"minigame-adaptor-config.js":{
-			"MD5":"def22efe44778640ece391a639651e38",
-			"filetype":"text",
-			"path":"minigame-adaptor-config.js"
-		},
-		"minigame-adaptor-util.js":{
-			"MD5":"84e866d88a7fae7ff6b48dba0688167e",
-			"filetype":"text",
-			"path":"minigame-adaptor-util.js"
-		},
-		"minigame-adaptor.js":{
-			"MD5":"a944c032913209a7348ea2a801516d2e",
-			"filetype":"text",
-			"path":"minigame-adaptor.js"
-		},
-		"weapp-adapter.js":{
-			"MD5":"0c43797e6f93e69831098a7240e04c75",
-			"filetype":"text",
-			"path":"weapp-adapter.js"
-		}
-	},
 	"assets":{
 		"Assets/Models/Cliff-Cliff.mesh":{
 			"descriptionPath":"Assets/Models/Cliff-Cliff.mesh",
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Cliff-Cliff.mesh.bin",
+				"Assets/Models/Cliff-Cliff.mesh.bin",
 				"Assets/Models/Cliff-Cliff.mesh"
 			]
 		},
@@ -854,7 +22,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Terrain-GroundPlane.mesh.bin",
+				"Assets/Models/Terrain-GroundPlane.mesh.bin",
 				"Assets/Models/Terrain-GroundPlane.mesh"
 			]
 		},
@@ -871,7 +39,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Concrete-Tarmac.mesh.bin",
+				"Assets/Models/Concrete-Tarmac.mesh.bin",
 				"Assets/Models/Concrete-Tarmac.mesh"
 			]
 		},
@@ -888,7 +56,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Dunes01-Dunes01.mesh.bin",
+				"Assets/Models/Dunes01-Dunes01.mesh.bin",
 				"Assets/Models/Dunes01-Dunes01.mesh"
 			]
 		},
@@ -897,7 +65,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Dunes02-Dunes02.mesh.bin",
+				"Assets/Models/Dunes02-Dunes02.mesh.bin",
 				"Assets/Models/Dunes02-Dunes02.mesh"
 			]
 		},
@@ -906,7 +74,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Cow-Cow.mesh.bin",
+				"Assets/Models/Cow-Cow.mesh.bin",
 				"Assets/Models/Cow-Cow.mesh"
 			]
 		},
@@ -923,7 +91,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Rocks01-Rocks01.mesh.bin",
+				"Assets/Models/Rocks01-Rocks01.mesh.bin",
 				"Assets/Models/Rocks01-Rocks01.mesh"
 			]
 		},
@@ -932,7 +100,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Rocks03-Rocks03.mesh.bin",
+				"Assets/Models/Rocks03-Rocks03.mesh.bin",
 				"Assets/Models/Rocks03-Rocks03.mesh"
 			]
 		},
@@ -941,7 +109,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Rocks02-Rocks02.mesh.bin",
+				"Assets/Models/Rocks02-Rocks02.mesh.bin",
 				"Assets/Models/Rocks02-Rocks02.mesh"
 			]
 		},
@@ -950,32 +118,32 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Column01-Column01.mesh.bin",
+				"Assets/Models/Column01-Column01.mesh.bin",
 				"Assets/Models/Column01-Column01.mesh"
 			]
 		},
-		"Assets/Models/Column01-Column01.lav":{
-			"descriptionPath":"Assets/Models/Column01-Column01.lav",
+		"Assets/Models/Column01-Column01.avatar":{
+			"descriptionPath":"Assets/Models/Column01-Column01.avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/Column01-Column01.lav"
+				"Assets/Models/Column01-Column01.avatar"
 			]
 		},
-		"Assets/Models/Column01-Column01__(1).lav":{
-			"descriptionPath":"Assets/Models/Column01-Column01__(1).lav",
+		"Assets/Models/Column01-Column01__(1).avatar":{
+			"descriptionPath":"Assets/Models/Column01-Column01__(1).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/Column01-Column01__(1).lav"
+				"Assets/Models/Column01-Column01__(1).avatar"
 			]
 		},
-		"Assets/Models/Column01-Column01__(2).lav":{
-			"descriptionPath":"Assets/Models/Column01-Column01__(2).lav",
+		"Assets/Models/Column01-Column01__(2).avatar":{
+			"descriptionPath":"Assets/Models/Column01-Column01__(2).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/Column01-Column01__(2).lav"
+				"Assets/Models/Column01-Column01__(2).avatar"
 			]
 		},
 		"Assets/Models/Column02-Column02.mesh":{
@@ -983,7 +151,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Column02-Column02.mesh.bin",
+				"Assets/Models/Column02-Column02.mesh.bin",
 				"Assets/Models/Column02-Column02.mesh"
 			]
 		},
@@ -992,7 +160,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Cactus-Cactus.mesh.bin",
+				"Assets/Models/Cactus-Cactus.mesh.bin",
 				"Assets/Models/Cactus-Cactus.mesh"
 			]
 		},
@@ -1009,7 +177,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Tree-Tree.mesh.bin",
+				"Assets/Models/Tree-Tree.mesh.bin",
 				"Assets/Models/Tree-Tree.mesh"
 			]
 		},
@@ -1026,7 +194,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_PalmTree-PalmTree01.mesh.bin",
+				"Assets/Models/PalmTree-PalmTree01.mesh.bin",
 				"Assets/Models/PalmTree-PalmTree01.mesh"
 			]
 		},
@@ -1035,7 +203,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Building01-Building01.mesh.bin",
+				"Assets/Models/Building01-Building01.mesh.bin",
 				"Assets/Models/Building01-Building01.mesh"
 			]
 		},
@@ -1068,7 +236,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Building02-Barracks.mesh.bin",
+				"Assets/Models/Building02-Barracks.mesh.bin",
 				"Assets/Models/Building02-Barracks.mesh"
 			]
 		},
@@ -1080,28 +248,28 @@
 				"Assets/Materials/OilDrums.mat"
 			]
 		},
-		"Assets/Models/Building02-Building02.lav":{
-			"descriptionPath":"Assets/Models/Building02-Building02.lav",
+		"Assets/Models/Building02-Building02.avatar":{
+			"descriptionPath":"Assets/Models/Building02-Building02.avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/Building02-Building02.lav"
+				"Assets/Models/Building02-Building02.avatar"
 			]
 		},
-		"Assets/Models/Building02-Building02__(1).lav":{
-			"descriptionPath":"Assets/Models/Building02-Building02__(1).lav",
+		"Assets/Models/Building02-Building02__(1).avatar":{
+			"descriptionPath":"Assets/Models/Building02-Building02__(1).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/Building02-Building02__(1).lav"
+				"Assets/Models/Building02-Building02__(1).avatar"
 			]
 		},
-		"Assets/Models/Building02-Building02__(2).lav":{
-			"descriptionPath":"Assets/Models/Building02-Building02__(2).lav",
+		"Assets/Models/Building02-Building02__(2).avatar":{
+			"descriptionPath":"Assets/Models/Building02-Building02__(2).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/Building02-Building02__(2).lav"
+				"Assets/Models/Building02-Building02__(2).avatar"
 			]
 		},
 		"Assets/Models/Radar-RadarSphere.mesh":{
@@ -1109,7 +277,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Radar-RadarSphere.mesh.bin",
+				"Assets/Models/Radar-RadarSphere.mesh.bin",
 				"Assets/Models/Radar-RadarSphere.mesh"
 			]
 		},
@@ -1118,32 +286,32 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_OilStorage-OilStorage.mesh.bin",
+				"Assets/Models/OilStorage-OilStorage.mesh.bin",
 				"Assets/Models/OilStorage-OilStorage.mesh"
 			]
 		},
-		"Assets/Models/OilStorage-OilStorage.lav":{
-			"descriptionPath":"Assets/Models/OilStorage-OilStorage.lav",
+		"Assets/Models/OilStorage-OilStorage.avatar":{
+			"descriptionPath":"Assets/Models/OilStorage-OilStorage.avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/OilStorage-OilStorage.lav"
+				"Assets/Models/OilStorage-OilStorage.avatar"
 			]
 		},
-		"Assets/Models/OilStorage-OilStorage__(1).lav":{
-			"descriptionPath":"Assets/Models/OilStorage-OilStorage__(1).lav",
+		"Assets/Models/OilStorage-OilStorage__(1).avatar":{
+			"descriptionPath":"Assets/Models/OilStorage-OilStorage__(1).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/OilStorage-OilStorage__(1).lav"
+				"Assets/Models/OilStorage-OilStorage__(1).avatar"
 			]
 		},
-		"Assets/Models/PumpJack-PumpJack.lav":{
-			"descriptionPath":"Assets/Models/PumpJack-PumpJack.lav",
+		"Assets/Models/PumpJack-PumpJack.avatar":{
+			"descriptionPath":"Assets/Models/PumpJack-PumpJack.avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/PumpJack-PumpJack.lav"
+				"Assets/Models/PumpJack-PumpJack.avatar"
 			]
 		},
 		"Assets/Models/PumpJack-Take__001.animationclip":{
@@ -1165,29 +333,29 @@
 				"Assets/_Completed-Assets/Animators/CompletePumpjack.controller"
 			]
 		},
-		"Assets_Models_PumpJack-Pumpjack.mesh":{
-			"descriptionPath":"Assets_Models_PumpJack-Pumpjack.mesh",
+		"Assets/Models/PumpJack-Pumpjack.mesh":{
+			"descriptionPath":"Assets/Models/PumpJack-Pumpjack.mesh",
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_PumpJack-Pumpjack.mesh.bin",
-				"Assets_Models_PumpJack-Pumpjack.mesh"
+				"Assets/Models/PumpJack-Pumpjack.mesh.bin",
+				"Assets/Models/PumpJack-Pumpjack.mesh"
 			]
 		},
-		"Assets/Models/PumpJack-PumpJack__(1).lav":{
-			"descriptionPath":"Assets/Models/PumpJack-PumpJack__(1).lav",
+		"Assets/Models/PumpJack-PumpJack__(1).avatar":{
+			"descriptionPath":"Assets/Models/PumpJack-PumpJack__(1).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/PumpJack-PumpJack__(1).lav"
+				"Assets/Models/PumpJack-PumpJack__(1).avatar"
 			]
 		},
-		"Assets/Models/PumpJack-PumpJack__(2).lav":{
-			"descriptionPath":"Assets/Models/PumpJack-PumpJack__(2).lav",
+		"Assets/Models/PumpJack-PumpJack__(2).avatar":{
+			"descriptionPath":"Assets/Models/PumpJack-PumpJack__(2).avatar",
 			"type":"avatar",
 			"dependencies":[],
 			"useFile":[
-				"Assets/Models/PumpJack-PumpJack__(2).lav"
+				"Assets/Models/PumpJack-PumpJack__(2).avatar"
 			]
 		},
 		"Assets/Models/Refinery-Refinery.mesh":{
@@ -1195,7 +363,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Refinery-Refinery.mesh.bin",
+				"Assets/Models/Refinery-Refinery.mesh.bin",
 				"Assets/Models/Refinery-Refinery.mesh"
 			]
 		},
@@ -1204,7 +372,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_BustedTank-BustedTank.mesh.bin",
+				"Assets/Models/BustedTank-BustedTank.mesh.bin",
 				"Assets/Models/BustedTank-BustedTank.mesh"
 			]
 		},
@@ -1221,7 +389,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Crater01-Crater01.mesh.bin",
+				"Assets/Models/Crater01-Crater01.mesh.bin",
 				"Assets/Models/Crater01-Crater01.mesh"
 			]
 		},
@@ -1230,7 +398,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Ruins01-Ruins01.mesh.bin",
+				"Assets/Models/Ruins01-Ruins01.mesh.bin",
 				"Assets/Models/Ruins01-Ruins01.mesh"
 			]
 		},
@@ -1239,46 +407,8 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Helipad-Helipad.mesh.bin",
+				"Assets/Models/Helipad-Helipad.mesh.bin",
 				"Assets/Models/Helipad-Helipad.mesh"
-			]
-		},
-		"Assets/AudioClips/TankExplosion.wav.raw":{
-			"descriptionPath":"Assets/AudioClips/TankExplosion.wav.raw",
-			"type":"raw",
-			"dependencies":[],
-			"useFile":[
-				"Assets/AudioClips/TankExplosion.wav",
-				"Assets/AudioClips/TankExplosion.wav.raw"
-			]
-		},
-		"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab":{
-			"descriptionPath":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab",
-			"type":"prefab",
-			"dependencies":[
-				"Resources/unity_builtin_extra.mat",
-				"Assets/AudioClips/TankExplosion.wav.raw",
-				"Assets/Materials/TankGrey.mat"
-			],
-			"useFile":[
-				"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab"
-			]
-		},
-		"Assets/Models/Shell-Shell.mesh":{
-			"descriptionPath":"Assets/Models/Shell-Shell.mesh",
-			"type":"mesh",
-			"dependencies":[],
-			"useFile":[
-				"Assets_Models_Shell-Shell.mesh.bin",
-				"Assets/Models/Shell-Shell.mesh"
-			]
-		},
-		"Assets/Materials/Gold.mat":{
-			"descriptionPath":"Assets/Materials/Gold.mat",
-			"type":"material",
-			"dependencies":[],
-			"useFile":[
-				"Assets/Materials/Gold.mat"
 			]
 		},
 		"Assets/Sprites/Smoke.texture2d":{
@@ -1300,6 +430,45 @@
 				"Assets/Materials/Explosion.mat"
 			]
 		},
+		"Assets/AudioClips/TankExplosion.wav.raw":{
+			"descriptionPath":"Assets/AudioClips/TankExplosion.wav.raw",
+			"type":"raw",
+			"dependencies":[],
+			"useFile":[
+				"Assets/AudioClips/TankExplosion.wav",
+				"Assets/AudioClips/TankExplosion.wav.raw"
+			]
+		},
+		"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab":{
+			"descriptionPath":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab",
+			"type":"prefab",
+			"dependencies":[
+				"Assets/Materials/Explosion.mat",
+				"Assets/AudioClips/TankExplosion.wav.raw",
+				"Assets/Materials/TankGrey.mat",
+				"Resources/unity_builtin_extra.mat"
+			],
+			"useFile":[
+				"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab"
+			]
+		},
+		"Assets/Models/Shell-Shell.mesh":{
+			"descriptionPath":"Assets/Models/Shell-Shell.mesh",
+			"type":"mesh",
+			"dependencies":[],
+			"useFile":[
+				"Assets/Models/Shell-Shell.mesh.bin",
+				"Assets/Models/Shell-Shell.mesh"
+			]
+		},
+		"Assets/Materials/Gold.mat":{
+			"descriptionPath":"Assets/Materials/Gold.mat",
+			"type":"material",
+			"dependencies":[],
+			"useFile":[
+				"Assets/Materials/Gold.mat"
+			]
+		},
 		"Assets/AudioClips/ShellExplosion.wav.raw":{
 			"descriptionPath":"Assets/AudioClips/ShellExplosion.wav.raw",
 			"type":"raw",
@@ -1309,35 +478,10 @@
 				"Assets/AudioClips/ShellExplosion.wav.raw"
 			]
 		},
-		"Resources/unity_builtin_extra.effect":{
-			"descriptionPath":"Resources/unity_builtin_extra.effect",
-			"type":"effect",
-			"dependencies":[],
-			"useFile":[
-				"Resources/unity_builtin_extra.vertex.hlsl",
-				"Resources/unity_builtin_extra.pixel.hlsl",
-				"Resources/unity_builtin_extra.effect",
-				"Resources/unity_builtin_extra.vertex.hlsl",
-				"Resources/unity_builtin_extra.pixel.hlsl",
-				"Resources/unity_builtin_extra.effect"
-			]
-		},
-		"Resources/unity_builtin_extra.texture2d":{
-			"descriptionPath":"Resources/unity_builtin_extra.texture2d",
-			"type":"texture2d",
-			"dependencies":[],
-			"useFile":[
-				"Resources/unity_builtin_extra.png",
-				"Resources/unity_builtin_extra.texture2d"
-			]
-		},
 		"Resources/unity_builtin_extra.mat":{
 			"descriptionPath":"Resources/unity_builtin_extra.mat",
 			"type":"material",
-			"dependencies":[
-				"Resources/unity_builtin_extra.effect",
-				"Resources/unity_builtin_extra.texture2d"
-			],
+			"dependencies":[],
 			"useFile":[
 				"Resources/unity_builtin_extra.mat"
 			]
@@ -1362,7 +506,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Tank-TankChassis.mesh.bin",
+				"Assets/Models/Tank-TankChassis.mesh.bin",
 				"Assets/Models/Tank-TankChassis.mesh"
 			]
 		},
@@ -1387,7 +531,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Tank-TankTracksLeft.mesh.bin",
+				"Assets/Models/Tank-TankTracksLeft.mesh.bin",
 				"Assets/Models/Tank-TankTracksLeft.mesh"
 			]
 		},
@@ -1396,7 +540,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Tank-TankTracksRight.mesh.bin",
+				"Assets/Models/Tank-TankTracksRight.mesh.bin",
 				"Assets/Models/Tank-TankTracksRight.mesh"
 			]
 		},
@@ -1405,7 +549,7 @@
 			"type":"mesh",
 			"dependencies":[],
 			"useFile":[
-				"Assets_Models_Tank-TankTurret.mesh.bin",
+				"Assets/Models/Tank-TankTurret.mesh.bin",
 				"Assets/Models/Tank-TankTurret.mesh"
 			]
 		},
@@ -1441,13 +585,13 @@
 				"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab"
 			]
 		},
-		"Assets/AudioClips/BackgroundMusic.wav.raw":{
-			"descriptionPath":"Assets/AudioClips/BackgroundMusic.wav.raw",
+		"Assets/Resources/BackgroundMusic.wav.raw":{
+			"descriptionPath":"Assets/Resources/BackgroundMusic.wav.raw",
 			"type":"raw",
 			"dependencies":[],
 			"useFile":[
-				"Assets/AudioClips/BackgroundMusic.wav",
-				"Assets/AudioClips/BackgroundMusic.wav.raw"
+				"Assets/Resources/BackgroundMusic.wav",
+				"Assets/Resources/BackgroundMusic.wav.raw"
 			]
 		},
 		"Assets/_Complete-Game.scene":{
@@ -1469,9 +613,9 @@
 				"Assets/Models/Rocks03-Rocks03.mesh",
 				"Assets/Models/Rocks02-Rocks02.mesh",
 				"Assets/Models/Column01-Column01.mesh",
-				"Assets/Models/Column01-Column01.lav",
-				"Assets/Models/Column01-Column01__(1).lav",
-				"Assets/Models/Column01-Column01__(2).lav",
+				"Assets/Models/Column01-Column01.avatar",
+				"Assets/Models/Column01-Column01__(1).avatar",
+				"Assets/Models/Column01-Column01__(2).avatar",
 				"Assets/Models/Column02-Column02.mesh",
 				"Assets/Models/Cactus-Cactus.mesh",
 				"Assets/Materials/Green.mat",
@@ -1484,18 +628,18 @@
 				"Assets/Materials/BuildingGlass.mat",
 				"Assets/Models/Building02-Barracks.mesh",
 				"Assets/Materials/OilDrums.mat",
-				"Assets/Models/Building02-Building02.lav",
-				"Assets/Models/Building02-Building02__(1).lav",
-				"Assets/Models/Building02-Building02__(2).lav",
+				"Assets/Models/Building02-Building02.avatar",
+				"Assets/Models/Building02-Building02__(1).avatar",
+				"Assets/Models/Building02-Building02__(2).avatar",
 				"Assets/Models/Radar-RadarSphere.mesh",
 				"Assets/Models/OilStorage-OilStorage.mesh",
-				"Assets/Models/OilStorage-OilStorage.lav",
-				"Assets/Models/OilStorage-OilStorage__(1).lav",
-				"Assets/Models/PumpJack-PumpJack.lav",
+				"Assets/Models/OilStorage-OilStorage.avatar",
+				"Assets/Models/OilStorage-OilStorage__(1).avatar",
+				"Assets/Models/PumpJack-PumpJack.avatar",
 				"Assets/_Completed-Assets/Animators/CompletePumpjack.controller",
-				"Assets_Models_PumpJack-Pumpjack.mesh",
-				"Assets/Models/PumpJack-PumpJack__(1).lav",
-				"Assets/Models/PumpJack-PumpJack__(2).lav",
+				"Assets/Models/PumpJack-Pumpjack.mesh",
+				"Assets/Models/PumpJack-PumpJack__(1).avatar",
+				"Assets/Models/PumpJack-PumpJack__(2).avatar",
 				"Assets/Models/Refinery-Refinery.mesh",
 				"Assets/Models/BustedTank-BustedTank.mesh",
 				"Assets/Materials/TankGrey.mat",
@@ -1504,7 +648,7 @@
 				"Assets/Models/Helipad-Helipad.mesh",
 				"bindings/Complete.GameManager.binding.js",
 				"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab",
-				"Assets/AudioClips/BackgroundMusic.wav.raw",
+				"Assets/Resources/BackgroundMusic.wav.raw",
 				"bindings/Complete.TankMovement.binding.js",
 				"bindings/Complete.TankHealth.binding.js",
 				"bindings/Complete.TankShooting.binding.js",
@@ -2000,6 +1144,813 @@
 			"useFile":[
 				"weapp-adapter.js"
 			]
+		}
+	},
+	"files":{
+		"Assets/Models/Cliff-Cliff.mesh.bin":{
+			"MD5":"910d97778a333008dfa91cbe375ed0e1637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Cliff-Cliff.mesh.bin"
+		},
+		"Assets/Models/Cliff-Cliff.mesh":{
+			"MD5":"mesh_989250f01452fbe5242afab87d3bae859b3411d2812eceb6de37c13f57825a76",
+			"filetype":"json",
+			"path":"Assets/Models/Cliff-Cliff.mesh"
+		},
+		"Assets/Materials/YellowDark.mat":{
+			"MD5":"material_50b540eea09c4a923827515b7237b66c",
+			"filetype":"json",
+			"path":"Assets/Materials/YellowDark.mat"
+		},
+		"Assets/Models/Terrain-GroundPlane.mesh.bin":{
+			"MD5":"fc3509d0ddae23f70894f58c9f6fcb32637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Terrain-GroundPlane.mesh.bin"
+		},
+		"Assets/Models/Terrain-GroundPlane.mesh":{
+			"MD5":"mesh_ca46455c4de04cdb21e4a611c6ef1ffb65a1649706ada274bfaee78f9dfe34a7",
+			"filetype":"json",
+			"path":"Assets/Models/Terrain-GroundPlane.mesh"
+		},
+		"Assets/Materials/YellowLight.mat":{
+			"MD5":"material_9b57fa59877e809e805b5d53b8aa1a5a",
+			"filetype":"json",
+			"path":"Assets/Materials/YellowLight.mat"
+		},
+		"Assets/Models/Concrete-Tarmac.mesh.bin":{
+			"MD5":"be4805fb7b26e228b9e639a25bca2534637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Concrete-Tarmac.mesh.bin"
+		},
+		"Assets/Models/Concrete-Tarmac.mesh":{
+			"MD5":"mesh_3c52e79d10bed35f68501837f1f93d206b60f1c0a353ec4a9c1463cf419a434a",
+			"filetype":"json",
+			"path":"Assets/Models/Concrete-Tarmac.mesh"
+		},
+		"Assets/Materials/BuildingStone.mat":{
+			"MD5":"material_e8789b166b73623ebf87cc2414eefe1d",
+			"filetype":"json",
+			"path":"Assets/Materials/BuildingStone.mat"
+		},
+		"Assets/Models/Dunes01-Dunes01.mesh.bin":{
+			"MD5":"19d976d1b332c6ffe739623f736a5e37637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Dunes01-Dunes01.mesh.bin"
+		},
+		"Assets/Models/Dunes01-Dunes01.mesh":{
+			"MD5":"mesh_854359432c4b010433d5733ad011d1b5a529d85ae69a611599889a33dd85e7d1",
+			"filetype":"json",
+			"path":"Assets/Models/Dunes01-Dunes01.mesh"
+		},
+		"Assets/Models/Dunes02-Dunes02.mesh.bin":{
+			"MD5":"9ebba426f0e378cafe53ba1615976e2c637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Dunes02-Dunes02.mesh.bin"
+		},
+		"Assets/Models/Dunes02-Dunes02.mesh":{
+			"MD5":"mesh_d30c25b1b56faabb2ba488fef7f4bdd706ac6729841fa79b0fde3222842a2cfc",
+			"filetype":"json",
+			"path":"Assets/Models/Dunes02-Dunes02.mesh"
+		},
+		"Assets/Models/Cow-Cow.mesh.bin":{
+			"MD5":"62920cbf583436739a1edfc4a76a97dd637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Cow-Cow.mesh.bin"
+		},
+		"Assets/Models/Cow-Cow.mesh":{
+			"MD5":"mesh_fc768cbf44c2622c22d2cf9d97d4379efe0707cc476fa27a17508867b2b95d14",
+			"filetype":"json",
+			"path":"Assets/Models/Cow-Cow.mesh"
+		},
+		"Assets/Materials/BuildingWhite.mat":{
+			"MD5":"material_abe4077fd04f62cc1a8466bdf01a352b",
+			"filetype":"json",
+			"path":"Assets/Materials/BuildingWhite.mat"
+		},
+		"Assets/Models/Rocks01-Rocks01.mesh.bin":{
+			"MD5":"53e72bda5a6464d71c498dd17910678d637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Rocks01-Rocks01.mesh.bin"
+		},
+		"Assets/Models/Rocks01-Rocks01.mesh":{
+			"MD5":"mesh_f44129724db4218405df7e5f7af7c56fafb098512ea94ab745e408abdfa510a1",
+			"filetype":"json",
+			"path":"Assets/Models/Rocks01-Rocks01.mesh"
+		},
+		"Assets/Models/Rocks03-Rocks03.mesh.bin":{
+			"MD5":"456c2886d338a29dbc0d05a3c781e4f8637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Rocks03-Rocks03.mesh.bin"
+		},
+		"Assets/Models/Rocks03-Rocks03.mesh":{
+			"MD5":"mesh_0be5ebe75dc8bbd8032b82e52c47eee085590de0ddc89bd27b2ba6e4db2a68a8",
+			"filetype":"json",
+			"path":"Assets/Models/Rocks03-Rocks03.mesh"
+		},
+		"Assets/Models/Rocks02-Rocks02.mesh.bin":{
+			"MD5":"299c732e893d0f89b9c0fe73d4670dad637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Rocks02-Rocks02.mesh.bin"
+		},
+		"Assets/Models/Rocks02-Rocks02.mesh":{
+			"MD5":"mesh_66d3b6b537f483ef6993a3d8ce218476f849143bd6b3b4a14a3257004aa26283",
+			"filetype":"json",
+			"path":"Assets/Models/Rocks02-Rocks02.mesh"
+		},
+		"Assets/Models/Column01-Column01.mesh.bin":{
+			"MD5":"9c81577f0e11411c898a03ccb25fea1c637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Column01-Column01.mesh.bin"
+		},
+		"Assets/Models/Column01-Column01.mesh":{
+			"MD5":"mesh_273d8e088d6584664c52a10fa6b68efdeffae77734327a3f9c3e0b50f3d16165",
+			"filetype":"json",
+			"path":"Assets/Models/Column01-Column01.mesh"
+		},
+		"Assets/Models/Column01-Column01.avatar":{
+			"MD5":"avatar_273d8e088d6584664c52a10fa6b68efd",
+			"filetype":"json",
+			"path":"Assets/Models/Column01-Column01.avatar"
+		},
+		"Assets/Models/Column01-Column01__(1).avatar":{
+			"MD5":"avatar_273d8e088d6584664c52a10fa6b68efd",
+			"filetype":"json",
+			"path":"Assets/Models/Column01-Column01__(1).avatar"
+		},
+		"Assets/Models/Column01-Column01__(2).avatar":{
+			"MD5":"avatar_273d8e088d6584664c52a10fa6b68efd",
+			"filetype":"json",
+			"path":"Assets/Models/Column01-Column01__(2).avatar"
+		},
+		"Assets/Models/Column02-Column02.mesh.bin":{
+			"MD5":"8b243f1946603191224ba0d5334f539e637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Column02-Column02.mesh.bin"
+		},
+		"Assets/Models/Column02-Column02.mesh":{
+			"MD5":"mesh_d41bfe58f97b6c18de5ccaccb7a57ddb41fce5e20b991eb6c2089ca6a08a2310",
+			"filetype":"json",
+			"path":"Assets/Models/Column02-Column02.mesh"
+		},
+		"Assets/Models/Cactus-Cactus.mesh.bin":{
+			"MD5":"17dca579afceb11695e567128e7f1a97637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Cactus-Cactus.mesh.bin"
+		},
+		"Assets/Models/Cactus-Cactus.mesh":{
+			"MD5":"mesh_859c76fe7727fbc8ea10cab4b7874ef7fb860a9b61e2a0b687a4c5b2da78eb85",
+			"filetype":"json",
+			"path":"Assets/Models/Cactus-Cactus.mesh"
+		},
+		"Assets/Materials/Green.mat":{
+			"MD5":"material_629f30a1b5e6c4cf62a546126eaf8f51",
+			"filetype":"json",
+			"path":"Assets/Materials/Green.mat"
+		},
+		"Assets/Models/Tree-Tree.mesh.bin":{
+			"MD5":"a2c5de162f3ee96f14181a388fe3beb4637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Tree-Tree.mesh.bin"
+		},
+		"Assets/Models/Tree-Tree.mesh":{
+			"MD5":"mesh_c1a893fe6332769d1452ff1ecea257f53b0c14770e6bd663518496da60f524da",
+			"filetype":"json",
+			"path":"Assets/Models/Tree-Tree.mesh"
+		},
+		"Assets/Materials/Brown.mat":{
+			"MD5":"material_939f7a7c0951c0a1b4df98271f2769fc",
+			"filetype":"json",
+			"path":"Assets/Materials/Brown.mat"
+		},
+		"Assets/Models/PalmTree-PalmTree01.mesh.bin":{
+			"MD5":"944f5dc291c8a8b8172261a2150123d9637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/PalmTree-PalmTree01.mesh.bin"
+		},
+		"Assets/Models/PalmTree-PalmTree01.mesh":{
+			"MD5":"mesh_d9dbe0a14489ffc4c83ee9e7d2ffb6fc708f18ddceb6d3763ccd3de6e4de917e",
+			"filetype":"json",
+			"path":"Assets/Models/PalmTree-PalmTree01.mesh"
+		},
+		"Assets/Models/Building01-Building01.mesh.bin":{
+			"MD5":"d6fc710a5058cf71a8911127808e1cb0637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Building01-Building01.mesh.bin"
+		},
+		"Assets/Models/Building01-Building01.mesh":{
+			"MD5":"mesh_7d9b4641a812c9eecbafc60ee19cad8bd3019e40758b4383f4eb6f7c5b0ef2a9",
+			"filetype":"json",
+			"path":"Assets/Models/Building01-Building01.mesh"
+		},
+		"Assets/Materials/BuildingGrey.mat":{
+			"MD5":"material_3aa17ee3b3f3946bb726fbe5b48e94d1",
+			"filetype":"json",
+			"path":"Assets/Materials/BuildingGrey.mat"
+		},
+		"Assets/Materials/BuildingMetal.mat":{
+			"MD5":"material_c0f9ae82dfb548d46f20ad407149c974",
+			"filetype":"json",
+			"path":"Assets/Materials/BuildingMetal.mat"
+		},
+		"Assets/Materials/BuildingGlass.mat":{
+			"MD5":"material_0aa5b3ff8a4bbc9b82ca8a4d8200bed3",
+			"filetype":"json",
+			"path":"Assets/Materials/BuildingGlass.mat"
+		},
+		"Assets/Models/Building02-Barracks.mesh.bin":{
+			"MD5":"cfcc5bc4146d3a7466cf2747db885081637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Building02-Barracks.mesh.bin"
+		},
+		"Assets/Models/Building02-Barracks.mesh":{
+			"MD5":"mesh_6d7da48f41c25349a3f8ebaa8b01de325bef4b9467f4039984dbb3e68df9f0b0",
+			"filetype":"json",
+			"path":"Assets/Models/Building02-Barracks.mesh"
+		},
+		"Assets/Materials/OilDrums.mat":{
+			"MD5":"material_4ad595f8752bd77040148e21c3abc3cd",
+			"filetype":"json",
+			"path":"Assets/Materials/OilDrums.mat"
+		},
+		"Assets/Models/Building02-Building02.avatar":{
+			"MD5":"avatar_6d7da48f41c25349a3f8ebaa8b01de32",
+			"filetype":"json",
+			"path":"Assets/Models/Building02-Building02.avatar"
+		},
+		"Assets/Models/Building02-Building02__(1).avatar":{
+			"MD5":"avatar_6d7da48f41c25349a3f8ebaa8b01de32",
+			"filetype":"json",
+			"path":"Assets/Models/Building02-Building02__(1).avatar"
+		},
+		"Assets/Models/Building02-Building02__(2).avatar":{
+			"MD5":"avatar_6d7da48f41c25349a3f8ebaa8b01de32",
+			"filetype":"json",
+			"path":"Assets/Models/Building02-Building02__(2).avatar"
+		},
+		"Assets/Models/Radar-RadarSphere.mesh.bin":{
+			"MD5":"f89a2b81773dcae0c7f2945950e631b2637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Radar-RadarSphere.mesh.bin"
+		},
+		"Assets/Models/Radar-RadarSphere.mesh":{
+			"MD5":"mesh_5f448fd3ad71fae12ebf0e3ad1d85bf3c34e5baa969bd65c23cfe81e6960e71d",
+			"filetype":"json",
+			"path":"Assets/Models/Radar-RadarSphere.mesh"
+		},
+		"Assets/Models/OilStorage-OilStorage.mesh.bin":{
+			"MD5":"0760875d3f61ab0e33d0a2192a13d421637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/OilStorage-OilStorage.mesh.bin"
+		},
+		"Assets/Models/OilStorage-OilStorage.mesh":{
+			"MD5":"mesh_20d1aed0c76cd9c931c8443f2367d07c8384d12f80b9fbc12be5391f8d7315e2",
+			"filetype":"json",
+			"path":"Assets/Models/OilStorage-OilStorage.mesh"
+		},
+		"Assets/Models/OilStorage-OilStorage.avatar":{
+			"MD5":"avatar_20d1aed0c76cd9c931c8443f2367d07c",
+			"filetype":"json",
+			"path":"Assets/Models/OilStorage-OilStorage.avatar"
+		},
+		"Assets/Models/OilStorage-OilStorage__(1).avatar":{
+			"MD5":"avatar_20d1aed0c76cd9c931c8443f2367d07c",
+			"filetype":"json",
+			"path":"Assets/Models/OilStorage-OilStorage__(1).avatar"
+		},
+		"Assets/Models/PumpJack-PumpJack.avatar":{
+			"MD5":"avatar_8f13299ee9b585d75b580a555ad37275",
+			"filetype":"json",
+			"path":"Assets/Models/PumpJack-PumpJack.avatar"
+		},
+		"Assets/Models/PumpJack-Take 001.animationclip.bin":{
+			"MD5":"8151648cfff737a6d664979f0e810c8e637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/PumpJack-Take 001.animationclip.bin"
+		},
+		"Assets/Models/PumpJack-Take__001.animationclip":{
+			"MD5":"animationclip_8f13299ee9b585d75b580a555ad37275",
+			"filetype":"json",
+			"path":"Assets/Models/PumpJack-Take__001.animationclip"
+		},
+		"Assets/_Completed-Assets/Animators/CompletePumpjack.controller":{
+			"MD5":"animatorcontroller_565b0acf98da2aef7ba76064216c6db0",
+			"filetype":"json",
+			"path":"Assets/_Completed-Assets/Animators/CompletePumpjack.controller"
+		},
+		"Assets/Models/PumpJack-Pumpjack.mesh.bin":{
+			"MD5":"bd1e730c5197617cb827bbca0d687c35637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/PumpJack-Pumpjack.mesh.bin"
+		},
+		"Assets/Models/PumpJack-Pumpjack.mesh":{
+			"MD5":"mesh_8f13299ee9b585d75b580a555ad372754fc497eb0c53731fee56319712346e03",
+			"filetype":"json",
+			"path":"Assets/Models/PumpJack-Pumpjack.mesh"
+		},
+		"Assets/Models/PumpJack-PumpJack__(1).avatar":{
+			"MD5":"avatar_8f13299ee9b585d75b580a555ad37275",
+			"filetype":"json",
+			"path":"Assets/Models/PumpJack-PumpJack__(1).avatar"
+		},
+		"Assets/Models/PumpJack-PumpJack__(2).avatar":{
+			"MD5":"avatar_8f13299ee9b585d75b580a555ad37275",
+			"filetype":"json",
+			"path":"Assets/Models/PumpJack-PumpJack__(2).avatar"
+		},
+		"Assets/Models/Refinery-Refinery.mesh.bin":{
+			"MD5":"e5ccf3c126470510cc8f62ee2cb053f5637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Refinery-Refinery.mesh.bin"
+		},
+		"Assets/Models/Refinery-Refinery.mesh":{
+			"MD5":"mesh_fa5e16390004eb1a285426c9143cd5c6a7a49e134b1aa7245707794ce21b7725",
+			"filetype":"json",
+			"path":"Assets/Models/Refinery-Refinery.mesh"
+		},
+		"Assets/Models/BustedTank-BustedTank.mesh.bin":{
+			"MD5":"0752bcf2ec747a21e2bf336b5bb46f01637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/BustedTank-BustedTank.mesh.bin"
+		},
+		"Assets/Models/BustedTank-BustedTank.mesh":{
+			"MD5":"mesh_0cf566b83680a3702f9d5201e01951927c1146b57696328d2a9448714cb741c2",
+			"filetype":"json",
+			"path":"Assets/Models/BustedTank-BustedTank.mesh"
+		},
+		"Assets/Materials/TankGrey.mat":{
+			"MD5":"material_cee2af8b2514c715082ffbfb340de9b1",
+			"filetype":"json",
+			"path":"Assets/Materials/TankGrey.mat"
+		},
+		"Assets/Models/Crater01-Crater01.mesh.bin":{
+			"MD5":"daf045771d948317e9f38f9fad86df46637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Crater01-Crater01.mesh.bin"
+		},
+		"Assets/Models/Crater01-Crater01.mesh":{
+			"MD5":"mesh_7c065b6027233db827ede255c10137bc8e48f58321d129f8874bae8fb6e9a2aa",
+			"filetype":"json",
+			"path":"Assets/Models/Crater01-Crater01.mesh"
+		},
+		"Assets/Models/Ruins01-Ruins01.mesh.bin":{
+			"MD5":"d20df5a9fdcb8dd518aad4dac50d895d637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Ruins01-Ruins01.mesh.bin"
+		},
+		"Assets/Models/Ruins01-Ruins01.mesh":{
+			"MD5":"mesh_565351025bea92ff605e26bc92fab09f7a2cba2a7a388d8be69b4da759406a95",
+			"filetype":"json",
+			"path":"Assets/Models/Ruins01-Ruins01.mesh"
+		},
+		"Assets/Models/Helipad-Helipad.mesh.bin":{
+			"MD5":"9d6ee3906bead655e048984622b42ff1637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Helipad-Helipad.mesh.bin"
+		},
+		"Assets/Models/Helipad-Helipad.mesh":{
+			"MD5":"mesh_8ae6eb3408b28f2420c9789ae10e12c92f8f711c854ce08e746d4393bdfe5c9e",
+			"filetype":"json",
+			"path":"Assets/Models/Helipad-Helipad.mesh"
+		},
+		"Assets/Sprites/Smoke.png":{
+			"MD5":"99799ae534c8c6889cc55d8bf3e7db10637305838000000000",
+			"filetype":"image",
+			"path":"Assets/Sprites/Smoke.png"
+		},
+		"Assets/Sprites/Smoke.texture2d":{
+			"MD5":"texture2d_24f48848c4ce50f22c14fe7b2f0b4f65",
+			"filetype":"json",
+			"path":"Assets/Sprites/Smoke.texture2d"
+		},
+		"Assets/Materials/Explosion.mat":{
+			"MD5":"material_74756bf8b50f25fccc2fcaa047705a63",
+			"filetype":"json",
+			"path":"Assets/Materials/Explosion.mat"
+		},
+		"Assets/AudioClips/TankExplosion.wav":{
+			"MD5":"85ed28e98b503a5ecf9cf124ee567771637305838000000000",
+			"filetype":"url",
+			"path":"Assets/AudioClips/TankExplosion.wav"
+		},
+		"Assets/AudioClips/TankExplosion.wav.raw":{
+			"MD5":"raw_9a41c2542f7e8ba1c2c5f4d4479368cc",
+			"filetype":"json",
+			"path":"Assets/AudioClips/TankExplosion.wav.raw"
+		},
+		"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab":{
+			"MD5":"prefab_gb8gkcda6fd7m4d1jkffe6h9n7mfeg6f",
+			"filetype":"json",
+			"path":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab"
+		},
+		"Assets/Models/Shell-Shell.mesh.bin":{
+			"MD5":"1108fa0b6fc9a2c32089c50a83da5448637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Shell-Shell.mesh.bin"
+		},
+		"Assets/Models/Shell-Shell.mesh":{
+			"MD5":"mesh_22457a6c2742d2d41254e9db7d0fe160ea89b68c34ce4a63c0f77e17413c6e30",
+			"filetype":"json",
+			"path":"Assets/Models/Shell-Shell.mesh"
+		},
+		"Assets/Materials/Gold.mat":{
+			"MD5":"material_4cf70c00a4f690afcdfd1c05aeec3560",
+			"filetype":"json",
+			"path":"Assets/Materials/Gold.mat"
+		},
+		"Assets/AudioClips/ShellExplosion.wav":{
+			"MD5":"9d82712f073b6a9114aeb7106404549b637305838000000000",
+			"filetype":"url",
+			"path":"Assets/AudioClips/ShellExplosion.wav"
+		},
+		"Assets/AudioClips/ShellExplosion.wav.raw":{
+			"MD5":"raw_9f465998a3e617cc18df580c7b6c6ac6",
+			"filetype":"json",
+			"path":"Assets/AudioClips/ShellExplosion.wav.raw"
+		},
+		"Resources/unity_builtin_extra.mat":{
+			"MD5":"material_0.497387",
+			"filetype":"json",
+			"path":"Resources/unity_builtin_extra.mat"
+		},
+		"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab":{
+			"MD5":"prefab_eead5e6ddgnfd81499l05gkef173ciff",
+			"filetype":"json",
+			"path":"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab"
+		},
+		"Assets/Models/Tank-TankChassis.mesh.bin":{
+			"MD5":"b4a0a1965778781d19a76652feae39fe637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Tank-TankChassis.mesh.bin"
+		},
+		"Assets/Models/Tank-TankChassis.mesh":{
+			"MD5":"mesh_3bf6e481f04c6479763a013316e4b1140ee7d0c5737e3e130bedcf21e7be4f96",
+			"filetype":"json",
+			"path":"Assets/Models/Tank-TankChassis.mesh"
+		},
+		"Assets/Materials/TankColour.mat":{
+			"MD5":"material_25f99c8c7390ec02866208f4470bf3da",
+			"filetype":"json",
+			"path":"Assets/Materials/TankColour.mat"
+		},
+		"Assets/Materials/TankLights.mat":{
+			"MD5":"material_24f22c68ec5bbe73c14cee893ae65a47",
+			"filetype":"json",
+			"path":"Assets/Materials/TankLights.mat"
+		},
+		"Assets/Models/Tank-TankTracksLeft.mesh.bin":{
+			"MD5":"3837b83b2b850f24fe68544ab8da4aab637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh.bin"
+		},
+		"Assets/Models/Tank-TankTracksLeft.mesh":{
+			"MD5":"mesh_3bf6e481f04c6479763a013316e4b11424455cecd610bd1c4ac6b8dfc217cc5b",
+			"filetype":"json",
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh"
+		},
+		"Assets/Models/Tank-TankTracksRight.mesh.bin":{
+			"MD5":"add664a2614b912e24549642e22b841b637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Tank-TankTracksRight.mesh.bin"
+		},
+		"Assets/Models/Tank-TankTracksRight.mesh":{
+			"MD5":"mesh_3bf6e481f04c6479763a013316e4b1140e3c9812dccdb63b76dd0b43ea37df38",
+			"filetype":"json",
+			"path":"Assets/Models/Tank-TankTracksRight.mesh"
+		},
+		"Assets/Models/Tank-TankTurret.mesh.bin":{
+			"MD5":"24958945cb5d53b4ba779c00f34dcb1a637305838000000000",
+			"filetype":"arraybuffer",
+			"path":"Assets/Models/Tank-TankTurret.mesh.bin"
+		},
+		"Assets/Models/Tank-TankTurret.mesh":{
+			"MD5":"mesh_3bf6e481f04c6479763a013316e4b114dc5b59574384bf05df75abe4caceca2c",
+			"filetype":"json",
+			"path":"Assets/Models/Tank-TankTurret.mesh"
+		},
+		"Assets/Materials/Dust.mat":{
+			"MD5":"material_da67c4efd710d23576f71de3a8195373",
+			"filetype":"json",
+			"path":"Assets/Materials/Dust.mat"
+		},
+		"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab":{
+			"MD5":"prefab_c014899d11ec77i2dbgd129a8c3m1636",
+			"filetype":"json",
+			"path":"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab"
+		},
+		"Assets/Resources/BackgroundMusic.wav":{
+			"MD5":"abe987f2686c9a0cf265e522896bd89f637305838000000000",
+			"filetype":"url",
+			"path":"Assets/Resources/BackgroundMusic.wav"
+		},
+		"Assets/Resources/BackgroundMusic.wav.raw":{
+			"MD5":"raw_40ec9bfe45b791a4f7ddf76d05bb4308",
+			"filetype":"json",
+			"path":"Assets/Resources/BackgroundMusic.wav.raw"
+		},
+		"Assets/_Complete-Game.scene":{
+			"MD5":"scene_mimf5n1b96gk7ehh5ha11fhac4c3edjk",
+			"filetype":"json",
+			"path":"Assets/_Complete-Game.scene"
+		},
+		"minigame-adaptor-lib-patch.js":{
+			"MD5":"8c518719fa587f924ef13f274cf26376",
+			"filetype":"text",
+			"path":"minigame-adaptor-lib-patch.js"
+		},
+		"minigame-adaptor-lib.js":{
+			"MD5":"046b44d99fe44a72e11a056aed6dd41a",
+			"filetype":"text",
+			"path":"minigame-adaptor-lib.js"
+		},
+		"minigame-adaptor-lib.meta.js":{
+			"MD5":"e2bec174ba142a450e7786c52b4f82d9",
+			"filetype":"text",
+			"path":"minigame-adaptor-lib.meta.js"
+		},
+		"minigame-adaptor-project.js":{
+			"MD5":"71c475d983fc352a8f419301d0bafe8a",
+			"filetype":"text",
+			"path":"minigame-adaptor-project.js"
+		},
+		"minigame-adaptor-project.meta.js":{
+			"MD5":"6947916974d33ad7c520131a211eeaca",
+			"filetype":"text",
+			"path":"minigame-adaptor-project.meta.js"
+		},
+		"bindings/Complete.CameraControl.binding.js":{
+			"MD5":"c74e554b795395d3e07a703485039d7f",
+			"filetype":"text",
+			"path":"bindings/Complete.CameraControl.binding.js"
+		},
+		"bindings/Complete.GameManager.binding.js":{
+			"MD5":"8d0e0fab07b43601f8495e66a528760a",
+			"filetype":"text",
+			"path":"bindings/Complete.GameManager.binding.js"
+		},
+		"bindings/Complete.ShellExplosion.binding.js":{
+			"MD5":"75c0c5f2b9dd169ae44d5d606eb56a3f",
+			"filetype":"text",
+			"path":"bindings/Complete.ShellExplosion.binding.js"
+		},
+		"bindings/Complete.TankHealth.binding.js":{
+			"MD5":"1f84c076d1b3d694cd5425f288325724",
+			"filetype":"text",
+			"path":"bindings/Complete.TankHealth.binding.js"
+		},
+		"bindings/Complete.TankManager.binding.js":{
+			"MD5":"93c71d40bb53a2cd65db9ddca005abc4",
+			"filetype":"text",
+			"path":"bindings/Complete.TankManager.binding.js"
+		},
+		"bindings/Complete.TankMovement.binding.js":{
+			"MD5":"32d7fe086757abd62d9a44347542bb42",
+			"filetype":"text",
+			"path":"bindings/Complete.TankMovement.binding.js"
+		},
+		"bindings/Complete.TankShooting.binding.js":{
+			"MD5":"f923b067d582a825fa50e18041d5656a",
+			"filetype":"text",
+			"path":"bindings/Complete.TankShooting.binding.js"
+		},
+		"bindings/Complete.UIDirectionControl.binding.js":{
+			"MD5":"3a479f6eac36d7e51bb56db0d92d881a",
+			"filetype":"text",
+			"path":"bindings/Complete.UIDirectionControl.binding.js"
+		},
+		"bindings/PhyWorld.binding.js":{
+			"MD5":"45dba8a59b6173c8edbdfd7a0824adc5",
+			"filetype":"text",
+			"path":"bindings/PhyWorld.binding.js"
+		},
+		"src/PhyWorld.js":{
+			"MD5":"66a144a1939bb10cdb5aad7ff350ee13",
+			"filetype":"text",
+			"path":"src/PhyWorld.js"
+		},
+		"src/ShellPool.js":{
+			"MD5":"45307110bd14ff35ad6b1cf292c96405",
+			"filetype":"text",
+			"path":"src/ShellPool.js"
+		},
+		"src/Complete/CameraControl.js":{
+			"MD5":"3d5f0994ba5bc34aa3364755b1bc6381",
+			"filetype":"text",
+			"path":"src/Complete/CameraControl.js"
+		},
+		"src/Complete/GameManager.js":{
+			"MD5":"0d71d9e2a144f4bb09f519a67eabf7bf",
+			"filetype":"text",
+			"path":"src/Complete/GameManager.js"
+		},
+		"src/Complete/ShellExplosion.js":{
+			"MD5":"e30132606366dcca9edd43bfba8362e7",
+			"filetype":"text",
+			"path":"src/Complete/ShellExplosion.js"
+		},
+		"src/Complete/TankHealth.js":{
+			"MD5":"0100ee30c05306abb9085be45cf08606",
+			"filetype":"text",
+			"path":"src/Complete/TankHealth.js"
+		},
+		"src/Complete/TankManager.js":{
+			"MD5":"5484952ee5514a72e9f0f6fb3b7eb05b",
+			"filetype":"text",
+			"path":"src/Complete/TankManager.js"
+		},
+		"src/Complete/TankMovement.js":{
+			"MD5":"09181446640c3df54c28b4d69919d7ea",
+			"filetype":"text",
+			"path":"src/Complete/TankMovement.js"
+		},
+		"src/Complete/TankShooting.js":{
+			"MD5":"d83d893ce3ed7193bf76c82b9c409c92",
+			"filetype":"text",
+			"path":"src/Complete/TankShooting.js"
+		},
+		"src/Complete/UIDirectionControl.js":{
+			"MD5":"1d6f4d56e3fbab00a97e9d1f9923c0c0",
+			"filetype":"text",
+			"path":"src/Complete/UIDirectionControl.js"
+		},
+		"src/PhyWorld/AABBInfo.js":{
+			"MD5":"f07b7d2dfd7471e66582f072f5d26282",
+			"filetype":"text",
+			"path":"src/PhyWorld/AABBInfo.js"
+		},
+		"src/PhyWorld/BoxEntity.js":{
+			"MD5":"9b73f41525313d7daef3a4fcd33cd74d",
+			"filetype":"text",
+			"path":"src/PhyWorld/BoxEntity.js"
+		},
+		"src/System/TimeZone.js":{
+			"MD5":"20504495d775f3eb86dc42718c800280",
+			"filetype":"text",
+			"path":"src/System/TimeZone.js"
+		},
+		"src/System/Globalization/GregorianCalendar.js":{
+			"MD5":"4efe8dc1979e2d518e3a53c87f736593",
+			"filetype":"text",
+			"path":"src/System/Globalization/GregorianCalendar.js"
+		},
+		"src/System/IO/BinaryReader.js":{
+			"MD5":"10adc26ab3d4665e4aa7b07cf8e71fe4",
+			"filetype":"text",
+			"path":"src/System/IO/BinaryReader.js"
+		},
+		"src/System/IO/BinaryWriter.js":{
+			"MD5":"89f101a283f20cfb1f43e087a8400de8",
+			"filetype":"text",
+			"path":"src/System/IO/BinaryWriter.js"
+		},
+		"src/System/IO/BufferedStream.js":{
+			"MD5":"be411bb736291a22e1b7ceeb54fcf840",
+			"filetype":"text",
+			"path":"src/System/IO/BufferedStream.js"
+		},
+		"src/System/IO/Directory.js":{
+			"MD5":"60bb73d5454d0df60c5e9fc6ec9e3311",
+			"filetype":"text",
+			"path":"src/System/IO/Directory.js"
+		},
+		"src/System/IO/DirectoryInfo.js":{
+			"MD5":"b5487da7d08e365f28021bbb8b7a7e7a",
+			"filetype":"text",
+			"path":"src/System/IO/DirectoryInfo.js"
+		},
+		"src/System/IO/DirectoryNotFoundException.js":{
+			"MD5":"45add7c913f185781146db39fe495ec2",
+			"filetype":"text",
+			"path":"src/System/IO/DirectoryNotFoundException.js"
+		},
+		"src/System/IO/FileAccess.js":{
+			"MD5":"1ffec835bddfab1cf83fa60cf3fd1459",
+			"filetype":"text",
+			"path":"src/System/IO/FileAccess.js"
+		},
+		"src/System/IO/FileNotFoundException.js":{
+			"MD5":"bbccbe2b88b9877c4708fcceac2ffc95",
+			"filetype":"text",
+			"path":"src/System/IO/FileNotFoundException.js"
+		},
+		"src/System/IO/Iterator.js":{
+			"MD5":"9e7000804cefeef50f9e1a98b05c12d1",
+			"filetype":"text",
+			"path":"src/System/IO/Iterator.js"
+		},
+		"src/System/IO/MemoryStream.js":{
+			"MD5":"11d22106e0a2ff37c354e7bc1c0fcbf3",
+			"filetype":"text",
+			"path":"src/System/IO/MemoryStream.js"
+		},
+		"src/System/IO/Path.js":{
+			"MD5":"799f3b3be645267342020efe5cb2f863",
+			"filetype":"text",
+			"path":"src/System/IO/Path.js"
+		},
+		"src/System/IO/ReadLinesIterator.js":{
+			"MD5":"0f036d19b42ecb2fedfee535ef0af355",
+			"filetype":"text",
+			"path":"src/System/IO/ReadLinesIterator.js"
+		},
+		"src/System/IO/SearchOption.js":{
+			"MD5":"b135d41df320a8cf801bd66734d0c629",
+			"filetype":"text",
+			"path":"src/System/IO/SearchOption.js"
+		},
+		"src/System/IO/StreamReader.js":{
+			"MD5":"d1ca9b92f0fac474e2e4bdc5978dd910",
+			"filetype":"text",
+			"path":"src/System/IO/StreamReader.js"
+		},
+		"src/System/IO/StreamWriter.js":{
+			"MD5":"84ba5abc6455154af1a16ca017e2bbd0",
+			"filetype":"text",
+			"path":"src/System/IO/StreamWriter.js"
+		},
+		"src/System/IO/StringReader.js":{
+			"MD5":"2d704d6a9f64c1a18acf0eeada00e956",
+			"filetype":"text",
+			"path":"src/System/IO/StringReader.js"
+		},
+		"src/System/IO/StringWriter.js":{
+			"MD5":"800b92e2393bd07a540edf52799a31da",
+			"filetype":"text",
+			"path":"src/System/IO/StringWriter.js"
+		},
+		"src/System/IO/TextReader.js":{
+			"MD5":"fdcd2d75914d509176460da1f1c2e042",
+			"filetype":"text",
+			"path":"src/System/IO/TextReader.js"
+		},
+		"src/System/IO/TextWriter.js":{
+			"MD5":"cac1614a5411a5982c3e3a1859bafe16",
+			"filetype":"text",
+			"path":"src/System/IO/TextWriter.js"
+		},
+		"src/System/IO/StreamReader/NullStreamReader.js":{
+			"MD5":"91b905a2a66776bf38d256703c8cc264",
+			"filetype":"text",
+			"path":"src/System/IO/StreamReader/NullStreamReader.js"
+		},
+		"src/System/IO/TextReader/NullTextReader.js":{
+			"MD5":"ee3c31c3e65791853510fe03a7b8e1c1",
+			"filetype":"text",
+			"path":"src/System/IO/TextReader/NullTextReader.js"
+		},
+		"src/System/IO/TextWriter/NullTextWriter.js":{
+			"MD5":"17b59e3d8cd9e33a25eb9c1e050e1d4d",
+			"filetype":"text",
+			"path":"src/System/IO/TextWriter/NullTextWriter.js"
+		},
+		"src/System/Runtime/Serialization/IFormatter.js":{
+			"MD5":"62ee3a87ec9c685ef232fd02e9b31380",
+			"filetype":"text",
+			"path":"src/System/Runtime/Serialization/IFormatter.js"
+		},
+		"src/System/Runtime/Serialization/Formatters/Binary/BinaryFormatter.js":{
+			"MD5":"d7b88ed3fffd040b01aa1e7c081b6b5b",
+			"filetype":"text",
+			"path":"src/System/Runtime/Serialization/Formatters/Binary/BinaryFormatter.js"
+		},
+		"src/System/Security/Cryptography/MD5.js":{
+			"MD5":"319ab6ebd460781262e2414510c9b0f0",
+			"filetype":"text",
+			"path":"src/System/Security/Cryptography/MD5.js"
+		},
+		"src/System/Security/Cryptography/MD5CryptoServiceProvider.js":{
+			"MD5":"ffd8e2efd8218b813a6074484b82f0fe",
+			"filetype":"text",
+			"path":"src/System/Security/Cryptography/MD5CryptoServiceProvider.js"
+		},
+		"src/System/Text/DecoderFallbackException.js":{
+			"MD5":"d57f677b56f52e02bd82cb18ce1164c4",
+			"filetype":"text",
+			"path":"src/System/Text/DecoderFallbackException.js"
+		},
+		"src/System/Text/EncoderFallbackException.js":{
+			"MD5":"14946496394f7c4a54f935f132ffabad",
+			"filetype":"text",
+			"path":"src/System/Text/EncoderFallbackException.js"
+		},
+		"minigame-adaptor-config.js":{
+			"MD5":"def22efe44778640ece391a639651e38",
+			"filetype":"text",
+			"path":"minigame-adaptor-config.js"
+		},
+		"minigame-adaptor-util.js":{
+			"MD5":"84e866d88a7fae7ff6b48dba0688167e",
+			"filetype":"text",
+			"path":"minigame-adaptor-util.js"
+		},
+		"minigame-adaptor.js":{
+			"MD5":"edd58e2975d78bde773973477049787e",
+			"filetype":"text",
+			"path":"minigame-adaptor.js"
+		},
+		"weapp-adapter.js":{
+			"MD5":"0c43797e6f93e69831098a7240e04c75",
+			"filetype":"text",
+			"path":"weapp-adapter.js"
 		}
 	}
 }

@@ -85,12 +85,14 @@ Bridge.assembly("minigame-adaptor-project", function ($asm, globals) {
                 //m_MovementInputValue = Input.GetAxis (m_MovementAxisName);
                 //m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
 
-                // EngineAudio ();
+                //EngineAudio ();
 
                 var playerNumber = this.GetComponent(Complete.TankShooting).m_PlayerNumber;
                 if (playerNumber !== 1) {
                     return;
                 }
+
+                // console.log(MiniGameAdaptor.Input.GetMouseButtonDown(0))
                 if (MiniGameAdaptor.Input.GetMouseButtonDown(0)) {
                     if (!this.flag) {
                         this.flag = true;

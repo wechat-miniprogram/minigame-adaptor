@@ -817,7 +817,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     fields: {
       routine: null,
       waitForCoroutine: null,
-      finished: false
+      finished: false,
+      __past: null
     },
     props: {
       keepWaiting: {
@@ -863,7 +864,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         init: function init() {
           this.instance = new MiniGameAdaptor.CoroutineManager();
         }
-      }
+      },
+      methods: {}
     },
     fields: {
       coroutines: null
@@ -907,14 +909,63 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             if (coroutine.waitForCoroutine != null) {
               continue;
             } // update coroutine
+            // 执行 yield return 内的协程
 
 
-            if (coroutine.routine.System$Collections$IEnumerator$moveNext()) {
+            if (coroutine.routine.routine && coroutine.routine.routine.System$Collections$IEnumerator$moveNext()) {
               coroutine.finished = false;
-            } else {
-              this.coroutines.remove(coroutine);
-              coroutine.finished = true;
-            }
+              var c = coroutine.routine.routine.System$Collections$IEnumerator$Current;
+
+              if (c && c instanceof MiniGameAdaptor.YieldInstruction) {
+                var innerCoroutine = new MiniGameAdaptor.Coroutine(c);
+                innerCoroutine.__past = coroutine; // 在IEnumerator里修改元素
+
+                this.coroutines = this.coroutines.ConvertAll(MiniGameAdaptor.Coroutine, function (e) {
+                  if (e === coroutine) {
+                    e = innerCoroutine;
+                  }
+
+                  return e;
+                });
+              }
+            } else if (coroutine.routine.System$Collections$IEnumerator$moveNext()) {
+              coroutine.finished = false;
+              var c = coroutine.routine.System$Collections$IEnumerator$Current;
+
+              if (c && c instanceof MiniGameAdaptor.YieldInstruction) {
+                // yield return StartCoroutine(Foo()) 的情况，需要将Foo其从coroutines数组中移除，并优先执行Foo协程
+                // 待Foo协程执行完毕后，再继续执行yield return StartCoroutine(Foo()) 后面的语句
+                // 因此在Foo协程上，用__past指向当前协程，并用Foo协程替换coroutines数组中的当前协程
+                this.coroutines.remove(c);
+                var innerCoroutine = new MiniGameAdaptor.Coroutine(c);
+                innerCoroutine.__past = coroutine; // 在IEnumerator里修改元素
+
+                this.coroutines = this.coroutines.ConvertAll(MiniGameAdaptor.Coroutine, function (e) {
+                  if (e.routine.current === c) {
+                    e = innerCoroutine;
+                  }
+
+                  return e;
+                });
+              }
+            } // 执行完当前协程
+            else {
+                if (coroutine && coroutine.__past) {
+                  // 如果当前协程执行完毕，需要返回到上一层调用处继续执行未完成的协程
+                  // 此处将当前协程里指向上一层协程的__past，还原回coroutines中
+                  this.coroutines = this.coroutines.ConvertAll(MiniGameAdaptor.Coroutine, function (e) {
+                    if (e === coroutine) {
+                      e = coroutine.__past;
+                    }
+
+                    return e;
+                  });
+                } // 执行完的协程移出数组
+
+
+                this.coroutines.remove(coroutine);
+                coroutine.finished = true;
+              }
           }
         } finally {
           if (Bridge.is($t, System.IDisposable)) {
@@ -941,7 +992,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     props: {
       keepWaiting: {
         get: function get() {
-          if (Date.now() <= this.endTime) {
+          if (MiniGameAdaptor.Time.time <= this.endTime) {
             return true;
           }
 
@@ -952,8 +1003,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     ctors: {
       ctor: function ctor(seconds) {
         this.$initialize();
-        MiniGameAdaptor.YieldInstruction.ctor.call(this);
-        this.endTime = Date.now() + seconds * 1000;
+        MiniGameAdaptor.YieldInstruction.ctor.call(this); // this.endTime = Date.now() + seconds * 1000;
+
+        this.endTime = MiniGameAdaptor.Time.time + seconds;
       }
     }
   });
@@ -968,10 +1020,25 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
   Bridge.define("MiniGameAdaptor.WaitForEndOfFrame", {
     inherits: [MiniGameAdaptor.YieldInstruction],
+    fields: {
+      endFrame: 0
+    },
+    props: {
+      keepWaiting: {
+        get: function get() {
+          if (MiniGameAdaptor.Time.frameCount < this.endFrame) {
+            return true;
+          }
+
+          return false;
+        }
+      }
+    },
     ctors: {
       ctor: function ctor() {
         this.$initialize();
         MiniGameAdaptor.YieldInstruction.ctor.call(this);
+        this.endFrame = MiniGameAdaptor.Time.frameCount + 1;
       }
     }
   });
@@ -1604,9 +1671,10 @@ var smoothDeltaTimer = {
   }
 };
 Object(_Extend_RootMonoBehaviour__WEBPACK_IMPORTED_MODULE_1__["onRootMonoBehaviourUpdate"])(function (dt) {
+  // dt = 0.0167;
   _deltaTime = dt;
   _time += dt;
-  _frameCount++;
+  _frameCount++; // console.log(_time);
 
   if (smoothDeltaTimer.recordArray.length < smoothDeltaTimer.recordMaxCount) {
     smoothDeltaTimer.recordArray.push(dt);
@@ -7154,6 +7222,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       _OverloadMethodInvoke: function _OverloadMethodInvoke(methodName) {
         if (this[methodName]) {
           this[methodName]();
+          return;
         } // bridge overload
 
 

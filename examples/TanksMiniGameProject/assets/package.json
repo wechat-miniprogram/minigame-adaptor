@@ -4,7 +4,8 @@
   "scripts": {},
   "dependencies": {
     "engine": "^0.0.1",
-    "eventemitter3": "^3.1.2"
+    "eventemitter3": "^3.1.2",
+    "tslib": "^1.11.1"
   },
   "main": "index.js",
   "devDependencies": {},

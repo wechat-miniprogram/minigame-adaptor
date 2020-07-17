@@ -1,2 +1,2 @@
-const engine = window.engine
-export default engine
+var engine = GameGlobal.engine;
+module.exports = engine

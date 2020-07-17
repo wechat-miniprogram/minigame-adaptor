@@ -1,1 +1,3 @@
-require ("./assets/game")
+require("./assets/weapp-adapter.js");
+
+require("./assets/game")

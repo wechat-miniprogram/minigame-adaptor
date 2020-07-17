@@ -625,3 +625,5 @@ MigrationBackup/
 !unity-plugin/script-export/sdk/System\~
 .DS_Store
 
+examples/TanksMiniGameProject/minigame/__temp
+

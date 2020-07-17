@@ -22,7 +22,7 @@ namespace Complete
         }
 
 
-        private void FixedUpdate ()
+        private void Update ()
         {
             // Move the camera towards a desired position.
             Move ();

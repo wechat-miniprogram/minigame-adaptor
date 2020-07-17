@@ -9,7 +9,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"nodeModules": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -25,20 +25,16 @@
 		},
 		"useIsolateContext": true,
 		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false,
+		"userConfirmedUseCompilerModuleSwitch": true,
 		"packNpmManually": false,
 		"packNpmRelationList": [],
-		"enablePhysicsEngine": true
-	},
-	"watchOptions": {
-		"ignore": [
-			"minigame/__temp/**/*"
-		]
+		"enablePhysicsEngine": true,
+		"useNewCompiler": false
 	},
 	"engine": true,
 	"miniprogramRoot": "minigame/",
 	"compileType": "game",
-	"libVersion": "2.11.3",
+	"libVersion": "2.12.0",
 	"appid": "wxcc504d3afbea8a0b",
 	"projectname": "game-test",
 	"simulatorType": "wechat",

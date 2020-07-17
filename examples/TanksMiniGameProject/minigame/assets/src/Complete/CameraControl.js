@@ -26,7 +26,7 @@ Bridge.assembly("minigame-adaptor-project", function ($asm, globals) {
             Awake: function () {
                 this.m_Camera = this.GetComponentInChildren(MiniGameAdaptor.Camera);
             },
-            FixedUpdate: function () {
+            Update: function () {
                 // Move the camera towards a desired position.
                 this.Move();
 

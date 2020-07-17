@@ -35,6 +35,12 @@ Bridge.assembly("minigame-adaptor-project", function ($asm, globals) {
 
                 // Once the tanks have been created and the camera is using them as targets, start the game.
                 this.StartCoroutine(this.GameLoop());
+
+                var audio = this.gameObject.GetComponent(MiniGameAdaptor.AudioSource);
+                MiniGameAdaptor.Resources.Load("BackgroundMusic", function (result) {
+                    audio.clip = result;
+                    audio.Play();
+                });
             },
             SpawnAllTanks: function () {
                 var Player1 = MiniGameAdaptor.GameObject.Find("Player1");
@@ -192,7 +198,7 @@ Bridge.assembly("minigame-adaptor-project", function ($asm, globals) {
                                     continue;
                                 }
                                 case 1: {
-                                    if ( this.OneTankLeft() ) {
+                                    if ( !this.OneTankLeft() ) {
                                             $step = 2;
                                             continue;
                                         } 

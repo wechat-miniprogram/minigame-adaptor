@@ -17,9 +17,9 @@
 				"Assets/Models/Rocks03-Rocks03.mesh",
 				"Assets/Models/Rocks02-Rocks02.mesh",
 				"Assets/Models/Column01-Column01.mesh",
-				"Assets/Models/Column01-Column01.lav",
-				"Assets/Models/Column01-Column01__(1).lav",
-				"Assets/Models/Column01-Column01__(2).lav",
+				"Assets/Models/Column01-Column01.avatar",
+				"Assets/Models/Column01-Column01__(1).avatar",
+				"Assets/Models/Column01-Column01__(2).avatar",
 				"Assets/Models/Column02-Column02.mesh",
 				"Assets/Models/Cactus-Cactus.mesh",
 				"Assets/Materials/Green.mat",
@@ -32,18 +32,18 @@
 				"Assets/Materials/BuildingGlass.mat",
 				"Assets/Models/Building02-Barracks.mesh",
 				"Assets/Materials/OilDrums.mat",
-				"Assets/Models/Building02-Building02.lav",
-				"Assets/Models/Building02-Building02__(1).lav",
-				"Assets/Models/Building02-Building02__(2).lav",
+				"Assets/Models/Building02-Building02.avatar",
+				"Assets/Models/Building02-Building02__(1).avatar",
+				"Assets/Models/Building02-Building02__(2).avatar",
 				"Assets/Models/Radar-RadarSphere.mesh",
 				"Assets/Models/OilStorage-OilStorage.mesh",
-				"Assets/Models/OilStorage-OilStorage.lav",
-				"Assets/Models/OilStorage-OilStorage__(1).lav",
-				"Assets/Models/PumpJack-PumpJack.lav",
+				"Assets/Models/OilStorage-OilStorage.avatar",
+				"Assets/Models/OilStorage-OilStorage__(1).avatar",
+				"Assets/Models/PumpJack-PumpJack.avatar",
 				"Assets/_Completed-Assets/Animators/CompletePumpjack.controller",
-				"Assets_Models_PumpJack-Pumpjack.mesh",
-				"Assets/Models/PumpJack-PumpJack__(1).lav",
-				"Assets/Models/PumpJack-PumpJack__(2).lav",
+				"Assets/Models/PumpJack-Pumpjack.mesh",
+				"Assets/Models/PumpJack-PumpJack__(1).avatar",
+				"Assets/Models/PumpJack-PumpJack__(2).avatar",
 				"Assets/Models/Refinery-Refinery.mesh",
 				"Assets/Models/BustedTank-BustedTank.mesh",
 				"Assets/Materials/TankGrey.mat",
@@ -52,7 +52,7 @@
 				"Assets/Models/Helipad-Helipad.mesh",
 				"bindings/Complete.GameManager.binding.js",
 				"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab",
-				"Assets/AudioClips/BackgroundMusic.wav.raw",
+				"Assets/Resources/BackgroundMusic.wav.raw",
 				"bindings/Complete.TankMovement.binding.js",
 				"bindings/Complete.TankHealth.binding.js",
 				"bindings/Complete.TankShooting.binding.js",
@@ -80,7 +80,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Cliff-Cliff.mesh",
 			"useFile":[
-				"Assets_Models_Cliff-Cliff.mesh.bin"
+				"Assets/Models/Cliff-Cliff.mesh.bin"
 			]
 		},
 		"Assets/Materials/YellowDark.mat":{
@@ -94,7 +94,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Terrain-GroundPlane.mesh",
 			"useFile":[
-				"Assets_Models_Terrain-GroundPlane.mesh.bin"
+				"Assets/Models/Terrain-GroundPlane.mesh.bin"
 			]
 		},
 		"Assets/Materials/YellowLight.mat":{
@@ -108,7 +108,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Concrete-Tarmac.mesh",
 			"useFile":[
-				"Assets_Models_Concrete-Tarmac.mesh.bin"
+				"Assets/Models/Concrete-Tarmac.mesh.bin"
 			]
 		},
 		"Assets/Materials/BuildingStone.mat":{
@@ -122,7 +122,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Dunes01-Dunes01.mesh",
 			"useFile":[
-				"Assets_Models_Dunes01-Dunes01.mesh.bin"
+				"Assets/Models/Dunes01-Dunes01.mesh.bin"
 			]
 		},
 		"Assets/Models/Dunes02-Dunes02.mesh":{
@@ -130,7 +130,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Dunes02-Dunes02.mesh",
 			"useFile":[
-				"Assets_Models_Dunes02-Dunes02.mesh.bin"
+				"Assets/Models/Dunes02-Dunes02.mesh.bin"
 			]
 		},
 		"Assets/Models/Cow-Cow.mesh":{
@@ -138,7 +138,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Cow-Cow.mesh",
 			"useFile":[
-				"Assets_Models_Cow-Cow.mesh.bin"
+				"Assets/Models/Cow-Cow.mesh.bin"
 			]
 		},
 		"Assets/Materials/BuildingWhite.mat":{
@@ -152,7 +152,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Rocks01-Rocks01.mesh",
 			"useFile":[
-				"Assets_Models_Rocks01-Rocks01.mesh.bin"
+				"Assets/Models/Rocks01-Rocks01.mesh.bin"
 			]
 		},
 		"Assets/Models/Rocks03-Rocks03.mesh":{
@@ -160,7 +160,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Rocks03-Rocks03.mesh",
 			"useFile":[
-				"Assets_Models_Rocks03-Rocks03.mesh.bin"
+				"Assets/Models/Rocks03-Rocks03.mesh.bin"
 			]
 		},
 		"Assets/Models/Rocks02-Rocks02.mesh":{
@@ -168,7 +168,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Rocks02-Rocks02.mesh",
 			"useFile":[
-				"Assets_Models_Rocks02-Rocks02.mesh.bin"
+				"Assets/Models/Rocks02-Rocks02.mesh.bin"
 			]
 		},
 		"Assets/Models/Column01-Column01.mesh":{
@@ -176,25 +176,25 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Column01-Column01.mesh",
 			"useFile":[
-				"Assets_Models_Column01-Column01.mesh.bin"
+				"Assets/Models/Column01-Column01.mesh.bin"
 			]
 		},
-		"Assets/Models/Column01-Column01.lav":{
+		"Assets/Models/Column01-Column01.avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/Column01-Column01.lav",
+			"descriptionFileID":"Assets/Models/Column01-Column01.avatar",
 			"useFile":[]
 		},
-		"Assets/Models/Column01-Column01__(1).lav":{
+		"Assets/Models/Column01-Column01__(1).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/Column01-Column01__(1).lav",
+			"descriptionFileID":"Assets/Models/Column01-Column01__(1).avatar",
 			"useFile":[]
 		},
-		"Assets/Models/Column01-Column01__(2).lav":{
+		"Assets/Models/Column01-Column01__(2).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/Column01-Column01__(2).lav",
+			"descriptionFileID":"Assets/Models/Column01-Column01__(2).avatar",
 			"useFile":[]
 		},
 		"Assets/Models/Column02-Column02.mesh":{
@@ -202,7 +202,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Column02-Column02.mesh",
 			"useFile":[
-				"Assets_Models_Column02-Column02.mesh.bin"
+				"Assets/Models/Column02-Column02.mesh.bin"
 			]
 		},
 		"Assets/Models/Cactus-Cactus.mesh":{
@@ -210,7 +210,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Cactus-Cactus.mesh",
 			"useFile":[
-				"Assets_Models_Cactus-Cactus.mesh.bin"
+				"Assets/Models/Cactus-Cactus.mesh.bin"
 			]
 		},
 		"Assets/Materials/Green.mat":{
@@ -224,7 +224,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Tree-Tree.mesh",
 			"useFile":[
-				"Assets_Models_Tree-Tree.mesh.bin"
+				"Assets/Models/Tree-Tree.mesh.bin"
 			]
 		},
 		"Assets/Materials/Brown.mat":{
@@ -238,7 +238,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/PalmTree-PalmTree01.mesh",
 			"useFile":[
-				"Assets_Models_PalmTree-PalmTree01.mesh.bin"
+				"Assets/Models/PalmTree-PalmTree01.mesh.bin"
 			]
 		},
 		"Assets/Models/Building01-Building01.mesh":{
@@ -246,7 +246,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Building01-Building01.mesh",
 			"useFile":[
-				"Assets_Models_Building01-Building01.mesh.bin"
+				"Assets/Models/Building01-Building01.mesh.bin"
 			]
 		},
 		"Assets/Materials/BuildingGrey.mat":{
@@ -272,7 +272,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Building02-Barracks.mesh",
 			"useFile":[
-				"Assets_Models_Building02-Barracks.mesh.bin"
+				"Assets/Models/Building02-Barracks.mesh.bin"
 			]
 		},
 		"Assets/Materials/OilDrums.mat":{
@@ -281,22 +281,22 @@
 			"descriptionFileID":"Assets/Materials/OilDrums.mat",
 			"useFile":[]
 		},
-		"Assets/Models/Building02-Building02.lav":{
+		"Assets/Models/Building02-Building02.avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/Building02-Building02.lav",
+			"descriptionFileID":"Assets/Models/Building02-Building02.avatar",
 			"useFile":[]
 		},
-		"Assets/Models/Building02-Building02__(1).lav":{
+		"Assets/Models/Building02-Building02__(1).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/Building02-Building02__(1).lav",
+			"descriptionFileID":"Assets/Models/Building02-Building02__(1).avatar",
 			"useFile":[]
 		},
-		"Assets/Models/Building02-Building02__(2).lav":{
+		"Assets/Models/Building02-Building02__(2).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/Building02-Building02__(2).lav",
+			"descriptionFileID":"Assets/Models/Building02-Building02__(2).avatar",
 			"useFile":[]
 		},
 		"Assets/Models/Radar-RadarSphere.mesh":{
@@ -304,7 +304,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Radar-RadarSphere.mesh",
 			"useFile":[
-				"Assets_Models_Radar-RadarSphere.mesh.bin"
+				"Assets/Models/Radar-RadarSphere.mesh.bin"
 			]
 		},
 		"Assets/Models/OilStorage-OilStorage.mesh":{
@@ -312,25 +312,25 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/OilStorage-OilStorage.mesh",
 			"useFile":[
-				"Assets_Models_OilStorage-OilStorage.mesh.bin"
+				"Assets/Models/OilStorage-OilStorage.mesh.bin"
 			]
 		},
-		"Assets/Models/OilStorage-OilStorage.lav":{
+		"Assets/Models/OilStorage-OilStorage.avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/OilStorage-OilStorage.lav",
+			"descriptionFileID":"Assets/Models/OilStorage-OilStorage.avatar",
 			"useFile":[]
 		},
-		"Assets/Models/OilStorage-OilStorage__(1).lav":{
+		"Assets/Models/OilStorage-OilStorage__(1).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/OilStorage-OilStorage__(1).lav",
+			"descriptionFileID":"Assets/Models/OilStorage-OilStorage__(1).avatar",
 			"useFile":[]
 		},
-		"Assets/Models/PumpJack-PumpJack.lav":{
+		"Assets/Models/PumpJack-PumpJack.avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/PumpJack-PumpJack.lav",
+			"descriptionFileID":"Assets/Models/PumpJack-PumpJack.avatar",
 			"useFile":[]
 		},
 		"Assets/_Completed-Assets/Animators/CompletePumpjack.controller":{
@@ -349,24 +349,24 @@
 				"Assets/Models/PumpJack-Take 001.animationclip.bin"
 			]
 		},
-		"Assets_Models_PumpJack-Pumpjack.mesh":{
+		"Assets/Models/PumpJack-Pumpjack.mesh":{
 			"dependencies":[],
 			"type":"mesh",
-			"descriptionFileID":"Assets_Models_PumpJack-Pumpjack.mesh",
+			"descriptionFileID":"Assets/Models/PumpJack-Pumpjack.mesh",
 			"useFile":[
-				"Assets_Models_PumpJack-Pumpjack.mesh.bin"
+				"Assets/Models/PumpJack-Pumpjack.mesh.bin"
 			]
 		},
-		"Assets/Models/PumpJack-PumpJack__(1).lav":{
+		"Assets/Models/PumpJack-PumpJack__(1).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/PumpJack-PumpJack__(1).lav",
+			"descriptionFileID":"Assets/Models/PumpJack-PumpJack__(1).avatar",
 			"useFile":[]
 		},
-		"Assets/Models/PumpJack-PumpJack__(2).lav":{
+		"Assets/Models/PumpJack-PumpJack__(2).avatar":{
 			"dependencies":[],
 			"type":"avatar",
-			"descriptionFileID":"Assets/Models/PumpJack-PumpJack__(2).lav",
+			"descriptionFileID":"Assets/Models/PumpJack-PumpJack__(2).avatar",
 			"useFile":[]
 		},
 		"Assets/Models/Refinery-Refinery.mesh":{
@@ -374,7 +374,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Refinery-Refinery.mesh",
 			"useFile":[
-				"Assets_Models_Refinery-Refinery.mesh.bin"
+				"Assets/Models/Refinery-Refinery.mesh.bin"
 			]
 		},
 		"Assets/Models/BustedTank-BustedTank.mesh":{
@@ -382,7 +382,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/BustedTank-BustedTank.mesh",
 			"useFile":[
-				"Assets_Models_BustedTank-BustedTank.mesh.bin"
+				"Assets/Models/BustedTank-BustedTank.mesh.bin"
 			]
 		},
 		"Assets/Materials/TankGrey.mat":{
@@ -396,7 +396,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Crater01-Crater01.mesh",
 			"useFile":[
-				"Assets_Models_Crater01-Crater01.mesh.bin"
+				"Assets/Models/Crater01-Crater01.mesh.bin"
 			]
 		},
 		"Assets/Models/Ruins01-Ruins01.mesh":{
@@ -404,7 +404,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Ruins01-Ruins01.mesh",
 			"useFile":[
-				"Assets_Models_Ruins01-Ruins01.mesh.bin"
+				"Assets/Models/Ruins01-Ruins01.mesh.bin"
 			]
 		},
 		"Assets/Models/Helipad-Helipad.mesh":{
@@ -412,7 +412,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Helipad-Helipad.mesh",
 			"useFile":[
-				"Assets_Models_Helipad-Helipad.mesh.bin"
+				"Assets/Models/Helipad-Helipad.mesh.bin"
 			]
 		},
 		"bindings/Complete.GameManager.binding.js":{
@@ -455,40 +455,29 @@
 		},
 		"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab":{
 			"dependencies":[
-				"Resources/unity_builtin_extra.mat",
+				"Assets/Materials/Explosion.mat",
 				"Assets/AudioClips/TankExplosion.wav.raw",
-				"Assets/Materials/TankGrey.mat"
+				"Assets/Materials/TankGrey.mat",
+				"Resources/unity_builtin_extra.mat"
 			],
 			"type":"prefab",
 			"descriptionFileID":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab",
 			"useFile":[]
 		},
-		"Resources/unity_builtin_extra.mat":{
+		"Assets/Materials/Explosion.mat":{
 			"dependencies":[
-				"Resources/unity_builtin_extra.effect",
-				"Resources/unity_builtin_extra.texture2d"
+				"Assets/Sprites/Smoke.texture2d"
 			],
 			"type":"material",
-			"descriptionFileID":"Resources/unity_builtin_extra.mat",
+			"descriptionFileID":"Assets/Materials/Explosion.mat",
 			"useFile":[]
 		},
-		"Resources/unity_builtin_extra.effect":{
-			"dependencies":[],
-			"type":"effect",
-			"descriptionFileID":"Resources/unity_builtin_extra.effect",
-			"useFile":[
-				"Resources/unity_builtin_extra.vertex.hlsl",
-				"Resources/unity_builtin_extra.pixel.hlsl",
-				"Resources/unity_builtin_extra.vertex.hlsl",
-				"Resources/unity_builtin_extra.pixel.hlsl"
-			]
-		},
-		"Resources/unity_builtin_extra.texture2d":{
+		"Assets/Sprites/Smoke.texture2d":{
 			"dependencies":[],
 			"type":"texture2d",
-			"descriptionFileID":"Resources/unity_builtin_extra.texture2d",
+			"descriptionFileID":"Assets/Sprites/Smoke.texture2d",
 			"useFile":[
-				"Resources/unity_builtin_extra.png"
+				"Assets/Sprites/Smoke.png"
 			]
 		},
 		"Assets/AudioClips/TankExplosion.wav.raw":{
@@ -498,6 +487,12 @@
 			"useFile":[
 				"Assets/AudioClips/TankExplosion.wav"
 			]
+		},
+		"Resources/unity_builtin_extra.mat":{
+			"dependencies":[],
+			"type":"material",
+			"descriptionFileID":"Resources/unity_builtin_extra.mat",
+			"useFile":[]
 		},
 		"bindings/Complete.TankShooting.binding.js":{
 			"dependencies":[],
@@ -523,7 +518,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Shell-Shell.mesh",
 			"useFile":[
-				"Assets_Models_Shell-Shell.mesh.bin"
+				"Assets/Models/Shell-Shell.mesh.bin"
 			]
 		},
 		"Assets/Materials/Gold.mat":{
@@ -538,22 +533,6 @@
 			"descriptionFileID":"bindings/Complete.ShellExplosion.binding.js",
 			"useFile":[]
 		},
-		"Assets/Materials/Explosion.mat":{
-			"dependencies":[
-				"Assets/Sprites/Smoke.texture2d"
-			],
-			"type":"material",
-			"descriptionFileID":"Assets/Materials/Explosion.mat",
-			"useFile":[]
-		},
-		"Assets/Sprites/Smoke.texture2d":{
-			"dependencies":[],
-			"type":"texture2d",
-			"descriptionFileID":"Assets/Sprites/Smoke.texture2d",
-			"useFile":[
-				"Assets/Sprites/Smoke.png"
-			]
-		},
 		"Assets/AudioClips/ShellExplosion.wav.raw":{
 			"dependencies":[],
 			"type":"raw",
@@ -567,7 +546,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Tank-TankChassis.mesh",
 			"useFile":[
-				"Assets_Models_Tank-TankChassis.mesh.bin"
+				"Assets/Models/Tank-TankChassis.mesh.bin"
 			]
 		},
 		"Assets/Materials/TankColour.mat":{
@@ -587,7 +566,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Tank-TankTracksLeft.mesh",
 			"useFile":[
-				"Assets_Models_Tank-TankTracksLeft.mesh.bin"
+				"Assets/Models/Tank-TankTracksLeft.mesh.bin"
 			]
 		},
 		"Assets/Models/Tank-TankTracksRight.mesh":{
@@ -595,7 +574,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Tank-TankTracksRight.mesh",
 			"useFile":[
-				"Assets_Models_Tank-TankTracksRight.mesh.bin"
+				"Assets/Models/Tank-TankTracksRight.mesh.bin"
 			]
 		},
 		"Assets/Models/Tank-TankTurret.mesh":{
@@ -603,7 +582,7 @@
 			"type":"mesh",
 			"descriptionFileID":"Assets/Models/Tank-TankTurret.mesh",
 			"useFile":[
-				"Assets_Models_Tank-TankTurret.mesh.bin"
+				"Assets/Models/Tank-TankTurret.mesh.bin"
 			]
 		},
 		"Assets/Materials/Dust.mat":{
@@ -614,12 +593,12 @@
 			"descriptionFileID":"Assets/Materials/Dust.mat",
 			"useFile":[]
 		},
-		"Assets/AudioClips/BackgroundMusic.wav.raw":{
+		"Assets/Resources/BackgroundMusic.wav.raw":{
 			"dependencies":[],
 			"type":"raw",
-			"descriptionFileID":"Assets/AudioClips/BackgroundMusic.wav.raw",
+			"descriptionFileID":"Assets/Resources/BackgroundMusic.wav.raw",
 			"useFile":[
-				"Assets/AudioClips/BackgroundMusic.wav"
+				"Assets/Resources/BackgroundMusic.wav"
 			]
 		},
 		"bindings/PhyWorld.binding.js":{
@@ -636,8 +615,8 @@
 		"bindings/Complete.CameraControl.binding.js":{
 			"path":"bindings/Complete.CameraControl.binding.js"
 		},
-		"Assets_Models_Cliff-Cliff.mesh.bin":{
-			"path":"Assets_Models_Cliff-Cliff.mesh.bin"
+		"Assets/Models/Cliff-Cliff.mesh.bin":{
+			"path":"Assets/Models/Cliff-Cliff.mesh.bin"
 		},
 		"Assets/Models/Cliff-Cliff.mesh":{
 			"path":"Assets/Models/Cliff-Cliff.mesh"
@@ -645,8 +624,8 @@
 		"Assets/Materials/YellowDark.mat":{
 			"path":"Assets/Materials/YellowDark.mat"
 		},
-		"Assets_Models_Terrain-GroundPlane.mesh.bin":{
-			"path":"Assets_Models_Terrain-GroundPlane.mesh.bin"
+		"Assets/Models/Terrain-GroundPlane.mesh.bin":{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh.bin"
 		},
 		"Assets/Models/Terrain-GroundPlane.mesh":{
 			"path":"Assets/Models/Terrain-GroundPlane.mesh"
@@ -654,8 +633,8 @@
 		"Assets/Materials/YellowLight.mat":{
 			"path":"Assets/Materials/YellowLight.mat"
 		},
-		"Assets_Models_Concrete-Tarmac.mesh.bin":{
-			"path":"Assets_Models_Concrete-Tarmac.mesh.bin"
+		"Assets/Models/Concrete-Tarmac.mesh.bin":{
+			"path":"Assets/Models/Concrete-Tarmac.mesh.bin"
 		},
 		"Assets/Models/Concrete-Tarmac.mesh":{
 			"path":"Assets/Models/Concrete-Tarmac.mesh"
@@ -663,20 +642,20 @@
 		"Assets/Materials/BuildingStone.mat":{
 			"path":"Assets/Materials/BuildingStone.mat"
 		},
-		"Assets_Models_Dunes01-Dunes01.mesh.bin":{
-			"path":"Assets_Models_Dunes01-Dunes01.mesh.bin"
+		"Assets/Models/Dunes01-Dunes01.mesh.bin":{
+			"path":"Assets/Models/Dunes01-Dunes01.mesh.bin"
 		},
 		"Assets/Models/Dunes01-Dunes01.mesh":{
 			"path":"Assets/Models/Dunes01-Dunes01.mesh"
 		},
-		"Assets_Models_Dunes02-Dunes02.mesh.bin":{
-			"path":"Assets_Models_Dunes02-Dunes02.mesh.bin"
+		"Assets/Models/Dunes02-Dunes02.mesh.bin":{
+			"path":"Assets/Models/Dunes02-Dunes02.mesh.bin"
 		},
 		"Assets/Models/Dunes02-Dunes02.mesh":{
 			"path":"Assets/Models/Dunes02-Dunes02.mesh"
 		},
-		"Assets_Models_Cow-Cow.mesh.bin":{
-			"path":"Assets_Models_Cow-Cow.mesh.bin"
+		"Assets/Models/Cow-Cow.mesh.bin":{
+			"path":"Assets/Models/Cow-Cow.mesh.bin"
 		},
 		"Assets/Models/Cow-Cow.mesh":{
 			"path":"Assets/Models/Cow-Cow.mesh"
@@ -684,47 +663,47 @@
 		"Assets/Materials/BuildingWhite.mat":{
 			"path":"Assets/Materials/BuildingWhite.mat"
 		},
-		"Assets_Models_Rocks01-Rocks01.mesh.bin":{
-			"path":"Assets_Models_Rocks01-Rocks01.mesh.bin"
+		"Assets/Models/Rocks01-Rocks01.mesh.bin":{
+			"path":"Assets/Models/Rocks01-Rocks01.mesh.bin"
 		},
 		"Assets/Models/Rocks01-Rocks01.mesh":{
 			"path":"Assets/Models/Rocks01-Rocks01.mesh"
 		},
-		"Assets_Models_Rocks03-Rocks03.mesh.bin":{
-			"path":"Assets_Models_Rocks03-Rocks03.mesh.bin"
+		"Assets/Models/Rocks03-Rocks03.mesh.bin":{
+			"path":"Assets/Models/Rocks03-Rocks03.mesh.bin"
 		},
 		"Assets/Models/Rocks03-Rocks03.mesh":{
 			"path":"Assets/Models/Rocks03-Rocks03.mesh"
 		},
-		"Assets_Models_Rocks02-Rocks02.mesh.bin":{
-			"path":"Assets_Models_Rocks02-Rocks02.mesh.bin"
+		"Assets/Models/Rocks02-Rocks02.mesh.bin":{
+			"path":"Assets/Models/Rocks02-Rocks02.mesh.bin"
 		},
 		"Assets/Models/Rocks02-Rocks02.mesh":{
 			"path":"Assets/Models/Rocks02-Rocks02.mesh"
 		},
-		"Assets_Models_Column01-Column01.mesh.bin":{
-			"path":"Assets_Models_Column01-Column01.mesh.bin"
+		"Assets/Models/Column01-Column01.mesh.bin":{
+			"path":"Assets/Models/Column01-Column01.mesh.bin"
 		},
 		"Assets/Models/Column01-Column01.mesh":{
 			"path":"Assets/Models/Column01-Column01.mesh"
 		},
-		"Assets/Models/Column01-Column01.lav":{
-			"path":"Assets/Models/Column01-Column01.lav"
+		"Assets/Models/Column01-Column01.avatar":{
+			"path":"Assets/Models/Column01-Column01.avatar"
 		},
-		"Assets/Models/Column01-Column01__(1).lav":{
-			"path":"Assets/Models/Column01-Column01__(1).lav"
+		"Assets/Models/Column01-Column01__(1).avatar":{
+			"path":"Assets/Models/Column01-Column01__(1).avatar"
 		},
-		"Assets/Models/Column01-Column01__(2).lav":{
-			"path":"Assets/Models/Column01-Column01__(2).lav"
+		"Assets/Models/Column01-Column01__(2).avatar":{
+			"path":"Assets/Models/Column01-Column01__(2).avatar"
 		},
-		"Assets_Models_Column02-Column02.mesh.bin":{
-			"path":"Assets_Models_Column02-Column02.mesh.bin"
+		"Assets/Models/Column02-Column02.mesh.bin":{
+			"path":"Assets/Models/Column02-Column02.mesh.bin"
 		},
 		"Assets/Models/Column02-Column02.mesh":{
 			"path":"Assets/Models/Column02-Column02.mesh"
 		},
-		"Assets_Models_Cactus-Cactus.mesh.bin":{
-			"path":"Assets_Models_Cactus-Cactus.mesh.bin"
+		"Assets/Models/Cactus-Cactus.mesh.bin":{
+			"path":"Assets/Models/Cactus-Cactus.mesh.bin"
 		},
 		"Assets/Models/Cactus-Cactus.mesh":{
 			"path":"Assets/Models/Cactus-Cactus.mesh"
@@ -732,8 +711,8 @@
 		"Assets/Materials/Green.mat":{
 			"path":"Assets/Materials/Green.mat"
 		},
-		"Assets_Models_Tree-Tree.mesh.bin":{
-			"path":"Assets_Models_Tree-Tree.mesh.bin"
+		"Assets/Models/Tree-Tree.mesh.bin":{
+			"path":"Assets/Models/Tree-Tree.mesh.bin"
 		},
 		"Assets/Models/Tree-Tree.mesh":{
 			"path":"Assets/Models/Tree-Tree.mesh"
@@ -741,14 +720,14 @@
 		"Assets/Materials/Brown.mat":{
 			"path":"Assets/Materials/Brown.mat"
 		},
-		"Assets_Models_PalmTree-PalmTree01.mesh.bin":{
-			"path":"Assets_Models_PalmTree-PalmTree01.mesh.bin"
+		"Assets/Models/PalmTree-PalmTree01.mesh.bin":{
+			"path":"Assets/Models/PalmTree-PalmTree01.mesh.bin"
 		},
 		"Assets/Models/PalmTree-PalmTree01.mesh":{
 			"path":"Assets/Models/PalmTree-PalmTree01.mesh"
 		},
-		"Assets_Models_Building01-Building01.mesh.bin":{
-			"path":"Assets_Models_Building01-Building01.mesh.bin"
+		"Assets/Models/Building01-Building01.mesh.bin":{
+			"path":"Assets/Models/Building01-Building01.mesh.bin"
 		},
 		"Assets/Models/Building01-Building01.mesh":{
 			"path":"Assets/Models/Building01-Building01.mesh"
@@ -762,8 +741,8 @@
 		"Assets/Materials/BuildingGlass.mat":{
 			"path":"Assets/Materials/BuildingGlass.mat"
 		},
-		"Assets_Models_Building02-Barracks.mesh.bin":{
-			"path":"Assets_Models_Building02-Barracks.mesh.bin"
+		"Assets/Models/Building02-Barracks.mesh.bin":{
+			"path":"Assets/Models/Building02-Barracks.mesh.bin"
 		},
 		"Assets/Models/Building02-Barracks.mesh":{
 			"path":"Assets/Models/Building02-Barracks.mesh"
@@ -771,35 +750,35 @@
 		"Assets/Materials/OilDrums.mat":{
 			"path":"Assets/Materials/OilDrums.mat"
 		},
-		"Assets/Models/Building02-Building02.lav":{
-			"path":"Assets/Models/Building02-Building02.lav"
+		"Assets/Models/Building02-Building02.avatar":{
+			"path":"Assets/Models/Building02-Building02.avatar"
 		},
-		"Assets/Models/Building02-Building02__(1).lav":{
-			"path":"Assets/Models/Building02-Building02__(1).lav"
+		"Assets/Models/Building02-Building02__(1).avatar":{
+			"path":"Assets/Models/Building02-Building02__(1).avatar"
 		},
-		"Assets/Models/Building02-Building02__(2).lav":{
-			"path":"Assets/Models/Building02-Building02__(2).lav"
+		"Assets/Models/Building02-Building02__(2).avatar":{
+			"path":"Assets/Models/Building02-Building02__(2).avatar"
 		},
-		"Assets_Models_Radar-RadarSphere.mesh.bin":{
-			"path":"Assets_Models_Radar-RadarSphere.mesh.bin"
+		"Assets/Models/Radar-RadarSphere.mesh.bin":{
+			"path":"Assets/Models/Radar-RadarSphere.mesh.bin"
 		},
 		"Assets/Models/Radar-RadarSphere.mesh":{
 			"path":"Assets/Models/Radar-RadarSphere.mesh"
 		},
-		"Assets_Models_OilStorage-OilStorage.mesh.bin":{
-			"path":"Assets_Models_OilStorage-OilStorage.mesh.bin"
+		"Assets/Models/OilStorage-OilStorage.mesh.bin":{
+			"path":"Assets/Models/OilStorage-OilStorage.mesh.bin"
 		},
 		"Assets/Models/OilStorage-OilStorage.mesh":{
 			"path":"Assets/Models/OilStorage-OilStorage.mesh"
 		},
-		"Assets/Models/OilStorage-OilStorage.lav":{
-			"path":"Assets/Models/OilStorage-OilStorage.lav"
+		"Assets/Models/OilStorage-OilStorage.avatar":{
+			"path":"Assets/Models/OilStorage-OilStorage.avatar"
 		},
-		"Assets/Models/OilStorage-OilStorage__(1).lav":{
-			"path":"Assets/Models/OilStorage-OilStorage__(1).lav"
+		"Assets/Models/OilStorage-OilStorage__(1).avatar":{
+			"path":"Assets/Models/OilStorage-OilStorage__(1).avatar"
 		},
-		"Assets/Models/PumpJack-PumpJack.lav":{
-			"path":"Assets/Models/PumpJack-PumpJack.lav"
+		"Assets/Models/PumpJack-PumpJack.avatar":{
+			"path":"Assets/Models/PumpJack-PumpJack.avatar"
 		},
 		"Assets/_Completed-Assets/Animators/CompletePumpjack.controller":{
 			"path":"Assets/_Completed-Assets/Animators/CompletePumpjack.controller"
@@ -810,26 +789,26 @@
 		"Assets/Models/PumpJack-Take__001.animationclip":{
 			"path":"Assets/Models/PumpJack-Take__001.animationclip"
 		},
-		"Assets_Models_PumpJack-Pumpjack.mesh.bin":{
-			"path":"Assets_Models_PumpJack-Pumpjack.mesh.bin"
+		"Assets/Models/PumpJack-Pumpjack.mesh.bin":{
+			"path":"Assets/Models/PumpJack-Pumpjack.mesh.bin"
 		},
-		"Assets_Models_PumpJack-Pumpjack.mesh":{
-			"path":"Assets_Models_PumpJack-Pumpjack.mesh"
+		"Assets/Models/PumpJack-Pumpjack.mesh":{
+			"path":"Assets/Models/PumpJack-Pumpjack.mesh"
 		},
-		"Assets/Models/PumpJack-PumpJack__(1).lav":{
-			"path":"Assets/Models/PumpJack-PumpJack__(1).lav"
+		"Assets/Models/PumpJack-PumpJack__(1).avatar":{
+			"path":"Assets/Models/PumpJack-PumpJack__(1).avatar"
 		},
-		"Assets/Models/PumpJack-PumpJack__(2).lav":{
-			"path":"Assets/Models/PumpJack-PumpJack__(2).lav"
+		"Assets/Models/PumpJack-PumpJack__(2).avatar":{
+			"path":"Assets/Models/PumpJack-PumpJack__(2).avatar"
 		},
-		"Assets_Models_Refinery-Refinery.mesh.bin":{
-			"path":"Assets_Models_Refinery-Refinery.mesh.bin"
+		"Assets/Models/Refinery-Refinery.mesh.bin":{
+			"path":"Assets/Models/Refinery-Refinery.mesh.bin"
 		},
 		"Assets/Models/Refinery-Refinery.mesh":{
 			"path":"Assets/Models/Refinery-Refinery.mesh"
 		},
-		"Assets_Models_BustedTank-BustedTank.mesh.bin":{
-			"path":"Assets_Models_BustedTank-BustedTank.mesh.bin"
+		"Assets/Models/BustedTank-BustedTank.mesh.bin":{
+			"path":"Assets/Models/BustedTank-BustedTank.mesh.bin"
 		},
 		"Assets/Models/BustedTank-BustedTank.mesh":{
 			"path":"Assets/Models/BustedTank-BustedTank.mesh"
@@ -837,20 +816,20 @@
 		"Assets/Materials/TankGrey.mat":{
 			"path":"Assets/Materials/TankGrey.mat"
 		},
-		"Assets_Models_Crater01-Crater01.mesh.bin":{
-			"path":"Assets_Models_Crater01-Crater01.mesh.bin"
+		"Assets/Models/Crater01-Crater01.mesh.bin":{
+			"path":"Assets/Models/Crater01-Crater01.mesh.bin"
 		},
 		"Assets/Models/Crater01-Crater01.mesh":{
 			"path":"Assets/Models/Crater01-Crater01.mesh"
 		},
-		"Assets_Models_Ruins01-Ruins01.mesh.bin":{
-			"path":"Assets_Models_Ruins01-Ruins01.mesh.bin"
+		"Assets/Models/Ruins01-Ruins01.mesh.bin":{
+			"path":"Assets/Models/Ruins01-Ruins01.mesh.bin"
 		},
 		"Assets/Models/Ruins01-Ruins01.mesh":{
 			"path":"Assets/Models/Ruins01-Ruins01.mesh"
 		},
-		"Assets_Models_Helipad-Helipad.mesh.bin":{
-			"path":"Assets_Models_Helipad-Helipad.mesh.bin"
+		"Assets/Models/Helipad-Helipad.mesh.bin":{
+			"path":"Assets/Models/Helipad-Helipad.mesh.bin"
 		},
 		"Assets/Models/Helipad-Helipad.mesh":{
 			"path":"Assets/Models/Helipad-Helipad.mesh"
@@ -870,23 +849,14 @@
 		"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab":{
 			"path":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab"
 		},
-		"Resources/unity_builtin_extra.mat":{
-			"path":"Resources/unity_builtin_extra.mat"
+		"Assets/Materials/Explosion.mat":{
+			"path":"Assets/Materials/Explosion.mat"
 		},
-		"Resources/unity_builtin_extra.vertex.hlsl":{
-			"path":"Resources/unity_builtin_extra.vertex.hlsl"
+		"Assets/Sprites/Smoke.png":{
+			"path":"Assets/Sprites/Smoke.png"
 		},
-		"Resources/unity_builtin_extra.pixel.hlsl":{
-			"path":"Resources/unity_builtin_extra.pixel.hlsl"
-		},
-		"Resources/unity_builtin_extra.effect":{
-			"path":"Resources/unity_builtin_extra.effect"
-		},
-		"Resources/unity_builtin_extra.png":{
-			"path":"Resources/unity_builtin_extra.png"
-		},
-		"Resources/unity_builtin_extra.texture2d":{
-			"path":"Resources/unity_builtin_extra.texture2d"
+		"Assets/Sprites/Smoke.texture2d":{
+			"path":"Assets/Sprites/Smoke.texture2d"
 		},
 		"Assets/AudioClips/TankExplosion.wav":{
 			"path":"Assets/AudioClips/TankExplosion.wav"
@@ -894,14 +864,17 @@
 		"Assets/AudioClips/TankExplosion.wav.raw":{
 			"path":"Assets/AudioClips/TankExplosion.wav.raw"
 		},
+		"Resources/unity_builtin_extra.mat":{
+			"path":"Resources/unity_builtin_extra.mat"
+		},
 		"bindings/Complete.TankShooting.binding.js":{
 			"path":"bindings/Complete.TankShooting.binding.js"
 		},
 		"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab":{
 			"path":"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab"
 		},
-		"Assets_Models_Shell-Shell.mesh.bin":{
-			"path":"Assets_Models_Shell-Shell.mesh.bin"
+		"Assets/Models/Shell-Shell.mesh.bin":{
+			"path":"Assets/Models/Shell-Shell.mesh.bin"
 		},
 		"Assets/Models/Shell-Shell.mesh":{
 			"path":"Assets/Models/Shell-Shell.mesh"
@@ -912,23 +885,14 @@
 		"bindings/Complete.ShellExplosion.binding.js":{
 			"path":"bindings/Complete.ShellExplosion.binding.js"
 		},
-		"Assets/Materials/Explosion.mat":{
-			"path":"Assets/Materials/Explosion.mat"
-		},
-		"Assets/Sprites/Smoke.png":{
-			"path":"Assets/Sprites/Smoke.png"
-		},
-		"Assets/Sprites/Smoke.texture2d":{
-			"path":"Assets/Sprites/Smoke.texture2d"
-		},
 		"Assets/AudioClips/ShellExplosion.wav":{
 			"path":"Assets/AudioClips/ShellExplosion.wav"
 		},
 		"Assets/AudioClips/ShellExplosion.wav.raw":{
 			"path":"Assets/AudioClips/ShellExplosion.wav.raw"
 		},
-		"Assets_Models_Tank-TankChassis.mesh.bin":{
-			"path":"Assets_Models_Tank-TankChassis.mesh.bin"
+		"Assets/Models/Tank-TankChassis.mesh.bin":{
+			"path":"Assets/Models/Tank-TankChassis.mesh.bin"
 		},
 		"Assets/Models/Tank-TankChassis.mesh":{
 			"path":"Assets/Models/Tank-TankChassis.mesh"
@@ -939,20 +903,20 @@
 		"Assets/Materials/TankLights.mat":{
 			"path":"Assets/Materials/TankLights.mat"
 		},
-		"Assets_Models_Tank-TankTracksLeft.mesh.bin":{
-			"path":"Assets_Models_Tank-TankTracksLeft.mesh.bin"
+		"Assets/Models/Tank-TankTracksLeft.mesh.bin":{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh.bin"
 		},
 		"Assets/Models/Tank-TankTracksLeft.mesh":{
 			"path":"Assets/Models/Tank-TankTracksLeft.mesh"
 		},
-		"Assets_Models_Tank-TankTracksRight.mesh.bin":{
-			"path":"Assets_Models_Tank-TankTracksRight.mesh.bin"
+		"Assets/Models/Tank-TankTracksRight.mesh.bin":{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh.bin"
 		},
 		"Assets/Models/Tank-TankTracksRight.mesh":{
 			"path":"Assets/Models/Tank-TankTracksRight.mesh"
 		},
-		"Assets_Models_Tank-TankTurret.mesh.bin":{
-			"path":"Assets_Models_Tank-TankTurret.mesh.bin"
+		"Assets/Models/Tank-TankTurret.mesh.bin":{
+			"path":"Assets/Models/Tank-TankTurret.mesh.bin"
 		},
 		"Assets/Models/Tank-TankTurret.mesh":{
 			"path":"Assets/Models/Tank-TankTurret.mesh"
@@ -960,16 +924,449 @@
 		"Assets/Materials/Dust.mat":{
 			"path":"Assets/Materials/Dust.mat"
 		},
-		"Assets/AudioClips/BackgroundMusic.wav":{
-			"path":"Assets/AudioClips/BackgroundMusic.wav"
+		"Assets/Resources/BackgroundMusic.wav":{
+			"path":"Assets/Resources/BackgroundMusic.wav"
 		},
-		"Assets/AudioClips/BackgroundMusic.wav.raw":{
-			"path":"Assets/AudioClips/BackgroundMusic.wav.raw"
+		"Assets/Resources/BackgroundMusic.wav.raw":{
+			"path":"Assets/Resources/BackgroundMusic.wav.raw"
 		},
 		"bindings/PhyWorld.binding.js":{
 			"path":"bindings/PhyWorld.binding.js"
 		}
 	},
-	"files":[],
-	"version":"0.7.0"
+	"files":[
+		{
+			"path":"Assets/_Complete-Game.scene",
+			"filetype":"json"
+		},
+		{
+			"path":"bindings/Complete.CameraControl.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"Assets/Models/Cliff-Cliff.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Cliff-Cliff.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/YellowDark.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/YellowLight.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Concrete-Tarmac.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Concrete-Tarmac.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/BuildingStone.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Dunes01-Dunes01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Dunes01-Dunes01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Dunes02-Dunes02.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Dunes02-Dunes02.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Cow-Cow.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Cow-Cow.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/BuildingWhite.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Rocks01-Rocks01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Rocks01-Rocks01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Rocks03-Rocks03.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Rocks03-Rocks03.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Rocks02-Rocks02.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Rocks02-Rocks02.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Column01-Column01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Column01-Column01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Column01-Column01.avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Column01-Column01__(1).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Column01-Column01__(2).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Column02-Column02.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Column02-Column02.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Cactus-Cactus.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Cactus-Cactus.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/Green.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tree-Tree.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tree-Tree.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/Brown.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/PalmTree-PalmTree01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/PalmTree-PalmTree01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Building01-Building01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Building01-Building01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/BuildingGrey.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/BuildingMetal.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/BuildingGlass.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Building02-Barracks.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Building02-Barracks.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/OilDrums.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Building02-Building02.avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Building02-Building02__(1).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Building02-Building02__(2).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Radar-RadarSphere.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Radar-RadarSphere.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/OilStorage-OilStorage.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/OilStorage-OilStorage.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/OilStorage-OilStorage.avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/OilStorage-OilStorage__(1).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/PumpJack-PumpJack.avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/_Completed-Assets/Animators/CompletePumpjack.controller",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/PumpJack-Take 001.animationclip.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/PumpJack-Take__001.animationclip",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/PumpJack-Pumpjack.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/PumpJack-Pumpjack.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/PumpJack-PumpJack__(1).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/PumpJack-PumpJack__(2).avatar",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Refinery-Refinery.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Refinery-Refinery.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/BustedTank-BustedTank.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/BustedTank-BustedTank.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/TankGrey.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Crater01-Crater01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Crater01-Crater01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Ruins01-Ruins01.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Ruins01-Ruins01.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Helipad-Helipad.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Helipad-Helipad.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"bindings/Complete.GameManager.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"Assets/_Completed-Assets/Prefabs/CompleteTank.prefab",
+			"filetype":"json"
+		},
+		{
+			"path":"bindings/Complete.TankMovement.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"bindings/Complete.TankHealth.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"Assets/_Completed-Assets/Prefabs/CompleteTankExplosion.prefab",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/Explosion.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Sprites/Smoke.png",
+			"filetype":"image"
+		},
+		{
+			"path":"Assets/Sprites/Smoke.texture2d",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/AudioClips/TankExplosion.wav",
+			"filetype":"url"
+		},
+		{
+			"path":"Assets/AudioClips/TankExplosion.wav.raw",
+			"filetype":"json"
+		},
+		{
+			"path":"Resources/unity_builtin_extra.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"bindings/Complete.TankShooting.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"Assets/_Completed-Assets/Prefabs/CompleteShell.prefab",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Shell-Shell.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Shell-Shell.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/Gold.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"bindings/Complete.ShellExplosion.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"Assets/AudioClips/ShellExplosion.wav",
+			"filetype":"url"
+		},
+		{
+			"path":"Assets/AudioClips/ShellExplosion.wav.raw",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankChassis.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankChassis.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/TankColour.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/TankLights.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTurret.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTurret.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/Dust.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Resources/BackgroundMusic.wav",
+			"filetype":"url"
+		},
+		{
+			"path":"Assets/Resources/BackgroundMusic.wav.raw",
+			"filetype":"json"
+		},
+		{
+			"path":"bindings/PhyWorld.binding.js",
+			"filetype":"text"
+		}
+	],
+	"version":"1.0.0"
 }
