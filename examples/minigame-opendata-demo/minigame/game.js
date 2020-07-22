@@ -130,14 +130,29 @@ function showSingleFriend() {
 
   function renderSharedCanvas() {
     const tex = new engine.Texture2D();
-    tex._needPremultiplyAlpha = true;
-  
-    tex.initWithCanvas(sharedCanvas);
-    const sf = engine.SpriteFrame.createFromTexture(tex);
-    img.spriteFrame = sf;
+    
+    if (info.platform == "devtools") {
+    
+      tex.initDynamicTexture(400, 400);
+      const sf = engine.SpriteFrame.createFromTexture(tex);
+      img.spriteFrame = sf;
+      
+      updateTexture(tex)
+    } else {
+      tex.initWithCanvas(sharedCanvas, false, true);
+      const sf = engine.SpriteFrame.createFromTexture(tex);
+      img.spriteFrame = sf;
+    }
+    
+  }
 
-    if (info.platform !== 'ios') {
-      requestAnimationFrame(renderSharedCanvas)
+  function updateTexture(tex) {
+    tex.updateSubTexture(sharedCanvas, 0, 0, 400, 400, true);
+
+    if (single) {
+      requestAnimationFrame(() => {
+        updateTexture(tex);
+      }) 
     }
   }
 
@@ -172,28 +187,35 @@ function showFriendList() {
         y      : realY
     }
   });
-  // openDataContext.postMessage({
-  //   event: 'showFriendList',
-  //   box       : {
-  //       width  : realWidth,
-  //       height : realHeight,
-  //       x      : realX,
-  //       y      : realY
-  //   }
-  // });
 
   const img = list.addComponent(engine.UISprite);
   function renderSharedCanvas() {
     const tex = new engine.Texture2D();
-    tex._needPremultiplyAlpha = true
-  
-    tex.initWithCanvas(sharedCanvas);
-    const sf = engine.SpriteFrame.createFromTexture(tex);
-    img.spriteFrame = sf;
     
-    if (info.platform !== 'ios') {
-      // requestAnimationFrame(renderSharedCanvas)
-      // setInterval(renderSharedCanvas, 1000)
+    if (info.platform == "devtools") {
+    
+      tex.initDynamicTexture(SHAREDWIDTH, SHAREDHEIGHT);
+      const sf = engine.SpriteFrame.createFromTexture(tex);
+      img.spriteFrame = sf;
+      
+      
+      updateTexture(tex)
+    } else {
+
+      tex.initWithCanvas(sharedCanvas, false, true);
+      const sf = engine.SpriteFrame.createFromTexture(tex);
+      img.spriteFrame = sf;
+    }
+    
+  }
+
+  function updateTexture(tex) {
+    tex.updateSubTexture(sharedCanvas, 0, 0, SHAREDWIDTH, SHAREDHEIGHT, true);
+
+    if (list) {
+      requestAnimationFrame(() => {
+        updateTexture(tex);
+      }) 
     }
   }
 

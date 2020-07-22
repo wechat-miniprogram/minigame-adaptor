@@ -4,7 +4,7 @@
   "engine":true,
   "plugins":{
       "WXEngine":{
-          "version":"0.6.1",
+          "version":"1.0.0",
           "provider":"wx20afc706a711eefc",
           "contexts":[
               {
