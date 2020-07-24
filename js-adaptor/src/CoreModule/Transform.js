@@ -467,7 +467,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.SetParent$1(p, true);
             },
             SetParent$1: function (parent, worldPositionStays) {
-                debugger
                 // set one's parent to null means set its parent to the root
                 if (parent === null) {
                     this.ref.parent.removeChild(this.ref);

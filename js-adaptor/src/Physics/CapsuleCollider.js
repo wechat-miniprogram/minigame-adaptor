@@ -12,6 +12,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         return comp;
                     }
 
+                    console.log(data)
+
                     const instance = physx.Phys3dInstance;
                     const entity = comp.entity;
 
@@ -19,6 +21,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     const center = new Phys3D.RawVec3f(data.center[0], data.center[1], data.center[2]);
 
                     comp.nativeCollider = new Phys3D.CapsuleCollider(physx.Phys3dInstance, center, data.height, data.radius);
+                    comp.nativeCollider.direction = data.direction;
 
                     // 设置material信息
                     const materialData = data.material || {};
@@ -105,12 +108,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         methods: {
-            onStart: function () {
-                setTimeout(() => {
-                    console.log('setdirection')
-                    this.nativeCollider.direction = 1;
-                }, 0);
-            },
         }
     });
 });
