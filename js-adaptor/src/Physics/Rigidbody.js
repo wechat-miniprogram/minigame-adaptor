@@ -45,12 +45,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         statics: {
             methods: {
                 Deserialize: function(data, comp, context, builtContext) {
-                    /*console.log('Deserialize ctor called', data, comp)*/
                     if (!data) {
                         return comp;
                     }
 
                     comp.__deserializeData = data;
+                    console.log('Rigidbody Deserialize ctor called', data, comp, comp.__deserializeData)
 
                     return comp;
                 },
@@ -183,17 +183,17 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             position: {
                 get: function () {
                     const RawVec3f = this.nativeRigidBody.position;
-                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f);
+                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
                 },
                 set: function (value) {
-                    this.nativeRigidBody.angularVelocity = new Phys3D.RawVec3f(value.x, value.y, value.z);
+                    this.nativeRigidBody.position = new Phys3D.RawVec3f(-value.x, value.y, value.z);
                 }
             },
             rotation: {
                 get: function () {
                     const rotation = this.nativeRigidBody.rotation;
 
-                    return new MiniGameAdaptor.Quaternion.$ctor3(rotation);
+                    return new MiniGameAdaptor.Quaternion.$ctor3(rotation)._FlipXnW();
                 },
                 set: function (value) {
                     this.nativeRigidBody.rotation = value;
@@ -250,11 +250,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function () {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
-
             }
         },
         methods: {
-            onStart: function(e) {
+            onStart: function () {
+                if(!this.__physInitReady) {
+                    this.onInstantiated();
+                }
+            },
+            onInstantiated: function() {
+                if (!Phys3D) {
+                    return;
+                }
                 /**
                  * 在native中的Phys3D创建对应的刚体
                  */
@@ -262,10 +269,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 const data = this.__deserializeData;
 
                 this.nativeRigidBody = body;
+                this.gameObject.nativeRigidBody = body;
                 this.nativeRigidBody.__sourceComp = this;
 
                 // 设置native层物理刚体的实际位置
-                const pos = this.transform.position;
+                const pos = this.entity.transform.worldPosition;
                 this.nativeRigidBody.position = new Phys3D.RawVec3f(pos.x, pos.y, pos.z);
 
                 body.angularDamping = data.angularDrag;
@@ -275,37 +283,21 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 body.isKinematic = data.isKinematic;
                 body.mass = data.mass;
                 body.useGravity = data.useGravity;
-                /*body.ResetCenterOfMass();*/
 
-                const quaternion = this.entity.transform.quaternion;
-                const RawQuaternion = new Phys3D.RawQuaternion();
-                RawQuaternion.x = quaternion.x;
-                RawQuaternion.y = quaternion.y;
-                RawQuaternion.z = quaternion.z;
-                RawQuaternion.w = quaternion.w;
+                // 将entity的旋转同步到物理
+                physx.syncRotation(this.entity, body);
 
-                body.rotation = RawQuaternion;
-
-                /*const quaternion = this.transform.rotation;
-                const RawQuaternion = new Phys3D.RawQuaternion()
-                RawQuaternion.x = quaternion.x;
-                RawQuaternion.y = quaternion.y;
-                RawQuaternion.z = quaternion.z;
-                RawQuaternion.w = quaternion.w;
-                this.nativeRigidBody.rotation = RawQuaternion;*/
-
-                let components = this.gameObject.ref.components;
-                let adaptorRigidBody = null;
-                for (let i = 0; i < components.length; i++) {
-                    let component = components[i];
-                    let type = component.__typeName;
-                    if (type == "MiniGameAdaptor.BoxCollider") {
-                        component.nativeCollider.adaptorRigidBody = this;
-                        component.nativeCollider.attachedRigidbody = body;
+                // TODO: 一个gameobject可能挂多个collider
+                [MiniGameAdaptor.BoxCollider, MiniGameAdaptor.MeshCollider, MiniGameAdaptor.CapsuleCollider, MiniGameAdaptor.SphereCollider].forEach( colliderClass => {
+                    const collider = this.getComponent(colliderClass);
+                    if (collider) {
+                        collider.nativeCollider.adaptorRigidBody = this;
+                        collider.nativeCollider.attachedRigidbody = body;
                     }
-                }
+                })
 
                 physx.addBody(this.nativeRigidBody);
+                this.__physInitReady = true;
             },
 
             AddExplosionForce: function (explosionForce, explosionPosition, explosionRadius) {
@@ -318,104 +310,104 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             AddForce: function (x, y, z) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddForce(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddForce$1: function (x, y, z, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(value.x, value.y, value.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-value.x, value.y, value.z);
                 this.nativeRigidBody.AddForce(RawVec3f, mode)
             },
             AddForce$2: function (force) {
-                const RawVec3f =  new Phys3D.RawVec3f(force.x, force.y, force.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-force.x, force.y, force.z);
                 this.nativeRigidBody.AddForce(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddForce$3: function (force, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(force.x, force.y, force.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-force.x, force.y, force.z);
                 this.nativeRigidBody.AddForce(RawVec3f, mode)
             },
             AddForceAtPosition: function (force, position) {
-                const RawVec3f =  new Phys3D.RawVec3f(force.x, force.y, force.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-force.x, force.y, force.z);
                 const posRawVec3f =  new Phys3D.RawVec3f(position.x, position.y, position.z);
                 this.nativeRigidBody.AddForceAtPosition(RawVec3f, posRawVec3f,  MiniGameAdaptor.ForceMode.force);
             },
             AddForceAtPosition$1: function (force, position, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(force.x, force.y, force.z);
-                const posRawVec3f =  new Phys3D.RawVec3f(position.x, position.y, position.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-force.x, force.y, force.z);
+                const posRawVec3f =  new Phys3D.RawVec3f(-position.x, position.y, position.z);
                 this.nativeRigidBody.AddForceAtPosition(RawVec3f, posRawVec3f,  mode);
             },
             AddRelativeForce: function (x, y, z) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddRelativeForce(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddRelativeForce$1: function (x, y, z, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddRelativeForce(RawVec3f, mode)
             },
             AddRelativeForce$2: function (force) {
-                const RawVec3f =  new Phys3D.RawVec3f(force.x, force.y, force.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-force.x, force.y, force.z);
                 this.nativeRigidBody.AddRelativeForce(RawVec3f, MiniGameAdaptor.ForceMode.Force);
             },
             AddRelativeForce$3: function (force, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(force.x, force.y, force.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-force.x, force.y, force.z);
                 this.nativeRigidBody.AddRelativeForce(RawVec3f, mode);
             },
             AddRelativeTorque: function (x, y, z) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddRelativeTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddRelativeTorque$1: function (x, y, z, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddRelativeTorque(RawVec3f, mode)
             },
             AddRelativeTorque$2: function (torque) {
-                const RawVec3f =  new Phys3D.RawVec3f(torque.x, torque.y, torque.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-torque.x, torque.y, torque.z);
                 this.nativeRigidBody.AddRelativeTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddRelativeTorque$3: function (torque, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(torque.x, torque.y, torque.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-torque.x, torque.y, torque.z);
                 this.nativeRigidBody.AddRelativeTorque(RawVec3f, mode)
             },
             AddTorque: function (x, y, z) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddTorque$1: function (x, y, z, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(x, y, z);
+                const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
                 this.nativeRigidBody.AddTorque(RawVec3f, mode)
             },
             AddTorque$2: function (torque) {
-                const RawVec3f =  new Phys3D.RawVec3f(torque.x, torque.y, torque.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-torque.x, torque.y, torque.z);
                 this.nativeRigidBody.AddTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force)
             },
             AddTorque$3: function (torque, mode) {
-                const RawVec3f =  new Phys3D.RawVec3f(torque.x, torque.y, torque.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-torque.x, torque.y, torque.z);
                 this.nativeRigidBody.AddTorque(RawVec3f, mode)
             },
             ClosestPointOnBounds: function (position) {
-                const RawVec3f =  new Phys3D.RawVec3f(position.x, position.y, position.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-position.x, position.y, position.z);
                 const resRawVec3f = this.nativeRigidBody.ClosestPointOnBounds(RawVec3f);
 
                 return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f);
             },
             GetPointVelocity: function (worldPoint) {
-                const RawVec3f =  new Phys3D.RawVec3f(worldPoint.x, worldPoint.y, worldPoint.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-worldPoint.x, worldPoint.y, worldPoint.z);
                 const resRawVec3f = this.nativeRigidBody.GetPointVelocity(RawVec3f);
 
                 return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f);
             },
 
             GetRelativePointVelocity: function (relativePoint) {
-                const RawVec3f =  new Phys3D.RawVec3f(relativePoint.x, relativePoint.y, relativePoint.z);
+                const RawVec3f =  new Phys3D.RawVec3f(-relativePoint.x, relativePoint.y, relativePoint.z);
                 const resRawVec3f = this.nativeRigidBody.GetRelativePointVelocity(RawVec3f);
 
-                return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f);
+                return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f)._FlipX();
             },
             IsSleeping: function () {
                 return this.nativeRigidBody.IsSleeping();
             },
             MovePosition: function (position) {
-                const RawVec3f =  new Phys3D.RawVec3f(position.x, position.y, position.z);
-                return this.nativeRigidBody.MovePosition(RawVec3f);
+                const RawVec3f =  new Phys3D.RawVec3f(-position.x, position.y, position.z);
+                this.nativeRigidBody.MovePosition(RawVec3f);
             },
             MoveRotation: function (rot) {
                 throw new System.Exception("not impl");

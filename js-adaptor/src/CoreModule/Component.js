@@ -24,11 +24,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             tag: {
                 get: function () {
-                    // throw new System.Exception("not impl");
+                    
                     return this.gameObject.tag;
                 },
                 set: function (value) {
-                    // throw new System.Exception("not impl");
+                    
                     this.gameObject.tag = value;
                 }
             },
@@ -55,23 +55,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         },
         methods: {
             BroadcastMessage: function (methodName) {
-                // throw new System.Exception("not impl");
                 this.gameObject.BroadcastMessage(methodName);
             },
             BroadcastMessage$1: function (methodName, parameter) {
-                // throw new System.Exception("not impl");
                 this.gameObject.BroadcastMessage$1(methodName, parameter);
             },
             BroadcastMessage$2: function (methodName, parameter, options) {
-                // throw new System.Exception("not impl");
                 this.gameObject.BroadcastMessage$2(methodName, parameter, options);
             },
             BroadcastMessage$3: function (methodName, options) {
-                // throw new System.Exception("not impl");
                 this.gameObject.BroadcastMessage$3(methodName, options);
             },
             CompareTag: function (tag) {
-                // throw new System.Exception("not impl");
                 return this.tag === tag;
             },
             GetComponent: function (T) {
@@ -105,19 +100,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 return this.gameObject.GetComponentsInParent$1(T, includeInactive);
             },
             SendMessage: function (methodName) {
-                // throw new System.Exception("not impl");
                 this.gameObject.SendMessage(methodName);
             },
             SendMessage$1: function (methodName, value) {
-                // throw new System.Exception("not impl");
                 this.gameObject.SendMessage$1(methodName, value);
             },
             SendMessage$2: function (methodName, value, options) {
-                // throw new System.Exception("not impl");
                 this.gameObject.SendMessage$2(methodName, value, options);
             },
             SendMessage$3: function (methodName, options) {
-                // throw new System.Exception("not impl");
                 this.gameObject.SendMessage$3(methodName, options);
             },
             SendMessageUpwards: function (methodName) {
@@ -131,7 +122,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             SendMessageUpwards$3: function (methodName, options) {
                 throw new System.Exception("not impl");
-            }
+            },
+            // prefab实例化完成后的回调
+            // 直接在子类中定义，此处仅作注解，避免浪费性能
+            // onInstantiated: function () {
+
+            // }
         }
     });
 });

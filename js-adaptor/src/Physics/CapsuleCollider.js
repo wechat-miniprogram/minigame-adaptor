@@ -1,3 +1,5 @@
+import {physx, Phys3D, bindEventForCollider} from './Physx';
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
@@ -10,11 +12,36 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         return comp;
                     }
 
-                    comp._isTrigger = data.isTrigger;
-                    comp._center = new MiniGameAdaptor.Vector3.$ctor2(data.center[0], data.center[1], data.center[2]);
-                    comp._radius = data.radius;
-                    comp._height = data.height;
-                    comp._direction = data.direction;
+                    const instance = physx.Phys3dInstance;
+                    const entity = comp.entity;
+
+                    const scale = comp.transform.localScale;
+                    const center = new Phys3D.RawVec3f(data.center[0], data.center[1], data.center[2]);
+
+                    comp.nativeCollider = new Phys3D.CapsuleCollider(physx.Phys3dInstance, center, data.height, data.radius);
+
+                    // 设置material信息
+                    const materialData = data.material || {};
+                    comp.nativeCollider.material = new Phys3D.Material(
+                        physx.Phys3dInstance,
+                        materialData.dynamicFriction,
+                        materialData.staticFriction,
+                        materialData.bounciness,
+                        materialData.frictionCombine,
+                        materialData.bounceCombine,
+                    );
+
+                    const hasRigidBody = comp.getComponent(MiniGameAdaptor.Rigidbody);
+
+                    comp.nativeCollider.scale = new Phys3D.RawVec3f(scale.x, scale.y, scale.z);
+
+                    // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
+                    if (!hasRigidBody) {
+                        physx.addStaticBodyForCollider(comp)
+                    }
+
+                    // 为collider绑定事件
+                    bindEventForCollider(comp.nativeCollider, comp.gameObject)
 
                     return comp;
                 }
@@ -30,42 +57,43 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             isTrigger: {
                 get: function () {
-                    return this._isTrigger;
+                    return this.nativeCollider.isTrigger;
                 },
                 set: function (value) {
-                    this._isTrigger = value;
+                    this.nativeCollider.isTrigger = value;
                 }
             },
             center: {
                 get: function () {
-                    return this._center;
+                    const RawVec3f = this.nativeCollider.center;
+                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
                 },
                 set: function (value) {
-                    this._center = value;
+                    this.nativeCollider.center = new Phys3D.RawVec3f(-value.x, value.y, value.z);
                 }
             },
             radius: {
                 get: function () {
-                    return this._radius;
+                    return this.nativeCollider.radius;
                 },
                 set: function (value) {
-                    this._radius = value;
+                    this.nativeCollider.radius = value;
                 }
             },
             height: {
                 get: function () {
-                    return this._height;
+                    return this.nativeCollider.height;
                 },
                 set: function (value) {
-                    this._height = value;
+                    this.nativeCollider.height = value;
                 }
             },
             direction: {
                 get: function () {
-                    return this._direction;
+                    return this.nativeCollider.direction;
                 },
                 set: function (value) {
-                    this._direction = value;
+                    this.nativeCollider.direction = value;
                 }
             }
         },
@@ -73,7 +101,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function () {
                 this.$initialize();
                 MiniGameAdaptor.Collider.ctor.call(this);
+
             }
+        },
+        methods: {
+            onStart: function () {
+                setTimeout(() => {
+                    console.log('setdirection')
+                    this.nativeCollider.direction = 1;
+                }, 0);
+            },
         }
     });
 });

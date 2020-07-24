@@ -1,3 +1,5 @@
+const { screenHeight, screenWidth } = wx.getSystemInfoSync()
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
@@ -584,7 +586,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             ScreenToWorldPoint: function (position) {
-                return this.ref.convertWorldPositionToViewport(position.ref);
+
+                var clipX = 2 * position.x / screenWidth - 1;
+                var clipY = 2 * position.y / screenHeight - 1;
+
+                return new MiniGameAdaptor.Vector3.$ctor4(this.ref.convertClipPositionToWorld(engine.Vector3.createFromNumber(clipX, clipY, -1)))._FlipX();
             },
             ScreenToWorldPoint$1: function (position, eye) {
                 throw new System.Exception("not impl");
@@ -620,7 +626,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             WorldToScreenPoint: function (position) {
-                return this.ref.convertWorldPositionToClip(position.ref);
+                var clipPos = this.ref.convertWorldPositionToClip(position._FlipX().ref);
+                var screenX = (clipPos.x + 1) / 2 * screenWidth;
+                var screenY = (clipPos.y + 1) / 2 * screenHeight;
+                return new MiniGameAdaptor.Vector3.$ctor2(screenX, screenY, clipPos.z);
             },
             WorldToScreenPoint$1: function (position, eye) {
                 throw new System.Exception("not impl");

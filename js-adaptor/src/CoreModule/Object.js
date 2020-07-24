@@ -19,11 +19,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 },
                 Destroy$1: function (obj, t) {
                     setTimeout(() => {
-                        obj.ref ? obj.ref.destroy() : obj = null;
+                        if (obj instanceof MiniGameAdaptor.Component) {
+                            obj.entity ? obj.entity.removeComponent(obj) : obj = null;
+                        } else {
+                            obj.ref ? obj.ref.destroy() : obj = null;
+                        }
                     }, t * 1000);
                 },
                 DestroyImmediate: function (obj) {
-                    obj.ref ? obj.ref.destroy() : obj = null;
+                    MiniGameAdaptor.Object.Destroy$1(obj, 0);
                 },
                 DestroyImmediate$1: function (obj, allowDestroyingAssets) {
                      throw new System.Exception("not impl");
@@ -65,6 +69,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         if (position) go.transform.position = position;
                         if (rotation) go.transform.rotation = rotation;
 
+                        // onInstantiated回调
+                        entity.components.forEach(c => {
+                            if (c instanceof MiniGameAdaptor.Component && c["onInstantiated"]) {
+                                c["onInstantiated"]();
+                            }
+                        });
+
                         if (T === MiniGameAdaptor.GameObject) {
                             return go;
                         } else {
@@ -75,7 +86,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         // 递归克隆entity及components
                         let cloneEntityRecursive = function(_origin, _copy) {
                             _origin.getAllComponents().forEach(component => {
-                                _copy.addComponent(component.constructor);
+                                let comp = _copy.addComponent(component.constructor);
+                                // clone transform
+                                if (comp && comp instanceof engine.Transform3D) {
+                                    comp.position = engine.Vector3.createFromNumber(component.position.x, component.position.y, component.position.z);
+                                    comp.quaternion = engine.Quaternion.createFromNumber(component.quaternion.x, component.quaternion.y, component.quaternion.z, component.quaternion.w);
+                                    comp.scale = engine.Vector3.createFromNumber(component.scale.x, component.scale.y, component.scale.z);
+                                }
+                                
                                 // TODO:
                                 // 将原component上的值clone到新的component上
                             });
@@ -103,6 +121,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                             cloneEntityRecursive(origin, newRoot);
                             parent.ref ? parent.ref.addChild(newRoot.transform) : parent.addChild(newRoot.transform);
+
+                            // onInstantiated回调
+                            entity.components.forEach(c => {
+                                if (c instanceof MiniGameAdaptor.Component && c["onInstantiated"]) {
+                                    c["onInstantiated"]();
+                                }
+                            });
                             return MiniGameAdaptor.engineToAdaptorMap.get(newRoot);
                         } else {
                             let origin = original.gameObject.ref;
@@ -115,6 +140,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                             cloneEntityRecursive(origin, newRoot);
                             parent.ref ? parent.ref.addChild(newRoot.transform) : parent.addChild(newRoot.transform);
+
+                            // onInstantiated回调
+                            entity.components.forEach(c => {
+                                if (c instanceof MiniGameAdaptor.Component && c["onInstantiated"]) {
+                                    c["onInstantiated"]();
+                                }
+                            });
                             return MiniGameAdaptor.engineToAdaptorMap.get(newRoot).GetComponent(T);
                         }
                     }

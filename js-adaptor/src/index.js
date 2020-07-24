@@ -64,6 +64,7 @@ import './SDK/SceneManager'
 import './SDK/Resources'
 
 // Physics
+import './Physics/Rigidbody'
 import './Physics/PhysicMaterial'
 import './Physics/Collider'
 import './Physics/MeshCollider'
@@ -71,7 +72,6 @@ import './Physics/BoxCollider'
 import './Physics/SphereCollider'
 import './Physics/CapsuleCollider'
 import './Physics/RaycastHit'
-import './Physics/Rigidbody'
 import './Physics/Physics'
 
 // Event

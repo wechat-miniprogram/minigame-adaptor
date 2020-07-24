@@ -32,7 +32,6 @@ function consumeTouchCountState() {
 onRootMonoBehaviourUpdate(consumeMouseButtonDownState)
 onRootMonoBehaviourUpdate(consumeMouseButtonUpState)
 onRootMonoBehaviourUpdate(consumeTouchCountState)
-
 wx.onTouchStart((e) => {
     _mouseButtonDownState = true
     updateMousePosition(e.touches)

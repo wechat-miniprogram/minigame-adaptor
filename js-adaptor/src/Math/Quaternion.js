@@ -195,6 +195,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 SlerpUnclamped: function (a, b, t) {
                     return new MiniGameAdaptor.Quaternion.$ctor2(a.ref.slerp(b.ref, t));
                 },
+                __axisAngle2Quat: function(axis, angle) {
+                    let q = new MiniGameAdaptor.Quaternion();
+                    let halfAngle = angle * 0.5;
+                    let s = Math.sin(halfAngle);
+
+                    q.x = s * axis.x;
+                    q.y = s * axis.y;
+                    q.z = s * axis.z;
+                    q.w = Math.cos(halfAngle);
+
+                    return q;
+                },
                 op_Equality: function (lhs, rhs) {
                     return MiniGameAdaptor.Quaternion.__IsEqualUsingDot(MiniGameAdaptor.Quaternion.Dot(lhs, rhs));
                 },
@@ -403,7 +415,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 angle.v *= MiniGameAdaptor.Mathf.Rad2Deg;
                 // return angle;
             },
-            __ToAxisAngleRad(axis, angle) {
+            __ToAxisAngleRad: function(axis, angle) {
                 let q = this;
                 if (Math.abs(q.w) > 1.0) {
                     q.Normalize();

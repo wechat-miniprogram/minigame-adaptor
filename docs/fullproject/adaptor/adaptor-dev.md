@@ -12,9 +12,29 @@
 按照导出插件流程，adaptor会被构建到两个地方:
 
 - 1.经过导出插件一键转换脚本之后，adaptor会被自动打包到`WXScripts.mgepackage/minigame-adaptor.js`
+- 2.在方案工具内经过批量解压后，adaptor.js会被解压到：`assets/minigame-adaptor.js`
 - 2.在微信微信引擎开发工具构建项目成功之后，adaptor会被自动打包到`minigame/assets/minigame-adaptor.js`
 
-如果要手动适配adaptor接口，修改构建脚本webpack.config.json:
+如果要手动适配adaptor接口，要执行两个操作，第一是配置使用本地minigame-adaptor.js: 配置`useMiniGameAdaptorJs`为`false`
+```
+module.exports = {
+    pluginConfig: {
+        useMiniGameAdaptorPlugin: false,
+        useMiniGameAdaptorJs: false,
+        pluginAlias: "WXBridge"
+    },
+    sceneConfig: {
+        index2NameMap: {
+
+        },
+        name2PathMap: {
+
+        }
+    }
+}
+```
+
+第二步修改构建脚本webpack.config.json:
 ```js
 var path    = require('path');
 var webpack = require('webpack');

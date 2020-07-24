@@ -72,14 +72,13 @@ class RootMonoBehaviour extends engine.Script{
 
 MiniGameAdaptor.register('RootMonoBehaviour', RootMonoBehaviour);
 
-var originPlayScene = game.playScene;
+// var originPlayScene = game.playScene;
 
-game.playScene = function () {
-    var root = originPlayScene.apply(this, arguments);
+setTimeout(function () {
+    var root = game.activeScene.root;
     root.addComponent(MiniGameAdaptor.RootMonoBehaviour);
-    invokeSceneLoadCallBack()
-    return root;
-};
+    invokeSceneLoadCallBack();
+}, 0);
 
 export {
     onRootMonoBehaviourUpdate,

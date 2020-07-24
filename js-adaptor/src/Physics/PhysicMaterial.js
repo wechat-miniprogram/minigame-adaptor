@@ -64,7 +64,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         ctors: {
             ctor: function () {
                 this.$initialize();
-                UnityEngine.Object.ctor.call(this);
+                MiniGameAdaptor.Object.ctor.call(this);
 
                 const instance = physx.Phys3dInstance;
 
@@ -73,7 +73,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             $ctor1: function (name) {
                 this.$initialize();
-                UnityEngine.Object.ctor.call(this);
+                MiniGameAdaptor.Object.ctor.call(this);
 
                 // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
                 this.nativeMaterial = new Phys3D.Material(instance);
