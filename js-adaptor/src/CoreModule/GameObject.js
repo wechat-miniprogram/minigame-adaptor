@@ -182,7 +182,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 });
 
                 entity.transform.children.forEach( child => {
-                    this._BroadcastMessage(child.entity, methodName, parameter);
+                    child.entity.active && this._BroadcastMessage(child.entity, methodName, parameter);
                 });
             },
 

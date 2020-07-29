@@ -1,4 +1,4 @@
-import {physx, Phys3D, bindEventForCollider} from './Physx';
+import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from './Physx';
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
@@ -27,11 +27,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     const scale = comp.transform.localScale;
                     collider.center = new Phys3D.RawVec3f(data.center[0], data.center[1], data.center[2]);
 
+                    collider.isTrigger = data.isTrigger;
+
                     // collider的scale要和GameObject本身的scale保持一致
                     collider.size = new Phys3D.RawVec3f(data.size[0] * scale.x || 0.00001, data.size[1] * scale.y || 0.00001, data.size[2] * scale.z || 0.00001);
-                    console.log(data.size[0] * scale.x, data.size[1] * scale.y, data.size[2] * scale.z);
 
                     // 设置material信息
+                    // TODO: share
                     const materialData = data.material || {};
                     collider.material = new Phys3D.Material(
                         physx.Phys3dInstance,
@@ -51,6 +53,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     // 为collider绑定事件
                     bindEventForCollider(comp.nativeCollider, comp.gameObject)
+
+                    nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
 
                     return comp;
                 }

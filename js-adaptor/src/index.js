@@ -59,11 +59,16 @@ import './Input/Touch'
 import './Input/TouchPhase'
 import './Input/TouchType'
 
+// Geometry
+import './Geometry/Plane'
+
 // SDK
 import './SDK/SceneManager'
 import './SDK/Resources'
 
 // Physics
+import './Physics/ContactPoint'
+import './Physics/Collision'
 import './Physics/Rigidbody'
 import './Physics/PhysicMaterial'
 import './Physics/Collider'

@@ -50,7 +50,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     }
 
                     comp.__deserializeData = data;
-                    console.log('Rigidbody Deserialize ctor called', data, comp, comp.__deserializeData)
 
                     return comp;
                 },
@@ -295,6 +294,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         collider.nativeCollider.attachedRigidbody = body;
                     }
                 })
+
+                body.userData = this.entity;
 
                 physx.addBody(this.nativeRigidBody);
                 this.__physInitReady = true;

@@ -184,7 +184,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function (ref) {
                 this.$initialize();
                 MiniGameAdaptor.Object.ctor.call(this);
-                
+
                 this.ref = ref;
             }
         },
@@ -367,4 +367,4 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     });
 });
 
- 
+

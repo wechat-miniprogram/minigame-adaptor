@@ -1,4 +1,4 @@
-import {physx, Phys3D, bindEventForCollider} from './Physx';
+import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from './Physx';
 
 /**
  * 创建Mesh是有性能开销的，不同的MeshCollider可能共用一个PhyMesh，这里加个weakmap做池
@@ -86,6 +86,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     // 为collider绑定事件
                     bindEventForCollider(comp.nativeCollider, comp.gameObject)
+
+                    nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
 
                     return comp;
                 }

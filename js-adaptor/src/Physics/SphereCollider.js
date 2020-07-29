@@ -1,4 +1,4 @@
-import {physx, Phys3D, bindEventForCollider, } from './Physx';
+import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from './Physx';
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
@@ -34,6 +34,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     comp.nativeCollider.scale = new Phys3D.RawVec3f(scale.x, scale.y, scale.z);
 
+                    comp.isTrigger = data.isTrigger;
+
                     const hasRigidBody = comp.getComponent(MiniGameAdaptor.Rigidbody);
 
                     // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
@@ -43,6 +45,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     // 为collider绑定事件
                     bindEventForCollider(comp.nativeCollider, comp.gameObject)
+
+                    nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
 
                     return comp;
                 }

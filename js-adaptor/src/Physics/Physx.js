@@ -71,8 +71,6 @@ class Physx {
         const quaternion = entity.transform.worldQuaternion;
 
         body.rotation = new Phys3D.RawQuaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
-
-        console.log('syncRotation')
     }
 
     /**
@@ -109,6 +107,7 @@ class Physx {
         }
 
         start = new Date();
+        const len = this.rigidbodies.length;
 
         for (let i = 0; i < this.rigidbodies.length; i++ ) {
             const body = this.rigidbodies[i];
@@ -153,9 +152,12 @@ class Physx {
         }
 
         const render = new Date() - start;
-        if (render > 2 ) {
-            console.log('render update cost', render)
+        if (len > 30) {
+            console.log('render update cost', render, 'rigidbody count', len, 'simulate cost', sim)
         }
+        /*if (render > 2 ) {
+            console.log('render update cost', render)
+        }*/
     }
 
     loop(dt) {
@@ -174,28 +176,38 @@ onRootMonoBehaviourUpdate((dt) => {
     physx.loop(dt);
 });
 
+const nativeColliderToAdaptorColliderMap = new WeakMap();
+
 function bindEventForCollider(nativeCollider, gameObject) {
+    nativeCollider.userData = gameObject;
+
     nativeCollider.onCollisionEnter = (other) => {
-        gameObject.BroadcastMessage$2('OnCollisionEnter', other, MiniGameAdaptor.SendMessageOptions.DontRequireReceiver);
+        const collision = new MiniGameAdaptor.Collision.$ctor1(other);
+
+        gameObject.BroadcastMessage$2('OnCollisionEnter', other, MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collision);
     }
 
     nativeCollider.onCollisionExit = (other) => {
-        gameObject.BroadcastMessage$3('OnCollisionExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver);
+        const collision = new MiniGameAdaptor.Collision.$ctor1(other);
+        gameObject.BroadcastMessage$3('OnCollisionExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collision);
     }
 
     nativeCollider.onCollisionStay = (other) => {
-        gameObject.BroadcastMessage$3('OnCollisionStay', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver);
+        const collision = new MiniGameAdaptor.Collision.$ctor1(other);
+        gameObject.BroadcastMessage$3('OnCollisionStay', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collision);
     }
 
     nativeCollider.onTriggerExit = (other) => {
-        gameObject.BroadcastMessage$3('onTriggerExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver);
+        const collider = nativeColliderToAdaptorColliderMap(other)
+        gameObject.BroadcastMessage$3('onTriggerExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
     }
 
     nativeCollider.onTriggerEnter = (other) => {
-        gameObject.BroadcastMessage$3('onTriggerEnter', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver);
+        const collider = nativeColliderToAdaptorColliderMap(other)
+        gameObject.BroadcastMessage$3('onTriggerEnter', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
     }
 }
 
 
-export {Phys3D, physx, bindEventForCollider};
+export {Phys3D, physx, bindEventForCollider, nativeColliderToAdaptorColliderMap};
 
