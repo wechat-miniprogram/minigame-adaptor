@@ -31,7 +31,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       extents: {
         get: function () {
-          throw new System.Exception("not impl");
+            return this.m_Extents;
         },
         set: function (value) {
           throw new System.Exception("not impl");
@@ -55,7 +55,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       size: {
         get: function () {
-          throw new System.Exception("not impl");
+            return this.m_Size;
         },
         set: function (value) {
           throw new System.Exception("not impl");
@@ -70,7 +70,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       ctor: function (center, size) {
         this.$initialize();
         this.m_Center = center;
-        this.m_Extents = size * 0.5;
+        this.m_Size = size;
+        /*this.m_Extents = size * 0.5;*/
       }
     },
     methods: {

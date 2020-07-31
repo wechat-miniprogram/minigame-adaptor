@@ -13,7 +13,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             bounds: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this.nativeCollider.bounds;
                 }
             },
             contactOffset: {

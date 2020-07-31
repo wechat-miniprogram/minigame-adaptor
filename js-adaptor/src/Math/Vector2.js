@@ -57,7 +57,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     get: function () {
                         return MiniGameAdaptor.Vector2.negativeInfinityVector.$clone();
                     }
-                }  
+                }
             },
             ctors: {
                 init: function () {
@@ -74,7 +74,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 }
             },
             methods: {
-                Deserialize: function(data, comp) { 
+                Deserialize: function(data, comp) {
                     comp.x = data[0];
                     comp.y = data[1];
                     return comp;
@@ -83,7 +83,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     let denominator = Math.sqrt(from.sqrMagnitude * to.sqrMagnitude);
                     if (denominator < MiniGameAdaptor.Vector2.kEpsilonNormalSqrt)
                         return 0;
-            
+
                     let dot = MiniGameAdaptor.Mathf.Clamp(MiniGameAdaptor.Vector2.Dot(from, to) / denominator, -1, 1);
                     return Math.acos(dot) * MiniGameAdaptor.Mathf.Rad2Deg;
                 },
@@ -91,7 +91,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     let sqrMagnitude = vector.sqrMagnitude;
                     if (sqrMagnitude > maxLength * maxLength) {
                         let mag = Math.sqrt(sqrMagnitude);
-            
+
                         let normalized_x = vector.x / mag;
                         let normalized_y = vector.y / mag;
                         return new MiniGameAdaptor.Vector2.$ctor1(normalized_x * maxLength,
@@ -130,14 +130,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 MoveTowards: function (current, target, maxDistanceDelta) {
                     let toVector_x = target.x - current.x;
                     let toVector_y = target.y - current.y;
-            
+
                     let sqDist = toVector_x * toVector_x + toVector_y * toVector_y;
-            
+
                     if (sqDist == 0 || (maxDistanceDelta >= 0 && sqDist <= maxDistanceDelta * maxDistanceDelta))
                         return target;
-            
+
                     let dist = Math.sqrt(sqDist);
-            
+
                     return new MiniGameAdaptor.Vector2.$ctor1(current.x + toVector_x / dist * maxDistanceDelta,
                         current.y + toVector_y / dist * maxDistanceDelta);
                 },
@@ -168,16 +168,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 SmoothDamp$2: function (current, target, currentVelocity, smoothTime, maxSpeed, deltaTime) {
                     smoothTime = MiniGameAdaptor.Mathf.Max(0.0001, smoothTime);
                     let omega = 2 / smoothTime;
-        
+
                     let x = omega * deltaTime;
                     let exp = 1 / (1 + x + 0.48 * x * x + 0.235 * x * x * x);
-        
+
                     let change_x = current.x - target.x;
                     let change_y = current.y - target.y;
                     let originalTo = target;
-        
+
                     let maxChange = maxSpeed * smoothTime;
-        
+
                     let maxChangeSq = maxChange * maxChange;
                     let sqDist = change_x * change_x + change_y * change_y;
                     if (sqDist > maxChangeSq) {
@@ -185,28 +185,28 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         change_x = change_x / mag * maxChange;
                         change_y = change_y / mag * maxChange;
                     }
-        
+
                     target.x = current.x - change_x;
                     target.y = current.y - change_y;
-        
+
                     let temp_x = (currentVelocity.x + omega * change_x) * deltaTime;
                     let temp_y = (currentVelocity.y + omega * change_y) * deltaTime;
-        
+
                     currentVelocity.x = (currentVelocity.x - omega * temp_x) * exp;
                     currentVelocity.y = (currentVelocity.y - omega * temp_y) * exp;
-        
+
                     let output_x = target.x + (change_x + temp_x) * exp;
                     let output_y = target.y + (change_y + temp_y) * exp;
-        
+
                     let origMinusCurrent_x = originalTo.x - current.x;
                     let origMinusCurrent_y = originalTo.y - current.y;
                     let outMinusOrig_x = output_x - originalTo.x;
                     let outMinusOrig_y = output_y - originalTo.y;
-        
+
                     if (origMinusCurrent_x * outMinusOrig_x + origMinusCurrent_y * outMinusOrig_y > 0) {
                         output_x = originalTo.x;
                         output_y = originalTo.y;
-        
+
                         currentVelocity.x = (output_x - originalTo.x) / deltaTime;
                         currentVelocity.y = (output_y - originalTo.y) / deltaTime;
                     }
@@ -313,23 +313,23 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         methods: {
             getItem: function (index) {
                 switch (index) {
-                    case 0: 
+                    case 0:
                         return this.x;
-                    case 1: 
+                    case 1:
                         return this.y;
-                    default: 
+                    default:
                         throw new System.IndexOutOfRangeException.$ctor1("Invalid Vector2 index!");
                 }
             },
             setItem: function (index, value) {
                 switch (index) {
-                    case 0: 
+                    case 0:
                         this.x = value;
                         break;
-                    case 1: 
+                    case 1:
                         this.y = value;
                         break;
-                    default: 
+                    default:
                         throw new System.IndexOutOfRangeException.$ctor1("Invalid Vector2 index!");
                 }
             },

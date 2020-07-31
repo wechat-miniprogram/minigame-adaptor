@@ -14,7 +14,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       methods: {
         MinMaxRect: function (xmin, ymin, xmax, ymax) {
-          throw new System.Exception("not impl");
         },
         NormalizedToPoint: function (rectangle, normalizedRectCoordinates) {
           throw new System.Exception("not impl");
@@ -160,7 +159,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         this.$initialize();
         throw new System.Exception("not impl");
       },
-      ctor: function () {
+      ctor: function (x, y, width, height) {
         this.$initialize();
         this._x = x
         this._y = y

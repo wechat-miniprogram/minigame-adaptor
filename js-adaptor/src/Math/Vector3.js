@@ -283,15 +283,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 SlerpUnclamped: function (lhs, rhs, t) {
                     let lhsMag = MiniGameAdaptor.Vector3.Magnitude (lhs);
                     let rhsMag = MiniGameAdaptor.Vector3.Magnitude (rhs);
-                    
+
                     if (lhsMag < MiniGameAdaptor.Vector3.kEpsilon || rhsMag < MiniGameAdaptor.Vector3.kEpsilon) {
                         return MiniGameAdaptor.Vector3.Lerp(lhs, rhs, t);
                     }
 
                     let lerpedMagnitude = MiniGameAdaptor.Mathf.Lerp(lhsMag, rhsMag, t);
-                    
+
                     let dot = MiniGameAdaptor.Vector3.Dot(lhs, rhs) / (lhsMag * rhsMag);
-                    
+
                     // almost same
                     if (dot > 1.0 - MiniGameAdaptor.Vector3.kEpsilon) {
                         return MiniGameAdaptor.Vector3.Lerp(lhs, rhs, t);
@@ -311,7 +311,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         let lhsNorm = MiniGameAdaptor.Vector3.op_Division(lhs, lhsMag);
                         axis = MiniGameAdaptor.Vector3.Normalize(axis);
                         let angle = Math.acos(dot) * t;
-                        
+
                         let m = new window.__minigamePrivate.Matrix3x3();
                         m.SetAxisAngle(axis, angle);
                         let slerped = m.MultiplyVec3(lhsNorm);

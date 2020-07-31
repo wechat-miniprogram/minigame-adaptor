@@ -93,7 +93,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                                     comp.quaternion = engine.Quaternion.createFromNumber(component.quaternion.x, component.quaternion.y, component.quaternion.z, component.quaternion.w);
                                     comp.scale = engine.Vector3.createFromNumber(component.scale.x, component.scale.y, component.scale.z);
                                 }
-                                
+
                                 // TODO:
                                 // 将原component上的值clone到新的component上
                             });
@@ -134,7 +134,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                             if (origin.__prefab) {
                                 return MiniGameAdaptor.Object.Instantiate$4(T, origin.__prefab, position, rotation, parent);
                             }
-                            
+
                             let newRoot = engine.Entity.createEntity3D(origin.name + '(Clone)');
                             // let newRoot = engine.Entity.createEntity3D(origin.name);
 

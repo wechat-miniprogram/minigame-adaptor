@@ -13,7 +13,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             distance: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return 10;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -26,7 +26,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             normal: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this.inNormal;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -39,6 +39,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             $ctor2: function (inNormal, inPoint) {
                 this.$initialize();
+
+                this.inNormal = inNormal;
+                this.inPoint = inPoint;
             },
             $ctor3: function (a, b, c) {
                 this.$initialize();

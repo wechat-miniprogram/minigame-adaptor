@@ -1,6 +1,36 @@
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
+    const EnumVertexLayoutUsage =  {
+        CUSTOM : 0,
+        POSITION : 1,
+        NORMAL : 2,
+        TANGENT : 3,
+        UV0 : 4,
+        UV1 : 5,
+        UV2 : 6,
+        COLOR : 7,
+        BONEINDEX : 8,
+        BONEWEIGHT : 9,
+    }
+
+    const EnumVertexFormat = {
+        INVALID : 0,
+        FLOAT : 1,
+        FLOAT2 : 2,
+        FLOAT3 : 3,
+        FLOAT4 : 4,
+        BYTE4 : 5,
+        BYTE4N : 6,
+        UBYTE4 : 7,
+        UBYTE4N : 8,
+        SHORT2 : 9,
+        SHORT2N : 10,
+        SHORT4 : 11,
+        SHORT4N : 12,
+        UINT10_N2 : 13,
+    }
+
     Bridge.define("MiniGameAdaptor.Mesh", {
         inherits: [MiniGameAdaptor.Object],
         fields: {
@@ -30,7 +60,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             bounds: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    const center = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.center)._FlipX();
+                    const size = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.size)._FlipX();
+
+                    return new MiniGameAdaptor.Bounds.ctor(center, size);
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -67,7 +100,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             normals: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -83,7 +116,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             tangents: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -91,7 +124,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             triangles: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this._triangles;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -99,7 +132,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -107,7 +140,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv2: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -115,7 +148,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv3: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -123,7 +156,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv4: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -131,7 +164,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv5: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -139,7 +172,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv6: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -147,7 +180,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv7: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -155,25 +188,25 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv8: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    return [];
                 }
             },
             vertexBufferCount: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return 0
                 }
             },
             vertexCount: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return 0;
                 }
             },
             vertices: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this._vertices;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -185,7 +218,72 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.$initialize();
                 MiniGameAdaptor.Object.ctor.call(this);
 
-                this.ref = ref;
+                let start = new Date();
+
+                console.log('mesh ref', ref)
+                const mesh = ref;
+                const buffer = mesh._getRawVertexBuffer();
+                if (!buffer) {
+                    // 删除了数据
+                }
+
+                const _vertexLayout = mesh._vertexLayout;
+                const stride = _vertexLayout.stride / 4;
+                const config = mesh._vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.POSITION);
+                const offset = config.offset / 4;
+                const verticesCount = buffer.length / stride;
+
+                // 一个顶点为float x y z组成，每个属性占4个字节，总共12个字节
+                const newBuffer = new Float32Array(verticesCount * 3);
+
+                const vertices = [];
+
+                // 遍历自研引擎Mesh的buffer数据，将顶点信息取出，存到一个新的Uint8Array里面
+                let pStart;
+                for (let i = 0; i < verticesCount; i++) {
+                    pStart = buffer[i * stride + offset];
+                    vertices.push(new MiniGameAdaptor.Vector3.$ctor2(pStart, pStart + 1, pStart + 2))
+                }
+
+                this._vertices = vertices;
+
+                // uv数据
+                const uvConfig = mesh._vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.UV0);
+                const uvOffset = uvConfig.offset / 4;
+                const uvs = [];
+                let vStart;
+                for (let i = 0; i < verticesCount; i++) {
+                    vStart = buffer[i * stride + uvOffset];
+                    uvs.push(new MiniGameAdaptor.Vector3.$ctor2(pStart, pStart + 1))
+                }
+
+                const triangles = mesh._getRawIndiceBuffer();
+
+                console.log('parse cost', new Date() - start);
+
+                /*console.log(vertices, uvs, triangles)*/
+
+                /*let start = new Date();
+
+                // 三角形数据
+                const source = mesh._indiceBuffer._uploadedBuffer;
+                const bufferLen = source.buffer.byteLength;
+                const sliceBuffer = source.buffer.slice(bufferLen - source.length, bufferLen)
+
+                // 自研引擎是固定用uint16做index的，所以将手动裁剪出来的arraybuffer创建为Uint16Array即可
+                const uint16 = new Uint16Array(sliceBuffer)
+                const trianglesCount = uint16.length / 3;
+
+                const uint32 = new Uint32Array(uint16.length)
+                for ( let i = 0; i < uint16.length; i++) {
+                    uint32[i] = uint16[i];
+                }
+
+                this._triangles = uint32;
+
+                [>console.log(uint32, trianglesCount, verticesCount);<]
+
+                console.log('parse cost', new Date() - start)*/
             }
         },
         methods: {
