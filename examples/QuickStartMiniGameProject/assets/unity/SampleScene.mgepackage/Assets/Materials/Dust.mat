@@ -1,0 +1,1 @@
+{"textures":{"_MainTex":"Assets/Sprites/Smoke.texture2d","_MaskTex":"white"},"shaderParams":{"_MainTex_ST":[1,1,0,0],"_TintColor":[0.5,0.5,0.5,1],"_Bright":[2]},"renderStates":{"blendOn":true,"blendSrc":5,"blendDst":6},"renderQueue":3000,"shaderDefinations":{"USE_ADDITIVE_FOG":false},"effect":"@system/particle3d","editorInfo":{"assetVersion":2}}

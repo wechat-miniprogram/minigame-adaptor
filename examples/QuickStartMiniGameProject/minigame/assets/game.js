@@ -136,7 +136,7 @@ function main() {
 engine.loader.load("Assets/Scenes/SampleScene.scene").promise.then(function (scene) {
   game.playScene(scene);
 }).catch(function (error){
-  console.error(error)
+  console.error(error);
 });
 
 

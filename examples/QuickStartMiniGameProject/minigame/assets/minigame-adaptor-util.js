@@ -11,15 +11,9 @@ import config from './minigame-adaptor-config.js';
 function requireBridge() {
     if(config.pluginConfig.useMiniGameAdaptorPlugin) {
         try {
-            // requirePlugin(config.pluginConfig.pluginAlias)({
-            //     useLocalBridgeAdaptor: !config.pluginConfig.useMiniGameAdaptorJs
-            // })
-            requirePlugin(config.pluginConfig.pluginAlias, {
-                enableRequireHostModule: true, // 是否允许插件引用宿主的模块，默认 false
-                customEnv: { // 传递给插件的值，多次调用传递会覆盖写（Object.assign）
-                  wx
-                }
-              })
+            requirePlugin(config.pluginConfig.pluginAlias)({
+                useLocalBridgeAdaptor: !config.pluginConfig.useMiniGameAdaptorJs
+            })
 
             if (!config.pluginConfig.useMiniGameAdaptorJs) {
                 require("./minigame-adaptor.js");

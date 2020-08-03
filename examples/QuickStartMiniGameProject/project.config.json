@@ -2,13 +2,14 @@
 	"description": "项目配置文件。",
 	"setting": {
 		"urlCheck": false,
-		"es6": false,
-		"enhance": true,
+		"es6": true,
+		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -16,26 +17,24 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
 		},
+		"enablePhysicsEngine": true,
 		"useIsolateContext": true,
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false,
-		"useNewCompiler": true,
-		"compileHotReLoad": false
-	},
-	"watchOptions": {
-		"ignore": [
-			"minigame/__temp/**/*"
-		]
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": true,
+		"packNpmManually": false,
+		"packNpmRelationList": [],
+		"useNewCompiler": false
 	},
 	"engine": true,
 	"miniprogramRoot": "minigame/",
 	"compileType": "game",
-	"libVersion": "feat-beefball",
+	"libVersion": "2.11.3",
 	"appid": "wxe92a56f105f5963d",
 	"projectname": "game-test",
 	"simulatorType": "wechat",

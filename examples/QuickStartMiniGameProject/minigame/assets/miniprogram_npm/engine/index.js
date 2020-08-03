@@ -1,2 +1,2 @@
-var engine = window.engine;
+var engine = GameGlobal.engine;
 module.exports = engine

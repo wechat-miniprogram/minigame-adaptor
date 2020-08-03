@@ -1,4 +1,4 @@
-import './src/Rotation.js';
+import './src/Fllow.js';
 import './src/System/Globalization/GregorianCalendar.js';
 import './src/System/IO/BinaryReader.js';
 import './src/System/IO/BinaryWriter.js';
@@ -19,6 +19,7 @@ import './src/System/Security/Cryptography/MD5.js';
 import './src/System/Text/DecoderFallbackException.js';
 import './src/System/Text/EncoderFallbackException.js';
 import './src/System/TimeZone.js';
+import './src/TankMovement.js';
 import './src/System/IO/ReadLinesIterator.js';
 import './src/System/IO/StreamReader.js';
 import './src/System/IO/StreamWriter.js';

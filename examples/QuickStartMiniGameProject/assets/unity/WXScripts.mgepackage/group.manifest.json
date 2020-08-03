@@ -12,16 +12,28 @@
 			"descriptionFileID":"minigame-adaptor-project.meta.js",
 			"useFile":[]
 		},
-		"bindings/Rotation.binding.js":{
+		"bindings/Fllow.binding.js":{
 			"dependencies":[],
 			"type":"script",
-			"descriptionFileID":"bindings/Rotation.binding.js",
+			"descriptionFileID":"bindings/Fllow.binding.js",
 			"useFile":[]
 		},
-		"src/Rotation.js":{
+		"bindings/TankMovement.binding.js":{
 			"dependencies":[],
 			"type":"script",
-			"descriptionFileID":"src/Rotation.js",
+			"descriptionFileID":"bindings/TankMovement.binding.js",
+			"useFile":[]
+		},
+		"src/Fllow.js":{
+			"dependencies":[],
+			"type":"script",
+			"descriptionFileID":"src/Fllow.js",
+			"useFile":[]
+		},
+		"src/TankMovement.js":{
+			"dependencies":[],
+			"type":"script",
+			"descriptionFileID":"src/TankMovement.js",
 			"useFile":[]
 		},
 		"src/System/TimeZone.js":{
@@ -224,11 +236,17 @@
 		"minigame-adaptor-project.meta.js":{
 			"path":"minigame-adaptor-project.meta.js"
 		},
-		"bindings/Rotation.binding.js":{
-			"path":"bindings/Rotation.binding.js"
+		"bindings/Fllow.binding.js":{
+			"path":"bindings/Fllow.binding.js"
 		},
-		"src/Rotation.js":{
-			"path":"src/Rotation.js"
+		"bindings/TankMovement.binding.js":{
+			"path":"bindings/TankMovement.binding.js"
+		},
+		"src/Fllow.js":{
+			"path":"src/Fllow.js"
+		},
+		"src/TankMovement.js":{
+			"path":"src/TankMovement.js"
 		},
 		"src/System/TimeZone.js":{
 			"path":"src/System/TimeZone.js"
@@ -337,11 +355,19 @@
 			"filetype":"text"
 		},
 		{
-			"path":"bindings/Rotation.binding.js",
+			"path":"bindings/Fllow.binding.js",
 			"filetype":"text"
 		},
 		{
-			"path":"src/Rotation.js",
+			"path":"bindings/TankMovement.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"src/Fllow.js",
+			"filetype":"text"
+		},
+		{
+			"path":"src/TankMovement.js",
 			"filetype":"text"
 		},
 		{
@@ -473,5 +499,5 @@
 			"filetype":"text"
 		}
 	],
-	"version":"0.7.0"
+	"version":"1.0.0"
 }

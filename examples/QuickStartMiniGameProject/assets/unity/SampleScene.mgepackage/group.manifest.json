@@ -2,45 +2,129 @@
 	"resourceDefinitions":{
 		"Assets/Scenes/SampleScene.scene":{
 			"dependencies":[
-				"Library/unity__default__resources-Cube.mesh",
-				"Resources/unity_builtin_extra.mat",
-				"bindings/Rotation.binding.js"
+				"bindings/Fllow.binding.js",
+				"bindings/TankMovement.binding.js",
+				"Assets/Models/Tank-TankChassis.mesh",
+				"Assets/Materials/TankColour.mat",
+				"Assets/Materials/TankLights.mat",
+				"Assets/Materials/TankGrey.mat",
+				"Assets/Models/Tank-TankTracksLeft.mesh",
+				"Assets/Models/Tank-TankTracksRight.mesh",
+				"Assets/Models/Tank-TankTurret.mesh",
+				"Assets/Materials/Dust.mat",
+				"Assets/Models/Terrain-GroundPlane.mesh",
+				"Assets/Materials/YellowLight.mat",
+				"Assets/Models/Concrete-Tarmac.mesh",
+				"Assets/Materials/BuildingStone.mat"
 			],
 			"type":"scene",
 			"descriptionFileID":"Assets/Scenes/SampleScene.scene",
 			"useFile":[]
 		},
-		"Library/unity__default__resources-Cube.mesh":{
-			"dependencies":[],
-			"type":"mesh",
-			"descriptionFileID":"Library/unity__default__resources-Cube.mesh",
-			"useFile":[
-				"Library_unity__default__resources-Cube.mesh.bin"
-			]
-		},
-		"Resources/unity_builtin_extra.mat":{
-			"dependencies":[
-				"Resources/unity_builtin_extra.effect"
-			],
-			"type":"material",
-			"descriptionFileID":"Resources/unity_builtin_extra.mat",
-			"useFile":[]
-		},
-		"Resources/unity_builtin_extra.effect":{
-			"dependencies":[],
-			"type":"effect",
-			"descriptionFileID":"Resources/unity_builtin_extra.effect",
-			"useFile":[
-				"Resources/unity_builtin_extra.vertex.hlsl",
-				"Resources/unity_builtin_extra.pixel.hlsl",
-				"Resources/unity_builtin_extra.vertex.hlsl",
-				"Resources/unity_builtin_extra.pixel.hlsl"
-			]
-		},
-		"bindings/Rotation.binding.js":{
+		"bindings/Fllow.binding.js":{
 			"dependencies":[],
 			"type":"script",
-			"descriptionFileID":"bindings/Rotation.binding.js",
+			"descriptionFileID":"bindings/Fllow.binding.js",
+			"useFile":[]
+		},
+		"bindings/TankMovement.binding.js":{
+			"dependencies":[],
+			"type":"script",
+			"descriptionFileID":"bindings/TankMovement.binding.js",
+			"useFile":[]
+		},
+		"Assets/Models/Tank-TankChassis.mesh":{
+			"dependencies":[],
+			"type":"mesh",
+			"descriptionFileID":"Assets/Models/Tank-TankChassis.mesh",
+			"useFile":[
+				"Assets/Models/Tank-TankChassis.mesh.bin"
+			]
+		},
+		"Assets/Materials/TankColour.mat":{
+			"dependencies":[],
+			"type":"material",
+			"descriptionFileID":"Assets/Materials/TankColour.mat",
+			"useFile":[]
+		},
+		"Assets/Materials/TankLights.mat":{
+			"dependencies":[],
+			"type":"material",
+			"descriptionFileID":"Assets/Materials/TankLights.mat",
+			"useFile":[]
+		},
+		"Assets/Materials/TankGrey.mat":{
+			"dependencies":[],
+			"type":"material",
+			"descriptionFileID":"Assets/Materials/TankGrey.mat",
+			"useFile":[]
+		},
+		"Assets/Models/Tank-TankTracksLeft.mesh":{
+			"dependencies":[],
+			"type":"mesh",
+			"descriptionFileID":"Assets/Models/Tank-TankTracksLeft.mesh",
+			"useFile":[
+				"Assets/Models/Tank-TankTracksLeft.mesh.bin"
+			]
+		},
+		"Assets/Models/Tank-TankTracksRight.mesh":{
+			"dependencies":[],
+			"type":"mesh",
+			"descriptionFileID":"Assets/Models/Tank-TankTracksRight.mesh",
+			"useFile":[
+				"Assets/Models/Tank-TankTracksRight.mesh.bin"
+			]
+		},
+		"Assets/Models/Tank-TankTurret.mesh":{
+			"dependencies":[],
+			"type":"mesh",
+			"descriptionFileID":"Assets/Models/Tank-TankTurret.mesh",
+			"useFile":[
+				"Assets/Models/Tank-TankTurret.mesh.bin"
+			]
+		},
+		"Assets/Materials/Dust.mat":{
+			"dependencies":[
+				"Assets/Sprites/Smoke.texture2d"
+			],
+			"type":"material",
+			"descriptionFileID":"Assets/Materials/Dust.mat",
+			"useFile":[]
+		},
+		"Assets/Sprites/Smoke.texture2d":{
+			"dependencies":[],
+			"type":"texture2d",
+			"descriptionFileID":"Assets/Sprites/Smoke.texture2d",
+			"useFile":[
+				"Assets/Sprites/Smoke.png"
+			]
+		},
+		"Assets/Models/Terrain-GroundPlane.mesh":{
+			"dependencies":[],
+			"type":"mesh",
+			"descriptionFileID":"Assets/Models/Terrain-GroundPlane.mesh",
+			"useFile":[
+				"Assets/Models/Terrain-GroundPlane.mesh.bin"
+			]
+		},
+		"Assets/Materials/YellowLight.mat":{
+			"dependencies":[],
+			"type":"material",
+			"descriptionFileID":"Assets/Materials/YellowLight.mat",
+			"useFile":[]
+		},
+		"Assets/Models/Concrete-Tarmac.mesh":{
+			"dependencies":[],
+			"type":"mesh",
+			"descriptionFileID":"Assets/Models/Concrete-Tarmac.mesh",
+			"useFile":[
+				"Assets/Models/Concrete-Tarmac.mesh.bin"
+			]
+		},
+		"Assets/Materials/BuildingStone.mat":{
+			"dependencies":[],
+			"type":"material",
+			"descriptionFileID":"Assets/Materials/BuildingStone.mat",
 			"useFile":[]
 		}
 	},
@@ -48,26 +132,71 @@
 		"Assets/Scenes/SampleScene.scene":{
 			"path":"Assets/Scenes/SampleScene.scene"
 		},
-		"Library_unity__default__resources-Cube.mesh.bin":{
-			"path":"Library_unity__default__resources-Cube.mesh.bin"
+		"bindings/Fllow.binding.js":{
+			"path":"bindings/Fllow.binding.js"
 		},
-		"Library/unity__default__resources-Cube.mesh":{
-			"path":"Library/unity__default__resources-Cube.mesh"
+		"bindings/TankMovement.binding.js":{
+			"path":"bindings/TankMovement.binding.js"
 		},
-		"Resources/unity_builtin_extra.mat":{
-			"path":"Resources/unity_builtin_extra.mat"
+		"Assets/Models/Tank-TankChassis.mesh.bin":{
+			"path":"Assets/Models/Tank-TankChassis.mesh.bin"
 		},
-		"Resources/unity_builtin_extra.vertex.hlsl":{
-			"path":"Resources/unity_builtin_extra.vertex.hlsl"
+		"Assets/Models/Tank-TankChassis.mesh":{
+			"path":"Assets/Models/Tank-TankChassis.mesh"
 		},
-		"Resources/unity_builtin_extra.pixel.hlsl":{
-			"path":"Resources/unity_builtin_extra.pixel.hlsl"
+		"Assets/Materials/TankColour.mat":{
+			"path":"Assets/Materials/TankColour.mat"
 		},
-		"Resources/unity_builtin_extra.effect":{
-			"path":"Resources/unity_builtin_extra.effect"
+		"Assets/Materials/TankLights.mat":{
+			"path":"Assets/Materials/TankLights.mat"
 		},
-		"bindings/Rotation.binding.js":{
-			"path":"bindings/Rotation.binding.js"
+		"Assets/Materials/TankGrey.mat":{
+			"path":"Assets/Materials/TankGrey.mat"
+		},
+		"Assets/Models/Tank-TankTracksLeft.mesh.bin":{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh.bin"
+		},
+		"Assets/Models/Tank-TankTracksLeft.mesh":{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh"
+		},
+		"Assets/Models/Tank-TankTracksRight.mesh.bin":{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh.bin"
+		},
+		"Assets/Models/Tank-TankTracksRight.mesh":{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh"
+		},
+		"Assets/Models/Tank-TankTurret.mesh.bin":{
+			"path":"Assets/Models/Tank-TankTurret.mesh.bin"
+		},
+		"Assets/Models/Tank-TankTurret.mesh":{
+			"path":"Assets/Models/Tank-TankTurret.mesh"
+		},
+		"Assets/Materials/Dust.mat":{
+			"path":"Assets/Materials/Dust.mat"
+		},
+		"Assets/Sprites/Smoke.png":{
+			"path":"Assets/Sprites/Smoke.png"
+		},
+		"Assets/Sprites/Smoke.texture2d":{
+			"path":"Assets/Sprites/Smoke.texture2d"
+		},
+		"Assets/Models/Terrain-GroundPlane.mesh.bin":{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh.bin"
+		},
+		"Assets/Models/Terrain-GroundPlane.mesh":{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh"
+		},
+		"Assets/Materials/YellowLight.mat":{
+			"path":"Assets/Materials/YellowLight.mat"
+		},
+		"Assets/Models/Concrete-Tarmac.mesh.bin":{
+			"path":"Assets/Models/Concrete-Tarmac.mesh.bin"
+		},
+		"Assets/Models/Concrete-Tarmac.mesh":{
+			"path":"Assets/Models/Concrete-Tarmac.mesh"
+		},
+		"Assets/Materials/BuildingStone.mat":{
+			"path":"Assets/Materials/BuildingStone.mat"
 		}
 	},
 	"files":[
@@ -76,33 +205,93 @@
 			"filetype":"json"
 		},
 		{
-			"path":"Library_unity__default__resources-Cube.mesh.bin",
+			"path":"bindings/Fllow.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"bindings/TankMovement.binding.js",
+			"filetype":"text"
+		},
+		{
+			"path":"Assets/Models/Tank-TankChassis.mesh.bin",
 			"filetype":"arraybuffer"
 		},
 		{
-			"path":"Library/unity__default__resources-Cube.mesh",
+			"path":"Assets/Models/Tank-TankChassis.mesh",
 			"filetype":"json"
 		},
 		{
-			"path":"Resources/unity_builtin_extra.mat",
+			"path":"Assets/Materials/TankColour.mat",
 			"filetype":"json"
 		},
 		{
-			"path":"Resources/unity_builtin_extra.vertex.hlsl",
-			"filetype":"text"
-		},
-		{
-			"path":"Resources/unity_builtin_extra.pixel.hlsl",
-			"filetype":"text"
-		},
-		{
-			"path":"Resources/unity_builtin_extra.effect",
+			"path":"Assets/Materials/TankLights.mat",
 			"filetype":"json"
 		},
 		{
-			"path":"bindings/Rotation.binding.js",
-			"filetype":"text"
+			"path":"Assets/Materials/TankGrey.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksLeft.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTracksRight.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTurret.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Tank-TankTurret.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/Dust.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Sprites/Smoke.png",
+			"filetype":"image"
+		},
+		{
+			"path":"Assets/Sprites/Smoke.texture2d",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Terrain-GroundPlane.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/YellowLight.mat",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Models/Concrete-Tarmac.mesh.bin",
+			"filetype":"arraybuffer"
+		},
+		{
+			"path":"Assets/Models/Concrete-Tarmac.mesh",
+			"filetype":"json"
+		},
+		{
+			"path":"Assets/Materials/BuildingStone.mat",
+			"filetype":"json"
 		}
 	],
-	"version":"0.7.0"
+	"version":"1.0.0"
 }
