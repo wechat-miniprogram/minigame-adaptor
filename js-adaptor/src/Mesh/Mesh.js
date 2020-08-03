@@ -1,35 +1,7 @@
+import { EnumVertexLayoutUsage, getPointDataByUsage} from './MeshHelper.js';
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
-
-    const EnumVertexLayoutUsage =  {
-        CUSTOM : 0,
-        POSITION : 1,
-        NORMAL : 2,
-        TANGENT : 3,
-        UV0 : 4,
-        UV1 : 5,
-        UV2 : 6,
-        COLOR : 7,
-        BONEINDEX : 8,
-        BONEWEIGHT : 9,
-    }
-
-    const EnumVertexFormat = {
-        INVALID : 0,
-        FLOAT : 1,
-        FLOAT2 : 2,
-        FLOAT3 : 3,
-        FLOAT4 : 4,
-        BYTE4 : 5,
-        BYTE4N : 6,
-        UBYTE4 : 7,
-        UBYTE4N : 8,
-        SHORT2 : 9,
-        SHORT2N : 10,
-        SHORT4 : 11,
-        SHORT4N : 12,
-        UINT10_N2 : 13,
-    }
 
     Bridge.define("MiniGameAdaptor.Mesh", {
         inherits: [MiniGameAdaptor.Object],
@@ -222,23 +194,22 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 console.log('mesh ref', ref)
                 const mesh = ref;
+                const _vertexLayout = mesh._vertexLayout;
+
                 const buffer = mesh._getRawVertexBuffer();
                 if (!buffer) {
                     // 删除了数据
                 }
 
-                const _vertexLayout = mesh._vertexLayout;
                 const stride = _vertexLayout.stride / 4;
                 const config = mesh._vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.POSITION);
                 const offset = config.offset / 4;
                 const verticesCount = buffer.length / stride;
 
                 // 一个顶点为float x y z组成，每个属性占4个字节，总共12个字节
-                const newBuffer = new Float32Array(verticesCount * 3);
 
                 const vertices = [];
 
-                // 遍历自研引擎Mesh的buffer数据，将顶点信息取出，存到一个新的Uint8Array里面
                 let pStart;
                 for (let i = 0; i < verticesCount; i++) {
                     pStart = buffer[i * stride + offset];
@@ -246,6 +217,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 }
 
                 this._vertices = vertices;
+
+                const verticesData = getPointDataByUsage(buffer, _vertexLayout, EnumVertexLayoutUsage.POSITION)
 
                 // uv数据
                 const uvConfig = mesh._vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.UV0);
