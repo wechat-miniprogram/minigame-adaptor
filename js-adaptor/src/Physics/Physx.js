@@ -114,7 +114,6 @@ class Physx {
             const comp = body.__sourceComp;
             const entity = comp.entity;
             const pos = body.position;
-            const entityPos = entity.transform.position;
             const rotation = body.rotation;
 
             if (entity) {

@@ -31,6 +31,7 @@ const EnumVertexFormat = {
 function getPointDataByUsage(buffer, vertexLayout, usage) {
     if (!buffer) {
         console.log('buffer is not exist!')
+        return [];
     }
     const stride = vertexLayout.stride / 4;
     const config = vertexLayout.getConfigByUsage(usage);
@@ -38,18 +39,18 @@ function getPointDataByUsage(buffer, vertexLayout, usage) {
     const format = config.format;
     const verticesCount = buffer.length / stride;
 
-    console.log(config)
-
     const res = [];
 
     let start;
     for (let i = 0; i < verticesCount; i++) {
-        start = buffer[i * stride + offset];
+        start = i * stride + offset;
 
-        if (usage === EnumVertexLayoutUsage.POSITION) {
-            res.push(new MiniGameAdaptor.Vector3.$ctor2(start, start + 1, start + 2))
+        if (usage === EnumVertexLayoutUsage.POSITION || usage === EnumVertexLayoutUsage.NORMAL) {
+            res.push(new MiniGameAdaptor.Vector3.$ctor2(buffer[start], buffer[start + 1], buffer[start + 2]));
         } else if (usage === EnumVertexLayoutUsage.UV0) {
-            res.push(new MiniGameAdaptor.Vector2.$ctor1(pStart, pStart + 1))
+            res.push(new MiniGameAdaptor.Vector2.$ctor1(buffer[start], buffer[start + 1]));
+        } else if (usage === EnumVertexLayoutUsage.TANGENT) {
+            res.push(new MiniGameAdaptor.Vector4.$ctor3(buffer[start], buffer[start + 1], buffer[start + 2], buffer[start + 3]));
         }
     }
 

@@ -44,7 +44,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 }
             },
             methods: {
-                Deserialize: function(data, comp) { 
+                Deserialize: function(data, comp) {
                     comp.x = data[0];
                     comp.y = data[1];
                     comp.z = data[2];
@@ -89,17 +89,17 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     let toVector_y = target.y - current.y;
                     let toVector_z = target.z - current.z;
                     let toVector_w = target.w - current.w;
-            
+
                     let sqdist = (toVector_x * toVector_x +
                         toVector_y * toVector_y +
                         toVector_z * toVector_z +
                         toVector_w * toVector_w);
-            
+
                     if (sqdist == 0 || (maxDistanceDelta >= 0 && sqdist <= maxDistanceDelta * maxDistanceDelta))
                         return target;
-            
+
                     var dist = Math.sqrt(sqdist);
-            
+
                     return new MiniGameAdaptor.Vector4.$ctor3(current.x + toVector_x / dist * maxDistanceDelta,
                         current.y + toVector_y / dist * maxDistanceDelta,
                         current.z + toVector_z / dist * maxDistanceDelta,
@@ -243,7 +243,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.z = z;
                 this.w = w;
             },
-            $ctor4: function (ref) { 
+            $ctor4: function (ref) {
                 this.$initialize();
                 this.ref = ref;
             },
@@ -264,33 +264,33 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         methods: {
             getItem: function (index) {
                 switch (index) {
-                    case 0: 
+                    case 0:
                         return this.x;
-                    case 1: 
+                    case 1:
                         return this.y;
-                    case 2: 
+                    case 2:
                         return this.z;
-                    case 3: 
+                    case 3:
                         return this.w;
-                    default: 
+                    default:
                         throw new System.IndexOutOfRangeException.$ctor1("Invalid Vector4 index!");
                 }
             },
             setItem: function (index, value) {
                 switch (index) {
-                    case 0: 
+                    case 0:
                         this.x = value;
                         break;
-                    case 1: 
+                    case 1:
                         this.y = value;
                         break;
-                    case 2: 
+                    case 2:
                         this.z = value;
                         break;
-                    case 3: 
+                    case 3:
                         this.w = value;
                         break;
-                    default: 
+                    default:
                         throw new System.IndexOutOfRangeException.$ctor1("Invalid Vector4 index!");
                 }
             },

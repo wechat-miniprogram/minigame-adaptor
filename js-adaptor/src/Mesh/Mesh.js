@@ -1,3 +1,4 @@
+import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from '../Physics/Physx';
 import { EnumVertexLayoutUsage, getPointDataByUsage} from './MeshHelper.js';
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -72,7 +73,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             normals: {
                 get: function () {
-                    return [];
+                    return this._normals;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -88,7 +89,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             tangents: {
                 get: function () {
-                    return [];
+                    return this._tangents;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -104,7 +105,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             uv: {
                 get: function () {
-                    return [];
+                    return this._uv;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -190,73 +191,26 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.$initialize();
                 MiniGameAdaptor.Object.ctor.call(this);
 
-                let start = new Date();
+                if (ref) {
+                    this.ref = ref;
+                    this._buffer = ref._getRawVertexBuffer();
+                    this._vertexLayout = ref._vertexLayout;
 
-                console.log('mesh ref', ref)
-                const mesh = ref;
-                const _vertexLayout = mesh._vertexLayout;
+                    // 顶点数据
+                    this._vertices = getPointDataByUsage(this._buffer, this._vertexLayout, EnumVertexLayoutUsage.POSITION);
 
-                const buffer = mesh._getRawVertexBuffer();
-                if (!buffer) {
-                    // 删除了数据
+                    // uv数据
+                    this._uv = getPointDataByUsage(this._buffer, this._vertexLayout, EnumVertexLayoutUsage.UV0);
+
+                    // normals数据
+                    this._normals = getPointDataByUsage(this._buffer, this._vertexLayout, EnumVertexLayoutUsage.NORMAL);
+
+                    // tangents数据
+                    this._tangents = getPointDataByUsage(this._buffer, this._vertexLayout, EnumVertexLayoutUsage.TANGENT);
+
+                    // 三角形数据
+                    this._triangles = ref._getRawIndiceBuffer();
                 }
-
-                const stride = _vertexLayout.stride / 4;
-                const config = mesh._vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.POSITION);
-                const offset = config.offset / 4;
-                const verticesCount = buffer.length / stride;
-
-                // 一个顶点为float x y z组成，每个属性占4个字节，总共12个字节
-
-                const vertices = [];
-
-                let pStart;
-                for (let i = 0; i < verticesCount; i++) {
-                    pStart = buffer[i * stride + offset];
-                    vertices.push(new MiniGameAdaptor.Vector3.$ctor2(pStart, pStart + 1, pStart + 2))
-                }
-
-                this._vertices = vertices;
-
-                const verticesData = getPointDataByUsage(buffer, _vertexLayout, EnumVertexLayoutUsage.POSITION)
-
-                // uv数据
-                const uvConfig = mesh._vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.UV0);
-                const uvOffset = uvConfig.offset / 4;
-                const uvs = [];
-                let vStart;
-                for (let i = 0; i < verticesCount; i++) {
-                    vStart = buffer[i * stride + uvOffset];
-                    uvs.push(new MiniGameAdaptor.Vector3.$ctor2(pStart, pStart + 1))
-                }
-
-                const triangles = mesh._getRawIndiceBuffer();
-
-                console.log('parse cost', new Date() - start);
-
-                /*console.log(vertices, uvs, triangles)*/
-
-                /*let start = new Date();
-
-                // 三角形数据
-                const source = mesh._indiceBuffer._uploadedBuffer;
-                const bufferLen = source.buffer.byteLength;
-                const sliceBuffer = source.buffer.slice(bufferLen - source.length, bufferLen)
-
-                // 自研引擎是固定用uint16做index的，所以将手动裁剪出来的arraybuffer创建为Uint16Array即可
-                const uint16 = new Uint16Array(sliceBuffer)
-                const trianglesCount = uint16.length / 3;
-
-                const uint32 = new Uint32Array(uint16.length)
-                for ( let i = 0; i < uint16.length; i++) {
-                    uint32[i] = uint16[i];
-                }
-
-                this._triangles = uint32;
-
-                [>console.log(uint32, trianglesCount, verticesCount);<]
-
-                console.log('parse cost', new Date() - start)*/
             }
         },
         methods: {
@@ -433,6 +387,35 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             UploadMeshData: function (markNoLongerReadable) {
                 throw new System.Exception("not impl");
+            },
+            test: function(vertices, triangles) {
+                const phyMesh = new Phys3D.PhysMesh(physx.Phys3dInstance);
+                const float32 = new Float32Array(vertices.length * 3);
+
+                let index = 0;
+                vertices.forEach(item => {
+                    float32[index] = item.x;
+                    index++;
+                    float32[index] = item.y;
+                    index++;
+                    float32[index] = item.z;
+                    index++;
+                });
+                phyMesh.SetVertices(float32, vertices.length);
+
+                const indices = new Float32Array(triangles.length);
+                triangles.forEach((item, index) => {
+                    indices[index] = triangles[index];
+                });
+                phyMesh.SetTriangles(indices, triangles.length / 3);
+
+                const nativeCollider = new Phys3D.MeshCollider(physx.Phys3dInstance, true, 14, phyMesh);
+
+                /*const rigidBody = new Phys3D.StaticRigidbody(physx.Phys3dInstance);*/
+                const rigidBody = new Phys3D.DynamicRigidbody(physx.Phys3dInstance, 10);
+                rigidBody.position = new Phys3D.RawVec3f(-2, 0 ,0);
+
+                nativeCollider.attachedRigidbody = rigidBody;
             }
         }
     });
