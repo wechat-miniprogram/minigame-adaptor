@@ -1,0 +1,1 @@
+{"data":{"indiceFormat":1,"vertexLayout":"POSITION,NORMAL,UV,UV1,TANGENT","vertexStart":0,"vertexLength":28840,"indiceStart":28840,"indiceLength":4608,"capsule":{"x":0.01085113,"y":-0.001896671,"z":-0.00002850925,"radius":0.5108547},"version":1,"subMeshs":[{"start":0,"length":2304}],"boundBox":{"center":[0,0,0],"size":[1,1,1]}},"file":{"src":"4c6bffF-f982d1I-27764fL-e95746E"}}

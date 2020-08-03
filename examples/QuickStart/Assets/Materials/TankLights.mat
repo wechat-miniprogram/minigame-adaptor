@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TankLights
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: c4ff516b680a8395c2fc3a0b3e5cdcec, type: 3}
   m_ShaderKeywords: EnableFog _ALPHABLEND_OFF _ALPHATEST_OFF
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0

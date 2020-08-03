@@ -1,0 +1,1 @@
+{"textures":{"u_texture":"Assets/ArtSource/Effects/Texture/ksgb_dt_smh_jb.png","u_maskTexture":"white"},"shaderParams":{"u_color":[0.5019608,0.5019608,0.5019608,0.5019608]},"renderStates":{"blendOn":true,"blendSrc":5,"blendDst":2},"renderQueue":3000,"shaderDefinations":{},"effect":"@system/particle3d"}

@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -381648116, guid: 70bdd3e00aaae9d8f3bc4847b9b669c8, type: 3}
+  m_Name: project-script
+  m_EditorClassIdentifier: 
+  project:
+    sources:
+    - pathType: 0
+      glob: Assets/**/*.cs
+      folder: {fileID: 0}
+    excludes:
+    - pathType: 0
+      glob: '[Ll]ibrary/**'
+      folder: {fileID: 0}
+    - pathType: 0
+      glob: '**/[Ee]ditor/**'
+      folder: {fileID: 0}
+    - pathType: 0
+      glob: '**/[Ee]xample/**'
+      folder: {fileID: 0}
+    - pathType: 0
+      glob: '**/[Ee]xamples/**'
+      folder: {fileID: 0}
+    - pathType: 0
+      glob: '**/UnityTool/core/**'
+      folder: {fileID: 0}
+    - pathType: 0
+      glob: '**/unity-plugin/core/**'
+      folder: {fileID: 0}
+    libs:
+    - pathType: 0
+      glob: Assets/**.dll
+      folder: {fileID: 0}
+    - pathType: 0
+      glob: Library/**.dll
+      folder: {fileID: 0}
+  defineMacros:
+  - UNITY_WAGAME
+  - UNITY_WAGAME_RES
+  - UNITY_2018_1_OR_NEWER
+  - UNITY_2018_4_OR_NEWER
+  globIgnoreCase: 0
