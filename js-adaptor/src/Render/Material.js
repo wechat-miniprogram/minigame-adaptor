@@ -37,7 +37,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         this._color = value;
                         const remap = value.__remap0255();
                         const vec4 = engine.Vector4.createFromNumber(remap.r, remap.g, remap.b, remap.a);
-                        
+
                         if (!this.ref.setVector("_Color", vec4)) {
                             AdaptorDebugger.warn("Material: <" + this.ref._id + "> _Color properties not found");
                         }
@@ -233,7 +233,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 if (!this._textures) {
                     this._textures = [];
                     this.ref._textures.forEach((tex) => {
-                        
+
                     });
                 }
                 return this._textures

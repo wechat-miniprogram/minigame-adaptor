@@ -1,5 +1,9 @@
 import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from '../Physics/Physx';
-import { EnumVertexLayoutUsage, getPointDataByUsage} from './MeshHelper.js';
+import { EnumVertexLayoutUsage, getPointDataByUsage, createEngineMesh} from './MeshHelper.js';
+
+function propsChecker(mesh) {
+    return mesh.vertices.length && mesh.normals.length && mesh.uv.length && mesh.triangles.length && mesh.tangents.length && !mesh.engineMesh;
+}
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
@@ -25,7 +29,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             boneWeights: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -34,7 +38,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             bounds: {
                 get: function () {
                     const center = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.center)._FlipX();
-                    const size = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.size)._FlipX();
+                    /*const size = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.size)._FlipX();*/
+                    const size = new MiniGameAdaptor.Vector3.$ctor2(1,1,1)
 
                     return new MiniGameAdaptor.Bounds.ctor(center, size);
                 },
@@ -44,7 +49,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             colors: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return [];
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -73,42 +78,55 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             normals: {
                 get: function () {
-                    return this._normals;
+                    return this._normals || [];
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this._normals = value;
+
+                    if (propsChecker(this)) {
+                        createEngineMesh(this)
+                    }
                 }
             },
             subMeshCount: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this._subMeshCount || this.ref.getSubMeshCount();
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this._subMeshCount = value;
                 }
             },
             tangents: {
                 get: function () {
-                    return this._tangents;
+                    return this._tangents || [];
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this._tangents = value;
+                    if (propsChecker(this)) {
+                        createEngineMesh(this)
+                    }
                 }
             },
             triangles: {
                 get: function () {
-                    return this._triangles;
+                    return this._triangles || [];
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this._triangles = value;
+                    if (propsChecker(this)) {
+                        createEngineMesh(this)
+                    }
                 }
             },
             uv: {
                 get: function () {
-                    return this._uv;
+                    return this._uv || [];
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this._uv = value;
+                    if (propsChecker(this)) {
+                        createEngineMesh(this)
+                    }
                 }
             },
             uv2: {
@@ -174,15 +192,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             vertexCount: {
                 get: function () {
-                    return 0;
+                    return this._vertices.length;
                 }
             },
             vertices: {
                 get: function () {
-                    return this._vertices;
+                    return this._vertices || [];
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this._vertices = value;
+                    if (propsChecker(this)) {
+                        createEngineMesh(this)
+                    }
                 }
             }
         },
@@ -210,6 +231,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     // 三角形数据
                     this._triangles = ref._getRawIndiceBuffer();
+                } else {
+                    // TODO 创建真正的自研引擎Mesh
+                    this.ref = new engine.Mesh();
                 }
             }
         },
@@ -296,7 +320,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             GetTriangles: function (submesh) {
-                throw new System.Exception("not impl");
+                if (this.subMeshCount === 1 && submesh === 0 ) {
+                    return this._triangles;
+                } else {
+                    throw new System.Exception("not impl");
+                }
             },
             GetTriangles$1: function (submesh, applyBaseVertex) {
                 throw new System.Exception("not impl");
@@ -368,7 +396,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             SetTriangles$4: function (triangles, submesh, calculateBounds) {
-                throw new System.Exception("not impl");
+                if ( submesh === 0) {
+                    this.triangles = triangles;
+                } else {
+                    this.triangles = this.triangles.concat(triangles)
+                }
             },
             SetTriangles$5: function (triangles, submesh, calculateBounds, baseVertex) {
                 throw new System.Exception("not impl");

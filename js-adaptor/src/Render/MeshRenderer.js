@@ -33,8 +33,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.$initialize();
                 MiniGameAdaptor.Renderer.ctor.call(this);
 
-                if (entity && entity.name === "NewEntity") {
-                    this.ref = new engine.MeshRenderer();
+                if (!entity.getComponent(engine.MeshRenderer)) {
+                    this.ref = entity.addComponent(engine.MeshRenderer);
                 }
             }
         }

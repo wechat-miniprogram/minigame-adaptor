@@ -54,6 +54,7 @@ class Physx {
         comp.rigidBody.__sourceComp = comp;
 
         comp.nativeCollider.attachedRigidbody = comp.rigidBody;
+        comp.gameObject.nativeRigidBody = comp.rigidBody;
 
         // 静态刚体不需要关心位置和旋转反向同步问题，所以不需要添加到遍历数组
         /*physx.addBody(comp.rigidBody)*/

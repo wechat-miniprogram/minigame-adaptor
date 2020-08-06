@@ -257,6 +257,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     this.onInstantiated();
                 }
             },
+
             onInstantiated: function() {
                 if (!Phys3D) {
                     return;
@@ -275,13 +276,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 const pos = this.entity.transform.worldPosition;
                 this.nativeRigidBody.position = new Phys3D.RawVec3f(pos.x, pos.y, pos.z);
 
-                body.angularDamping = data.angularDrag;
-                body.collisionDetectionMode = data.collisionDetectionMode;
-                body.constraints = data.constraints;
-                body.linearDamping = data.drag;
-                body.isKinematic = data.isKinematic;
-                body.mass = data.mass;
-                body.useGravity = data.useGravity;
+                // 直接调用AddComponent的情况没有反序列化数据
+                if (data) {
+                    body.angularDamping = data.angularDrag;
+                    body.collisionDetectionMode = data.collisionDetectionMode;
+                    body.constraints = data.constraints;
+                    body.linearDamping = data.drag;
+                    body.isKinematic = data.isKinematic;
+                    body.mass = data.mass;
+                    body.useGravity = data.useGravity;
+                }
 
                 // 将entity的旋转同步到物理
                 physx.syncRotation(this.entity, body);
@@ -302,7 +306,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
 
             AddExplosionForce: function (explosionForce, explosionPosition, explosionRadius) {
-                throw new System.Exception("not impl");
+                console.log('todo AddExplosionForce')
             },
             AddExplosionForce$1: function (explosionForce, explosionPosition, explosionRadius, upwardsModifier) {
                 throw new System.Exception("not impl");

@@ -32,7 +32,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         }
                     }
                     return this._sharedMesh;
-                }, 
+                },
                 set: function (value) {
                     this.sharedMesh.ref = value.ref;
                 }
@@ -52,4 +52,4 @@ Object.defineProperty(MiniGameAdaptor.MeshFilter.prototype, '__properties', {
     writable: false,
     value: { ...MiniGameAdaptor.MeshFilter.prototype.__properties }
 })
- 
+

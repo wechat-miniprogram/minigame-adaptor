@@ -71,7 +71,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         this.$initialize();
         this.m_Center = center;
         this.m_Size = size;
-        /*this.m_Extents = size * 0.5;*/
       }
     },
     methods: {

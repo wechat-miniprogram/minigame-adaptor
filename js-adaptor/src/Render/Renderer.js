@@ -240,9 +240,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         ctors: {
-            ctor: function () {
+            ctor: function (entity) {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
+
+                this.ref = new engine.MeshRenderer();
+                console.log('meshrender', this.ref)
             }
         },
         methods: {
