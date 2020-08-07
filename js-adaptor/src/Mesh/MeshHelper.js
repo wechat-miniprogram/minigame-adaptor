@@ -28,6 +28,29 @@ const EnumVertexFormat = {
     UINT10_N2 : 13,
 }
 
+function getPointBuffer(buffer, vertexLayout) {
+    if (!buffer) {
+        console.log('buffer is not exist!')
+    }
+
+    const stride = vertexLayout.stride / 4;
+    const config = vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.POSITION);
+    const offset = config.offset / 4;
+    const verticesCount = buffer.length / stride;
+
+    // 一个顶点为float x y z组成，每个属性占4个字节，总共12个字节
+    const newBuffer = new Float32Array(verticesCount * 3);
+
+    // 遍历自研引擎Mesh的buffer数据，将顶点信息取出，存到一个新的Uint8Array里面
+    for (let i = 0; i < verticesCount; i++) {
+        for (let j = 0; j < 3; j++) {
+            newBuffer[i * 3 + j] = buffer[j + i * stride + offset];
+        }
+    }
+
+    return { newBuffer, verticesCount};
+}
+
 function getPointDataByUsage(buffer, vertexLayout, usage) {
     if (!buffer) {
         console.log('buffer is not exist!')
@@ -36,7 +59,6 @@ function getPointDataByUsage(buffer, vertexLayout, usage) {
     const stride = vertexLayout.stride / 4;
     const config = vertexLayout.getConfigByUsage(usage);
     const offset = config.offset / 4;
-    const format = config.format;
     const verticesCount = buffer.length / stride;
 
     const res = [];
@@ -266,5 +288,6 @@ export {
     EnumVertexFormat,
     getPointDataByUsage,
     WXMeshVertexLayout,
-    createEngineMesh
+    createEngineMesh,
+    getPointBuffer
 }

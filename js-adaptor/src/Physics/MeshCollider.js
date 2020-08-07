@@ -1,3 +1,4 @@
+import { EnumVertexLayoutUsage, getPointDataByUsage, getPointBuffer, createEngineMesh} from '../Mesh/MeshHelper.js';
 import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from './Physx';
 
 /**
@@ -12,82 +13,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         statics: {
             methods: {
                 Deserialize: function (data, comp) {
-                    if (!Phys3D) {
-                        return comp;
-                    }
+                    comp.__deserializeData = data;
 
-                    const meshId = data.mesh
-                    let phyMesh = null;
-                    // 从资源管理器取Mesh数据，如果取不到，从运行时取
-                    let mesh = engine.loader.getAsset(meshId) || comp.entity.getComponent(engine.MeshRenderer).mesh;
-
-                    // 对齐Unity的error提示
-                    const rigidBody = comp.entity.getComponent(MiniGameAdaptor.Rigidbody);
-                    if (  (rigidBody && rigidBody.nativeRigidBody && !rigidBody.nativeRigidBody.isKinematic)
-                        || (rigidBody && rigidBody.__deserializeData && !rigidBody.__deserializeData.isKinematic) ) {
-                        console.error(`Non-convex MeshCollider with non-kinematic Rigidbody is no longer supported since Unity 5.\nIf you want to use a non-convex mesh either make the Rigidbody kinematic or remove the Rigidbody component. `)
-                    }
-
-                    if (meshMap.get(mesh)) {
-                        phyMesh = meshMap.get(mesh);
-                    } else {
-                        const buffer = mesh._vertexBuffers[0]._uploadedBuffer;
-                        const _vertexLayout = mesh._vertexLayout;
-                        const stride = _vertexLayout.stride;
-                        const config = mesh._vertexLayout.getConfigByUsage(1);
-
-                        const {offset, format } = config;
-                        const len = buffer.length;
-
-                        const verticesCount = len / stride;
-
-                        // 一个顶点为float x y z组成，每个属性占4个字节，总共12个字节
-                        const verBytes = 12;
-                        const newBuffer = new Uint8Array(verticesCount * verBytes);
-
-                        // 遍历自研引擎Mesh的buffer数据，将顶点信息取出，存到一个新的Uint8Array里面
-                        let index = 0;
-                        for ( let i = 0; i < len; i += stride) {
-                            for (let j = i + offset; j < i + offset + verBytes; j++) {
-                                newBuffer[index++] = buffer[j];
-                            }
-                        }
-
-                        // 手动截取最后一段索引相关的buffer然后创建Uint32Array
-                        const source = mesh._indiceBuffer._uploadedBuffer;
-                        const bufferLen = source.buffer.byteLength;
-                        const sliceBuffer = source.buffer.slice(bufferLen - source.length, bufferLen)
-
-                        // 自研引擎是固定用uint16做index的，所以将手动裁剪出来的arraybuffer创建为Uint16Array即可
-                        const uint16 = new Uint16Array(sliceBuffer)
-                        const trianglesCount = uint16.length / 3;
-
-                        phyMesh = new Phys3D.PhysMesh(physx.Phys3dInstance);
-
-                        const float32 = new Float32Array(newBuffer.buffer);
-                        phyMesh.SetVertices(float32, verticesCount);
-                        // 客户端特殊处理，传第三个参数支持为支持uint16的情况
-                        phyMesh.SetTriangles(uint16, trianglesCount, true);
-
-                        meshMap.set(mesh, phyMesh)
-                    }
-
-                    comp.nativeCollider = new Phys3D.MeshCollider(physx.Phys3dInstance, data.convex, data.cookingOptions, phyMesh);
-
-                    const scale = comp.transform.localScale;
-                    comp.nativeCollider.scale = new Phys3D.RawVec3f(scale.x, scale.y, scale.z);
-
-                    const hasRigidBody = !!comp.getComponent(MiniGameAdaptor.Rigidbody);
-
-                    // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
-                    if (!hasRigidBody) {
-                        physx.addStaticBodyForCollider(comp)
-                    }
-
-                    // 为collider绑定事件
-                    bindEventForCollider(comp.nativeCollider, comp.gameObject)
-
-                    nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
 
                     return comp;
                 }
@@ -129,6 +56,74 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.$initialize();
 
                 MiniGameAdaptor.Collider.ctor.call(this);
+            }
+        },
+
+        methods: {
+            onStart: function () {
+                if(!this.__physInitReady) {
+                    this.onInstantiated();
+                }
+            },
+
+            onInstantiated: function() {
+                this.__physInitReady = true;
+                if (!Phys3D) {
+                    return comp;
+                }
+
+                const data = this.__deserializeData || {}
+                const comp = this;
+
+                const meshId = data.mesh
+                let phyMesh = null;
+                // 从资源管理器取Mesh数据，如果取不到，从运行时取
+                let mesh = (meshId && engine.loader.getAsset(meshId)) || comp.entity.getComponent(engine.MeshRenderer).mesh;
+
+                // 对齐Unity的error提示
+                const rigidBody = comp.entity.getComponent(MiniGameAdaptor.Rigidbody);
+                if (  (rigidBody && rigidBody.nativeRigidBody && !rigidBody.nativeRigidBody.isKinematic)
+                    || (rigidBody && rigidBody.__deserializeData && !rigidBody.__deserializeData.isKinematic) ) {
+                    console.error(`Non-convex MeshCollider with non-kinematic Rigidbody is no longer supported since Unity 5.\nIf you want to use a non-convex mesh either make the Rigidbody kinematic or remove the Rigidbody component. `)
+                }
+
+                if (meshMap.get(mesh)) {
+                    phyMesh = meshMap.get(mesh);
+                } else {
+                    phyMesh = new Phys3D.PhysMesh(physx.Phys3dInstance);
+
+                    const _buffer = mesh._getRawVertexBuffer();
+                    const _vertexLayout = mesh._vertexLayout;
+                    const {newBuffer, verticesCount} = getPointBuffer(_buffer, _vertexLayout);
+
+                    // 三角形数据
+                    const triangles = mesh._getRawIndiceBuffer();
+
+                    phyMesh.SetVertices(newBuffer, verticesCount);
+
+                    // 客户端特殊处理，传第三个参数支持为支持uint16的情况
+                    phyMesh.SetTriangles(triangles, triangles.length / 3, true);
+
+                    meshMap.set(mesh, phyMesh)
+                }
+
+                comp.nativeCollider = new Phys3D.MeshCollider(physx.Phys3dInstance, data.convex || true, data.cookingOptions || 14, phyMesh);
+
+                const scale = comp.transform.localScale;
+                comp.nativeCollider.scale = new Phys3D.RawVec3f(scale.x, scale.y, scale.z);
+
+                const hasRigidBody = !!comp.getComponent(MiniGameAdaptor.Rigidbody);
+
+                // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
+                if (!hasRigidBody) {
+                    physx.addStaticBodyForCollider(comp)
+                }
+
+                // 为collider绑定事件
+                bindEventForCollider(comp.nativeCollider, comp.gameObject)
+
+                nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
+
             }
         }
     });

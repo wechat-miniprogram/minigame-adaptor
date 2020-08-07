@@ -19,7 +19,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     return this._mesh;
                 },
                 set: function (value) {
-                    this.mesh.ref = value.ref;
+                    this._mesh = value;
+
+                    this.entity.getComponent(engine.MeshRenderer).mesh = value.ref;
+
+                    /*this.mesh.ref = value.ref;*/
                 }
             },
             sharedMesh: {
@@ -34,6 +38,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     return this._sharedMesh;
                 },
                 set: function (value) {
+                    debugger
                     this.sharedMesh.ref = value.ref;
                 }
             }
