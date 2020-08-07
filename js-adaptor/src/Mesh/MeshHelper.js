@@ -268,6 +268,8 @@ function createEngineMesh(mesh) {
 
     const engineVertexLayout = engine.buildInVertexLayoutFactory3D.getVertexLayout(metadata.vertexLayout);
     const engineMesh = engine.Mesh.createFromDynamicArrayBuffer(engineVertexLayout, array.buffer, indiceArray.buffer);
+
+    debugger
     console.log(engineMesh, mesh)
 
     mesh.engineMesh = engineMesh;
@@ -276,7 +278,6 @@ function createEngineMesh(mesh) {
 
     var radius = 1;
     engineMesh._setBoundBall(engine.Vector3.ZERO, 1);
-    engineMesh._addSubMesh(0, 0);
 
     /*mesh.test(mesh.vertices, mesh.triangles);*/
 

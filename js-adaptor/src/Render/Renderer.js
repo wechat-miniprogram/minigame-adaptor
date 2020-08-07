@@ -115,9 +115,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     return this._materials;
                 },
                 set: function (value) {
-                    this.ref.materials.clear();
+                    /*this.ref.materials.clear();
                     value.forEach(mat => {
                         this.ref.materials.push(mat.ref);
+                    });*/
+
+                    this.ref.clearAllMaterials();
+                    value.forEach(mat => {
+                        this.ref.addMaterial(mat.ref);
                     });
                 }
             },

@@ -2,7 +2,14 @@ import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap}
 import { EnumVertexLayoutUsage, getPointDataByUsage, createEngineMesh} from './MeshHelper.js';
 
 function propsChecker(mesh) {
-    return mesh.vertices.length && mesh.normals.length && mesh.uv.length && mesh.triangles.length && mesh.tangents.length && !mesh.engineMesh;
+    console.log(mesh.ref._subMeshs)
+
+    return ( mesh.vertices.length
+             && mesh.normals.length
+             && mesh.uv.length
+             && mesh.tangents.length
+             && (mesh.ref._subMeshs.length && mesh.ref._subMeshs.length === mesh.subMeshCount)
+             && !mesh.engineMesh )
 }
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -113,6 +120,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 },
                 set: function (value) {
                     this._triangles = value;
+
                     if (propsChecker(this)) {
                         createEngineMesh(this)
                     }
@@ -396,11 +404,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             SetTriangles$4: function (triangles, submesh, calculateBounds) {
-                if ( submesh === 0) {
-                    this.triangles = triangles;
-                } else {
-                    this.triangles = this.triangles.concat(triangles)
-                }
+
+                let offset = submesh === 0 ? 0 : this.ref.getIndiceLength(submesh - 1);
+
+                this.ref._addSubMesh(triangles.length, offset);
+
+                this.triangles = (this.triangles || []).concat(triangles);
             },
             SetTriangles$5: function (triangles, submesh, calculateBounds, baseVertex) {
                 throw new System.Exception("not impl");
