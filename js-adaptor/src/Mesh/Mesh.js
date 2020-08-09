@@ -2,8 +2,6 @@ import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap}
 import { EnumVertexLayoutUsage, getPointDataByUsage, createEngineMesh} from './MeshHelper.js';
 
 function propsChecker(mesh) {
-    console.log(mesh.ref._subMeshs)
-
     return ( mesh.vertices.length
              && mesh.normals.length
              && mesh.uv.length
@@ -240,7 +238,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     // 三角形数据
                     this._triangles = ref._getRawIndiceBuffer();
                 } else {
-                    // TODO 创建真正的自研引擎Mesh
+                    // 这里先临时创建一个空的引擎Mesh实例，等Mesh数据补齐的时候会执行真正的引擎Mesh创建逻辑
                     this.ref = new engine.Mesh();
                 }
             }
@@ -404,12 +402,19 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             SetTriangles$4: function (triangles, submesh, calculateBounds) {
-
+                if (!this._subMeshs) {
+                    this._subMeshs = [];
+                }
                 let offset = submesh === 0 ? 0 : this.ref.getIndiceLength(submesh - 1);
 
                 this.ref._addSubMesh(triangles.length, offset);
 
                 this.triangles = (this.triangles || []).concat(triangles);
+
+                this._subMeshs.push({
+                    length: triangles.length,
+                    offset,
+                })
             },
             SetTriangles$5: function (triangles, submesh, calculateBounds, baseVertex) {
                 throw new System.Exception("not impl");

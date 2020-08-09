@@ -19,13 +19,11 @@ class Physx {
                 return;
             }
 
-            console.log('physicsConfig', window.physicsConfig)
-
             if (window.physicsConfig) {
-                this.Phys3dInstance = new Phys3D.PhysSystem(window.physicsConfig);
-            } else {
-                this.Phys3dInstance = new Phys3D.PhysSystem();
+                console.log('当前已开启pvd调试模式：', window.physicsConfig)
             }
+
+            this.Phys3dInstance = new Phys3D.PhysSystem(window.physicsConfig);
 
             console.log('Phys3dInstance', this.Phys3dInstance)
         } catch(e) {

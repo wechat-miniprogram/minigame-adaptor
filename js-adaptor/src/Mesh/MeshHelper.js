@@ -262,15 +262,8 @@ function createEngineMesh(mesh) {
         subMeshs: [{start: 0, length: 852}]
     }
 
-    /*console.log('vArrayBuffer', byteView);
-    console.log('iArrayBuffer', indiceArray);
-    console.log('metadata', metadata);*/
-
     const engineVertexLayout = engine.buildInVertexLayoutFactory3D.getVertexLayout(metadata.vertexLayout);
     const engineMesh = engine.Mesh.createFromDynamicArrayBuffer(engineVertexLayout, array.buffer, indiceArray.buffer);
-
-    debugger
-    console.log(engineMesh, mesh)
 
     mesh.engineMesh = engineMesh;
 
@@ -279,7 +272,11 @@ function createEngineMesh(mesh) {
     var radius = 1;
     engineMesh._setBoundBall(engine.Vector3.ZERO, 1);
 
-    /*mesh.test(mesh.vertices, mesh.triangles);*/
+    if (mesh._subMeshs && mesh._subMeshs.length) {
+        mesh._subMeshs.forEach(item => {
+            engineMesh._addSubMesh(item.length, item.offset);
+        });
+    }
 
     return engineMesh;
 }
