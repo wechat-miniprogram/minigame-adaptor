@@ -166,6 +166,7 @@ class WXMeshVertexLayout {
 }
 
 function createEngineMesh(mesh) {
+    let cstart = new Date();
     const vertexLayout = new WXMeshVertexLayout(mesh);
 
     let vertexStart = 0;
@@ -277,6 +278,8 @@ function createEngineMesh(mesh) {
             engineMesh._addSubMesh(item.length, item.offset);
         });
     }
+
+    console.log('微信引擎Mesh解析成Unity格式耗时：', new Date() - cstart)
 
     return engineMesh;
 }

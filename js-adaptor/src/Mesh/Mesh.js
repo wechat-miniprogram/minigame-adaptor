@@ -219,6 +219,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 MiniGameAdaptor.Object.ctor.call(this);
 
                 if (ref) {
+                    let start = new Date();
                     this.ref = ref;
                     this._buffer = ref._getRawVertexBuffer();
                     this._vertexLayout = ref._vertexLayout;
@@ -237,6 +238,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     // 三角形数据
                     this._triangles = ref._getRawIndiceBuffer();
+
+                    console.log('微信引擎Mesh解析成Unity格式耗时：', new Date() - start)
                 } else {
                     // 这里先临时创建一个空的引擎Mesh实例，等Mesh数据补齐的时候会执行真正的引擎Mesh创建逻辑
                     this.ref = new engine.Mesh();
@@ -409,12 +412,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 this.ref._addSubMesh(triangles.length, offset);
 
-                this.triangles = (this.triangles || []).concat(triangles);
-
                 this._subMeshs.push({
                     length: triangles.length,
                     offset,
-                })
+                });
+
+                this.triangles = (this.triangles || []).concat(triangles);
             },
             SetTriangles$5: function (triangles, submesh, calculateBounds, baseVertex) {
                 throw new System.Exception("not impl");

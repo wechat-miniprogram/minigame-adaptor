@@ -38,7 +38,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     return this._sharedMesh;
                 },
                 set: function (value) {
-                    debugger
                     this.sharedMesh.ref = value.ref;
                 }
             }
