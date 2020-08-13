@@ -15,7 +15,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     });
 });
 
-
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
     Bridge.define("MiniGameAdaptor.RigidbodyConstraints", {
@@ -125,10 +124,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             inertiaTensor: {
                 get: function () {
                     const RawVec3f = this.nativeRigidBody.inertiaTensor;
-                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f);
+                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
                 },
                 set: function (value) {
-                    this.nativeRigidBody.inertiaTensor = new Phys3D.RawVec3f(value.x, value.y, value.z);
+                    this.nativeRigidBody.inertiaTensor = new Phys3D.RawVec3f(-value.x, value.y, value.z);
                 }
             },
             inertiaTensorRotation: {
@@ -194,6 +193,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     return new MiniGameAdaptor.Quaternion.$ctor3(rotation)._FlipXnW();
                 },
+                // TODO: 坐标系换算
                 set: function (value) {
                     this.nativeRigidBody.rotation = value;
                 }
@@ -233,10 +233,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             velocity: {
                 get: function () {
                     const RawVec3f = this.nativeRigidBody.velocity;
-                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f);
+                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
                 },
                 set: function (value) {
-                    this.nativeRigidBody.velocity = new Phys3D.RawVec3f(value.x, value.y, value.z);
+                    this.nativeRigidBody.velocity = new Phys3D.RawVec3f(-value.x, value.y, value.z);
                 }
             },
             worldCenterOfMass: {
@@ -246,9 +246,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         ctors: {
-            ctor: function () {
+            ctor: function (entity) {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
+
+                /**
+                 * 在native中的Phys3D创建对应的刚体
+                 * 因为不确定后续是否会执行反序列函数，所以将nativeRigidBody放到构造函数里面，防止手动addComponent(RigidBody)之后里面设置属性会undefined的情况
+                 */
+                const body = new Phys3D.DynamicRigidbody(physx.Phys3dInstance);
+
+                this.nativeRigidBody = body;
+                this.nativeRigidBody.__sourceComp = this;
             }
         },
         methods: {
@@ -262,21 +271,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 if (!Phys3D) {
                     return;
                 }
-                /**
-                 * 在native中的Phys3D创建对应的刚体
-                 */
-                const body = new Phys3D.DynamicRigidbody(physx.Phys3dInstance, 10);
-                const data = this.__deserializeData;
 
-                this.nativeRigidBody = body;
+                const body = this.nativeRigidBody;
                 this.gameObject.nativeRigidBody = body;
-                this.nativeRigidBody.__sourceComp = this;
 
                 // 设置native层物理刚体的实际位置
                 const pos = this.entity.transform.worldPosition;
                 this.nativeRigidBody.position = new Phys3D.RawVec3f(pos.x, pos.y, pos.z);
 
                 // 直接调用AddComponent的情况没有反序列化数据
+                const data = this.__deserializeData;
                 if (data) {
                     body.angularDamping = data.angularDrag;
                     body.collisionDetectionMode = data.collisionDetectionMode;
@@ -290,10 +294,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 // 将entity的旋转同步到物理
                 physx.syncRotation(this.entity, body);
 
-                // TODO: 一个gameobject可能挂多个collider
                 [MiniGameAdaptor.BoxCollider, MiniGameAdaptor.MeshCollider, MiniGameAdaptor.CapsuleCollider, MiniGameAdaptor.SphereCollider].forEach( colliderClass => {
                     const collider = this.getComponent(colliderClass);
-                    if (collider) {
+
+                    if (collider && collider.nativeCollider) {
                         collider.nativeCollider.adaptorRigidBody = this;
                         collider.nativeCollider.attachedRigidbody = body;
                     }
@@ -302,17 +306,23 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 body.userData = this.entity;
 
                 physx.addBody(this.nativeRigidBody);
+
                 this.__physInitReady = true;
             },
 
             AddExplosionForce: function (explosionForce, explosionPosition, explosionRadius) {
-                console.log('todo AddExplosionForce')
+                const RawVec3f =  new Phys3D.RawVec3f(-explosionPosition.x, explosionPosition.y, explosionPosition.z);
+                this.nativeRigidBody.AddExplosionForce(explosionForce, RawVec3f, explosionRadius)
             },
+
             AddExplosionForce$1: function (explosionForce, explosionPosition, explosionRadius, upwardsModifier) {
-                throw new System.Exception("not impl");
+                const RawVec3f =  new Phys3D.RawVec3f(-explosionPosition.x, explosionPosition.y, explosionPosition.z);
+                this.nativeRigidBody.AddExplosionForce(explosionForce, RawVec3f, explosionRadius, upwardsModifier);
             },
             AddExplosionForce$2: function (explosionForce, explosionPosition, explosionRadius, upwardsModifier, mode) {
-                throw new System.Exception("not impl");
+                const RawVec3f =  new Phys3D.RawVec3f(-explosionPosition.x, explosionPosition.y, explosionPosition.z);
+
+                this.nativeRigidBody.AddExplosionForce(explosionForce, RawVec3f, explosionRadius, upwardsModifier, mode);
             },
             AddForce: function (x, y, z) {
                 const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);

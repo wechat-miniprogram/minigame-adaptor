@@ -239,7 +239,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     // 三角形数据
                     this._triangles = ref._getRawIndiceBuffer();
 
-                    console.log('微信引擎Mesh解析成Unity格式耗时：', new Date() - start)
+                    /*console.log('微信引擎Mesh解析成Unity格式耗时：', new Date() - start)*/
                 } else {
                     // 这里先临时创建一个空的引擎Mesh实例，等Mesh数据补齐的时候会执行真正的引擎Mesh创建逻辑
                     this.ref = new engine.Mesh();
@@ -329,11 +329,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("not impl");
             },
             GetTriangles: function (submesh) {
-                if (this.subMeshCount === 1 && submesh === 0 ) {
+                if (this.subMeshCount === 1 && submesh === 0) {
                     return this._triangles;
-                } else {
-                    throw new System.Exception("not impl");
                 }
+
+                let item = this._subMeshs[submesh];
+
+                return this._triangles.slice(item.offset, item.offset + item.length);
             },
             GetTriangles$1: function (submesh, applyBaseVertex) {
                 throw new System.Exception("not impl");

@@ -39,6 +39,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 },
                 set: function (value) {
                     this.sharedMesh.ref = value.ref;
+
+                    this.entity.getComponent(engine.MeshRenderer).mesh = value.ref;
                 }
             }
         },

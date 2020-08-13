@@ -11,6 +11,7 @@ try {
 } catch(e) {
     console.log('load Phys3D error', e)
 }
+
 class Physx {
     constructor() {
         try {
@@ -42,7 +43,6 @@ class Physx {
         this.rigidbodies.push(body)
     }
 
-
     addStaticBodyForCollider(comp) {
         const entity = comp.entity;
         const pos = entity.transform.worldPosition;
@@ -53,9 +53,6 @@ class Physx {
 
         comp.nativeCollider.attachedRigidbody = comp.rigidBody;
         comp.gameObject.nativeRigidBody = comp.rigidBody;
-
-        // 静态刚体不需要关心位置和旋转反向同步问题，所以不需要添加到遍历数组
-        /*physx.addBody(comp.rigidBody)*/
 
         const quaternion = entity.transform.worldQuaternion;
         const RawQuaternion = new Phys3D.RawQuaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w)
@@ -150,9 +147,9 @@ class Physx {
         }
 
         const render = new Date() - start;
-        if (len > 30) {
+        /*if (len > 30) {
             console.log('render update cost', render, 'rigidbody count', len, 'simulate cost', sim)
-        }
+        }*/
         /*if (render > 2 ) {
             console.log('render update cost', render)
         }*/
@@ -177,7 +174,7 @@ onRootMonoBehaviourUpdate((dt) => {
 const nativeColliderToAdaptorColliderMap = new WeakMap();
 
 function bindEventForCollider(nativeCollider, gameObject) {
-    nativeCollider.userData = gameObject;
+    /*nativeCollider.userData = gameObject;*/
 
     nativeCollider.onCollisionEnter = (other) => {
         const collision = new MiniGameAdaptor.Collision.$ctor1(other);
@@ -196,12 +193,12 @@ function bindEventForCollider(nativeCollider, gameObject) {
     }
 
     nativeCollider.onTriggerExit = (other) => {
-        const collider = nativeColliderToAdaptorColliderMap(other)
+        const collider = nativeColliderToAdaptorColliderMap.get(other)
         gameObject.BroadcastMessage$3('onTriggerExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
     }
 
     nativeCollider.onTriggerEnter = (other) => {
-        const collider = nativeColliderToAdaptorColliderMap(other)
+        const collider = nativeColliderToAdaptorColliderMap.get(other)
         gameObject.BroadcastMessage$3('onTriggerEnter', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
     }
 }

@@ -82,8 +82,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 // 对齐Unity的error提示
                 const rigidBody = comp.entity.getComponent(MiniGameAdaptor.Rigidbody);
-                if (  (rigidBody && rigidBody.nativeRigidBody && !rigidBody.nativeRigidBody.isKinematic)
-                    || (rigidBody && rigidBody.__deserializeData && !rigidBody.__deserializeData.isKinematic) ) {
+                if (  rigidBody && rigidBody.nativeRigidBody && !rigidBody.nativeRigidBody.isKinematic && data && !data.convex) {
                     console.error(`Non-convex MeshCollider with non-kinematic Rigidbody is no longer supported since Unity 5.\nIf you want to use a non-convex mesh either make the Rigidbody kinematic or remove the Rigidbody component. `)
                 }
 
@@ -92,7 +91,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 } else {
                     phyMesh = new Phys3D.PhysMesh(physx.Phys3dInstance);
 
-                    const _buffer = mesh._getRawVertexBuffer();
+                    // 兼容一些buffer取不到的情况
+                    const _buffer = mesh._getRawVertexBuffer() || mesh._rawVertexBuffers[0];
                     const _vertexLayout = mesh._vertexLayout;
                     const {newBuffer, verticesCount} = getPointBuffer(_buffer, _vertexLayout);
 
@@ -117,13 +117,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
                 if (!hasRigidBody) {
                     physx.addStaticBodyForCollider(comp)
+                } else if (!this.nativeCollider.attachedRigidbody) {
+                    // 先添加RigidBody再添加MeshCollider的场景
+                    this.nativeCollider.adaptorRigidBody = rigidBody;
+                    this.nativeCollider.attachedRigidbody = rigidBody.nativeRigidBody;
                 }
 
                 // 为collider绑定事件
                 bindEventForCollider(comp.nativeCollider, comp.gameObject)
-
                 nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
-
             }
         }
     });

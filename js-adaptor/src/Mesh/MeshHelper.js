@@ -279,7 +279,7 @@ function createEngineMesh(mesh) {
         });
     }
 
-    console.log('微信引擎Mesh解析成Unity格式耗时：', new Date() - cstart)
+    /*console.log('微信引擎Mesh解析成Unity格式耗时：', new Date() - cstart)*/
 
     return engineMesh;
 }

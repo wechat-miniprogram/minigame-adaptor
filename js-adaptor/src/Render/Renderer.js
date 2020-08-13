@@ -108,10 +108,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 get: function () {
                     if (!this._materials) {
                         this._materials = [];
-                        this.ref.materials.forEach(mat => {
+                        // 新版引擎改了materials
+                        let source = Array.isArray(this.ref.materials) ? this.ref.materials : this.ref.materials.data;
+
+                        source.forEach(mat => {
                             this._materials.push(new MiniGameAdaptor.Material.$ctor2(mat));
                         });
                     }
+
                     return this._materials;
                 },
                 set: function (value) {

@@ -12,8 +12,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         return comp;
                     }
 
-                    console.log(data)
-
                     const instance = physx.Phys3dInstance;
                     const entity = comp.entity;
 

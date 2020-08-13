@@ -186,7 +186,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function (ref) {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
-                
+
                 if (ref instanceof engine.Particle) {
                     this.ref = ref;
                 }
