@@ -284,7 +284,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 if (data) {
                     body.angularDamping = data.angularDrag;
                     body.collisionDetectionMode = data.collisionDetectionMode;
-                    body.constraints = data.constraints;
+                    body.constraints = data.constraints >> 1;
                     body.linearDamping = data.drag;
                     body.isKinematic = data.isKinematic;
                     body.mass = data.mass;
@@ -425,7 +425,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.nativeRigidBody.MovePosition(RawVec3f);
             },
             MoveRotation: function (rot) {
-                throw new System.Exception("not impl");
+                const phys3DRot = new Phys3D.RawQuaternion(-rot.x, rot.y, rot.z, -rot.w);
+                this.nativeRigidBody.MoveRotation(phys3DRot)
             },
             ResetCenterOfMass: function () {
                 this.nativeRigidBody.ResetCenterOfMass();

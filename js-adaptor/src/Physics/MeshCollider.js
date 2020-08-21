@@ -107,7 +107,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     meshMap.set(mesh, phyMesh)
                 }
 
-                comp.nativeCollider = new Phys3D.MeshCollider(physx.Phys3dInstance, data.convex || true, data.cookingOptions || 14, phyMesh);
+                comp.nativeCollider = new Phys3D.MeshCollider(physx.Phys3dInstance, data.convex === undefined ? true : data.convex, data.cookingOptions || 14, phyMesh);
 
                 const scale = comp.transform.localScale;
                 comp.nativeCollider.scale = new Phys3D.RawVec3f(scale.x, scale.y, scale.z);

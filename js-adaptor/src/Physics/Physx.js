@@ -198,7 +198,8 @@ function bindEventForCollider(nativeCollider, gameObject) {
     }
 
     nativeCollider.onTriggerEnter = (other) => {
-        const collider = nativeColliderToAdaptorColliderMap.get(other)
+        const collider = nativeColliderToAdaptorColliderMap.get(other.collider)
+        // const collider = nativeColliderToAdaptorColliderMap.get(nativeCollider)
         gameObject.BroadcastMessage$3('onTriggerEnter', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
     }
 }

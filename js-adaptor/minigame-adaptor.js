@@ -139,344 +139,345 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CoreModule_Component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(28);
 /* harmony import */ var _CoreModule_Component__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(_CoreModule_Component__WEBPACK_IMPORTED_MODULE_27__);
 /* harmony import */ var _CoreModule_Transform__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(29);
-/* harmony import */ var _CoreModule_Transform__WEBPACK_IMPORTED_MODULE_28___default = /*#__PURE__*/__webpack_require__.n(_CoreModule_Transform__WEBPACK_IMPORTED_MODULE_28__);
-/* harmony import */ var _CoreModule_Behaviour__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(30);
+/* harmony import */ var _CoreModule_Behaviour__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(31);
 /* harmony import */ var _CoreModule_Behaviour__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(_CoreModule_Behaviour__WEBPACK_IMPORTED_MODULE_29__);
-/* harmony import */ var _CoreModule_MonoBehaviour__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(31);
+/* harmony import */ var _CoreModule_MonoBehaviour__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(32);
 /* harmony import */ var _CoreModule_MonoBehaviour__WEBPACK_IMPORTED_MODULE_30___default = /*#__PURE__*/__webpack_require__.n(_CoreModule_MonoBehaviour__WEBPACK_IMPORTED_MODULE_30__);
-/* harmony import */ var _Audio_AudioBehaviour__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(32);
+/* harmony import */ var _Audio_AudioBehaviour__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(33);
 /* harmony import */ var _Audio_AudioBehaviour__WEBPACK_IMPORTED_MODULE_31___default = /*#__PURE__*/__webpack_require__.n(_Audio_AudioBehaviour__WEBPACK_IMPORTED_MODULE_31__);
-/* harmony import */ var _Audio_AudioSource__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(33);
+/* harmony import */ var _Audio_AudioSource__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(34);
 /* harmony import */ var _Audio_AudioSource__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(_Audio_AudioSource__WEBPACK_IMPORTED_MODULE_32__);
-/* harmony import */ var _Audio_AudioClip__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(34);
+/* harmony import */ var _Audio_AudioClip__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(35);
 /* harmony import */ var _Audio_AudioClip__WEBPACK_IMPORTED_MODULE_33___default = /*#__PURE__*/__webpack_require__.n(_Audio_AudioClip__WEBPACK_IMPORTED_MODULE_33__);
-/* harmony import */ var _Input_KeyCode__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(35);
+/* harmony import */ var _Input_KeyCode__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(36);
 /* harmony import */ var _Input_KeyCode__WEBPACK_IMPORTED_MODULE_34___default = /*#__PURE__*/__webpack_require__.n(_Input_KeyCode__WEBPACK_IMPORTED_MODULE_34__);
-/* harmony import */ var _Input_Input__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(36);
-/* harmony import */ var _Input_Touch__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(37);
+/* harmony import */ var _Input_Input__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(37);
+/* harmony import */ var _Input_Touch__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(38);
 /* harmony import */ var _Input_Touch__WEBPACK_IMPORTED_MODULE_36___default = /*#__PURE__*/__webpack_require__.n(_Input_Touch__WEBPACK_IMPORTED_MODULE_36__);
-/* harmony import */ var _Input_TouchPhase__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(38);
+/* harmony import */ var _Input_TouchPhase__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(39);
 /* harmony import */ var _Input_TouchPhase__WEBPACK_IMPORTED_MODULE_37___default = /*#__PURE__*/__webpack_require__.n(_Input_TouchPhase__WEBPACK_IMPORTED_MODULE_37__);
-/* harmony import */ var _Input_TouchType__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(39);
+/* harmony import */ var _Input_TouchType__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(40);
 /* harmony import */ var _Input_TouchType__WEBPACK_IMPORTED_MODULE_38___default = /*#__PURE__*/__webpack_require__.n(_Input_TouchType__WEBPACK_IMPORTED_MODULE_38__);
-/* harmony import */ var _SDK_SceneManager__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(40);
-/* harmony import */ var _SDK_Resources__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(41);
-/* harmony import */ var _Physics_PhysicMaterial__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(43);
-/* harmony import */ var _Physics_Collider__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(45);
-/* harmony import */ var _Physics_MeshCollider__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(46);
-/* harmony import */ var _Physics_BoxCollider__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(47);
-/* harmony import */ var _Physics_SphereCollider__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(48);
-/* harmony import */ var _Physics_SphereCollider__WEBPACK_IMPORTED_MODULE_45___default = /*#__PURE__*/__webpack_require__.n(_Physics_SphereCollider__WEBPACK_IMPORTED_MODULE_45__);
-/* harmony import */ var _Physics_CapsuleCollider__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(49);
-/* harmony import */ var _Physics_CapsuleCollider__WEBPACK_IMPORTED_MODULE_46___default = /*#__PURE__*/__webpack_require__.n(_Physics_CapsuleCollider__WEBPACK_IMPORTED_MODULE_46__);
-/* harmony import */ var _Physics_RaycastHit__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(50);
-/* harmony import */ var _Physics_RaycastHit__WEBPACK_IMPORTED_MODULE_47___default = /*#__PURE__*/__webpack_require__.n(_Physics_RaycastHit__WEBPACK_IMPORTED_MODULE_47__);
-/* harmony import */ var _Physics_Rigidbody__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(51);
-/* harmony import */ var _Physics_Physics__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(52);
-/* harmony import */ var _Event_ISerializationCallbackReceiver__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(53);
-/* harmony import */ var _Event_ISerializationCallbackReceiver__WEBPACK_IMPORTED_MODULE_50___default = /*#__PURE__*/__webpack_require__.n(_Event_ISerializationCallbackReceiver__WEBPACK_IMPORTED_MODULE_50__);
-/* harmony import */ var _Event_UnityEventCallState__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(54);
-/* harmony import */ var _Event_UnityEventCallState__WEBPACK_IMPORTED_MODULE_51___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEventCallState__WEBPACK_IMPORTED_MODULE_51__);
-/* harmony import */ var _Event_UnityEventBase__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(55);
-/* harmony import */ var _Event_UnityEventBase__WEBPACK_IMPORTED_MODULE_52___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEventBase__WEBPACK_IMPORTED_MODULE_52__);
-/* harmony import */ var _Event_UnityEvent__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(56);
-/* harmony import */ var _Event_UnityEvent__WEBPACK_IMPORTED_MODULE_53___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEvent__WEBPACK_IMPORTED_MODULE_53__);
-/* harmony import */ var _Event_UnityEvent$1__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(57);
-/* harmony import */ var _Event_UnityEvent$1__WEBPACK_IMPORTED_MODULE_54___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEvent$1__WEBPACK_IMPORTED_MODULE_54__);
-/* harmony import */ var _Event_AbstractEventData__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(58);
-/* harmony import */ var _Event_AbstractEventData__WEBPACK_IMPORTED_MODULE_55___default = /*#__PURE__*/__webpack_require__.n(_Event_AbstractEventData__WEBPACK_IMPORTED_MODULE_55__);
-/* harmony import */ var _Event_BaseEventData__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(59);
-/* harmony import */ var _Event_BaseEventData__WEBPACK_IMPORTED_MODULE_56___default = /*#__PURE__*/__webpack_require__.n(_Event_BaseEventData__WEBPACK_IMPORTED_MODULE_56__);
-/* harmony import */ var _Event_PointerEventData__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(60);
-/* harmony import */ var _Event_PointerEventData__WEBPACK_IMPORTED_MODULE_57___default = /*#__PURE__*/__webpack_require__.n(_Event_PointerEventData__WEBPACK_IMPORTED_MODULE_57__);
-/* harmony import */ var _Event_AxisEventData__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(61);
-/* harmony import */ var _Event_AxisEventData__WEBPACK_IMPORTED_MODULE_58___default = /*#__PURE__*/__webpack_require__.n(_Event_AxisEventData__WEBPACK_IMPORTED_MODULE_58__);
-/* harmony import */ var _Event_UIBehaviour__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(62);
-/* harmony import */ var _Event_UIBehaviour__WEBPACK_IMPORTED_MODULE_59___default = /*#__PURE__*/__webpack_require__.n(_Event_UIBehaviour__WEBPACK_IMPORTED_MODULE_59__);
-/* harmony import */ var _Event_BaseInput__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(63);
-/* harmony import */ var _Event_BaseInput__WEBPACK_IMPORTED_MODULE_60___default = /*#__PURE__*/__webpack_require__.n(_Event_BaseInput__WEBPACK_IMPORTED_MODULE_60__);
-/* harmony import */ var _Event_EventSystem__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(64);
-/* harmony import */ var _Event_EventSystem__WEBPACK_IMPORTED_MODULE_61___default = /*#__PURE__*/__webpack_require__.n(_Event_EventSystem__WEBPACK_IMPORTED_MODULE_61__);
-/* harmony import */ var _Event_ExecuteEvents__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(65);
-/* harmony import */ var _Event_ExecuteEvents__WEBPACK_IMPORTED_MODULE_62___default = /*#__PURE__*/__webpack_require__.n(_Event_ExecuteEvents__WEBPACK_IMPORTED_MODULE_62__);
-/* harmony import */ var _Event_IEventSystemHandler__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(66);
-/* harmony import */ var _Event_IEventSystemHandler__WEBPACK_IMPORTED_MODULE_63___default = /*#__PURE__*/__webpack_require__.n(_Event_IEventSystemHandler__WEBPACK_IMPORTED_MODULE_63__);
-/* harmony import */ var _Event_IBeginDragHandler__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(67);
-/* harmony import */ var _Event_IBeginDragHandler__WEBPACK_IMPORTED_MODULE_64___default = /*#__PURE__*/__webpack_require__.n(_Event_IBeginDragHandler__WEBPACK_IMPORTED_MODULE_64__);
-/* harmony import */ var _Event_IDragHandler__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(68);
-/* harmony import */ var _Event_IDragHandler__WEBPACK_IMPORTED_MODULE_65___default = /*#__PURE__*/__webpack_require__.n(_Event_IDragHandler__WEBPACK_IMPORTED_MODULE_65__);
-/* harmony import */ var _Event_IDropHandler__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(69);
-/* harmony import */ var _Event_IDropHandler__WEBPACK_IMPORTED_MODULE_66___default = /*#__PURE__*/__webpack_require__.n(_Event_IDropHandler__WEBPACK_IMPORTED_MODULE_66__);
-/* harmony import */ var _Event_IEndDragHandler__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(70);
-/* harmony import */ var _Event_IEndDragHandler__WEBPACK_IMPORTED_MODULE_67___default = /*#__PURE__*/__webpack_require__.n(_Event_IEndDragHandler__WEBPACK_IMPORTED_MODULE_67__);
-/* harmony import */ var _Event_ICancelHandler__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(71);
-/* harmony import */ var _Event_ICancelHandler__WEBPACK_IMPORTED_MODULE_68___default = /*#__PURE__*/__webpack_require__.n(_Event_ICancelHandler__WEBPACK_IMPORTED_MODULE_68__);
-/* harmony import */ var _Event_IInitializePotentialDragHandler__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(72);
-/* harmony import */ var _Event_IInitializePotentialDragHandler__WEBPACK_IMPORTED_MODULE_69___default = /*#__PURE__*/__webpack_require__.n(_Event_IInitializePotentialDragHandler__WEBPACK_IMPORTED_MODULE_69__);
-/* harmony import */ var _Event_IDeselectHandler__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(73);
-/* harmony import */ var _Event_IDeselectHandler__WEBPACK_IMPORTED_MODULE_70___default = /*#__PURE__*/__webpack_require__.n(_Event_IDeselectHandler__WEBPACK_IMPORTED_MODULE_70__);
-/* harmony import */ var _Event_IMoveHandler__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(74);
-/* harmony import */ var _Event_IMoveHandler__WEBPACK_IMPORTED_MODULE_71___default = /*#__PURE__*/__webpack_require__.n(_Event_IMoveHandler__WEBPACK_IMPORTED_MODULE_71__);
-/* harmony import */ var _Event_IPointerClickHandler__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(75);
-/* harmony import */ var _Event_IPointerClickHandler__WEBPACK_IMPORTED_MODULE_72___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerClickHandler__WEBPACK_IMPORTED_MODULE_72__);
-/* harmony import */ var _Event_IPointerDownHandler__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(76);
-/* harmony import */ var _Event_IPointerDownHandler__WEBPACK_IMPORTED_MODULE_73___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerDownHandler__WEBPACK_IMPORTED_MODULE_73__);
-/* harmony import */ var _Event_IPointerEnterHandler__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(77);
-/* harmony import */ var _Event_IPointerEnterHandler__WEBPACK_IMPORTED_MODULE_74___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerEnterHandler__WEBPACK_IMPORTED_MODULE_74__);
-/* harmony import */ var _Event_IPointerExitHandler__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(78);
-/* harmony import */ var _Event_IPointerExitHandler__WEBPACK_IMPORTED_MODULE_75___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerExitHandler__WEBPACK_IMPORTED_MODULE_75__);
-/* harmony import */ var _Event_IPointerUpHandler__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(79);
-/* harmony import */ var _Event_IPointerUpHandler__WEBPACK_IMPORTED_MODULE_76___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerUpHandler__WEBPACK_IMPORTED_MODULE_76__);
-/* harmony import */ var _Event_IScrollHandler__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(80);
-/* harmony import */ var _Event_IScrollHandler__WEBPACK_IMPORTED_MODULE_77___default = /*#__PURE__*/__webpack_require__.n(_Event_IScrollHandler__WEBPACK_IMPORTED_MODULE_77__);
-/* harmony import */ var _Event_ISubmitHandler__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(81);
-/* harmony import */ var _Event_ISubmitHandler__WEBPACK_IMPORTED_MODULE_78___default = /*#__PURE__*/__webpack_require__.n(_Event_ISubmitHandler__WEBPACK_IMPORTED_MODULE_78__);
-/* harmony import */ var _Event_ISelectHandler__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(82);
-/* harmony import */ var _Event_ISelectHandler__WEBPACK_IMPORTED_MODULE_79___default = /*#__PURE__*/__webpack_require__.n(_Event_ISelectHandler__WEBPACK_IMPORTED_MODULE_79__);
-/* harmony import */ var _Event_IUpdateSelectedHandler__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(83);
-/* harmony import */ var _Event_IUpdateSelectedHandler__WEBPACK_IMPORTED_MODULE_80___default = /*#__PURE__*/__webpack_require__.n(_Event_IUpdateSelectedHandler__WEBPACK_IMPORTED_MODULE_80__);
-/* harmony import */ var _Event_EventTrigger__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(84);
-/* harmony import */ var _Event_EventTrigger__WEBPACK_IMPORTED_MODULE_81___default = /*#__PURE__*/__webpack_require__.n(_Event_EventTrigger__WEBPACK_IMPORTED_MODULE_81__);
-/* harmony import */ var _Event_Entry__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(85);
-/* harmony import */ var _Event_Entry__WEBPACK_IMPORTED_MODULE_82___default = /*#__PURE__*/__webpack_require__.n(_Event_Entry__WEBPACK_IMPORTED_MODULE_82__);
-/* harmony import */ var _Event_MoveDirection__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(86);
-/* harmony import */ var _Event_MoveDirection__WEBPACK_IMPORTED_MODULE_83___default = /*#__PURE__*/__webpack_require__.n(_Event_MoveDirection__WEBPACK_IMPORTED_MODULE_83__);
-/* harmony import */ var _Event_RaycastResult__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(87);
-/* harmony import */ var _Event_RaycastResult__WEBPACK_IMPORTED_MODULE_84___default = /*#__PURE__*/__webpack_require__.n(_Event_RaycastResult__WEBPACK_IMPORTED_MODULE_84__);
-/* harmony import */ var _Event_TriggerEvent__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(88);
-/* harmony import */ var _Event_TriggerEvent__WEBPACK_IMPORTED_MODULE_85___default = /*#__PURE__*/__webpack_require__.n(_Event_TriggerEvent__WEBPACK_IMPORTED_MODULE_85__);
-/* harmony import */ var _Event_BaseRaycaster__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(89);
-/* harmony import */ var _Event_BaseRaycaster__WEBPACK_IMPORTED_MODULE_86___default = /*#__PURE__*/__webpack_require__.n(_Event_BaseRaycaster__WEBPACK_IMPORTED_MODULE_86__);
-/* harmony import */ var _Graphics_RenderTextureFormat__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(90);
-/* harmony import */ var _Graphics_RenderTextureFormat__WEBPACK_IMPORTED_MODULE_87___default = /*#__PURE__*/__webpack_require__.n(_Graphics_RenderTextureFormat__WEBPACK_IMPORTED_MODULE_87__);
-/* harmony import */ var _Graphics_Texture__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(91);
-/* harmony import */ var _Graphics_Texture__WEBPACK_IMPORTED_MODULE_88___default = /*#__PURE__*/__webpack_require__.n(_Graphics_Texture__WEBPACK_IMPORTED_MODULE_88__);
-/* harmony import */ var _Graphics_Texture2D__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(92);
-/* harmony import */ var _Graphics_Texture2D__WEBPACK_IMPORTED_MODULE_89___default = /*#__PURE__*/__webpack_require__.n(_Graphics_Texture2D__WEBPACK_IMPORTED_MODULE_89__);
-/* harmony import */ var _Graphics_RenderTexture__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(93);
-/* harmony import */ var _Graphics_RenderTexture__WEBPACK_IMPORTED_MODULE_90___default = /*#__PURE__*/__webpack_require__.n(_Graphics_RenderTexture__WEBPACK_IMPORTED_MODULE_90__);
-/* harmony import */ var _System_IO_File__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(94);
-/* harmony import */ var _System_IO_File__WEBPACK_IMPORTED_MODULE_91___default = /*#__PURE__*/__webpack_require__.n(_System_IO_File__WEBPACK_IMPORTED_MODULE_91__);
-/* harmony import */ var _System_IO_FileInfo__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(95);
-/* harmony import */ var _System_IO_FileInfo__WEBPACK_IMPORTED_MODULE_92___default = /*#__PURE__*/__webpack_require__.n(_System_IO_FileInfo__WEBPACK_IMPORTED_MODULE_92__);
-/* harmony import */ var _System_IO_FileStream__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(96);
-/* harmony import */ var _System_IO_FileStream__WEBPACK_IMPORTED_MODULE_93___default = /*#__PURE__*/__webpack_require__.n(_System_IO_FileStream__WEBPACK_IMPORTED_MODULE_93__);
-/* harmony import */ var _System_SystemInfo_SystemInfo__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(97);
-/* harmony import */ var _Camera_Camera__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(99);
-/* harmony import */ var _Camera_Camera__WEBPACK_IMPORTED_MODULE_95___default = /*#__PURE__*/__webpack_require__.n(_Camera_Camera__WEBPACK_IMPORTED_MODULE_95__);
-/* harmony import */ var _Particle_ParticleSystem__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(100);
-/* harmony import */ var _Particle_ParticleSystem__WEBPACK_IMPORTED_MODULE_96___default = /*#__PURE__*/__webpack_require__.n(_Particle_ParticleSystem__WEBPACK_IMPORTED_MODULE_96__);
-/* harmony import */ var _Network_WWW__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(101);
-/* harmony import */ var _Network_WWW__WEBPACK_IMPORTED_MODULE_97___default = /*#__PURE__*/__webpack_require__.n(_Network_WWW__WEBPACK_IMPORTED_MODULE_97__);
-/* harmony import */ var _Network_WWWForm__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(102);
-/* harmony import */ var _Network_WWWForm__WEBPACK_IMPORTED_MODULE_98___default = /*#__PURE__*/__webpack_require__.n(_Network_WWWForm__WEBPACK_IMPORTED_MODULE_98__);
-/* harmony import */ var _Network_NetworkReachability__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(103);
-/* harmony import */ var _Network_NetworkReachability__WEBPACK_IMPORTED_MODULE_99___default = /*#__PURE__*/__webpack_require__.n(_Network_NetworkReachability__WEBPACK_IMPORTED_MODULE_99__);
-/* harmony import */ var _Light_Light__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(104);
-/* harmony import */ var _Light_Light__WEBPACK_IMPORTED_MODULE_100___default = /*#__PURE__*/__webpack_require__.n(_Light_Light__WEBPACK_IMPORTED_MODULE_100__);
-/* harmony import */ var _PlayerPrefs_PlayerPrefs__WEBPACK_IMPORTED_MODULE_101__ = __webpack_require__(105);
-/* harmony import */ var _PlayerPrefs_PlayerPrefs__WEBPACK_IMPORTED_MODULE_101___default = /*#__PURE__*/__webpack_require__.n(_PlayerPrefs_PlayerPrefs__WEBPACK_IMPORTED_MODULE_101__);
-/* harmony import */ var _Application_Application__WEBPACK_IMPORTED_MODULE_102__ = __webpack_require__(106);
-/* harmony import */ var _Application_Application__WEBPACK_IMPORTED_MODULE_102___default = /*#__PURE__*/__webpack_require__.n(_Application_Application__WEBPACK_IMPORTED_MODULE_102__);
-/* harmony import */ var _Screen_Screen__WEBPACK_IMPORTED_MODULE_103__ = __webpack_require__(107);
-/* harmony import */ var _ColorUtility_ColorUtility__WEBPACK_IMPORTED_MODULE_104__ = __webpack_require__(108);
-/* harmony import */ var _ColorUtility_ColorUtility__WEBPACK_IMPORTED_MODULE_104___default = /*#__PURE__*/__webpack_require__.n(_ColorUtility_ColorUtility__WEBPACK_IMPORTED_MODULE_104__);
-/* harmony import */ var _TextAsset_TextAsset__WEBPACK_IMPORTED_MODULE_105__ = __webpack_require__(109);
-/* harmony import */ var _TextAsset_TextAsset__WEBPACK_IMPORTED_MODULE_105___default = /*#__PURE__*/__webpack_require__.n(_TextAsset_TextAsset__WEBPACK_IMPORTED_MODULE_105__);
-/* harmony import */ var _Rect_Rect__WEBPACK_IMPORTED_MODULE_106__ = __webpack_require__(110);
-/* harmony import */ var _Rect_Rect__WEBPACK_IMPORTED_MODULE_106___default = /*#__PURE__*/__webpack_require__.n(_Rect_Rect__WEBPACK_IMPORTED_MODULE_106__);
-/* harmony import */ var _Bounds_Bounds__WEBPACK_IMPORTED_MODULE_107__ = __webpack_require__(111);
-/* harmony import */ var _Bounds_Bounds__WEBPACK_IMPORTED_MODULE_107___default = /*#__PURE__*/__webpack_require__.n(_Bounds_Bounds__WEBPACK_IMPORTED_MODULE_107__);
-/* harmony import */ var _Render_FogMod__WEBPACK_IMPORTED_MODULE_108__ = __webpack_require__(112);
-/* harmony import */ var _Render_FogMod__WEBPACK_IMPORTED_MODULE_108___default = /*#__PURE__*/__webpack_require__.n(_Render_FogMod__WEBPACK_IMPORTED_MODULE_108__);
-/* harmony import */ var _Render_RenderSettings__WEBPACK_IMPORTED_MODULE_109__ = __webpack_require__(113);
-/* harmony import */ var _Render_RenderSettings__WEBPACK_IMPORTED_MODULE_109___default = /*#__PURE__*/__webpack_require__.n(_Render_RenderSettings__WEBPACK_IMPORTED_MODULE_109__);
-/* harmony import */ var _Render_Shader__WEBPACK_IMPORTED_MODULE_110__ = __webpack_require__(114);
-/* harmony import */ var _Render_Shader__WEBPACK_IMPORTED_MODULE_110___default = /*#__PURE__*/__webpack_require__.n(_Render_Shader__WEBPACK_IMPORTED_MODULE_110__);
-/* harmony import */ var _Render_Material__WEBPACK_IMPORTED_MODULE_111__ = __webpack_require__(115);
-/* harmony import */ var _Render_Material__WEBPACK_IMPORTED_MODULE_111___default = /*#__PURE__*/__webpack_require__.n(_Render_Material__WEBPACK_IMPORTED_MODULE_111__);
-/* harmony import */ var _Render_Renderer__WEBPACK_IMPORTED_MODULE_112__ = __webpack_require__(116);
-/* harmony import */ var _Render_Renderer__WEBPACK_IMPORTED_MODULE_112___default = /*#__PURE__*/__webpack_require__.n(_Render_Renderer__WEBPACK_IMPORTED_MODULE_112__);
-/* harmony import */ var _Render_LineRenderer__WEBPACK_IMPORTED_MODULE_113__ = __webpack_require__(117);
-/* harmony import */ var _Render_LineRenderer__WEBPACK_IMPORTED_MODULE_113___default = /*#__PURE__*/__webpack_require__.n(_Render_LineRenderer__WEBPACK_IMPORTED_MODULE_113__);
-/* harmony import */ var _Render_MeshRenderer__WEBPACK_IMPORTED_MODULE_114__ = __webpack_require__(118);
-/* harmony import */ var _Render_MeshRenderer__WEBPACK_IMPORTED_MODULE_114___default = /*#__PURE__*/__webpack_require__.n(_Render_MeshRenderer__WEBPACK_IMPORTED_MODULE_114__);
-/* harmony import */ var _Render_SkinnedMeshRenderer__WEBPACK_IMPORTED_MODULE_115__ = __webpack_require__(119);
-/* harmony import */ var _Render_SkinnedMeshRenderer__WEBPACK_IMPORTED_MODULE_115___default = /*#__PURE__*/__webpack_require__.n(_Render_SkinnedMeshRenderer__WEBPACK_IMPORTED_MODULE_115__);
-/* harmony import */ var _Mesh_Mesh__WEBPACK_IMPORTED_MODULE_116__ = __webpack_require__(120);
-/* harmony import */ var _Mesh_Mesh__WEBPACK_IMPORTED_MODULE_116___default = /*#__PURE__*/__webpack_require__.n(_Mesh_Mesh__WEBPACK_IMPORTED_MODULE_116__);
-/* harmony import */ var _Mesh_MeshFilter__WEBPACK_IMPORTED_MODULE_117__ = __webpack_require__(121);
-/* harmony import */ var _Mesh_MeshFilter__WEBPACK_IMPORTED_MODULE_117___default = /*#__PURE__*/__webpack_require__.n(_Mesh_MeshFilter__WEBPACK_IMPORTED_MODULE_117__);
-/* harmony import */ var _Render_ShaderVariantCollection__WEBPACK_IMPORTED_MODULE_118__ = __webpack_require__(122);
-/* harmony import */ var _Render_ShaderVariantCollection__WEBPACK_IMPORTED_MODULE_118___default = /*#__PURE__*/__webpack_require__.n(_Render_ShaderVariantCollection__WEBPACK_IMPORTED_MODULE_118__);
-/* harmony import */ var _Render_ShaderVariant__WEBPACK_IMPORTED_MODULE_119__ = __webpack_require__(123);
-/* harmony import */ var _Render_ShaderVariant__WEBPACK_IMPORTED_MODULE_119___default = /*#__PURE__*/__webpack_require__.n(_Render_ShaderVariant__WEBPACK_IMPORTED_MODULE_119__);
-/* harmony import */ var _Render_LightmapData__WEBPACK_IMPORTED_MODULE_120__ = __webpack_require__(124);
-/* harmony import */ var _Render_LightmapData__WEBPACK_IMPORTED_MODULE_120___default = /*#__PURE__*/__webpack_require__.n(_Render_LightmapData__WEBPACK_IMPORTED_MODULE_120__);
-/* harmony import */ var _Render_LightmapSettings__WEBPACK_IMPORTED_MODULE_121__ = __webpack_require__(125);
-/* harmony import */ var _Render_LightmapSettings__WEBPACK_IMPORTED_MODULE_121___default = /*#__PURE__*/__webpack_require__.n(_Render_LightmapSettings__WEBPACK_IMPORTED_MODULE_121__);
-/* harmony import */ var _Render_AnisotropicFiltering__WEBPACK_IMPORTED_MODULE_122__ = __webpack_require__(126);
-/* harmony import */ var _Render_AnisotropicFiltering__WEBPACK_IMPORTED_MODULE_122___default = /*#__PURE__*/__webpack_require__.n(_Render_AnisotropicFiltering__WEBPACK_IMPORTED_MODULE_122__);
-/* harmony import */ var _Render_FilterMode__WEBPACK_IMPORTED_MODULE_123__ = __webpack_require__(127);
-/* harmony import */ var _Render_FilterMode__WEBPACK_IMPORTED_MODULE_123___default = /*#__PURE__*/__webpack_require__.n(_Render_FilterMode__WEBPACK_IMPORTED_MODULE_123__);
-/* harmony import */ var _Animation_PlayMode__WEBPACK_IMPORTED_MODULE_124__ = __webpack_require__(128);
-/* harmony import */ var _Animation_PlayMode__WEBPACK_IMPORTED_MODULE_124___default = /*#__PURE__*/__webpack_require__.n(_Animation_PlayMode__WEBPACK_IMPORTED_MODULE_124__);
-/* harmony import */ var _Animation_Motion__WEBPACK_IMPORTED_MODULE_125__ = __webpack_require__(129);
-/* harmony import */ var _Animation_Motion__WEBPACK_IMPORTED_MODULE_125___default = /*#__PURE__*/__webpack_require__.n(_Animation_Motion__WEBPACK_IMPORTED_MODULE_125__);
-/* harmony import */ var _Animation_AnimationClip__WEBPACK_IMPORTED_MODULE_126__ = __webpack_require__(130);
-/* harmony import */ var _Animation_AnimationClip__WEBPACK_IMPORTED_MODULE_126___default = /*#__PURE__*/__webpack_require__.n(_Animation_AnimationClip__WEBPACK_IMPORTED_MODULE_126__);
-/* harmony import */ var _Animation_Animator__WEBPACK_IMPORTED_MODULE_127__ = __webpack_require__(131);
-/* harmony import */ var _Animation_Animator__WEBPACK_IMPORTED_MODULE_127___default = /*#__PURE__*/__webpack_require__.n(_Animation_Animator__WEBPACK_IMPORTED_MODULE_127__);
-/* harmony import */ var _Animation_WrapMode__WEBPACK_IMPORTED_MODULE_128__ = __webpack_require__(132);
-/* harmony import */ var _Animation_WrapMode__WEBPACK_IMPORTED_MODULE_128___default = /*#__PURE__*/__webpack_require__.n(_Animation_WrapMode__WEBPACK_IMPORTED_MODULE_128__);
-/* harmony import */ var _Animation_TrackedReference__WEBPACK_IMPORTED_MODULE_129__ = __webpack_require__(133);
-/* harmony import */ var _Animation_TrackedReference__WEBPACK_IMPORTED_MODULE_129___default = /*#__PURE__*/__webpack_require__.n(_Animation_TrackedReference__WEBPACK_IMPORTED_MODULE_129__);
-/* harmony import */ var _Animation_AnimationState__WEBPACK_IMPORTED_MODULE_130__ = __webpack_require__(134);
-/* harmony import */ var _Animation_AnimationState__WEBPACK_IMPORTED_MODULE_130___default = /*#__PURE__*/__webpack_require__.n(_Animation_AnimationState__WEBPACK_IMPORTED_MODULE_130__);
-/* harmony import */ var _Animation_Animation_Enumerator__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(135);
-/* harmony import */ var _Animation_Animation_Enumerator__WEBPACK_IMPORTED_MODULE_131___default = /*#__PURE__*/__webpack_require__.n(_Animation_Animation_Enumerator__WEBPACK_IMPORTED_MODULE_131__);
-/* harmony import */ var _Animation_Animation__WEBPACK_IMPORTED_MODULE_132__ = __webpack_require__(136);
-/* harmony import */ var _Animation_Animation__WEBPACK_IMPORTED_MODULE_132___default = /*#__PURE__*/__webpack_require__.n(_Animation_Animation__WEBPACK_IMPORTED_MODULE_132__);
-/* harmony import */ var _Animation_BlendWeights__WEBPACK_IMPORTED_MODULE_133__ = __webpack_require__(137);
-/* harmony import */ var _Animation_BlendWeights__WEBPACK_IMPORTED_MODULE_133___default = /*#__PURE__*/__webpack_require__.n(_Animation_BlendWeights__WEBPACK_IMPORTED_MODULE_133__);
-/* harmony import */ var _Exception_index__WEBPACK_IMPORTED_MODULE_134__ = __webpack_require__(138);
-/* harmony import */ var _Attribute_PropertyAttribute__WEBPACK_IMPORTED_MODULE_135__ = __webpack_require__(140);
-/* harmony import */ var _Attribute_PropertyAttribute__WEBPACK_IMPORTED_MODULE_135___default = /*#__PURE__*/__webpack_require__.n(_Attribute_PropertyAttribute__WEBPACK_IMPORTED_MODULE_135__);
-/* harmony import */ var _Attribute_HeaderAttribute__WEBPACK_IMPORTED_MODULE_136__ = __webpack_require__(141);
-/* harmony import */ var _Attribute_HeaderAttribute__WEBPACK_IMPORTED_MODULE_136___default = /*#__PURE__*/__webpack_require__.n(_Attribute_HeaderAttribute__WEBPACK_IMPORTED_MODULE_136__);
-/* harmony import */ var _Attribute_SerializeField__WEBPACK_IMPORTED_MODULE_137__ = __webpack_require__(142);
-/* harmony import */ var _Attribute_SerializeField__WEBPACK_IMPORTED_MODULE_137___default = /*#__PURE__*/__webpack_require__.n(_Attribute_SerializeField__WEBPACK_IMPORTED_MODULE_137__);
-/* harmony import */ var _Attribute_TooltipAttribute__WEBPACK_IMPORTED_MODULE_138__ = __webpack_require__(143);
-/* harmony import */ var _Attribute_TooltipAttribute__WEBPACK_IMPORTED_MODULE_138___default = /*#__PURE__*/__webpack_require__.n(_Attribute_TooltipAttribute__WEBPACK_IMPORTED_MODULE_138__);
-/* harmony import */ var _Attribute_HideInInspector__WEBPACK_IMPORTED_MODULE_139__ = __webpack_require__(144);
-/* harmony import */ var _Attribute_HideInInspector__WEBPACK_IMPORTED_MODULE_139___default = /*#__PURE__*/__webpack_require__.n(_Attribute_HideInInspector__WEBPACK_IMPORTED_MODULE_139__);
-/* harmony import */ var _Attribute_ExecuteInEditMode__WEBPACK_IMPORTED_MODULE_140__ = __webpack_require__(145);
-/* harmony import */ var _Attribute_ExecuteInEditMode__WEBPACK_IMPORTED_MODULE_140___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ExecuteInEditMode__WEBPACK_IMPORTED_MODULE_140__);
-/* harmony import */ var _Attribute_AddComponentMenu__WEBPACK_IMPORTED_MODULE_141__ = __webpack_require__(146);
-/* harmony import */ var _Attribute_AddComponentMenu__WEBPACK_IMPORTED_MODULE_141___default = /*#__PURE__*/__webpack_require__.n(_Attribute_AddComponentMenu__WEBPACK_IMPORTED_MODULE_141__);
-/* harmony import */ var _Attribute_ContextMenu__WEBPACK_IMPORTED_MODULE_142__ = __webpack_require__(147);
-/* harmony import */ var _Attribute_ContextMenu__WEBPACK_IMPORTED_MODULE_142___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ContextMenu__WEBPACK_IMPORTED_MODULE_142__);
-/* harmony import */ var _Attribute_PreserveAttribute__WEBPACK_IMPORTED_MODULE_143__ = __webpack_require__(148);
-/* harmony import */ var _Attribute_PreserveAttribute__WEBPACK_IMPORTED_MODULE_143___default = /*#__PURE__*/__webpack_require__.n(_Attribute_PreserveAttribute__WEBPACK_IMPORTED_MODULE_143__);
-/* harmony import */ var _Attribute_RequireComponent__WEBPACK_IMPORTED_MODULE_144__ = __webpack_require__(149);
-/* harmony import */ var _Attribute_RequireComponent__WEBPACK_IMPORTED_MODULE_144___default = /*#__PURE__*/__webpack_require__.n(_Attribute_RequireComponent__WEBPACK_IMPORTED_MODULE_144__);
-/* harmony import */ var _Attribute_ImageEffectOpaque__WEBPACK_IMPORTED_MODULE_145__ = __webpack_require__(150);
-/* harmony import */ var _Attribute_ImageEffectOpaque__WEBPACK_IMPORTED_MODULE_145___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ImageEffectOpaque__WEBPACK_IMPORTED_MODULE_145__);
-/* harmony import */ var _Attribute_ImageEffectTransformsToLDR__WEBPACK_IMPORTED_MODULE_146__ = __webpack_require__(151);
-/* harmony import */ var _Attribute_ImageEffectTransformsToLDR__WEBPACK_IMPORTED_MODULE_146___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ImageEffectTransformsToLDR__WEBPACK_IMPORTED_MODULE_146__);
-/* harmony import */ var _Attribute_DisallowMultipleComponent__WEBPACK_IMPORTED_MODULE_147__ = __webpack_require__(152);
-/* harmony import */ var _Attribute_DisallowMultipleComponent__WEBPACK_IMPORTED_MODULE_147___default = /*#__PURE__*/__webpack_require__.n(_Attribute_DisallowMultipleComponent__WEBPACK_IMPORTED_MODULE_147__);
-/* harmony import */ var _Attribute_RangeAttribute__WEBPACK_IMPORTED_MODULE_148__ = __webpack_require__(153);
-/* harmony import */ var _Attribute_RangeAttribute__WEBPACK_IMPORTED_MODULE_148___default = /*#__PURE__*/__webpack_require__.n(_Attribute_RangeAttribute__WEBPACK_IMPORTED_MODULE_148__);
-/* harmony import */ var _Attribute_RuntimeInitializeOnLoadMethodAttribute__WEBPACK_IMPORTED_MODULE_149__ = __webpack_require__(154);
-/* harmony import */ var _Attribute_RuntimeInitializeOnLoadMethodAttribute__WEBPACK_IMPORTED_MODULE_149___default = /*#__PURE__*/__webpack_require__.n(_Attribute_RuntimeInitializeOnLoadMethodAttribute__WEBPACK_IMPORTED_MODULE_149__);
-/* harmony import */ var _Attribute_SpaceAttribute__WEBPACK_IMPORTED_MODULE_150__ = __webpack_require__(155);
-/* harmony import */ var _Attribute_SpaceAttribute__WEBPACK_IMPORTED_MODULE_150___default = /*#__PURE__*/__webpack_require__.n(_Attribute_SpaceAttribute__WEBPACK_IMPORTED_MODULE_150__);
-/* harmony import */ var _Attribute_MultilineAttribute__WEBPACK_IMPORTED_MODULE_151__ = __webpack_require__(156);
-/* harmony import */ var _Attribute_MultilineAttribute__WEBPACK_IMPORTED_MODULE_151___default = /*#__PURE__*/__webpack_require__.n(_Attribute_MultilineAttribute__WEBPACK_IMPORTED_MODULE_151__);
-/* harmony import */ var _Attribute_TextAreaAttribute__WEBPACK_IMPORTED_MODULE_152__ = __webpack_require__(157);
-/* harmony import */ var _Attribute_TextAreaAttribute__WEBPACK_IMPORTED_MODULE_152___default = /*#__PURE__*/__webpack_require__.n(_Attribute_TextAreaAttribute__WEBPACK_IMPORTED_MODULE_152__);
-/* harmony import */ var _UGUI_ICanvasElement__WEBPACK_IMPORTED_MODULE_153__ = __webpack_require__(158);
-/* harmony import */ var _UGUI_ICanvasElement__WEBPACK_IMPORTED_MODULE_153___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ICanvasElement__WEBPACK_IMPORTED_MODULE_153__);
-/* harmony import */ var _UGUI_ICanvasRaycastFilter__WEBPACK_IMPORTED_MODULE_154__ = __webpack_require__(159);
-/* harmony import */ var _UGUI_ICanvasRaycastFilter__WEBPACK_IMPORTED_MODULE_154___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ICanvasRaycastFilter__WEBPACK_IMPORTED_MODULE_154__);
-/* harmony import */ var _UGUI_Axis__WEBPACK_IMPORTED_MODULE_155__ = __webpack_require__(160);
-/* harmony import */ var _UGUI_Axis__WEBPACK_IMPORTED_MODULE_155___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Axis__WEBPACK_IMPORTED_MODULE_155__);
-/* harmony import */ var _UGUI_AnimationTriggers__WEBPACK_IMPORTED_MODULE_156__ = __webpack_require__(161);
-/* harmony import */ var _UGUI_AnimationTriggers__WEBPACK_IMPORTED_MODULE_156___default = /*#__PURE__*/__webpack_require__.n(_UGUI_AnimationTriggers__WEBPACK_IMPORTED_MODULE_156__);
-/* harmony import */ var _UGUI_IMeshModifier__WEBPACK_IMPORTED_MODULE_157__ = __webpack_require__(162);
-/* harmony import */ var _UGUI_IMeshModifier__WEBPACK_IMPORTED_MODULE_157___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IMeshModifier__WEBPACK_IMPORTED_MODULE_157__);
-/* harmony import */ var _UGUI_CanvasUpdate__WEBPACK_IMPORTED_MODULE_158__ = __webpack_require__(163);
-/* harmony import */ var _UGUI_CanvasUpdate__WEBPACK_IMPORTED_MODULE_158___default = /*#__PURE__*/__webpack_require__.n(_UGUI_CanvasUpdate__WEBPACK_IMPORTED_MODULE_158__);
-/* harmony import */ var _UGUI_ColorBlock__WEBPACK_IMPORTED_MODULE_159__ = __webpack_require__(164);
-/* harmony import */ var _UGUI_ColorBlock__WEBPACK_IMPORTED_MODULE_159___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ColorBlock__WEBPACK_IMPORTED_MODULE_159__);
-/* harmony import */ var _UGUI_ILayoutElement__WEBPACK_IMPORTED_MODULE_160__ = __webpack_require__(165);
-/* harmony import */ var _UGUI_ILayoutElement__WEBPACK_IMPORTED_MODULE_160___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ILayoutElement__WEBPACK_IMPORTED_MODULE_160__);
-/* harmony import */ var _UGUI_Constraint__WEBPACK_IMPORTED_MODULE_161__ = __webpack_require__(166);
-/* harmony import */ var _UGUI_Constraint__WEBPACK_IMPORTED_MODULE_161___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Constraint__WEBPACK_IMPORTED_MODULE_161__);
-/* harmony import */ var _UGUI_Corner__WEBPACK_IMPORTED_MODULE_162__ = __webpack_require__(167);
-/* harmony import */ var _UGUI_Corner__WEBPACK_IMPORTED_MODULE_162___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Corner__WEBPACK_IMPORTED_MODULE_162__);
-/* harmony import */ var _UGUI_IClippable__WEBPACK_IMPORTED_MODULE_163__ = __webpack_require__(168);
-/* harmony import */ var _UGUI_IClippable__WEBPACK_IMPORTED_MODULE_163___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IClippable__WEBPACK_IMPORTED_MODULE_163__);
-/* harmony import */ var _UGUI_IMaterialModifier__WEBPACK_IMPORTED_MODULE_164__ = __webpack_require__(169);
-/* harmony import */ var _UGUI_IMaterialModifier__WEBPACK_IMPORTED_MODULE_164___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IMaterialModifier__WEBPACK_IMPORTED_MODULE_164__);
-/* harmony import */ var _UGUI_IMaskable__WEBPACK_IMPORTED_MODULE_165__ = __webpack_require__(170);
-/* harmony import */ var _UGUI_IMaskable__WEBPACK_IMPORTED_MODULE_165___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IMaskable__WEBPACK_IMPORTED_MODULE_165__);
-/* harmony import */ var _UGUI_Type__WEBPACK_IMPORTED_MODULE_166__ = __webpack_require__(171);
-/* harmony import */ var _UGUI_Type__WEBPACK_IMPORTED_MODULE_166___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Type__WEBPACK_IMPORTED_MODULE_166__);
-/* harmony import */ var _UGUI_Navigation__WEBPACK_IMPORTED_MODULE_167__ = __webpack_require__(172);
-/* harmony import */ var _UGUI_Navigation__WEBPACK_IMPORTED_MODULE_167___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Navigation__WEBPACK_IMPORTED_MODULE_167__);
-/* harmony import */ var _UGUI_Mode__WEBPACK_IMPORTED_MODULE_168__ = __webpack_require__(173);
-/* harmony import */ var _UGUI_Mode__WEBPACK_IMPORTED_MODULE_168___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Mode__WEBPACK_IMPORTED_MODULE_168__);
-/* harmony import */ var _UGUI_Direction__WEBPACK_IMPORTED_MODULE_169__ = __webpack_require__(174);
-/* harmony import */ var _UGUI_Direction__WEBPACK_IMPORTED_MODULE_169___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Direction__WEBPACK_IMPORTED_MODULE_169__);
-/* harmony import */ var _UGUI_MovementType__WEBPACK_IMPORTED_MODULE_170__ = __webpack_require__(175);
-/* harmony import */ var _UGUI_MovementType__WEBPACK_IMPORTED_MODULE_170___default = /*#__PURE__*/__webpack_require__.n(_UGUI_MovementType__WEBPACK_IMPORTED_MODULE_170__);
-/* harmony import */ var _UGUI_ScrollbarVisibility__WEBPACK_IMPORTED_MODULE_171__ = __webpack_require__(176);
-/* harmony import */ var _UGUI_ScrollbarVisibility__WEBPACK_IMPORTED_MODULE_171___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollbarVisibility__WEBPACK_IMPORTED_MODULE_171__);
-/* harmony import */ var _UGUI_Transition__WEBPACK_IMPORTED_MODULE_172__ = __webpack_require__(177);
-/* harmony import */ var _UGUI_Transition__WEBPACK_IMPORTED_MODULE_172___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Transition__WEBPACK_IMPORTED_MODULE_172__);
-/* harmony import */ var _UGUI_SpriteState__WEBPACK_IMPORTED_MODULE_173__ = __webpack_require__(178);
-/* harmony import */ var _UGUI_SpriteState__WEBPACK_IMPORTED_MODULE_173___default = /*#__PURE__*/__webpack_require__.n(_UGUI_SpriteState__WEBPACK_IMPORTED_MODULE_173__);
-/* harmony import */ var _UGUI_ToggleTransition__WEBPACK_IMPORTED_MODULE_174__ = __webpack_require__(179);
-/* harmony import */ var _UGUI_ToggleTransition__WEBPACK_IMPORTED_MODULE_174___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ToggleTransition__WEBPACK_IMPORTED_MODULE_174__);
-/* harmony import */ var _UGUI_VertexHelper__WEBPACK_IMPORTED_MODULE_175__ = __webpack_require__(180);
-/* harmony import */ var _UGUI_VertexHelper__WEBPACK_IMPORTED_MODULE_175___default = /*#__PURE__*/__webpack_require__.n(_UGUI_VertexHelper__WEBPACK_IMPORTED_MODULE_175__);
-/* harmony import */ var _UGUI_UICharInfo__WEBPACK_IMPORTED_MODULE_176__ = __webpack_require__(181);
-/* harmony import */ var _UGUI_UICharInfo__WEBPACK_IMPORTED_MODULE_176___default = /*#__PURE__*/__webpack_require__.n(_UGUI_UICharInfo__WEBPACK_IMPORTED_MODULE_176__);
-/* harmony import */ var _UGUI_UILineInfo__WEBPACK_IMPORTED_MODULE_177__ = __webpack_require__(182);
-/* harmony import */ var _UGUI_UILineInfo__WEBPACK_IMPORTED_MODULE_177___default = /*#__PURE__*/__webpack_require__.n(_UGUI_UILineInfo__WEBPACK_IMPORTED_MODULE_177__);
-/* harmony import */ var _UGUI_UIVertex__WEBPACK_IMPORTED_MODULE_178__ = __webpack_require__(183);
-/* harmony import */ var _UGUI_UIVertex__WEBPACK_IMPORTED_MODULE_178___default = /*#__PURE__*/__webpack_require__.n(_UGUI_UIVertex__WEBPACK_IMPORTED_MODULE_178__);
-/* harmony import */ var _UGUI_ILayoutController__WEBPACK_IMPORTED_MODULE_179__ = __webpack_require__(184);
-/* harmony import */ var _UGUI_ILayoutController__WEBPACK_IMPORTED_MODULE_179___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ILayoutController__WEBPACK_IMPORTED_MODULE_179__);
-/* harmony import */ var _UGUI_ILayoutGroup__WEBPACK_IMPORTED_MODULE_180__ = __webpack_require__(185);
-/* harmony import */ var _UGUI_ILayoutGroup__WEBPACK_IMPORTED_MODULE_180___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ILayoutGroup__WEBPACK_IMPORTED_MODULE_180__);
-/* harmony import */ var _UGUI_ButtonClickedEvent__WEBPACK_IMPORTED_MODULE_181__ = __webpack_require__(186);
-/* harmony import */ var _UGUI_ButtonClickedEvent__WEBPACK_IMPORTED_MODULE_181___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ButtonClickedEvent__WEBPACK_IMPORTED_MODULE_181__);
-/* harmony import */ var _UGUI_CullStateChangedEvent__WEBPACK_IMPORTED_MODULE_182__ = __webpack_require__(187);
-/* harmony import */ var _UGUI_CullStateChangedEvent__WEBPACK_IMPORTED_MODULE_182___default = /*#__PURE__*/__webpack_require__.n(_UGUI_CullStateChangedEvent__WEBPACK_IMPORTED_MODULE_182__);
-/* harmony import */ var _UGUI_ScrollEvent__WEBPACK_IMPORTED_MODULE_183__ = __webpack_require__(188);
-/* harmony import */ var _UGUI_ScrollEvent__WEBPACK_IMPORTED_MODULE_183___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollEvent__WEBPACK_IMPORTED_MODULE_183__);
-/* harmony import */ var _UGUI_SliderEvent__WEBPACK_IMPORTED_MODULE_184__ = __webpack_require__(189);
-/* harmony import */ var _UGUI_SliderEvent__WEBPACK_IMPORTED_MODULE_184___default = /*#__PURE__*/__webpack_require__.n(_UGUI_SliderEvent__WEBPACK_IMPORTED_MODULE_184__);
-/* harmony import */ var _UGUI_ToggleEvent__WEBPACK_IMPORTED_MODULE_185__ = __webpack_require__(190);
-/* harmony import */ var _UGUI_ToggleEvent__WEBPACK_IMPORTED_MODULE_185___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ToggleEvent__WEBPACK_IMPORTED_MODULE_185__);
-/* harmony import */ var _UGUI_ScrollRectEvent__WEBPACK_IMPORTED_MODULE_186__ = __webpack_require__(191);
-/* harmony import */ var _UGUI_ScrollRectEvent__WEBPACK_IMPORTED_MODULE_186___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollRectEvent__WEBPACK_IMPORTED_MODULE_186__);
-/* harmony import */ var _UGUI_BaseMeshEffect__WEBPACK_IMPORTED_MODULE_187__ = __webpack_require__(192);
-/* harmony import */ var _UGUI_BaseMeshEffect__WEBPACK_IMPORTED_MODULE_187___default = /*#__PURE__*/__webpack_require__.n(_UGUI_BaseMeshEffect__WEBPACK_IMPORTED_MODULE_187__);
-/* harmony import */ var _UGUI_Selectable__WEBPACK_IMPORTED_MODULE_188__ = __webpack_require__(193);
-/* harmony import */ var _UGUI_Selectable__WEBPACK_IMPORTED_MODULE_188___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Selectable__WEBPACK_IMPORTED_MODULE_188__);
-/* harmony import */ var _UGUI_Graphic__WEBPACK_IMPORTED_MODULE_189__ = __webpack_require__(194);
-/* harmony import */ var _UGUI_Graphic__WEBPACK_IMPORTED_MODULE_189___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Graphic__WEBPACK_IMPORTED_MODULE_189__);
-/* harmony import */ var _UGUI_LayoutGroup__WEBPACK_IMPORTED_MODULE_190__ = __webpack_require__(195);
-/* harmony import */ var _UGUI_LayoutGroup__WEBPACK_IMPORTED_MODULE_190___default = /*#__PURE__*/__webpack_require__.n(_UGUI_LayoutGroup__WEBPACK_IMPORTED_MODULE_190__);
-/* harmony import */ var _UGUI_ScrollRect__WEBPACK_IMPORTED_MODULE_191__ = __webpack_require__(196);
-/* harmony import */ var _UGUI_ScrollRect__WEBPACK_IMPORTED_MODULE_191___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollRect__WEBPACK_IMPORTED_MODULE_191__);
-/* harmony import */ var _UGUI_ToggleGroup__WEBPACK_IMPORTED_MODULE_192__ = __webpack_require__(197);
-/* harmony import */ var _UGUI_ToggleGroup__WEBPACK_IMPORTED_MODULE_192___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ToggleGroup__WEBPACK_IMPORTED_MODULE_192__);
-/* harmony import */ var _UGUI_Button__WEBPACK_IMPORTED_MODULE_193__ = __webpack_require__(198);
-/* harmony import */ var _UGUI_Button__WEBPACK_IMPORTED_MODULE_193___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Button__WEBPACK_IMPORTED_MODULE_193__);
-/* harmony import */ var _UGUI_GridLayoutGroup__WEBPACK_IMPORTED_MODULE_194__ = __webpack_require__(199);
-/* harmony import */ var _UGUI_GridLayoutGroup__WEBPACK_IMPORTED_MODULE_194___default = /*#__PURE__*/__webpack_require__.n(_UGUI_GridLayoutGroup__WEBPACK_IMPORTED_MODULE_194__);
-/* harmony import */ var _UGUI_MaskableGraphic__WEBPACK_IMPORTED_MODULE_195__ = __webpack_require__(200);
-/* harmony import */ var _UGUI_MaskableGraphic__WEBPACK_IMPORTED_MODULE_195___default = /*#__PURE__*/__webpack_require__.n(_UGUI_MaskableGraphic__WEBPACK_IMPORTED_MODULE_195__);
-/* harmony import */ var _UGUI_Shadow__WEBPACK_IMPORTED_MODULE_196__ = __webpack_require__(201);
-/* harmony import */ var _UGUI_Shadow__WEBPACK_IMPORTED_MODULE_196___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Shadow__WEBPACK_IMPORTED_MODULE_196__);
-/* harmony import */ var _UGUI_Scrollbar__WEBPACK_IMPORTED_MODULE_197__ = __webpack_require__(202);
-/* harmony import */ var _UGUI_Scrollbar__WEBPACK_IMPORTED_MODULE_197___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Scrollbar__WEBPACK_IMPORTED_MODULE_197__);
-/* harmony import */ var _UGUI_Slider_js__WEBPACK_IMPORTED_MODULE_198__ = __webpack_require__(203);
-/* harmony import */ var _UGUI_Slider_js__WEBPACK_IMPORTED_MODULE_198___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Slider_js__WEBPACK_IMPORTED_MODULE_198__);
-/* harmony import */ var _UGUI_Toggle_js__WEBPACK_IMPORTED_MODULE_199__ = __webpack_require__(204);
-/* harmony import */ var _UGUI_Toggle_js__WEBPACK_IMPORTED_MODULE_199___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Toggle_js__WEBPACK_IMPORTED_MODULE_199__);
-/* harmony import */ var _UGUI_Image_js__WEBPACK_IMPORTED_MODULE_200__ = __webpack_require__(205);
-/* harmony import */ var _UGUI_Image_js__WEBPACK_IMPORTED_MODULE_200___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Image_js__WEBPACK_IMPORTED_MODULE_200__);
-/* harmony import */ var _UGUI_Outline_js__WEBPACK_IMPORTED_MODULE_201__ = __webpack_require__(206);
-/* harmony import */ var _UGUI_Outline_js__WEBPACK_IMPORTED_MODULE_201___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Outline_js__WEBPACK_IMPORTED_MODULE_201__);
-/* harmony import */ var _UGUI_Text_js__WEBPACK_IMPORTED_MODULE_202__ = __webpack_require__(207);
-/* harmony import */ var _UGUI_Text_js__WEBPACK_IMPORTED_MODULE_202___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Text_js__WEBPACK_IMPORTED_MODULE_202__);
-/* harmony import */ var _Debug_WADebugger__WEBPACK_IMPORTED_MODULE_203__ = __webpack_require__(208);
+/* harmony import */ var _Geometry_Plane__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(41);
+/* harmony import */ var _Geometry_Plane__WEBPACK_IMPORTED_MODULE_39___default = /*#__PURE__*/__webpack_require__.n(_Geometry_Plane__WEBPACK_IMPORTED_MODULE_39__);
+/* harmony import */ var _SDK_SceneManager__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(42);
+/* harmony import */ var _SDK_Resources__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(43);
+/* harmony import */ var _Physics_ContactPoint__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(45);
+/* harmony import */ var _Physics_ContactPoint__WEBPACK_IMPORTED_MODULE_42___default = /*#__PURE__*/__webpack_require__.n(_Physics_ContactPoint__WEBPACK_IMPORTED_MODULE_42__);
+/* harmony import */ var _Physics_Collision__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(46);
+/* harmony import */ var _Physics_Rigidbody__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(47);
+/* harmony import */ var _Physics_PhysicMaterial__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(48);
+/* harmony import */ var _Physics_Collider__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(49);
+/* harmony import */ var _Physics_MeshCollider__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(50);
+/* harmony import */ var _Physics_BoxCollider__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(52);
+/* harmony import */ var _Physics_SphereCollider__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(53);
+/* harmony import */ var _Physics_CapsuleCollider__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(54);
+/* harmony import */ var _Physics_RaycastHit__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(55);
+/* harmony import */ var _Physics_RaycastHit__WEBPACK_IMPORTED_MODULE_51___default = /*#__PURE__*/__webpack_require__.n(_Physics_RaycastHit__WEBPACK_IMPORTED_MODULE_51__);
+/* harmony import */ var _Physics_Physics__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(56);
+/* harmony import */ var _Event_ISerializationCallbackReceiver__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(57);
+/* harmony import */ var _Event_ISerializationCallbackReceiver__WEBPACK_IMPORTED_MODULE_53___default = /*#__PURE__*/__webpack_require__.n(_Event_ISerializationCallbackReceiver__WEBPACK_IMPORTED_MODULE_53__);
+/* harmony import */ var _Event_UnityEventCallState__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(58);
+/* harmony import */ var _Event_UnityEventCallState__WEBPACK_IMPORTED_MODULE_54___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEventCallState__WEBPACK_IMPORTED_MODULE_54__);
+/* harmony import */ var _Event_UnityEventBase__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(59);
+/* harmony import */ var _Event_UnityEventBase__WEBPACK_IMPORTED_MODULE_55___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEventBase__WEBPACK_IMPORTED_MODULE_55__);
+/* harmony import */ var _Event_UnityEvent__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(60);
+/* harmony import */ var _Event_UnityEvent__WEBPACK_IMPORTED_MODULE_56___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEvent__WEBPACK_IMPORTED_MODULE_56__);
+/* harmony import */ var _Event_UnityEvent$1__WEBPACK_IMPORTED_MODULE_57__ = __webpack_require__(61);
+/* harmony import */ var _Event_UnityEvent$1__WEBPACK_IMPORTED_MODULE_57___default = /*#__PURE__*/__webpack_require__.n(_Event_UnityEvent$1__WEBPACK_IMPORTED_MODULE_57__);
+/* harmony import */ var _Event_AbstractEventData__WEBPACK_IMPORTED_MODULE_58__ = __webpack_require__(62);
+/* harmony import */ var _Event_AbstractEventData__WEBPACK_IMPORTED_MODULE_58___default = /*#__PURE__*/__webpack_require__.n(_Event_AbstractEventData__WEBPACK_IMPORTED_MODULE_58__);
+/* harmony import */ var _Event_BaseEventData__WEBPACK_IMPORTED_MODULE_59__ = __webpack_require__(63);
+/* harmony import */ var _Event_BaseEventData__WEBPACK_IMPORTED_MODULE_59___default = /*#__PURE__*/__webpack_require__.n(_Event_BaseEventData__WEBPACK_IMPORTED_MODULE_59__);
+/* harmony import */ var _Event_PointerEventData__WEBPACK_IMPORTED_MODULE_60__ = __webpack_require__(64);
+/* harmony import */ var _Event_PointerEventData__WEBPACK_IMPORTED_MODULE_60___default = /*#__PURE__*/__webpack_require__.n(_Event_PointerEventData__WEBPACK_IMPORTED_MODULE_60__);
+/* harmony import */ var _Event_AxisEventData__WEBPACK_IMPORTED_MODULE_61__ = __webpack_require__(65);
+/* harmony import */ var _Event_AxisEventData__WEBPACK_IMPORTED_MODULE_61___default = /*#__PURE__*/__webpack_require__.n(_Event_AxisEventData__WEBPACK_IMPORTED_MODULE_61__);
+/* harmony import */ var _Event_UIBehaviour__WEBPACK_IMPORTED_MODULE_62__ = __webpack_require__(66);
+/* harmony import */ var _Event_UIBehaviour__WEBPACK_IMPORTED_MODULE_62___default = /*#__PURE__*/__webpack_require__.n(_Event_UIBehaviour__WEBPACK_IMPORTED_MODULE_62__);
+/* harmony import */ var _Event_BaseInput__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(67);
+/* harmony import */ var _Event_BaseInput__WEBPACK_IMPORTED_MODULE_63___default = /*#__PURE__*/__webpack_require__.n(_Event_BaseInput__WEBPACK_IMPORTED_MODULE_63__);
+/* harmony import */ var _Event_EventSystem__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(68);
+/* harmony import */ var _Event_EventSystem__WEBPACK_IMPORTED_MODULE_64___default = /*#__PURE__*/__webpack_require__.n(_Event_EventSystem__WEBPACK_IMPORTED_MODULE_64__);
+/* harmony import */ var _Event_ExecuteEvents__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(69);
+/* harmony import */ var _Event_ExecuteEvents__WEBPACK_IMPORTED_MODULE_65___default = /*#__PURE__*/__webpack_require__.n(_Event_ExecuteEvents__WEBPACK_IMPORTED_MODULE_65__);
+/* harmony import */ var _Event_IEventSystemHandler__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(70);
+/* harmony import */ var _Event_IEventSystemHandler__WEBPACK_IMPORTED_MODULE_66___default = /*#__PURE__*/__webpack_require__.n(_Event_IEventSystemHandler__WEBPACK_IMPORTED_MODULE_66__);
+/* harmony import */ var _Event_IBeginDragHandler__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(71);
+/* harmony import */ var _Event_IBeginDragHandler__WEBPACK_IMPORTED_MODULE_67___default = /*#__PURE__*/__webpack_require__.n(_Event_IBeginDragHandler__WEBPACK_IMPORTED_MODULE_67__);
+/* harmony import */ var _Event_IDragHandler__WEBPACK_IMPORTED_MODULE_68__ = __webpack_require__(72);
+/* harmony import */ var _Event_IDragHandler__WEBPACK_IMPORTED_MODULE_68___default = /*#__PURE__*/__webpack_require__.n(_Event_IDragHandler__WEBPACK_IMPORTED_MODULE_68__);
+/* harmony import */ var _Event_IDropHandler__WEBPACK_IMPORTED_MODULE_69__ = __webpack_require__(73);
+/* harmony import */ var _Event_IDropHandler__WEBPACK_IMPORTED_MODULE_69___default = /*#__PURE__*/__webpack_require__.n(_Event_IDropHandler__WEBPACK_IMPORTED_MODULE_69__);
+/* harmony import */ var _Event_IEndDragHandler__WEBPACK_IMPORTED_MODULE_70__ = __webpack_require__(74);
+/* harmony import */ var _Event_IEndDragHandler__WEBPACK_IMPORTED_MODULE_70___default = /*#__PURE__*/__webpack_require__.n(_Event_IEndDragHandler__WEBPACK_IMPORTED_MODULE_70__);
+/* harmony import */ var _Event_ICancelHandler__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(75);
+/* harmony import */ var _Event_ICancelHandler__WEBPACK_IMPORTED_MODULE_71___default = /*#__PURE__*/__webpack_require__.n(_Event_ICancelHandler__WEBPACK_IMPORTED_MODULE_71__);
+/* harmony import */ var _Event_IInitializePotentialDragHandler__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(76);
+/* harmony import */ var _Event_IInitializePotentialDragHandler__WEBPACK_IMPORTED_MODULE_72___default = /*#__PURE__*/__webpack_require__.n(_Event_IInitializePotentialDragHandler__WEBPACK_IMPORTED_MODULE_72__);
+/* harmony import */ var _Event_IDeselectHandler__WEBPACK_IMPORTED_MODULE_73__ = __webpack_require__(77);
+/* harmony import */ var _Event_IDeselectHandler__WEBPACK_IMPORTED_MODULE_73___default = /*#__PURE__*/__webpack_require__.n(_Event_IDeselectHandler__WEBPACK_IMPORTED_MODULE_73__);
+/* harmony import */ var _Event_IMoveHandler__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(78);
+/* harmony import */ var _Event_IMoveHandler__WEBPACK_IMPORTED_MODULE_74___default = /*#__PURE__*/__webpack_require__.n(_Event_IMoveHandler__WEBPACK_IMPORTED_MODULE_74__);
+/* harmony import */ var _Event_IPointerClickHandler__WEBPACK_IMPORTED_MODULE_75__ = __webpack_require__(79);
+/* harmony import */ var _Event_IPointerClickHandler__WEBPACK_IMPORTED_MODULE_75___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerClickHandler__WEBPACK_IMPORTED_MODULE_75__);
+/* harmony import */ var _Event_IPointerDownHandler__WEBPACK_IMPORTED_MODULE_76__ = __webpack_require__(80);
+/* harmony import */ var _Event_IPointerDownHandler__WEBPACK_IMPORTED_MODULE_76___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerDownHandler__WEBPACK_IMPORTED_MODULE_76__);
+/* harmony import */ var _Event_IPointerEnterHandler__WEBPACK_IMPORTED_MODULE_77__ = __webpack_require__(81);
+/* harmony import */ var _Event_IPointerEnterHandler__WEBPACK_IMPORTED_MODULE_77___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerEnterHandler__WEBPACK_IMPORTED_MODULE_77__);
+/* harmony import */ var _Event_IPointerExitHandler__WEBPACK_IMPORTED_MODULE_78__ = __webpack_require__(82);
+/* harmony import */ var _Event_IPointerExitHandler__WEBPACK_IMPORTED_MODULE_78___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerExitHandler__WEBPACK_IMPORTED_MODULE_78__);
+/* harmony import */ var _Event_IPointerUpHandler__WEBPACK_IMPORTED_MODULE_79__ = __webpack_require__(83);
+/* harmony import */ var _Event_IPointerUpHandler__WEBPACK_IMPORTED_MODULE_79___default = /*#__PURE__*/__webpack_require__.n(_Event_IPointerUpHandler__WEBPACK_IMPORTED_MODULE_79__);
+/* harmony import */ var _Event_IScrollHandler__WEBPACK_IMPORTED_MODULE_80__ = __webpack_require__(84);
+/* harmony import */ var _Event_IScrollHandler__WEBPACK_IMPORTED_MODULE_80___default = /*#__PURE__*/__webpack_require__.n(_Event_IScrollHandler__WEBPACK_IMPORTED_MODULE_80__);
+/* harmony import */ var _Event_ISubmitHandler__WEBPACK_IMPORTED_MODULE_81__ = __webpack_require__(85);
+/* harmony import */ var _Event_ISubmitHandler__WEBPACK_IMPORTED_MODULE_81___default = /*#__PURE__*/__webpack_require__.n(_Event_ISubmitHandler__WEBPACK_IMPORTED_MODULE_81__);
+/* harmony import */ var _Event_ISelectHandler__WEBPACK_IMPORTED_MODULE_82__ = __webpack_require__(86);
+/* harmony import */ var _Event_ISelectHandler__WEBPACK_IMPORTED_MODULE_82___default = /*#__PURE__*/__webpack_require__.n(_Event_ISelectHandler__WEBPACK_IMPORTED_MODULE_82__);
+/* harmony import */ var _Event_IUpdateSelectedHandler__WEBPACK_IMPORTED_MODULE_83__ = __webpack_require__(87);
+/* harmony import */ var _Event_IUpdateSelectedHandler__WEBPACK_IMPORTED_MODULE_83___default = /*#__PURE__*/__webpack_require__.n(_Event_IUpdateSelectedHandler__WEBPACK_IMPORTED_MODULE_83__);
+/* harmony import */ var _Event_EventTrigger__WEBPACK_IMPORTED_MODULE_84__ = __webpack_require__(88);
+/* harmony import */ var _Event_EventTrigger__WEBPACK_IMPORTED_MODULE_84___default = /*#__PURE__*/__webpack_require__.n(_Event_EventTrigger__WEBPACK_IMPORTED_MODULE_84__);
+/* harmony import */ var _Event_Entry__WEBPACK_IMPORTED_MODULE_85__ = __webpack_require__(89);
+/* harmony import */ var _Event_Entry__WEBPACK_IMPORTED_MODULE_85___default = /*#__PURE__*/__webpack_require__.n(_Event_Entry__WEBPACK_IMPORTED_MODULE_85__);
+/* harmony import */ var _Event_MoveDirection__WEBPACK_IMPORTED_MODULE_86__ = __webpack_require__(90);
+/* harmony import */ var _Event_MoveDirection__WEBPACK_IMPORTED_MODULE_86___default = /*#__PURE__*/__webpack_require__.n(_Event_MoveDirection__WEBPACK_IMPORTED_MODULE_86__);
+/* harmony import */ var _Event_RaycastResult__WEBPACK_IMPORTED_MODULE_87__ = __webpack_require__(91);
+/* harmony import */ var _Event_RaycastResult__WEBPACK_IMPORTED_MODULE_87___default = /*#__PURE__*/__webpack_require__.n(_Event_RaycastResult__WEBPACK_IMPORTED_MODULE_87__);
+/* harmony import */ var _Event_TriggerEvent__WEBPACK_IMPORTED_MODULE_88__ = __webpack_require__(92);
+/* harmony import */ var _Event_TriggerEvent__WEBPACK_IMPORTED_MODULE_88___default = /*#__PURE__*/__webpack_require__.n(_Event_TriggerEvent__WEBPACK_IMPORTED_MODULE_88__);
+/* harmony import */ var _Event_BaseRaycaster__WEBPACK_IMPORTED_MODULE_89__ = __webpack_require__(93);
+/* harmony import */ var _Event_BaseRaycaster__WEBPACK_IMPORTED_MODULE_89___default = /*#__PURE__*/__webpack_require__.n(_Event_BaseRaycaster__WEBPACK_IMPORTED_MODULE_89__);
+/* harmony import */ var _Graphics_RenderTextureFormat__WEBPACK_IMPORTED_MODULE_90__ = __webpack_require__(94);
+/* harmony import */ var _Graphics_RenderTextureFormat__WEBPACK_IMPORTED_MODULE_90___default = /*#__PURE__*/__webpack_require__.n(_Graphics_RenderTextureFormat__WEBPACK_IMPORTED_MODULE_90__);
+/* harmony import */ var _Graphics_Texture__WEBPACK_IMPORTED_MODULE_91__ = __webpack_require__(95);
+/* harmony import */ var _Graphics_Texture__WEBPACK_IMPORTED_MODULE_91___default = /*#__PURE__*/__webpack_require__.n(_Graphics_Texture__WEBPACK_IMPORTED_MODULE_91__);
+/* harmony import */ var _Graphics_Texture2D__WEBPACK_IMPORTED_MODULE_92__ = __webpack_require__(96);
+/* harmony import */ var _Graphics_Texture2D__WEBPACK_IMPORTED_MODULE_92___default = /*#__PURE__*/__webpack_require__.n(_Graphics_Texture2D__WEBPACK_IMPORTED_MODULE_92__);
+/* harmony import */ var _Graphics_RenderTexture__WEBPACK_IMPORTED_MODULE_93__ = __webpack_require__(97);
+/* harmony import */ var _Graphics_RenderTexture__WEBPACK_IMPORTED_MODULE_93___default = /*#__PURE__*/__webpack_require__.n(_Graphics_RenderTexture__WEBPACK_IMPORTED_MODULE_93__);
+/* harmony import */ var _System_IO_File__WEBPACK_IMPORTED_MODULE_94__ = __webpack_require__(98);
+/* harmony import */ var _System_IO_File__WEBPACK_IMPORTED_MODULE_94___default = /*#__PURE__*/__webpack_require__.n(_System_IO_File__WEBPACK_IMPORTED_MODULE_94__);
+/* harmony import */ var _System_IO_FileInfo__WEBPACK_IMPORTED_MODULE_95__ = __webpack_require__(99);
+/* harmony import */ var _System_IO_FileInfo__WEBPACK_IMPORTED_MODULE_95___default = /*#__PURE__*/__webpack_require__.n(_System_IO_FileInfo__WEBPACK_IMPORTED_MODULE_95__);
+/* harmony import */ var _System_IO_FileStream__WEBPACK_IMPORTED_MODULE_96__ = __webpack_require__(100);
+/* harmony import */ var _System_IO_FileStream__WEBPACK_IMPORTED_MODULE_96___default = /*#__PURE__*/__webpack_require__.n(_System_IO_FileStream__WEBPACK_IMPORTED_MODULE_96__);
+/* harmony import */ var _System_SystemInfo_SystemInfo__WEBPACK_IMPORTED_MODULE_97__ = __webpack_require__(101);
+/* harmony import */ var _Camera_Camera__WEBPACK_IMPORTED_MODULE_98__ = __webpack_require__(103);
+/* harmony import */ var _Camera_Camera__WEBPACK_IMPORTED_MODULE_98___default = /*#__PURE__*/__webpack_require__.n(_Camera_Camera__WEBPACK_IMPORTED_MODULE_98__);
+/* harmony import */ var _Particle_ParticleSystem__WEBPACK_IMPORTED_MODULE_99__ = __webpack_require__(104);
+/* harmony import */ var _Particle_ParticleSystem__WEBPACK_IMPORTED_MODULE_99___default = /*#__PURE__*/__webpack_require__.n(_Particle_ParticleSystem__WEBPACK_IMPORTED_MODULE_99__);
+/* harmony import */ var _Network_WWW__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(105);
+/* harmony import */ var _Network_WWW__WEBPACK_IMPORTED_MODULE_100___default = /*#__PURE__*/__webpack_require__.n(_Network_WWW__WEBPACK_IMPORTED_MODULE_100__);
+/* harmony import */ var _Network_WWWForm__WEBPACK_IMPORTED_MODULE_101__ = __webpack_require__(106);
+/* harmony import */ var _Network_WWWForm__WEBPACK_IMPORTED_MODULE_101___default = /*#__PURE__*/__webpack_require__.n(_Network_WWWForm__WEBPACK_IMPORTED_MODULE_101__);
+/* harmony import */ var _Network_NetworkReachability__WEBPACK_IMPORTED_MODULE_102__ = __webpack_require__(107);
+/* harmony import */ var _Network_NetworkReachability__WEBPACK_IMPORTED_MODULE_102___default = /*#__PURE__*/__webpack_require__.n(_Network_NetworkReachability__WEBPACK_IMPORTED_MODULE_102__);
+/* harmony import */ var _Light_Light__WEBPACK_IMPORTED_MODULE_103__ = __webpack_require__(108);
+/* harmony import */ var _Light_Light__WEBPACK_IMPORTED_MODULE_103___default = /*#__PURE__*/__webpack_require__.n(_Light_Light__WEBPACK_IMPORTED_MODULE_103__);
+/* harmony import */ var _PlayerPrefs_PlayerPrefs__WEBPACK_IMPORTED_MODULE_104__ = __webpack_require__(109);
+/* harmony import */ var _PlayerPrefs_PlayerPrefs__WEBPACK_IMPORTED_MODULE_104___default = /*#__PURE__*/__webpack_require__.n(_PlayerPrefs_PlayerPrefs__WEBPACK_IMPORTED_MODULE_104__);
+/* harmony import */ var _Application_Application__WEBPACK_IMPORTED_MODULE_105__ = __webpack_require__(110);
+/* harmony import */ var _Application_Application__WEBPACK_IMPORTED_MODULE_105___default = /*#__PURE__*/__webpack_require__.n(_Application_Application__WEBPACK_IMPORTED_MODULE_105__);
+/* harmony import */ var _Screen_Screen__WEBPACK_IMPORTED_MODULE_106__ = __webpack_require__(111);
+/* harmony import */ var _ColorUtility_ColorUtility__WEBPACK_IMPORTED_MODULE_107__ = __webpack_require__(112);
+/* harmony import */ var _ColorUtility_ColorUtility__WEBPACK_IMPORTED_MODULE_107___default = /*#__PURE__*/__webpack_require__.n(_ColorUtility_ColorUtility__WEBPACK_IMPORTED_MODULE_107__);
+/* harmony import */ var _TextAsset_TextAsset__WEBPACK_IMPORTED_MODULE_108__ = __webpack_require__(113);
+/* harmony import */ var _TextAsset_TextAsset__WEBPACK_IMPORTED_MODULE_108___default = /*#__PURE__*/__webpack_require__.n(_TextAsset_TextAsset__WEBPACK_IMPORTED_MODULE_108__);
+/* harmony import */ var _Rect_Rect__WEBPACK_IMPORTED_MODULE_109__ = __webpack_require__(114);
+/* harmony import */ var _Rect_Rect__WEBPACK_IMPORTED_MODULE_109___default = /*#__PURE__*/__webpack_require__.n(_Rect_Rect__WEBPACK_IMPORTED_MODULE_109__);
+/* harmony import */ var _Bounds_Bounds__WEBPACK_IMPORTED_MODULE_110__ = __webpack_require__(115);
+/* harmony import */ var _Bounds_Bounds__WEBPACK_IMPORTED_MODULE_110___default = /*#__PURE__*/__webpack_require__.n(_Bounds_Bounds__WEBPACK_IMPORTED_MODULE_110__);
+/* harmony import */ var _Render_FogMod__WEBPACK_IMPORTED_MODULE_111__ = __webpack_require__(116);
+/* harmony import */ var _Render_FogMod__WEBPACK_IMPORTED_MODULE_111___default = /*#__PURE__*/__webpack_require__.n(_Render_FogMod__WEBPACK_IMPORTED_MODULE_111__);
+/* harmony import */ var _Render_RenderSettings__WEBPACK_IMPORTED_MODULE_112__ = __webpack_require__(117);
+/* harmony import */ var _Render_RenderSettings__WEBPACK_IMPORTED_MODULE_112___default = /*#__PURE__*/__webpack_require__.n(_Render_RenderSettings__WEBPACK_IMPORTED_MODULE_112__);
+/* harmony import */ var _Render_Shader__WEBPACK_IMPORTED_MODULE_113__ = __webpack_require__(118);
+/* harmony import */ var _Render_Shader__WEBPACK_IMPORTED_MODULE_113___default = /*#__PURE__*/__webpack_require__.n(_Render_Shader__WEBPACK_IMPORTED_MODULE_113__);
+/* harmony import */ var _Render_Material__WEBPACK_IMPORTED_MODULE_114__ = __webpack_require__(119);
+/* harmony import */ var _Render_Material__WEBPACK_IMPORTED_MODULE_114___default = /*#__PURE__*/__webpack_require__.n(_Render_Material__WEBPACK_IMPORTED_MODULE_114__);
+/* harmony import */ var _Render_Renderer__WEBPACK_IMPORTED_MODULE_115__ = __webpack_require__(120);
+/* harmony import */ var _Render_Renderer__WEBPACK_IMPORTED_MODULE_115___default = /*#__PURE__*/__webpack_require__.n(_Render_Renderer__WEBPACK_IMPORTED_MODULE_115__);
+/* harmony import */ var _Render_LineRenderer__WEBPACK_IMPORTED_MODULE_116__ = __webpack_require__(121);
+/* harmony import */ var _Render_LineRenderer__WEBPACK_IMPORTED_MODULE_116___default = /*#__PURE__*/__webpack_require__.n(_Render_LineRenderer__WEBPACK_IMPORTED_MODULE_116__);
+/* harmony import */ var _Render_MeshRenderer__WEBPACK_IMPORTED_MODULE_117__ = __webpack_require__(122);
+/* harmony import */ var _Render_MeshRenderer__WEBPACK_IMPORTED_MODULE_117___default = /*#__PURE__*/__webpack_require__.n(_Render_MeshRenderer__WEBPACK_IMPORTED_MODULE_117__);
+/* harmony import */ var _Render_SkinnedMeshRenderer__WEBPACK_IMPORTED_MODULE_118__ = __webpack_require__(123);
+/* harmony import */ var _Render_SkinnedMeshRenderer__WEBPACK_IMPORTED_MODULE_118___default = /*#__PURE__*/__webpack_require__.n(_Render_SkinnedMeshRenderer__WEBPACK_IMPORTED_MODULE_118__);
+/* harmony import */ var _Mesh_Mesh__WEBPACK_IMPORTED_MODULE_119__ = __webpack_require__(124);
+/* harmony import */ var _Mesh_MeshFilter__WEBPACK_IMPORTED_MODULE_120__ = __webpack_require__(125);
+/* harmony import */ var _Mesh_MeshFilter__WEBPACK_IMPORTED_MODULE_120___default = /*#__PURE__*/__webpack_require__.n(_Mesh_MeshFilter__WEBPACK_IMPORTED_MODULE_120__);
+/* harmony import */ var _Render_ShaderVariantCollection__WEBPACK_IMPORTED_MODULE_121__ = __webpack_require__(126);
+/* harmony import */ var _Render_ShaderVariantCollection__WEBPACK_IMPORTED_MODULE_121___default = /*#__PURE__*/__webpack_require__.n(_Render_ShaderVariantCollection__WEBPACK_IMPORTED_MODULE_121__);
+/* harmony import */ var _Render_ShaderVariant__WEBPACK_IMPORTED_MODULE_122__ = __webpack_require__(127);
+/* harmony import */ var _Render_ShaderVariant__WEBPACK_IMPORTED_MODULE_122___default = /*#__PURE__*/__webpack_require__.n(_Render_ShaderVariant__WEBPACK_IMPORTED_MODULE_122__);
+/* harmony import */ var _Render_LightmapData__WEBPACK_IMPORTED_MODULE_123__ = __webpack_require__(128);
+/* harmony import */ var _Render_LightmapData__WEBPACK_IMPORTED_MODULE_123___default = /*#__PURE__*/__webpack_require__.n(_Render_LightmapData__WEBPACK_IMPORTED_MODULE_123__);
+/* harmony import */ var _Render_LightmapSettings__WEBPACK_IMPORTED_MODULE_124__ = __webpack_require__(129);
+/* harmony import */ var _Render_LightmapSettings__WEBPACK_IMPORTED_MODULE_124___default = /*#__PURE__*/__webpack_require__.n(_Render_LightmapSettings__WEBPACK_IMPORTED_MODULE_124__);
+/* harmony import */ var _Render_AnisotropicFiltering__WEBPACK_IMPORTED_MODULE_125__ = __webpack_require__(130);
+/* harmony import */ var _Render_AnisotropicFiltering__WEBPACK_IMPORTED_MODULE_125___default = /*#__PURE__*/__webpack_require__.n(_Render_AnisotropicFiltering__WEBPACK_IMPORTED_MODULE_125__);
+/* harmony import */ var _Render_FilterMode__WEBPACK_IMPORTED_MODULE_126__ = __webpack_require__(131);
+/* harmony import */ var _Render_FilterMode__WEBPACK_IMPORTED_MODULE_126___default = /*#__PURE__*/__webpack_require__.n(_Render_FilterMode__WEBPACK_IMPORTED_MODULE_126__);
+/* harmony import */ var _Animation_PlayMode__WEBPACK_IMPORTED_MODULE_127__ = __webpack_require__(132);
+/* harmony import */ var _Animation_PlayMode__WEBPACK_IMPORTED_MODULE_127___default = /*#__PURE__*/__webpack_require__.n(_Animation_PlayMode__WEBPACK_IMPORTED_MODULE_127__);
+/* harmony import */ var _Animation_Motion__WEBPACK_IMPORTED_MODULE_128__ = __webpack_require__(133);
+/* harmony import */ var _Animation_Motion__WEBPACK_IMPORTED_MODULE_128___default = /*#__PURE__*/__webpack_require__.n(_Animation_Motion__WEBPACK_IMPORTED_MODULE_128__);
+/* harmony import */ var _Animation_AnimationClip__WEBPACK_IMPORTED_MODULE_129__ = __webpack_require__(134);
+/* harmony import */ var _Animation_AnimationClip__WEBPACK_IMPORTED_MODULE_129___default = /*#__PURE__*/__webpack_require__.n(_Animation_AnimationClip__WEBPACK_IMPORTED_MODULE_129__);
+/* harmony import */ var _Animation_Animator__WEBPACK_IMPORTED_MODULE_130__ = __webpack_require__(135);
+/* harmony import */ var _Animation_Animator__WEBPACK_IMPORTED_MODULE_130___default = /*#__PURE__*/__webpack_require__.n(_Animation_Animator__WEBPACK_IMPORTED_MODULE_130__);
+/* harmony import */ var _Animation_WrapMode__WEBPACK_IMPORTED_MODULE_131__ = __webpack_require__(136);
+/* harmony import */ var _Animation_WrapMode__WEBPACK_IMPORTED_MODULE_131___default = /*#__PURE__*/__webpack_require__.n(_Animation_WrapMode__WEBPACK_IMPORTED_MODULE_131__);
+/* harmony import */ var _Animation_TrackedReference__WEBPACK_IMPORTED_MODULE_132__ = __webpack_require__(137);
+/* harmony import */ var _Animation_TrackedReference__WEBPACK_IMPORTED_MODULE_132___default = /*#__PURE__*/__webpack_require__.n(_Animation_TrackedReference__WEBPACK_IMPORTED_MODULE_132__);
+/* harmony import */ var _Animation_AnimationState__WEBPACK_IMPORTED_MODULE_133__ = __webpack_require__(138);
+/* harmony import */ var _Animation_AnimationState__WEBPACK_IMPORTED_MODULE_133___default = /*#__PURE__*/__webpack_require__.n(_Animation_AnimationState__WEBPACK_IMPORTED_MODULE_133__);
+/* harmony import */ var _Animation_Animation_Enumerator__WEBPACK_IMPORTED_MODULE_134__ = __webpack_require__(139);
+/* harmony import */ var _Animation_Animation_Enumerator__WEBPACK_IMPORTED_MODULE_134___default = /*#__PURE__*/__webpack_require__.n(_Animation_Animation_Enumerator__WEBPACK_IMPORTED_MODULE_134__);
+/* harmony import */ var _Animation_Animation__WEBPACK_IMPORTED_MODULE_135__ = __webpack_require__(140);
+/* harmony import */ var _Animation_Animation__WEBPACK_IMPORTED_MODULE_135___default = /*#__PURE__*/__webpack_require__.n(_Animation_Animation__WEBPACK_IMPORTED_MODULE_135__);
+/* harmony import */ var _Animation_BlendWeights__WEBPACK_IMPORTED_MODULE_136__ = __webpack_require__(141);
+/* harmony import */ var _Animation_BlendWeights__WEBPACK_IMPORTED_MODULE_136___default = /*#__PURE__*/__webpack_require__.n(_Animation_BlendWeights__WEBPACK_IMPORTED_MODULE_136__);
+/* harmony import */ var _Exception_index__WEBPACK_IMPORTED_MODULE_137__ = __webpack_require__(142);
+/* harmony import */ var _Attribute_PropertyAttribute__WEBPACK_IMPORTED_MODULE_138__ = __webpack_require__(144);
+/* harmony import */ var _Attribute_PropertyAttribute__WEBPACK_IMPORTED_MODULE_138___default = /*#__PURE__*/__webpack_require__.n(_Attribute_PropertyAttribute__WEBPACK_IMPORTED_MODULE_138__);
+/* harmony import */ var _Attribute_HeaderAttribute__WEBPACK_IMPORTED_MODULE_139__ = __webpack_require__(145);
+/* harmony import */ var _Attribute_HeaderAttribute__WEBPACK_IMPORTED_MODULE_139___default = /*#__PURE__*/__webpack_require__.n(_Attribute_HeaderAttribute__WEBPACK_IMPORTED_MODULE_139__);
+/* harmony import */ var _Attribute_SerializeField__WEBPACK_IMPORTED_MODULE_140__ = __webpack_require__(146);
+/* harmony import */ var _Attribute_SerializeField__WEBPACK_IMPORTED_MODULE_140___default = /*#__PURE__*/__webpack_require__.n(_Attribute_SerializeField__WEBPACK_IMPORTED_MODULE_140__);
+/* harmony import */ var _Attribute_TooltipAttribute__WEBPACK_IMPORTED_MODULE_141__ = __webpack_require__(147);
+/* harmony import */ var _Attribute_TooltipAttribute__WEBPACK_IMPORTED_MODULE_141___default = /*#__PURE__*/__webpack_require__.n(_Attribute_TooltipAttribute__WEBPACK_IMPORTED_MODULE_141__);
+/* harmony import */ var _Attribute_HideInInspector__WEBPACK_IMPORTED_MODULE_142__ = __webpack_require__(148);
+/* harmony import */ var _Attribute_HideInInspector__WEBPACK_IMPORTED_MODULE_142___default = /*#__PURE__*/__webpack_require__.n(_Attribute_HideInInspector__WEBPACK_IMPORTED_MODULE_142__);
+/* harmony import */ var _Attribute_ExecuteInEditMode__WEBPACK_IMPORTED_MODULE_143__ = __webpack_require__(149);
+/* harmony import */ var _Attribute_ExecuteInEditMode__WEBPACK_IMPORTED_MODULE_143___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ExecuteInEditMode__WEBPACK_IMPORTED_MODULE_143__);
+/* harmony import */ var _Attribute_AddComponentMenu__WEBPACK_IMPORTED_MODULE_144__ = __webpack_require__(150);
+/* harmony import */ var _Attribute_AddComponentMenu__WEBPACK_IMPORTED_MODULE_144___default = /*#__PURE__*/__webpack_require__.n(_Attribute_AddComponentMenu__WEBPACK_IMPORTED_MODULE_144__);
+/* harmony import */ var _Attribute_ContextMenu__WEBPACK_IMPORTED_MODULE_145__ = __webpack_require__(151);
+/* harmony import */ var _Attribute_ContextMenu__WEBPACK_IMPORTED_MODULE_145___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ContextMenu__WEBPACK_IMPORTED_MODULE_145__);
+/* harmony import */ var _Attribute_PreserveAttribute__WEBPACK_IMPORTED_MODULE_146__ = __webpack_require__(152);
+/* harmony import */ var _Attribute_PreserveAttribute__WEBPACK_IMPORTED_MODULE_146___default = /*#__PURE__*/__webpack_require__.n(_Attribute_PreserveAttribute__WEBPACK_IMPORTED_MODULE_146__);
+/* harmony import */ var _Attribute_RequireComponent__WEBPACK_IMPORTED_MODULE_147__ = __webpack_require__(153);
+/* harmony import */ var _Attribute_RequireComponent__WEBPACK_IMPORTED_MODULE_147___default = /*#__PURE__*/__webpack_require__.n(_Attribute_RequireComponent__WEBPACK_IMPORTED_MODULE_147__);
+/* harmony import */ var _Attribute_ImageEffectOpaque__WEBPACK_IMPORTED_MODULE_148__ = __webpack_require__(154);
+/* harmony import */ var _Attribute_ImageEffectOpaque__WEBPACK_IMPORTED_MODULE_148___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ImageEffectOpaque__WEBPACK_IMPORTED_MODULE_148__);
+/* harmony import */ var _Attribute_ImageEffectTransformsToLDR__WEBPACK_IMPORTED_MODULE_149__ = __webpack_require__(155);
+/* harmony import */ var _Attribute_ImageEffectTransformsToLDR__WEBPACK_IMPORTED_MODULE_149___default = /*#__PURE__*/__webpack_require__.n(_Attribute_ImageEffectTransformsToLDR__WEBPACK_IMPORTED_MODULE_149__);
+/* harmony import */ var _Attribute_DisallowMultipleComponent__WEBPACK_IMPORTED_MODULE_150__ = __webpack_require__(156);
+/* harmony import */ var _Attribute_DisallowMultipleComponent__WEBPACK_IMPORTED_MODULE_150___default = /*#__PURE__*/__webpack_require__.n(_Attribute_DisallowMultipleComponent__WEBPACK_IMPORTED_MODULE_150__);
+/* harmony import */ var _Attribute_RangeAttribute__WEBPACK_IMPORTED_MODULE_151__ = __webpack_require__(157);
+/* harmony import */ var _Attribute_RangeAttribute__WEBPACK_IMPORTED_MODULE_151___default = /*#__PURE__*/__webpack_require__.n(_Attribute_RangeAttribute__WEBPACK_IMPORTED_MODULE_151__);
+/* harmony import */ var _Attribute_RuntimeInitializeOnLoadMethodAttribute__WEBPACK_IMPORTED_MODULE_152__ = __webpack_require__(158);
+/* harmony import */ var _Attribute_RuntimeInitializeOnLoadMethodAttribute__WEBPACK_IMPORTED_MODULE_152___default = /*#__PURE__*/__webpack_require__.n(_Attribute_RuntimeInitializeOnLoadMethodAttribute__WEBPACK_IMPORTED_MODULE_152__);
+/* harmony import */ var _Attribute_SpaceAttribute__WEBPACK_IMPORTED_MODULE_153__ = __webpack_require__(159);
+/* harmony import */ var _Attribute_SpaceAttribute__WEBPACK_IMPORTED_MODULE_153___default = /*#__PURE__*/__webpack_require__.n(_Attribute_SpaceAttribute__WEBPACK_IMPORTED_MODULE_153__);
+/* harmony import */ var _Attribute_MultilineAttribute__WEBPACK_IMPORTED_MODULE_154__ = __webpack_require__(160);
+/* harmony import */ var _Attribute_MultilineAttribute__WEBPACK_IMPORTED_MODULE_154___default = /*#__PURE__*/__webpack_require__.n(_Attribute_MultilineAttribute__WEBPACK_IMPORTED_MODULE_154__);
+/* harmony import */ var _Attribute_TextAreaAttribute__WEBPACK_IMPORTED_MODULE_155__ = __webpack_require__(161);
+/* harmony import */ var _Attribute_TextAreaAttribute__WEBPACK_IMPORTED_MODULE_155___default = /*#__PURE__*/__webpack_require__.n(_Attribute_TextAreaAttribute__WEBPACK_IMPORTED_MODULE_155__);
+/* harmony import */ var _UGUI_ICanvasElement__WEBPACK_IMPORTED_MODULE_156__ = __webpack_require__(162);
+/* harmony import */ var _UGUI_ICanvasElement__WEBPACK_IMPORTED_MODULE_156___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ICanvasElement__WEBPACK_IMPORTED_MODULE_156__);
+/* harmony import */ var _UGUI_ICanvasRaycastFilter__WEBPACK_IMPORTED_MODULE_157__ = __webpack_require__(163);
+/* harmony import */ var _UGUI_ICanvasRaycastFilter__WEBPACK_IMPORTED_MODULE_157___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ICanvasRaycastFilter__WEBPACK_IMPORTED_MODULE_157__);
+/* harmony import */ var _UGUI_Axis__WEBPACK_IMPORTED_MODULE_158__ = __webpack_require__(164);
+/* harmony import */ var _UGUI_Axis__WEBPACK_IMPORTED_MODULE_158___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Axis__WEBPACK_IMPORTED_MODULE_158__);
+/* harmony import */ var _UGUI_AnimationTriggers__WEBPACK_IMPORTED_MODULE_159__ = __webpack_require__(165);
+/* harmony import */ var _UGUI_AnimationTriggers__WEBPACK_IMPORTED_MODULE_159___default = /*#__PURE__*/__webpack_require__.n(_UGUI_AnimationTriggers__WEBPACK_IMPORTED_MODULE_159__);
+/* harmony import */ var _UGUI_IMeshModifier__WEBPACK_IMPORTED_MODULE_160__ = __webpack_require__(166);
+/* harmony import */ var _UGUI_IMeshModifier__WEBPACK_IMPORTED_MODULE_160___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IMeshModifier__WEBPACK_IMPORTED_MODULE_160__);
+/* harmony import */ var _UGUI_CanvasUpdate__WEBPACK_IMPORTED_MODULE_161__ = __webpack_require__(167);
+/* harmony import */ var _UGUI_CanvasUpdate__WEBPACK_IMPORTED_MODULE_161___default = /*#__PURE__*/__webpack_require__.n(_UGUI_CanvasUpdate__WEBPACK_IMPORTED_MODULE_161__);
+/* harmony import */ var _UGUI_ColorBlock__WEBPACK_IMPORTED_MODULE_162__ = __webpack_require__(168);
+/* harmony import */ var _UGUI_ColorBlock__WEBPACK_IMPORTED_MODULE_162___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ColorBlock__WEBPACK_IMPORTED_MODULE_162__);
+/* harmony import */ var _UGUI_ILayoutElement__WEBPACK_IMPORTED_MODULE_163__ = __webpack_require__(169);
+/* harmony import */ var _UGUI_ILayoutElement__WEBPACK_IMPORTED_MODULE_163___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ILayoutElement__WEBPACK_IMPORTED_MODULE_163__);
+/* harmony import */ var _UGUI_Constraint__WEBPACK_IMPORTED_MODULE_164__ = __webpack_require__(170);
+/* harmony import */ var _UGUI_Constraint__WEBPACK_IMPORTED_MODULE_164___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Constraint__WEBPACK_IMPORTED_MODULE_164__);
+/* harmony import */ var _UGUI_Corner__WEBPACK_IMPORTED_MODULE_165__ = __webpack_require__(171);
+/* harmony import */ var _UGUI_Corner__WEBPACK_IMPORTED_MODULE_165___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Corner__WEBPACK_IMPORTED_MODULE_165__);
+/* harmony import */ var _UGUI_IClippable__WEBPACK_IMPORTED_MODULE_166__ = __webpack_require__(172);
+/* harmony import */ var _UGUI_IClippable__WEBPACK_IMPORTED_MODULE_166___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IClippable__WEBPACK_IMPORTED_MODULE_166__);
+/* harmony import */ var _UGUI_IMaterialModifier__WEBPACK_IMPORTED_MODULE_167__ = __webpack_require__(173);
+/* harmony import */ var _UGUI_IMaterialModifier__WEBPACK_IMPORTED_MODULE_167___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IMaterialModifier__WEBPACK_IMPORTED_MODULE_167__);
+/* harmony import */ var _UGUI_IMaskable__WEBPACK_IMPORTED_MODULE_168__ = __webpack_require__(174);
+/* harmony import */ var _UGUI_IMaskable__WEBPACK_IMPORTED_MODULE_168___default = /*#__PURE__*/__webpack_require__.n(_UGUI_IMaskable__WEBPACK_IMPORTED_MODULE_168__);
+/* harmony import */ var _UGUI_Type__WEBPACK_IMPORTED_MODULE_169__ = __webpack_require__(175);
+/* harmony import */ var _UGUI_Type__WEBPACK_IMPORTED_MODULE_169___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Type__WEBPACK_IMPORTED_MODULE_169__);
+/* harmony import */ var _UGUI_Navigation__WEBPACK_IMPORTED_MODULE_170__ = __webpack_require__(176);
+/* harmony import */ var _UGUI_Navigation__WEBPACK_IMPORTED_MODULE_170___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Navigation__WEBPACK_IMPORTED_MODULE_170__);
+/* harmony import */ var _UGUI_Mode__WEBPACK_IMPORTED_MODULE_171__ = __webpack_require__(177);
+/* harmony import */ var _UGUI_Mode__WEBPACK_IMPORTED_MODULE_171___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Mode__WEBPACK_IMPORTED_MODULE_171__);
+/* harmony import */ var _UGUI_Direction__WEBPACK_IMPORTED_MODULE_172__ = __webpack_require__(178);
+/* harmony import */ var _UGUI_Direction__WEBPACK_IMPORTED_MODULE_172___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Direction__WEBPACK_IMPORTED_MODULE_172__);
+/* harmony import */ var _UGUI_MovementType__WEBPACK_IMPORTED_MODULE_173__ = __webpack_require__(179);
+/* harmony import */ var _UGUI_MovementType__WEBPACK_IMPORTED_MODULE_173___default = /*#__PURE__*/__webpack_require__.n(_UGUI_MovementType__WEBPACK_IMPORTED_MODULE_173__);
+/* harmony import */ var _UGUI_ScrollbarVisibility__WEBPACK_IMPORTED_MODULE_174__ = __webpack_require__(180);
+/* harmony import */ var _UGUI_ScrollbarVisibility__WEBPACK_IMPORTED_MODULE_174___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollbarVisibility__WEBPACK_IMPORTED_MODULE_174__);
+/* harmony import */ var _UGUI_Transition__WEBPACK_IMPORTED_MODULE_175__ = __webpack_require__(181);
+/* harmony import */ var _UGUI_Transition__WEBPACK_IMPORTED_MODULE_175___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Transition__WEBPACK_IMPORTED_MODULE_175__);
+/* harmony import */ var _UGUI_SpriteState__WEBPACK_IMPORTED_MODULE_176__ = __webpack_require__(182);
+/* harmony import */ var _UGUI_SpriteState__WEBPACK_IMPORTED_MODULE_176___default = /*#__PURE__*/__webpack_require__.n(_UGUI_SpriteState__WEBPACK_IMPORTED_MODULE_176__);
+/* harmony import */ var _UGUI_ToggleTransition__WEBPACK_IMPORTED_MODULE_177__ = __webpack_require__(183);
+/* harmony import */ var _UGUI_ToggleTransition__WEBPACK_IMPORTED_MODULE_177___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ToggleTransition__WEBPACK_IMPORTED_MODULE_177__);
+/* harmony import */ var _UGUI_VertexHelper__WEBPACK_IMPORTED_MODULE_178__ = __webpack_require__(184);
+/* harmony import */ var _UGUI_VertexHelper__WEBPACK_IMPORTED_MODULE_178___default = /*#__PURE__*/__webpack_require__.n(_UGUI_VertexHelper__WEBPACK_IMPORTED_MODULE_178__);
+/* harmony import */ var _UGUI_UICharInfo__WEBPACK_IMPORTED_MODULE_179__ = __webpack_require__(185);
+/* harmony import */ var _UGUI_UICharInfo__WEBPACK_IMPORTED_MODULE_179___default = /*#__PURE__*/__webpack_require__.n(_UGUI_UICharInfo__WEBPACK_IMPORTED_MODULE_179__);
+/* harmony import */ var _UGUI_UILineInfo__WEBPACK_IMPORTED_MODULE_180__ = __webpack_require__(186);
+/* harmony import */ var _UGUI_UILineInfo__WEBPACK_IMPORTED_MODULE_180___default = /*#__PURE__*/__webpack_require__.n(_UGUI_UILineInfo__WEBPACK_IMPORTED_MODULE_180__);
+/* harmony import */ var _UGUI_UIVertex__WEBPACK_IMPORTED_MODULE_181__ = __webpack_require__(187);
+/* harmony import */ var _UGUI_UIVertex__WEBPACK_IMPORTED_MODULE_181___default = /*#__PURE__*/__webpack_require__.n(_UGUI_UIVertex__WEBPACK_IMPORTED_MODULE_181__);
+/* harmony import */ var _UGUI_ILayoutController__WEBPACK_IMPORTED_MODULE_182__ = __webpack_require__(188);
+/* harmony import */ var _UGUI_ILayoutController__WEBPACK_IMPORTED_MODULE_182___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ILayoutController__WEBPACK_IMPORTED_MODULE_182__);
+/* harmony import */ var _UGUI_ILayoutGroup__WEBPACK_IMPORTED_MODULE_183__ = __webpack_require__(189);
+/* harmony import */ var _UGUI_ILayoutGroup__WEBPACK_IMPORTED_MODULE_183___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ILayoutGroup__WEBPACK_IMPORTED_MODULE_183__);
+/* harmony import */ var _UGUI_ButtonClickedEvent__WEBPACK_IMPORTED_MODULE_184__ = __webpack_require__(190);
+/* harmony import */ var _UGUI_ButtonClickedEvent__WEBPACK_IMPORTED_MODULE_184___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ButtonClickedEvent__WEBPACK_IMPORTED_MODULE_184__);
+/* harmony import */ var _UGUI_CullStateChangedEvent__WEBPACK_IMPORTED_MODULE_185__ = __webpack_require__(191);
+/* harmony import */ var _UGUI_CullStateChangedEvent__WEBPACK_IMPORTED_MODULE_185___default = /*#__PURE__*/__webpack_require__.n(_UGUI_CullStateChangedEvent__WEBPACK_IMPORTED_MODULE_185__);
+/* harmony import */ var _UGUI_ScrollEvent__WEBPACK_IMPORTED_MODULE_186__ = __webpack_require__(192);
+/* harmony import */ var _UGUI_ScrollEvent__WEBPACK_IMPORTED_MODULE_186___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollEvent__WEBPACK_IMPORTED_MODULE_186__);
+/* harmony import */ var _UGUI_SliderEvent__WEBPACK_IMPORTED_MODULE_187__ = __webpack_require__(193);
+/* harmony import */ var _UGUI_SliderEvent__WEBPACK_IMPORTED_MODULE_187___default = /*#__PURE__*/__webpack_require__.n(_UGUI_SliderEvent__WEBPACK_IMPORTED_MODULE_187__);
+/* harmony import */ var _UGUI_ToggleEvent__WEBPACK_IMPORTED_MODULE_188__ = __webpack_require__(194);
+/* harmony import */ var _UGUI_ToggleEvent__WEBPACK_IMPORTED_MODULE_188___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ToggleEvent__WEBPACK_IMPORTED_MODULE_188__);
+/* harmony import */ var _UGUI_ScrollRectEvent__WEBPACK_IMPORTED_MODULE_189__ = __webpack_require__(195);
+/* harmony import */ var _UGUI_ScrollRectEvent__WEBPACK_IMPORTED_MODULE_189___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollRectEvent__WEBPACK_IMPORTED_MODULE_189__);
+/* harmony import */ var _UGUI_BaseMeshEffect__WEBPACK_IMPORTED_MODULE_190__ = __webpack_require__(196);
+/* harmony import */ var _UGUI_BaseMeshEffect__WEBPACK_IMPORTED_MODULE_190___default = /*#__PURE__*/__webpack_require__.n(_UGUI_BaseMeshEffect__WEBPACK_IMPORTED_MODULE_190__);
+/* harmony import */ var _UGUI_Selectable__WEBPACK_IMPORTED_MODULE_191__ = __webpack_require__(197);
+/* harmony import */ var _UGUI_Selectable__WEBPACK_IMPORTED_MODULE_191___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Selectable__WEBPACK_IMPORTED_MODULE_191__);
+/* harmony import */ var _UGUI_Graphic__WEBPACK_IMPORTED_MODULE_192__ = __webpack_require__(198);
+/* harmony import */ var _UGUI_Graphic__WEBPACK_IMPORTED_MODULE_192___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Graphic__WEBPACK_IMPORTED_MODULE_192__);
+/* harmony import */ var _UGUI_LayoutGroup__WEBPACK_IMPORTED_MODULE_193__ = __webpack_require__(199);
+/* harmony import */ var _UGUI_LayoutGroup__WEBPACK_IMPORTED_MODULE_193___default = /*#__PURE__*/__webpack_require__.n(_UGUI_LayoutGroup__WEBPACK_IMPORTED_MODULE_193__);
+/* harmony import */ var _UGUI_ScrollRect__WEBPACK_IMPORTED_MODULE_194__ = __webpack_require__(200);
+/* harmony import */ var _UGUI_ScrollRect__WEBPACK_IMPORTED_MODULE_194___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ScrollRect__WEBPACK_IMPORTED_MODULE_194__);
+/* harmony import */ var _UGUI_ToggleGroup__WEBPACK_IMPORTED_MODULE_195__ = __webpack_require__(201);
+/* harmony import */ var _UGUI_ToggleGroup__WEBPACK_IMPORTED_MODULE_195___default = /*#__PURE__*/__webpack_require__.n(_UGUI_ToggleGroup__WEBPACK_IMPORTED_MODULE_195__);
+/* harmony import */ var _UGUI_Button__WEBPACK_IMPORTED_MODULE_196__ = __webpack_require__(202);
+/* harmony import */ var _UGUI_Button__WEBPACK_IMPORTED_MODULE_196___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Button__WEBPACK_IMPORTED_MODULE_196__);
+/* harmony import */ var _UGUI_GridLayoutGroup__WEBPACK_IMPORTED_MODULE_197__ = __webpack_require__(203);
+/* harmony import */ var _UGUI_GridLayoutGroup__WEBPACK_IMPORTED_MODULE_197___default = /*#__PURE__*/__webpack_require__.n(_UGUI_GridLayoutGroup__WEBPACK_IMPORTED_MODULE_197__);
+/* harmony import */ var _UGUI_MaskableGraphic__WEBPACK_IMPORTED_MODULE_198__ = __webpack_require__(204);
+/* harmony import */ var _UGUI_MaskableGraphic__WEBPACK_IMPORTED_MODULE_198___default = /*#__PURE__*/__webpack_require__.n(_UGUI_MaskableGraphic__WEBPACK_IMPORTED_MODULE_198__);
+/* harmony import */ var _UGUI_Shadow__WEBPACK_IMPORTED_MODULE_199__ = __webpack_require__(205);
+/* harmony import */ var _UGUI_Shadow__WEBPACK_IMPORTED_MODULE_199___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Shadow__WEBPACK_IMPORTED_MODULE_199__);
+/* harmony import */ var _UGUI_Scrollbar__WEBPACK_IMPORTED_MODULE_200__ = __webpack_require__(206);
+/* harmony import */ var _UGUI_Scrollbar__WEBPACK_IMPORTED_MODULE_200___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Scrollbar__WEBPACK_IMPORTED_MODULE_200__);
+/* harmony import */ var _UGUI_Slider_js__WEBPACK_IMPORTED_MODULE_201__ = __webpack_require__(207);
+/* harmony import */ var _UGUI_Slider_js__WEBPACK_IMPORTED_MODULE_201___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Slider_js__WEBPACK_IMPORTED_MODULE_201__);
+/* harmony import */ var _UGUI_Toggle_js__WEBPACK_IMPORTED_MODULE_202__ = __webpack_require__(208);
+/* harmony import */ var _UGUI_Toggle_js__WEBPACK_IMPORTED_MODULE_202___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Toggle_js__WEBPACK_IMPORTED_MODULE_202__);
+/* harmony import */ var _UGUI_Image_js__WEBPACK_IMPORTED_MODULE_203__ = __webpack_require__(209);
+/* harmony import */ var _UGUI_Image_js__WEBPACK_IMPORTED_MODULE_203___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Image_js__WEBPACK_IMPORTED_MODULE_203__);
+/* harmony import */ var _UGUI_Outline_js__WEBPACK_IMPORTED_MODULE_204__ = __webpack_require__(210);
+/* harmony import */ var _UGUI_Outline_js__WEBPACK_IMPORTED_MODULE_204___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Outline_js__WEBPACK_IMPORTED_MODULE_204__);
+/* harmony import */ var _UGUI_Text_js__WEBPACK_IMPORTED_MODULE_205__ = __webpack_require__(211);
+/* harmony import */ var _UGUI_Text_js__WEBPACK_IMPORTED_MODULE_205___default = /*#__PURE__*/__webpack_require__.n(_UGUI_Text_js__WEBPACK_IMPORTED_MODULE_205__);
+/* harmony import */ var _Debug_WADebugger__WEBPACK_IMPORTED_MODULE_206__ = __webpack_require__(212);
 // 安装所有Adaptor模块
  // Coroutine
 
@@ -524,10 +525,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // Geometry
+
  // SDK
 
 
  // Physics
+
+
 
 
 
@@ -1168,16 +1173,13 @@ var RootMonoBehaviour = /*#__PURE__*/function (_engine$Script) {
   return RootMonoBehaviour;
 }(engine.Script);
 
-_MiniGameAdaptor_js__WEBPACK_IMPORTED_MODULE_0__["default"].register('RootMonoBehaviour', RootMonoBehaviour);
-var originPlayScene = game.playScene;
+_MiniGameAdaptor_js__WEBPACK_IMPORTED_MODULE_0__["default"].register('RootMonoBehaviour', RootMonoBehaviour); // var originPlayScene = game.playScene;
 
-game.playScene = function () {
-  var root = originPlayScene.apply(this, arguments);
+setTimeout(function () {
+  var root = game.activeScene.root;
   root.addComponent(_MiniGameAdaptor_js__WEBPACK_IMPORTED_MODULE_0__["default"].RootMonoBehaviour);
   invokeSceneLoadCallBack();
-  return root;
-};
-
+}, 0);
 
 
 /***/ }),
@@ -1859,32 +1861,39 @@ var Debug = /*#__PURE__*/function () {
   }
 
   _createClass(Debug, null, [{
-    key: "Log",
-    value: function Log() {
+    key: "Assert",
+    value: function Assert() {
       var _console;
 
-      (_console = console).log.apply(_console, arguments);
+      (_console = console).assert.apply(_console, arguments);
+    }
+  }, {
+    key: "Log",
+    value: function Log() {
+      var _console2;
+
+      (_console2 = console).log.apply(_console2, arguments);
     }
   }, {
     key: "LogError",
     value: function LogError() {
-      var _console2;
-
-      (_console2 = console).error.apply(_console2, arguments);
-    }
-  }, {
-    key: "LogError$1",
-    value: function LogError$1() {
       var _console3;
 
       (_console3 = console).error.apply(_console3, arguments);
     }
   }, {
-    key: "LogWarning",
-    value: function LogWarning() {
+    key: "LogError$1",
+    value: function LogError$1() {
       var _console4;
 
-      (_console4 = console).warn.apply(_console4, arguments);
+      (_console4 = console).error.apply(_console4, arguments);
+    }
+  }, {
+    key: "LogWarning",
+    value: function LogWarning() {
+      var _console5;
+
+      (_console5 = console).warn.apply(_console5, arguments);
     }
   }, {
     key: "LogFormat",
@@ -3994,6 +4003,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         s.z = this.z;
         s.w = this.w;
         return s;
+      },
+      _FlipX: function _FlipX() {
+        this.x *= -1;
+        return this;
       }
     }
   });
@@ -5065,6 +5078,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         SlerpUnclamped: function SlerpUnclamped(a, b, t) {
           return new MiniGameAdaptor.Quaternion.$ctor2(a.ref.slerp(b.ref, t));
         },
+        __axisAngle2Quat: function __axisAngle2Quat(axis, angle) {
+          var q = new MiniGameAdaptor.Quaternion();
+          var halfAngle = angle * 0.5;
+          var s = Math.sin(halfAngle);
+          q.x = s * axis.x;
+          q.y = s * axis.y;
+          q.z = s * axis.z;
+          q.w = Math.cos(halfAngle);
+          return q;
+        },
         op_Equality: function op_Equality(lhs, rhs) {
           return MiniGameAdaptor.Quaternion.__IsEqualUsingDot(MiniGameAdaptor.Quaternion.Dot(lhs, rhs));
         },
@@ -5870,11 +5893,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         },
         Destroy$1: function Destroy$1(obj, t) {
           setTimeout(function () {
-            obj.ref ? obj.ref.destroy() : obj = null;
+            if (obj instanceof MiniGameAdaptor.Component) {
+              obj.entity ? obj.entity.removeComponent(obj) : obj = null;
+            } else {
+              obj.ref ? obj.ref.destroy() : obj = null;
+            }
           }, t * 1000);
         },
         DestroyImmediate: function DestroyImmediate(obj) {
-          obj.ref ? obj.ref.destroy() : obj = null;
+          MiniGameAdaptor.Object.Destroy$1(obj, 0);
         },
         DestroyImmediate$1: function DestroyImmediate$1(obj, allowDestroyingAssets) {
           throw new System.Exception("not impl");
@@ -5903,18 +5930,25 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         Instantiate$4: function Instantiate$4(T, original, position, rotation, parent) {
           // 特殊处理对engine.Prefab进行instantiate的逻辑
           if (original instanceof engine.Prefab) {
-            var entity = original.instantiate();
-            entity.__prefab = original;
+            var _entity = original.instantiate();
 
-            if (!entity.__clone) {
-              entity.name += "(Clone)";
-              entity.__clone = true;
+            _entity.__prefab = original;
+
+            if (!_entity.__clone) {
+              _entity.name += "(Clone)";
+              _entity.__clone = true;
             }
 
-            parent.ref ? parent.ref.addChild(entity.transform) : parent.addChild(entity.transform);
-            var go = MiniGameAdaptor.engineToAdaptorMap.get(entity);
+            parent.ref ? parent.ref.addChild(_entity.transform) : parent.addChild(_entity.transform);
+            var go = MiniGameAdaptor.engineToAdaptorMap.get(_entity);
             if (position) go.transform.position = position;
-            if (rotation) go.transform.rotation = rotation;
+            if (rotation) go.transform.rotation = rotation; // onInstantiated回调
+
+            _entity.components.forEach(function (c) {
+              if (c instanceof MiniGameAdaptor.Component && c["onInstantiated"]) {
+                c["onInstantiated"]();
+              }
+            });
 
             if (T === MiniGameAdaptor.GameObject) {
               return go;
@@ -5925,7 +5959,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             // 递归克隆entity及components
             var cloneEntityRecursive = function cloneEntityRecursive(_origin, _copy) {
               _origin.getAllComponents().forEach(function (component) {
-                _copy.addComponent(component.constructor); // TODO:
+                var comp = _copy.addComponent(component.constructor); // clone transform
+
+
+                if (comp && comp instanceof engine.Transform3D) {
+                  comp.position = engine.Vector3.createFromNumber(component.position.x, component.position.y, component.position.z);
+                  comp.quaternion = engine.Quaternion.createFromNumber(component.quaternion.x, component.quaternion.y, component.quaternion.z, component.quaternion.w);
+                  comp.scale = engine.Vector3.createFromNumber(component.scale.x, component.scale.y, component.scale.z);
+                } // TODO:
                 // 将原component上的值clone到新的component上
 
               });
@@ -5953,7 +5994,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
               var newRoot = engine.Entity.createEntity3D(origin.name + '(Clone)'); // let newRoot = engine.Entity.createEntity3D(origin.name);
 
               cloneEntityRecursive(origin, newRoot);
-              parent.ref ? parent.ref.addChild(newRoot.transform) : parent.addChild(newRoot.transform);
+              parent.ref ? parent.ref.addChild(newRoot.transform) : parent.addChild(newRoot.transform); // onInstantiated回调
+
+              entity.components.forEach(function (c) {
+                if (c instanceof MiniGameAdaptor.Component && c["onInstantiated"]) {
+                  c["onInstantiated"]();
+                }
+              });
               return MiniGameAdaptor.engineToAdaptorMap.get(newRoot);
             } else {
               var _origin2 = original.gameObject.ref;
@@ -5966,7 +6013,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
 
               cloneEntityRecursive(_origin2, _newRoot);
-              parent.ref ? parent.ref.addChild(_newRoot.transform) : parent.addChild(_newRoot.transform);
+              parent.ref ? parent.ref.addChild(_newRoot.transform) : parent.addChild(_newRoot.transform); // onInstantiated回调
+
+              entity.components.forEach(function (c) {
+                if (c instanceof MiniGameAdaptor.Component && c["onInstantiated"]) {
+                  c["onInstantiated"]();
+                }
+              });
               return MiniGameAdaptor.engineToAdaptorMap.get(_newRoot).GetComponent(T);
             }
           }
@@ -6231,7 +6284,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
           }
         });
         entity.transform.children.forEach(function (child) {
-          _this._BroadcastMessage(child.entity, methodName, parameter);
+          child.entity.active && _this._BroadcastMessage(child.entity, methodName, parameter);
         });
       },
       BroadcastMessage: function BroadcastMessage(methodName) {
@@ -6471,11 +6524,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       tag: {
         get: function get() {
-          // throw new System.Exception("not impl");
           return this.gameObject.tag;
         },
         set: function set(value) {
-          // throw new System.Exception("not impl");
           this.gameObject.tag = value;
         }
       },
@@ -6502,23 +6553,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     },
     methods: {
       BroadcastMessage: function BroadcastMessage(methodName) {
-        // throw new System.Exception("not impl");
         this.gameObject.BroadcastMessage(methodName);
       },
       BroadcastMessage$1: function BroadcastMessage$1(methodName, parameter) {
-        // throw new System.Exception("not impl");
         this.gameObject.BroadcastMessage$1(methodName, parameter);
       },
       BroadcastMessage$2: function BroadcastMessage$2(methodName, parameter, options) {
-        // throw new System.Exception("not impl");
         this.gameObject.BroadcastMessage$2(methodName, parameter, options);
       },
       BroadcastMessage$3: function BroadcastMessage$3(methodName, options) {
-        // throw new System.Exception("not impl");
         this.gameObject.BroadcastMessage$3(methodName, options);
       },
       CompareTag: function CompareTag(tag) {
-        // throw new System.Exception("not impl");
         return this.tag === tag;
       },
       GetComponent: function GetComponent(T) {
@@ -6552,19 +6598,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         return this.gameObject.GetComponentsInParent$1(T, includeInactive);
       },
       SendMessage: function SendMessage(methodName) {
-        // throw new System.Exception("not impl");
         this.gameObject.SendMessage(methodName);
       },
       SendMessage$1: function SendMessage$1(methodName, value) {
-        // throw new System.Exception("not impl");
         this.gameObject.SendMessage$1(methodName, value);
       },
       SendMessage$2: function SendMessage$2(methodName, value, options) {
-        // throw new System.Exception("not impl");
         this.gameObject.SendMessage$2(methodName, value, options);
       },
       SendMessage$3: function SendMessage$3(methodName, options) {
-        // throw new System.Exception("not impl");
         this.gameObject.SendMessage$3(methodName, options);
       },
       SendMessageUpwards: function SendMessageUpwards(methodName) {
@@ -6578,20 +6620,28 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       SendMessageUpwards$3: function SendMessageUpwards$3(methodName, options) {
         throw new System.Exception("not impl");
-      }
+      } // prefab实例化完成后的回调
+      // 直接在子类中定义，此处仅作注解，避免浪费性能
+      // onInstantiated: function () {
+      // }
+
     }
   });
 });
 
 /***/ }),
 /* 29 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
   "use strict";
@@ -6721,6 +6771,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
           if (!this.hasChanged) {
             this.hasChanged = true;
+          } // 有物理刚体的情况同步旋转到物理引擎
+
+
+          if (this.gameObject.nativeRigidBody) {
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
           }
         }
       },
@@ -6739,6 +6794,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
           if (!this.hasChanged) {
             this.hasChanged = true;
+          } // 如果gameObject存在物理刚体，需要将位置同步过去
+
+
+          if (this.gameObject.nativeRigidBody) {
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
           }
         }
       },
@@ -6751,6 +6811,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
           if (!this.hasChanged) {
             this.hasChanged = true;
+          } // 有物理刚体的情况同步旋转到物理引擎
+
+
+          if (this.gameObject.nativeRigidBody) {
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
           }
         }
       },
@@ -6767,7 +6832,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
           if (!this.hasChanged) {
             this.hasChanged = true;
-          }
+          } // TODO for physx
+
         }
       },
       localToWorldMatrix: {
@@ -6795,7 +6861,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
           return MiniGameAdaptor.engineToAdaptorMap.get(this.ref.parent.entity).transform;
         },
         set: function set(value) {
-          this.SetParent(value);
+          this.SetParent(value); // 如果gameObject存在物理刚体，需要将位置同步过去
+
+          if (this.gameObject.nativeRigidBody) {
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
+          }
         }
       },
       position: {
@@ -6816,6 +6887,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
           if (!this.hasChanged) {
             this.hasChanged = true;
+          } // 如果gameObject存在物理刚体，需要将位置同步过去
+
+
+          if (this.gameObject.nativeRigidBody) {
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
           }
         }
       },
@@ -6848,6 +6924,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
           if (!this.hasChanged) {
             this.hasChanged = true;
+          } // 如果gameObject存在物理刚体，需要将位置同步过去
+
+
+          if (this.gameObject.nativeRigidBody) {
+            _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
           }
         }
       },
@@ -6982,9 +7063,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       Rotate$4: function Rotate$4(axis, angle, relativeTo) {
         if (relativeTo === MiniGameAdaptor.Space.Self) {
-          this.__RotateAround(this.TransformDirection$1(axis), MiniGameAdaptor.Vector3.op_Multiply$1(angle, MiniGameAdaptor.Mathf.Deg2Rad));
+          this.__RotateAround$1(this.TransformDirection$1(axis), angle * MiniGameAdaptor.Mathf.Deg2Rad);
         } else {
-          this.__RotateAround(axis, MiniGameAdaptor.Vector3.op_Multiply$1(angle, MiniGameAdaptor.Mathf.Deg2Rad));
+          this.__RotateAround$1(axis, angle * MiniGameAdaptor.Mathf.Deg2Rad);
         }
       },
       Rotate$5: function Rotate$5(eulers, relativeTo) {
@@ -7017,6 +7098,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         // this.localPosition = MiniGameAdaptor.Vector3.op_Addition(point, dir);
 
         this.__RotateAround(rot);
+      },
+      __RotateAround$1: function __RotateAround$1(axis, angle) {
+        var local = this.InverseTransformDirection$1(axis);
+
+        var q = MiniGameAdaptor.Quaternion.__axisAngle2Quat(local, angle);
+
+        this.localRotation = MiniGameAdaptor.Quaternion.Normalize(MiniGameAdaptor.Quaternion.op_Multiply(this.localRotation, q));
       },
       __RotateAround: function __RotateAround(rot) {
         var myRot = this.rotation; // let myRot = this.localRotation;
@@ -7052,7 +7140,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
           return;
         }
 
-        if (worldPositionStays) {
+        if (!worldPositionStays) {
           this.position.x += parent.position.x;
           this.position.y += parent.position.y;
           this.position.z += parent.position.z;
@@ -7148,6 +7236,236 @@ Object.defineProperty(MiniGameAdaptor.Transform.prototype, '__properties', {
 
 /***/ }),
 /* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Phys3D", function() { return Phys3D; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "physx", function() { return physx; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bindEventForCollider", function() { return bindEventForCollider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "nativeColliderToAdaptorColliderMap", function() { return nativeColliderToAdaptorColliderMap; });
+/* harmony import */ var _Extend_RootMonoBehaviour__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Phys3D;
+
+
+try {
+  if (typeof NativeGlobal !== 'undefined' && NativeGlobal.Phys3D) {
+    Phys3D = NativeGlobal.Phys3D;
+  } else if (__global && __global.require && __global.require('physicsEngine')) {
+    Phys3D = __global.require('physicsEngine').Phys3D;
+  }
+
+  console.log('Phys3D', Phys3D);
+} catch (e) {
+  console.log('load Phys3D error', e);
+}
+
+var Physx = /*#__PURE__*/function () {
+  function Physx() {
+    _classCallCheck(this, Physx);
+
+    try {
+      if (!Phys3D) {
+        console.error('当前环境不支持原生物理引擎，某些组件表现可能不符合预期');
+        return;
+      }
+
+      if (window.physicsConfig) {
+        console.log('当前已开启pvd调试模式：', window.physicsConfig);
+      }
+
+      this.Phys3dInstance = new Phys3D.PhysSystem(window.physicsConfig);
+      console.log('Phys3dInstance', this.Phys3dInstance);
+    } catch (e) {
+      console.log(e);
+    }
+
+    this.rigidbodies = [];
+    this.requestId = null;
+    this.loopFunc = this.loop.bind(this);
+    this.vec = new engine.Vector3();
+  }
+
+  _createClass(Physx, [{
+    key: "addBody",
+    value: function addBody(body) {
+      this.rigidbodies.push(body);
+    }
+  }, {
+    key: "addStaticBodyForCollider",
+    value: function addStaticBodyForCollider(comp) {
+      var entity = comp.entity;
+      var pos = entity.transform.worldPosition;
+      comp.rigidBody = new Phys3D.StaticRigidbody(physx.Phys3dInstance);
+      comp.rigidBody.position = new Phys3D.RawVec3f(pos.x, pos.y, pos.z);
+      comp.rigidBody.__sourceComp = comp;
+      comp.nativeCollider.attachedRigidbody = comp.rigidBody;
+      comp.gameObject.nativeRigidBody = comp.rigidBody; // 静态刚体不需要关心位置和旋转反向同步问题，所以不需要添加到遍历数组
+
+      /*physx.addBody(comp.rigidBody)*/
+
+      var quaternion = entity.transform.worldQuaternion;
+      var RawQuaternion = new Phys3D.RawQuaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+      comp.rigidBody.rotation = RawQuaternion;
+    }
+    /**
+     * 不管是刚体初始化还是后续通过API手动改变刚体的旋转，都需要将旋转结果同步到物理引擎
+     */
+
+  }, {
+    key: "syncRotation",
+    value: function syncRotation(entity, body) {
+      var quaternion = entity.transform.worldQuaternion;
+      body.rotation = new Phys3D.RawQuaternion(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+    }
+    /**
+     * 不管是刚体初始化还是后续通过API手动改变刚体的旋转，都需要将位置同步到物理引擎
+     */
+
+  }, {
+    key: "syncPosition",
+    value: function syncPosition(entity, body) {
+      var pos = entity.transform.worldPosition;
+      body.position = new Phys3D.RawVec3f(pos.x, pos.y, pos.z);
+    }
+  }, {
+    key: "setEntityPosition",
+    value: function setEntityPosition(entity, pos) {
+      var tran = entity.transform;
+      var m;
+
+      if (tran.parent) {
+        m = tran.parent.worldMatrix.inverse();
+      } else {
+        m = tran.worldMatrix.inverse();
+      }
+
+      this.vec.x = pos.x;
+      this.vec.y = pos.y;
+      this.vec.z = pos.z;
+      m.transformPoint(this.vec, tran.position);
+    }
+  }, {
+    key: "simulate",
+    value: function simulate(dt) {
+      var start = new Date();
+      this.Phys3dInstance.Simulate(dt);
+      var sim = new Date() - start;
+
+      if (sim > 4) {
+        console.warn('simulate update cost  for a long time: ', sim);
+      }
+
+      start = new Date();
+      var len = this.rigidbodies.length;
+
+      for (var i = 0; i < this.rigidbodies.length; i++) {
+        var body = this.rigidbodies[i];
+        var comp = body.__sourceComp;
+        var entity = comp.entity;
+        var pos = body.position;
+        var rotation = body.rotation;
+
+        if (entity) {
+          // 如果实体销毁了，去除刚体引用，随GC自动释放
+          if (entity.isDestroyed) {
+            console.log('entity isDestroyed');
+            this.rigidbodies.splice(i, 1);
+            i--;
+          } else {
+            /**
+             * 物理引擎的适配要特别注意坐标系的换算
+             * 微信引擎和physx都是右手坐标系，而adaptor(Unity)是左手坐标系
+             * 如果需要从adaptor向physx设置坐标，有两种情况:
+             * 一种是直接取entity的坐标，因为坐标系一致，直接透传
+             * 一种是取adaptor的坐标，坐标系要取反，即x取反，如果是旋转的情况，x/w都要取反(从physx到adaptor同理）
+             *
+             * 为了可维护性，约定采取第一种方式，entity和physx进行交互，避免不必要的坐标换算
+             * 需要特别注意的是，adaptor的每个成员方法就不可避免要进行一个坐标换算再透传给physx了，比如：
+             *
+             * const RawVec3f =  new Phys3D.RawVec3f(-x, y, z);
+             * this.nativeRigidBody.AddForce(RawVec3f, MiniGameAdaptor.ForceMode.Force)
+             */
+            this.setEntityPosition(entity, pos);
+            var q = new engine.Quaternion();
+            q.x = rotation.x;
+            q.y = rotation.y;
+            q.z = rotation.z;
+            q.w = rotation.w;
+            entity.transform.quaternion = q;
+          }
+        }
+      }
+
+      var render = new Date() - start;
+
+      if (len > 30) {
+        console.log('render update cost', render, 'rigidbody count', len, 'simulate cost', sim);
+      }
+      /*if (render > 2 ) {
+          console.log('render update cost', render)
+      }*/
+
+    }
+  }, {
+    key: "loop",
+    value: function loop(dt) {
+      if (this.rigidbodies && this.rigidbodies.length && MiniGameAdaptor.Physics.autoSimulation) {
+        this.simulate(dt);
+      }
+    }
+  }]);
+
+  return Physx;
+}();
+
+var physx = new Physx();
+var count = 0; // 跟随引擎的update执行Simulate逻辑
+
+Object(_Extend_RootMonoBehaviour__WEBPACK_IMPORTED_MODULE_0__["onRootMonoBehaviourUpdate"])(function (dt) {
+  physx.loop(dt);
+});
+var nativeColliderToAdaptorColliderMap = new WeakMap();
+
+function bindEventForCollider(nativeCollider, gameObject) {
+  nativeCollider.userData = gameObject;
+
+  nativeCollider.onCollisionEnter = function (other) {
+    var collision = new MiniGameAdaptor.Collision.$ctor1(other);
+    gameObject.BroadcastMessage$2('OnCollisionEnter', other, MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collision);
+  };
+
+  nativeCollider.onCollisionExit = function (other) {
+    var collision = new MiniGameAdaptor.Collision.$ctor1(other);
+    gameObject.BroadcastMessage$3('OnCollisionExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collision);
+  };
+
+  nativeCollider.onCollisionStay = function (other) {
+    var collision = new MiniGameAdaptor.Collision.$ctor1(other);
+    gameObject.BroadcastMessage$3('OnCollisionStay', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collision);
+  };
+
+  nativeCollider.onTriggerExit = function (other) {
+    var collider = nativeColliderToAdaptorColliderMap(other);
+    gameObject.BroadcastMessage$3('onTriggerExit', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
+  };
+
+  nativeCollider.onTriggerEnter = function (other) {
+    var collider = nativeColliderToAdaptorColliderMap(other);
+    gameObject.BroadcastMessage$3('onTriggerEnter', MiniGameAdaptor.SendMessageOptions.DontRequireReceiver, collider);
+  };
+}
+
+
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -7181,7 +7499,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -7427,7 +7745,7 @@ Object.defineProperty(MiniGameAdaptor.MonoBehaviour.prototype, '__properties', {
 });
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -7445,7 +7763,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -7987,7 +8305,7 @@ MiniGameAdaptor.AudioSource.prototype.__properties._volume = {
 };
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -8100,7 +8418,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -8442,7 +8760,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8861,7 +9179,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -9014,7 +9332,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -9035,7 +9353,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -9054,7 +9372,106 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 40 */
+/* 41 */
+/***/ (function(module, exports) {
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.Plane", {
+    $kind: "struct",
+    statics: {
+      methods: {
+        Translate: function Translate(plane, translation) {
+          throw new System.Exception("not impl");
+        },
+        getDefaultValue: function getDefaultValue() {
+          return new UnityEngine.Plane();
+        }
+      }
+    },
+    props: {
+      distance: {
+        get: function get() {
+          return 0;
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      },
+      flipped: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      normal: {
+        get: function get() {
+          return new MiniGameAdaptor.Vector3.$ctor2(0, 0, 0);
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      }
+    },
+    ctors: {
+      $ctor1: function $ctor1(inNormal, d) {
+        this.$initialize();
+      },
+      $ctor2: function $ctor2(inNormal, inPoint) {
+        this.$initialize();
+        this.inNormal = inNormal;
+        this.inPoint = inPoint;
+      },
+      $ctor3: function $ctor3(a, b, c) {
+        this.$initialize();
+      },
+      ctor: function ctor() {
+        this.$initialize();
+      }
+    },
+    methods: {
+      ClosestPointOnPlane: function ClosestPointOnPlane(point) {
+        throw new System.Exception("not impl");
+      },
+      Flip: function Flip() {
+        throw new System.Exception("not impl");
+      },
+      GetDistanceToPoint: function GetDistanceToPoint(point) {
+        throw new System.Exception("not impl");
+      },
+      GetSide: function GetSide(point) {
+        throw new System.Exception("not impl");
+      },
+      Raycast: function Raycast(ray, enter) {
+        throw new System.Exception("not impl");
+      },
+      SameSide: function SameSide(inPt0, inPt1) {
+        throw new System.Exception("not impl");
+      },
+      Set3Points: function Set3Points(a, b, c) {
+        throw new System.Exception("not impl");
+      },
+      SetNormalAndPosition: function SetNormalAndPosition(inNormal, inPoint) {
+        throw new System.Exception("not impl");
+      },
+      toString: function toString() {
+        throw new System.Exception("not impl");
+      },
+      ToString: function ToString(format) {
+        throw new System.Exception("not impl");
+      },
+      Translate: function Translate(translation) {
+        throw new System.Exception("not impl");
+      },
+      $clone: function $clone(to) {
+        return this;
+      }
+    }
+  });
+});
+
+/***/ }),
+/* 42 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9156,13 +9573,13 @@ if (window.__minigamePrivate) {
 _MiniGameAdaptor_js__WEBPACK_IMPORTED_MODULE_0__["default"].register('SceneManager', SceneManager);
 
 /***/ }),
-/* 41 */
+/* 43 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _MiniGameAdaptor_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _File_getFile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(42);
+/* harmony import */ var _File_getFile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -9420,7 +9837,7 @@ Resources.directoryPathSet = new Set(); // 将对象挂在到MiniGameAdaptor
 _MiniGameAdaptor_js__WEBPACK_IMPORTED_MODULE_0__["default"].register('Resources', Resources);
 
 /***/ }),
-/* 42 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9545,841 +9962,54 @@ function getFile(path, callback) {
 }
 
 /***/ }),
-/* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
-
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.PhysicMaterialCombine", {
-    $kind: "enum",
-    statics: {
-      fields: {
-        Average: 0,
-        Minimum: 2,
-        Multiply: 1,
-        Maximum: 3
-      }
-    }
-  });
-});
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.PhysicMaterial", {
-    inherits: [MiniGameAdaptor.Object],
-    props: {
-      bounceCombine: {
-        get: function get() {
-          return this.nativeMaterial.bounceCombine;
-        },
-        set: function set(value) {
-          this.nativeMaterial.bounceCombine = value;
-        }
-      },
-      bounciness: {
-        get: function get() {
-          return this.nativeMaterial.bounciness;
-        },
-        set: function set(value) {
-          this.nativeMaterial.bounciness = value;
-        }
-      },
-      dynamicFriction: {
-        get: function get() {
-          return this.nativeMaterial.dynamicFriction;
-        },
-        set: function set(value) {
-          this.nativeMaterial.dynamicFriction = value;
-        }
-      },
-      frictionCombine: {
-        get: function get() {
-          return this.nativeMaterial.frictionCombine;
-        },
-        set: function set(value) {
-          this.nativeMaterial.frictionCombine = value;
-        }
-      },
-      staticFriction: {
-        get: function get() {
-          return this.nativeMaterial.staticFriction;
-        },
-        set: function set(value) {
-          this.nativeMaterial.staticFriction = value;
-        }
-      }
-    },
-    ctors: {
-      ctor: function ctor() {
-        this.$initialize();
-        UnityEngine.Object.ctor.call(this);
-        var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance; // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
-
-        this.nativeMaterial = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(instance);
-      },
-      $ctor1: function $ctor1(name) {
-        this.$initialize();
-        UnityEngine.Object.ctor.call(this); // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
-
-        this.nativeMaterial = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(instance);
-      }
-    }
-  });
-});
-
-/***/ }),
-/* 44 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Phys3D", function() { return Phys3D; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "physx", function() { return physx; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "bindEventForCollider", function() { return bindEventForCollider; });
-/* harmony import */ var _Extend_RootMonoBehaviour__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Phys3D;
-
-
-try {
-  if (typeof NativeGlobal !== 'undefined' && NativeGlobal.Phys3D) {
-    Phys3D = NativeGlobal.Phys3D;
-  } else if (__global.require('physicsEngine')) {
-    Phys3D = __global.require('physicsEngine').Phys3D;
-  }
-
-  console.log('Phys3D', Phys3D);
-} catch (e) {
-  console.log('load Phys3D error', e);
-}
-
-var Physx = /*#__PURE__*/function () {
-  function Physx() {
-    _classCallCheck(this, Physx);
-
-    try {
-      this.Phys3dInstance = new Phys3D.PhysSystem();
-      console.log('Phys3dInstance', this.Phys3dInstance);
-    } catch (e) {
-      console.log(e);
-    }
-
-    this.rigidbodies = [];
-    this.requestId = null;
-    this.loopFunc = this.loop.bind(this);
-  }
-
-  _createClass(Physx, [{
-    key: "addBody",
-    value: function addBody(body) {
-      this.rigidbodies.push(body);
-    }
-  }, {
-    key: "getLocalPosInEngine",
-    value: function getLocalPosInEngine(pos) {
-      var value = new MiniGameAdaptor.Vector3();
-      var m;
-
-      if (this.ref.parent) {
-        m = this.ref.parent.worldMatrix.inverse();
-      } else {
-        m = this.ref.worldMatrix.inverse();
-      }
-
-      var local = m.transformPoint(value._FlipX().ref);
-      this.ref.position = local;
-
-      if (!this.hasChanged) {
-        this.hasChanged = true;
-      }
-    }
-  }, {
-    key: "simulate",
-    value: function simulate(dt) {
-      var start = new Date();
-      this.Phys3dInstance.Simulate(dt);
-      var sim = new Date() - start;
-
-      if (sim > 2) {
-        console.log('simulate update cost', sim);
-      }
-
-      start = new Date();
-      this.rigidbodies.forEach(function (body) {
-        var comp = body.__sourceComp;
-        var entity = comp.entity;
-        var pos = body.position;
-        var rotation = body.rotation;
-
-        if (entity) {
-          /*entity.transform.position.x = pos.x;
-          entity.transform.position.y = pos.y;
-          entity.transform.position.z = pos.z;*/
-          comp.transform.position = new MiniGameAdaptor.Vector3.$ctor4(body.position);
-          var q = new engine.Quaternion();
-          q.x = rotation.x;
-          q.y = rotation.y;
-          q.z = rotation.z;
-          q.w = rotation.w;
-          entity.transform.quaternion = q;
-          /*comp.transform.rotation = new MiniGameAdaptor.Quaternion.$ctor3(rotation)*/
-        }
-      });
-      var render = new Date() - start;
-
-      if (render > 2) {
-        console.log('render update cost', render);
-      }
-    }
-  }, {
-    key: "loop",
-    value: function loop(dt) {
-      if (this.rigidbodies.length && MiniGameAdaptor.Physics.autoSimulation) {
-        this.simulate(dt);
-      }
-    }
-  }], [{
-    key: "delBody",
-    value: function delBody(body) {
-      var index = this.rigidbodies.find(function (item) {
-        return item === body;
-      });
-      this.rigidbodies.splice(index, 1);
-    }
-  }]);
-
-  return Physx;
-}();
-
-var physx = new Physx();
-var count = 0; // 跟随引擎的update执行Simulate逻辑
-
-Object(_Extend_RootMonoBehaviour__WEBPACK_IMPORTED_MODULE_0__["onRootMonoBehaviourUpdate"])(function (dt) {
-  physx.loop(dt);
-});
-/*setInterval(() => {
-    physx.loop(30 / 1000);
-}, 1000 / 30)*/
-
-function bindEventForCollider(nativeCollider, gameObject) {
-  nativeCollider.onCollisionEnter = function (other) {
-    /*console.log('onCollisionEnter Collision', other)
-    gameObject.BroadcastMessage('OnCollisionEnter');*/
-  };
-
-  nativeCollider.onCollisionExit = function (other) {
-    /*gameObject.BroadcastMessage('OnCollisionExit');*/
-  };
-
-  nativeCollider.onCollisionStay = function (other) {
-    /*gameObject.BroadcastMessage('OnCollisionStay');*/
-  };
-
-  nativeCollider.onTriggerExit = function (other) {
-    /*gameObject.BroadcastMessage('onTriggerExit');*/
-  };
-
-  nativeCollider.onTriggerEnter = function (other) {
-    /*gameObject.BroadcastMessage('onTriggerEnter');*/
-  };
-}
-
-
-
-/***/ }),
 /* 45 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
-
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.Collider", {
-    inherits: [MiniGameAdaptor.Component],
-    props: {
-      attachedRigidbody: {
-        get: function get() {
-          return this.nativeCollider.adaptorRigidBody;
-        }
-      },
-      bounds: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        }
-      },
-      contactOffset: {
-        get: function get() {
-          return this.nativeCollider.contactOffset;
-        },
-        set: function set(value) {
-          this.nativeCollider.contactOffset = value;
-        }
-      },
-      enabled: {
-        get: function get() {
-          return this.nativeCollider.enabled;
-        },
-        set: function set(value) {
-          this.nativeCollider.enabled = value;
-        }
-      },
-      isTrigger: {
-        get: function get() {
-          return this.nativeCollider.isTrigger;
-        },
-        set: function set(value) {
-          this.nativeRigidBody.isTrigger = value;
-        }
-      },
-      material: {
-        get: function get() {
-          var material = this.nativeCollider.material;
-          var res = new MiniGameAdaptor.PhysicMaterial();
-          res.bounceCombine = material.bounceCombine;
-          res.bounciness = material.bounciness;
-          res.dynamicFriction = material.dynamicFriction;
-          res.frictionCombine = material.frictionCombine;
-          res.staticFriction = material.staticFriction;
-          return res;
-        },
-        set: function set(value) {
-          var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance;
-          this.nativeCollider.material = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(instance, value.dynamicFriction, value.staticFriction, value.bounciness, value.frictionCombine, value.bounceCombine);
-        }
-      },
-      sharedMaterial: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
-        }
-      }
-    },
-    ctors: {
-      ctor: function ctor() {
-        this.$initialize();
-        MiniGameAdaptor.Component.ctor.call(this);
-        /*const physCenter = new Phys3D.RawVec3f(0, 0, 0);
-        const physSize = new Phys3D.RawVec3f(1, 1, 1);
-        this.nativeCollider = new Phys3D.BoxCollider(physx.Phys3dInstance, physCenter, physSize);*/
-      }
-    },
-    methods: {
-      ClosestPoint: function ClosestPoint(position) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
-        var resRawVec3f = this.nativeCollider.ClosestPoint(RawVec3f);
-        return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z);
-      },
-      ClosestPointOnBounds: function ClosestPointOnBounds(position) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
-        var resRawVec3f = this.nativeCollider.ClosestPointOnBounds(RawVec3f);
-        return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z);
-      },
-      Raycast: function Raycast(ray, hitInfo, maxDistance) {
-        throw new System.Exception("not impl");
-      }
-    }
-  });
-});
-
-/***/ }),
-/* 46 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.MeshCollider", {
-    inherits: [MiniGameAdaptor.Collider],
-    statics: {
-      methods: {
-        Deserialize: function Deserialize(data, comp) {
-          console.log('MeshCollider Deserialize data', data, comp);
-        }
-      }
-    },
-    fields: {
-      _convex: false,
-      _cookingOptions: 1,
-      _shareMesh: null
-    },
-    props: {
-      convex: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
-        }
-      },
-      cookingOptions: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
-        }
-      },
-      sharedMesh: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
-        }
-      }
-    },
-    ctors: {
-      ctor: function ctor() {
-        try {
-          this.$initialize();
-        } catch (e) {
-          console.log('initialize error', e);
-        }
-
-        MiniGameAdaptor.Collider.ctor.call(this);
-      }
-    }
-  });
-});
-engine.decorators.serialize('MiniGameAdaptor.MeshCollider')(MiniGameAdaptor.MeshCollider);
-Object.defineProperty(MiniGameAdaptor.MeshCollider.prototype, '__properties', {
-  enumerable: false,
-  configurable: false,
-  writable: false,
-  value: _objectSpread({}, MiniGameAdaptor.MeshCollider.prototype.__properties)
-});
-
-/***/ }),
-/* 47 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.BoxCollider", {
-    inherits: [MiniGameAdaptor.Collider],
-    statics: {
-      methods: {
-        Deserialize: function Deserialize(data, comp) {
-          /*console.log('BoxCollider Deserialize', data)*/
-          if (typeof data === "number") {
-            return comp;
-          }
-
-          var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance;
-          var hasRigidBody = false;
-          var components = comp.gameObject.ref.components;
-          var adaptorRigidBody = null;
-
-          for (var i = 0; i < components.length; i++) {
-            var component = components[i];
-            var type = component.__typeName;
-
-            if (type == "MiniGameAdaptor.Rigidbody") {
-              hasRigidBody = true;
-              /*adaptorRigidBody = component;
-              comp.rigidBody = component.nativeRigidBody;*/
-            }
-          }
-
-          var entity = comp.entity;
-          var pos = entity.transform.position;
-          var collider = comp.nativeCollider;
-          var scale = comp.transform.localScale;
-          collider.center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(data.center[0], data.center[1], data.center[2]); // collider的scale要和GameObject本身的scale保持一致
-
-          collider.size = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(data.size[0] * scale.x, data.size[1] * scale.y, data.size[2] * scale.z); // 设置material信息
-
-          var materialData = data.material || {};
-          collider.material = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, materialData.dynamicFriction, materialData.staticFriction, materialData.bounciness, materialData.frictionCombine, materialData.bounceCombine); // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
-
-          if (!hasRigidBody) {
-            comp.rigidBody = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].StaticRigidbody(instance);
-            /*console.log('static nativeRigidBody', comp.rigidBody)*/
-
-            comp.rigidBody.position = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(pos.x, pos.y, pos.z);
-            comp.rigidBody.__sourceComp = comp;
-            comp.nativeCollider.attachedRigidbody = comp.rigidBody;
-            _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].addBody(comp.rigidBody);
-            var quaternion = comp.entity.transform.quaternion;
-            var RawQuaternion = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawQuaternion();
-            RawQuaternion.x = quaternion.x;
-            RawQuaternion.y = quaternion.y;
-            RawQuaternion.z = quaternion.z;
-            RawQuaternion.w = quaternion.w;
-            comp.rigidBody.rotation = RawQuaternion;
-          }
-          /*else {
-              try {
-                  comp.nativeCollider.attachedRigidbody = comp.rigidBody;
-                  comp.nativeCollider.adaptorRigidBody = adaptorRigidBody;
-              } catch(e) {
-                  console.log(e)
-              }
-          }*/
-          // 为collider绑定事件
-
-
-          Object(_Physx__WEBPACK_IMPORTED_MODULE_0__["bindEventForCollider"])(comp.nativeCollider, comp.gameObject);
-          var render = comp.entity.getComponent(engine.MeshRenderer);
-
-          if (render) {
-            // 拿到微信引擎的mesh数据
-            var buffer = render.mesh._vertexBuffers;
-            var mesh = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].PhysMesh();
-          }
-
-          return comp;
-        }
-      }
-    },
-    fields: {
-      _isTrigger: false,
-      _center: null,
-      _size: null
-    },
-    props: {
-      isTrigger: {
-        get: function get() {
-          return this.nativeCollider.isTrigger;
-        },
-        set: function set(value) {
-          this.nativeRigidBody.isTrigger = value;
-        }
-      },
-      center: {
-        get: function get() {
-          var center = this.nativeCollider.center;
-          return new MiniGameAdaptor.Vector3.$ctor3(center.x, center.y, center.z);
-        },
-        set: function set(value) {
-          this.nativeCollider.center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(value.x, value.y, value.z);
-        }
-      },
-      size: {
-        get: function get() {
-          var size = this.nativeCollider.size;
-          return new MiniGameAdaptor.Vector3.$ctor3(size.x, size.y, size.z);
-        },
-        set: function set(value) {
-          this.nativeCollider.size = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(value.x, value.y, value.z);
-        }
-      }
-    },
-    ctors: {
-      ctor: function ctor() {
-        this.$initialize();
-        MiniGameAdaptor.Collider.ctor.call(this);
-        var physCenter = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(0, 0, 0);
-        var physSize = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(1, 1, 1);
-        this.nativeCollider = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].BoxCollider(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, physCenter, physSize);
-      }
-    }
-  });
-});
-engine.decorators.serialize('MiniGameAdaptor.BoxCollider')(MiniGameAdaptor.BoxCollider);
-Object.defineProperty(MiniGameAdaptor.BoxCollider.prototype, '__properties', {
-  enumerable: false,
-  configurable: true,
-  writable: false,
-  value: _objectSpread({}, MiniGameAdaptor.BoxCollider.prototype.__properties)
-});
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.SphereCollider", {
-    inherits: [MiniGameAdaptor.Collider],
-    statics: {
-      methods: {
-        Deserialize: function Deserialize(data, comp) {
-          if (typeof data === "number") {
-            return comp;
-          }
-
-          comp._isTrigger = data.isTrigger;
-          comp._center = new MiniGameAdaptor.Vector3.$ctor2(data.center[0], data.center[1], data.center[2]);
-          comp._radius = data.radius;
-          return comp;
-        }
-      }
-    },
-    fields: {
-      _isTrigger: false,
-      _center: null,
-      _radius: 0
-    },
-    props: {
-      isTrigger: {
-        get: function get() {
-          return this._isTrigger;
-        },
-        set: function set(value) {
-          this._isTrigger = value;
-        }
-      },
-      center: {
-        get: function get() {
-          return this._center;
-        },
-        set: function set(value) {
-          this._center = value;
-        }
-      },
-      radius: {
-        get: function get() {
-          return this._radius;
-        },
-        set: function set(value) {
-          this._radius = value;
-        }
-      }
-    },
-    ctors: {
-      ctor: function ctor() {
-        this.$initialize();
-        MiniGameAdaptor.Collider.ctor.call(this);
-      }
-    }
-  });
-});
-engine.decorators.serialize('MiniGameAdaptor.SphereCollider')(MiniGameAdaptor.SphereCollider);
-Object.defineProperty(MiniGameAdaptor.SphereCollider.prototype, '__properties', {
-  enumerable: false,
-  configurable: true,
-  writable: false,
-  value: _objectSpread({}, MiniGameAdaptor.SphereCollider.prototype.__properties)
-});
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports) {
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-Bridge.assembly("unity-script-converter", function ($asm, globals) {
-  "use strict";
-
-  Bridge.define("MiniGameAdaptor.CapsuleCollider", {
-    inherits: [MiniGameAdaptor.Collider],
-    statics: {
-      methods: {
-        Deserialize: function Deserialize(data, comp) {
-          if (typeof data === "number") {
-            return comp;
-          }
-
-          comp._isTrigger = data.isTrigger;
-          comp._center = new MiniGameAdaptor.Vector3.$ctor2(data.center[0], data.center[1], data.center[2]);
-          comp._radius = data.radius;
-          comp._height = data.height;
-          comp._direction = data.direction;
-          return comp;
-        }
-      }
-    },
-    fields: {
-      _isTrigger: false,
-      _center: null,
-      _radius: 0,
-      _height: 0,
-      _direction: 1
-    },
-    props: {
-      isTrigger: {
-        get: function get() {
-          return this._isTrigger;
-        },
-        set: function set(value) {
-          this._isTrigger = value;
-        }
-      },
-      center: {
-        get: function get() {
-          return this._center;
-        },
-        set: function set(value) {
-          this._center = value;
-        }
-      },
-      radius: {
-        get: function get() {
-          return this._radius;
-        },
-        set: function set(value) {
-          this._radius = value;
-        }
-      },
-      height: {
-        get: function get() {
-          return this._height;
-        },
-        set: function set(value) {
-          this._height = value;
-        }
-      },
-      direction: {
-        get: function get() {
-          return this._direction;
-        },
-        set: function set(value) {
-          this._direction = value;
-        }
-      }
-    },
-    ctors: {
-      ctor: function ctor() {
-        this.$initialize();
-        MiniGameAdaptor.Collider.ctor.call(this);
-      }
-    }
-  });
-});
-engine.decorators.serialize('MiniGameAdaptor.CapsuleCollider')(MiniGameAdaptor.CapsuleCollider);
-Object.defineProperty(MiniGameAdaptor.CapsuleCollider.prototype, '__properties', {
-  enumerable: false,
-  configurable: true,
-  writable: false,
-  value: _objectSpread({}, MiniGameAdaptor.CapsuleCollider.prototype.__properties)
-});
-
-/***/ }),
-/* 50 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
   "use strict";
 
-  Bridge.define("MiniGameAdaptor.RaycastHit", {
+  Bridge.define("MiniGameAdaptor.ContactPoint", {
     $kind: "struct",
     statics: {
       methods: {
         getDefaultValue: function getDefaultValue() {
-          return new MiniGameAdaptor.RaycastHit();
+          return new MiniGameAdaptor.ContactPoint();
         }
       }
     },
     props: {
-      barycentricCoordinate: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
-        }
-      },
-      collider: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        }
-      },
-      distance: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
-        }
-      },
-      lightmapCoord: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        }
-      },
       normal: {
         get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
+          return this._normal;
+        }
+      },
+      otherCollider: {
+        get: function get() {
           throw new System.Exception("not impl");
         }
       },
       point: {
         get: function get() {
-          throw new System.Exception("not impl");
-        },
-        set: function set(value) {
-          throw new System.Exception("not impl");
+          return this._point;
         }
       },
-      rigidbody: {
+      separation: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this.nativeData.separation;
         }
       },
-      textureCoord: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        }
-      },
-      textureCoord2: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        }
-      },
-      transform: {
-        get: function get() {
-          throw new System.Exception("not impl");
-        }
-      },
-      triangleIndex: {
+      thisCollider: {
         get: function get() {
           throw new System.Exception("not impl");
         }
       }
     },
     ctors: {
-      ctor: function ctor() {
+      ctor: function ctor(nativeData) {
         this.$initialize();
+        this.nativeData = nativeData || {};
+        this._point = new MiniGameAdaptor.Vector3.$ctor3(this.nativeData.point)._FlipX();
+        this._normal = new MiniGameAdaptor.Vector3.$ctor3(this.nativeData.normal)._FlipX();
       }
     },
     methods: {
@@ -10391,12 +10021,95 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 51 */
+/* 46 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.Collision", {
+    props: {
+      collider: {
+        get: function get() {
+          return _Physx__WEBPACK_IMPORTED_MODULE_0__["nativeColliderToAdaptorColliderMap"].get(this._collider);
+        }
+      },
+      contactCount: {
+        get: function get() {
+          return this._contactCount;
+        }
+      },
+      contacts: {
+        get: function get() {
+          return this._contacts;
+        }
+      },
+      gameObject: {
+        get: function get() {
+          return this._gameObject;
+        }
+      },
+      impulse: {
+        get: function get() {
+          return new MiniGameAdaptor.Vector3.$ctor3(this._nativeData.impulse)._FlipX();
+        }
+      },
+      relativeVelocity: {
+        get: function get() {
+          return new MiniGameAdaptor.Vector3.$ctor3(this._nativeData.relative_velocity)._FlipX();
+        }
+      },
+      rigidbody: {
+        get: function get() {
+          return _Physx__WEBPACK_IMPORTED_MODULE_0__["nativeColliderToAdaptorColliderMap"].get(this._collider).attachedRigidbody || null;
+        }
+      },
+      transform: {
+        get: function get() {
+          return this._gameObject.transform;
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+      },
+      // 通过native创建一个Collision
+      $ctor1: function $ctor1(nativeData) {
+        this._nativeData = nativeData;
+        this._collider = nativeData.collider;
+        this._gameObject = this._collider.userData;
+        this._contactCount = nativeData.contacts && this._nativeData.contacts.length || 0;
+        this._contacts = nativeData.contacts.map(function (item) {
+          return new MiniGameAdaptor.ContactPoint.ctor(item);
+        });
+      }
+    },
+    methods: {
+      GetContact: function GetContact(index) {
+        return this._contacts[index];
+      },
+      GetContacts: function GetContacts(contacts) {
+        throw new System.Exception("not impl");
+      },
+      GetEnumerator: function GetEnumerator() {
+        throw new System.Exception("not impl");
+      }
+    }
+  });
+});
+
+/***/ }),
+/* 47 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -10448,7 +10161,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     statics: {
       methods: {
         Deserialize: function Deserialize(data, comp, context, builtContext) {
-          /*console.log('Deserialize ctor called', data, comp)*/
           if (!data) {
             return comp;
           }
@@ -10585,16 +10297,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       position: {
         get: function get() {
           var RawVec3f = this.nativeRigidBody.position;
-          return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f);
+          return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
         },
         set: function set(value) {
-          this.nativeRigidBody.angularVelocity = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(value.x, value.y, value.z);
+          this.nativeRigidBody.position = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-value.x, value.y, value.z);
         }
       },
       rotation: {
         get: function get() {
           var rotation = this.nativeRigidBody.rotation;
-          return new MiniGameAdaptor.Quaternion.$ctor3(rotation);
+          return new MiniGameAdaptor.Quaternion.$ctor3(rotation)._FlipXnW();
         },
         set: function set(value) {
           this.nativeRigidBody.rotation = value;
@@ -10654,58 +10366,58 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       }
     },
     methods: {
-      onStart: function onStart(e) {
+      onStart: function onStart() {
+        if (!this.__physInitReady) {
+          this.onInstantiated();
+        }
+      },
+      onInstantiated: function onInstantiated() {
+        var _this = this;
+
+        if (!_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"]) {
+          return;
+        }
         /**
          * 在native中的Phys3D创建对应的刚体
          */
+
+
         var body = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].DynamicRigidbody(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, 10);
         var data = this.__deserializeData;
         this.nativeRigidBody = body;
+        this.gameObject.nativeRigidBody = body;
         this.nativeRigidBody.__sourceComp = this; // 设置native层物理刚体的实际位置
 
-        var pos = this.transform.position;
-        this.nativeRigidBody.position = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(pos.x, pos.y, pos.z);
-        body.angularDamping = data.angularDrag;
-        body.collisionDetectionMode = data.collisionDetectionMode;
-        body.constraints = data.constraints;
-        body.linearDamping = data.drag;
-        body.isKinematic = data.isKinematic;
-        body.mass = data.mass;
-        body.useGravity = data.useGravity;
-        /*body.ResetCenterOfMass();*/
+        var pos = this.entity.transform.worldPosition;
+        this.nativeRigidBody.position = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(pos.x, pos.y, pos.z); // 直接调用AddComponent的情况没有反序列化数据
 
-        var quaternion = this.entity.transform.quaternion;
-        var RawQuaternion = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawQuaternion();
-        RawQuaternion.x = quaternion.x;
-        RawQuaternion.y = quaternion.y;
-        RawQuaternion.z = quaternion.z;
-        RawQuaternion.w = quaternion.w;
-        body.rotation = RawQuaternion;
-        /*const quaternion = this.transform.rotation;
-        const RawQuaternion = new Phys3D.RawQuaternion()
-        RawQuaternion.x = quaternion.x;
-        RawQuaternion.y = quaternion.y;
-        RawQuaternion.z = quaternion.z;
-        RawQuaternion.w = quaternion.w;
-        this.nativeRigidBody.rotation = RawQuaternion;*/
+        if (data) {
+          body.angularDamping = data.angularDrag;
+          body.collisionDetectionMode = data.collisionDetectionMode;
+          body.constraints = data.constraints;
+          body.linearDamping = data.drag;
+          body.isKinematic = data.isKinematic;
+          body.mass = data.mass;
+          body.useGravity = data.useGravity;
+        } // 将entity的旋转同步到物理
 
-        var components = this.gameObject.ref.components;
-        var adaptorRigidBody = null;
 
-        for (var i = 0; i < components.length; i++) {
-          var component = components[i];
-          var type = component.__typeName;
+        _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].syncRotation(this.entity, body); // TODO: 一个gameobject可能挂多个collider
 
-          if (type == "MiniGameAdaptor.BoxCollider") {
-            component.nativeCollider.adaptorRigidBody = this;
-            component.nativeCollider.attachedRigidbody = body;
+        [MiniGameAdaptor.BoxCollider, MiniGameAdaptor.MeshCollider, MiniGameAdaptor.CapsuleCollider, MiniGameAdaptor.SphereCollider].forEach(function (colliderClass) {
+          var collider = _this.getComponent(colliderClass);
+
+          if (collider) {
+            collider.nativeCollider.adaptorRigidBody = _this;
+            collider.nativeCollider.attachedRigidbody = body;
           }
-        }
-
+        });
+        body.userData = this.entity;
         _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].addBody(this.nativeRigidBody);
+        this.__physInitReady = true;
       },
       AddExplosionForce: function AddExplosionForce(explosionForce, explosionPosition, explosionRadius) {
-        throw new System.Exception("not impl");
+        console.log('todo AddExplosionForce');
       },
       AddExplosionForce$1: function AddExplosionForce$1(explosionForce, explosionPosition, explosionRadius, upwardsModifier) {
         throw new System.Exception("not impl");
@@ -10714,103 +10426,104 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         throw new System.Exception("not impl");
       },
       AddForce: function AddForce(x, y, z) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddForce(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddForce$1: function AddForce$1(x, y, z, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(value.x, value.y, value.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-value.x, value.y, value.z);
         this.nativeRigidBody.AddForce(RawVec3f, mode);
       },
       AddForce$2: function AddForce$2(force) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(force.x, force.y, force.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-force.x, force.y, force.z);
         this.nativeRigidBody.AddForce(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddForce$3: function AddForce$3(force, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(force.x, force.y, force.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-force.x, force.y, force.z);
         this.nativeRigidBody.AddForce(RawVec3f, mode);
       },
       AddForceAtPosition: function AddForceAtPosition(force, position) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(force.x, force.y, force.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-force.x, force.y, force.z);
         var posRawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
         this.nativeRigidBody.AddForceAtPosition(RawVec3f, posRawVec3f, MiniGameAdaptor.ForceMode.force);
       },
       AddForceAtPosition$1: function AddForceAtPosition$1(force, position, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(force.x, force.y, force.z);
-        var posRawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-force.x, force.y, force.z);
+        var posRawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-position.x, position.y, position.z);
         this.nativeRigidBody.AddForceAtPosition(RawVec3f, posRawVec3f, mode);
       },
       AddRelativeForce: function AddRelativeForce(x, y, z) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddRelativeForce(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddRelativeForce$1: function AddRelativeForce$1(x, y, z, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddRelativeForce(RawVec3f, mode);
       },
       AddRelativeForce$2: function AddRelativeForce$2(force) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(force.x, force.y, force.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-force.x, force.y, force.z);
         this.nativeRigidBody.AddRelativeForce(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddRelativeForce$3: function AddRelativeForce$3(force, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(force.x, force.y, force.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-force.x, force.y, force.z);
         this.nativeRigidBody.AddRelativeForce(RawVec3f, mode);
       },
       AddRelativeTorque: function AddRelativeTorque(x, y, z) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddRelativeTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddRelativeTorque$1: function AddRelativeTorque$1(x, y, z, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddRelativeTorque(RawVec3f, mode);
       },
       AddRelativeTorque$2: function AddRelativeTorque$2(torque) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(torque.x, torque.y, torque.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-torque.x, torque.y, torque.z);
         this.nativeRigidBody.AddRelativeTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddRelativeTorque$3: function AddRelativeTorque$3(torque, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(torque.x, torque.y, torque.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-torque.x, torque.y, torque.z);
         this.nativeRigidBody.AddRelativeTorque(RawVec3f, mode);
       },
       AddTorque: function AddTorque(x, y, z) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddTorque$1: function AddTorque$1(x, y, z, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(x, y, z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-x, y, z);
         this.nativeRigidBody.AddTorque(RawVec3f, mode);
       },
       AddTorque$2: function AddTorque$2(torque) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(torque.x, torque.y, torque.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-torque.x, torque.y, torque.z);
         this.nativeRigidBody.AddTorque(RawVec3f, MiniGameAdaptor.ForceMode.Force);
       },
       AddTorque$3: function AddTorque$3(torque, mode) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(torque.x, torque.y, torque.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-torque.x, torque.y, torque.z);
         this.nativeRigidBody.AddTorque(RawVec3f, mode);
       },
       ClosestPointOnBounds: function ClosestPointOnBounds(position) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-position.x, position.y, position.z);
         var resRawVec3f = this.nativeRigidBody.ClosestPointOnBounds(RawVec3f);
         return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f);
       },
       GetPointVelocity: function GetPointVelocity(worldPoint) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(worldPoint.x, worldPoint.y, worldPoint.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-worldPoint.x, worldPoint.y, worldPoint.z);
         var resRawVec3f = this.nativeRigidBody.GetPointVelocity(RawVec3f);
         return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f);
       },
       GetRelativePointVelocity: function GetRelativePointVelocity(relativePoint) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(relativePoint.x, relativePoint.y, relativePoint.z);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-relativePoint.x, relativePoint.y, relativePoint.z);
         var resRawVec3f = this.nativeRigidBody.GetRelativePointVelocity(RawVec3f);
-        return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f);
+        return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f)._FlipX();
       },
       IsSleeping: function IsSleeping() {
         return this.nativeRigidBody.IsSleeping();
       },
       MovePosition: function MovePosition(position) {
-        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
-        return this.nativeRigidBody.MovePosition(RawVec3f);
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-position.x, position.y, position.z);
+        this.nativeRigidBody.MovePosition(RawVec3f);
       },
       MoveRotation: function MoveRotation(rot) {
-        throw new System.Exception("not impl");
+        var phys3DRot = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawQuaternion(rot.x, rot.y, rot.z, rot.w);
+        this.nativeRigidBody.MoveRotation(phys3DRot); // throw new System.Exception("not impl");
       },
       ResetCenterOfMass: function ResetCenterOfMass() {
         this.nativeRigidBody.ResetCenterOfMass();
@@ -10857,12 +10570,1063 @@ Object.defineProperty(MiniGameAdaptor.Rigidbody.prototype, '__properties', {
 });
 
 /***/ }),
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.PhysicMaterialCombine", {
+    $kind: "enum",
+    statics: {
+      fields: {
+        Average: 0,
+        Minimum: 2,
+        Multiply: 1,
+        Maximum: 3
+      }
+    }
+  });
+});
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.PhysicMaterial", {
+    inherits: [MiniGameAdaptor.Object],
+    props: {
+      bounceCombine: {
+        get: function get() {
+          return this.nativeMaterial.bounceCombine;
+        },
+        set: function set(value) {
+          this.nativeMaterial.bounceCombine = value;
+        }
+      },
+      bounciness: {
+        get: function get() {
+          return this.nativeMaterial.bounciness;
+        },
+        set: function set(value) {
+          this.nativeMaterial.bounciness = value;
+        }
+      },
+      dynamicFriction: {
+        get: function get() {
+          return this.nativeMaterial.dynamicFriction;
+        },
+        set: function set(value) {
+          this.nativeMaterial.dynamicFriction = value;
+        }
+      },
+      frictionCombine: {
+        get: function get() {
+          return this.nativeMaterial.frictionCombine;
+        },
+        set: function set(value) {
+          this.nativeMaterial.frictionCombine = value;
+        }
+      },
+      staticFriction: {
+        get: function get() {
+          return this.nativeMaterial.staticFriction;
+        },
+        set: function set(value) {
+          this.nativeMaterial.staticFriction = value;
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+        MiniGameAdaptor.Object.ctor.call(this);
+        var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance; // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
+
+        this.nativeMaterial = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(instance);
+      },
+      $ctor1: function $ctor1(name) {
+        this.$initialize();
+        MiniGameAdaptor.Object.ctor.call(this); // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
+
+        this.nativeMaterial = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(instance);
+      }
+    }
+  });
+});
+
+/***/ }),
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.Collider", {
+    inherits: [MiniGameAdaptor.Component],
+    props: {
+      attachedRigidbody: {
+        get: function get() {
+          return this.nativeCollider.adaptorRigidBody;
+        }
+      },
+      bounds: {
+        get: function get() {
+          return this.nativeCollider.bounds;
+        }
+      },
+      contactOffset: {
+        get: function get() {
+          return this.nativeCollider.contactOffset;
+        },
+        set: function set(value) {
+          this.nativeCollider.contactOffset = value;
+        }
+      },
+      enabled: {
+        get: function get() {
+          return this.nativeCollider.enabled;
+        },
+        set: function set(value) {
+          this.nativeCollider.enabled = value;
+        }
+      },
+      isTrigger: {
+        get: function get() {
+          return this.nativeCollider.isTrigger;
+        },
+        set: function set(value) {
+          this.nativeRigidBody.isTrigger = value;
+        }
+      },
+      material: {
+        get: function get() {
+          var material = this.nativeCollider.material;
+          var res = new MiniGameAdaptor.PhysicMaterial();
+          res.bounceCombine = material.bounceCombine;
+          res.bounciness = material.bounciness;
+          res.dynamicFriction = material.dynamicFriction;
+          res.frictionCombine = material.frictionCombine;
+          res.staticFriction = material.staticFriction;
+          return res;
+        },
+        set: function set(value) {
+          var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance;
+          this.nativeCollider.material = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(instance, value.dynamicFriction, value.staticFriction, value.bounciness, value.frictionCombine, value.bounceCombine);
+        }
+      },
+      sharedMaterial: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+        MiniGameAdaptor.Component.ctor.call(this);
+      }
+    },
+    methods: {
+      ClosestPoint: function ClosestPoint(position) {
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
+        var resRawVec3f = this.nativeCollider.ClosestPoint(RawVec3f);
+        return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z);
+      },
+      ClosestPointOnBounds: function ClosestPointOnBounds(position) {
+        var RawVec3f = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(position.x, position.y, position.z);
+        var resRawVec3f = this.nativeCollider.ClosestPointOnBounds(RawVec3f);
+        return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z);
+      },
+      Raycast: function Raycast(ray, hitInfo, maxDistance) {
+        throw new System.Exception("not impl");
+      }
+    }
+  });
+});
+
+/***/ }),
+/* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Mesh_MeshHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(51);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(30);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+/**
+ * 创建Mesh是有性能开销的，不同的MeshCollider可能共用一个PhyMesh，这里加个weakmap做池
+ */
+
+var meshMap = new WeakMap();
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.MeshCollider", {
+    inherits: [MiniGameAdaptor.Collider],
+    statics: {
+      methods: {
+        Deserialize: function Deserialize(data, comp) {
+          comp.__deserializeData = data;
+          return comp;
+        }
+      }
+    },
+    fields: {
+      _convex: false,
+      _cookingOptions: 1,
+      _shareMesh: null
+    },
+    props: {
+      convex: {
+        get: function get() {
+          return this.nativeCollider.convex;
+        },
+        set: function set(value) {
+          this.nativeCollider.convex = value;
+        }
+      },
+      cookingOptions: {
+        get: function get() {
+          return this.nativeCollider.cookingOptions;
+        },
+        set: function set(value) {
+          this.nativeCollider.cookingOptions = value;
+        }
+      },
+      sharedMesh: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+        MiniGameAdaptor.Collider.ctor.call(this);
+      }
+    },
+    methods: {
+      onStart: function onStart() {
+        if (!this.__physInitReady) {
+          this.onInstantiated();
+        }
+      },
+      onInstantiated: function onInstantiated() {
+        this.__physInitReady = true;
+
+        if (!_Physx__WEBPACK_IMPORTED_MODULE_1__["Phys3D"]) {
+          return comp;
+        }
+
+        var data = this.__deserializeData || {};
+        var comp = this;
+        var meshId = data.mesh;
+        var phyMesh = null; // 从资源管理器取Mesh数据，如果取不到，从运行时取
+
+        var mesh = meshId && engine.loader.getAsset(meshId) || comp.entity.getComponent(engine.MeshRenderer).mesh; // 对齐Unity的error提示
+
+        var rigidBody = comp.entity.getComponent(MiniGameAdaptor.Rigidbody);
+
+        if (rigidBody && rigidBody.nativeRigidBody && !rigidBody.nativeRigidBody.isKinematic || rigidBody && rigidBody.__deserializeData && !rigidBody.__deserializeData.isKinematic) {
+          console.error("Non-convex MeshCollider with non-kinematic Rigidbody is no longer supported since Unity 5.\nIf you want to use a non-convex mesh either make the Rigidbody kinematic or remove the Rigidbody component. ");
+        }
+
+        if (meshMap.get(mesh)) {
+          phyMesh = meshMap.get(mesh);
+        } else {
+          phyMesh = new _Physx__WEBPACK_IMPORTED_MODULE_1__["Phys3D"].PhysMesh(_Physx__WEBPACK_IMPORTED_MODULE_1__["physx"].Phys3dInstance);
+
+          var _buffer = mesh._getRawVertexBuffer();
+
+          var _vertexLayout = mesh._vertexLayout;
+
+          var _getPointBuffer = Object(_Mesh_MeshHelper_js__WEBPACK_IMPORTED_MODULE_0__["getPointBuffer"])(_buffer, _vertexLayout),
+              newBuffer = _getPointBuffer.newBuffer,
+              verticesCount = _getPointBuffer.verticesCount; // 三角形数据
+
+
+          var triangles = mesh._getRawIndiceBuffer();
+
+          phyMesh.SetVertices(newBuffer, verticesCount); // 客户端特殊处理，传第三个参数支持为支持uint16的情况
+
+          phyMesh.SetTriangles(triangles, triangles.length / 3, true);
+          meshMap.set(mesh, phyMesh);
+        }
+
+        comp.nativeCollider = new _Physx__WEBPACK_IMPORTED_MODULE_1__["Phys3D"].MeshCollider(_Physx__WEBPACK_IMPORTED_MODULE_1__["physx"].Phys3dInstance, data.convex || true, data.cookingOptions || 14, phyMesh);
+        var scale = comp.transform.localScale;
+        comp.nativeCollider.scale = new _Physx__WEBPACK_IMPORTED_MODULE_1__["Phys3D"].RawVec3f(scale.x, scale.y, scale.z);
+        var hasRigidBody = !!comp.getComponent(MiniGameAdaptor.Rigidbody); // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
+
+        if (!hasRigidBody) {
+          _Physx__WEBPACK_IMPORTED_MODULE_1__["physx"].addStaticBodyForCollider(comp);
+        } // 为collider绑定事件
+
+
+        Object(_Physx__WEBPACK_IMPORTED_MODULE_1__["bindEventForCollider"])(comp.nativeCollider, comp.gameObject);
+        _Physx__WEBPACK_IMPORTED_MODULE_1__["nativeColliderToAdaptorColliderMap"].set(comp.nativeCollider, comp);
+      }
+    }
+  });
+});
+engine.decorators.serialize('MiniGameAdaptor.MeshCollider')(MiniGameAdaptor.MeshCollider);
+Object.defineProperty(MiniGameAdaptor.MeshCollider.prototype, '__properties', {
+  enumerable: false,
+  configurable: false,
+  writable: false,
+  value: _objectSpread({}, MiniGameAdaptor.MeshCollider.prototype.__properties)
+});
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnumVertexLayoutUsage", function() { return EnumVertexLayoutUsage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnumVertexFormat", function() { return EnumVertexFormat; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPointDataByUsage", function() { return getPointDataByUsage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WXMeshVertexLayout", function() { return WXMeshVertexLayout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createEngineMesh", function() { return createEngineMesh; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPointBuffer", function() { return getPointBuffer; });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var EnumVertexLayoutUsage = {
+  CUSTOM: 0,
+  POSITION: 1,
+  NORMAL: 2,
+  TANGENT: 3,
+  UV0: 4,
+  UV1: 5,
+  UV2: 6,
+  COLOR: 7,
+  BONEINDEX: 8,
+  BONEWEIGHT: 9
+};
+var EnumVertexFormat = {
+  INVALID: 0,
+  FLOAT: 1,
+  FLOAT2: 2,
+  FLOAT3: 3,
+  FLOAT4: 4,
+  BYTE4: 5,
+  BYTE4N: 6,
+  UBYTE4: 7,
+  UBYTE4N: 8,
+  SHORT2: 9,
+  SHORT2N: 10,
+  SHORT4: 11,
+  SHORT4N: 12,
+  UINT10_N2: 13
+};
+
+function getPointBuffer(buffer, vertexLayout) {
+  if (!buffer) {
+    console.log('buffer is not exist!');
+  }
+
+  var stride = vertexLayout.stride / 4;
+  var config = vertexLayout.getConfigByUsage(EnumVertexLayoutUsage.POSITION);
+  var offset = config.offset / 4;
+  var verticesCount = buffer.length / stride; // 一个顶点为float x y z组成，每个属性占4个字节，总共12个字节
+
+  var newBuffer = new Float32Array(verticesCount * 3); // 遍历自研引擎Mesh的buffer数据，将顶点信息取出，存到一个新的Uint8Array里面
+
+  for (var i = 0; i < verticesCount; i++) {
+    for (var j = 0; j < 3; j++) {
+      newBuffer[i * 3 + j] = buffer[j + i * stride + offset];
+    }
+  }
+
+  return {
+    newBuffer: newBuffer,
+    verticesCount: verticesCount
+  };
+}
+
+function getPointDataByUsage(buffer, vertexLayout, usage) {
+  if (!buffer) {
+    console.log('buffer is not exist!');
+    return [];
+  }
+
+  var stride = vertexLayout.stride / 4;
+  var config = vertexLayout.getConfigByUsage(usage);
+  var offset = config.offset / 4;
+  var verticesCount = buffer.length / stride;
+  var res = [];
+  var start;
+
+  for (var i = 0; i < verticesCount; i++) {
+    start = i * stride + offset;
+
+    if (usage === EnumVertexLayoutUsage.POSITION || usage === EnumVertexLayoutUsage.NORMAL) {
+      res.push(new MiniGameAdaptor.Vector3.$ctor2(buffer[start], buffer[start + 1], buffer[start + 2])._FlipX());
+    } else if (usage === EnumVertexLayoutUsage.UV0) {
+      // 与导出插件相反操作
+      // wxFileUtil.WriteData(fileStream, vector3.x, vector3.y * -1f + 1f);
+      res.push(new MiniGameAdaptor.Vector2.$ctor1(buffer[start], (buffer[start + 1] - 1) * -1));
+    } else if (usage === EnumVertexLayoutUsage.TANGENT) {
+      res.push(new MiniGameAdaptor.Vector4.$ctor3(buffer[start], buffer[start + 1], buffer[start + 2], buffer[start + 3])._FlipX());
+    }
+  }
+
+  return res;
+}
+
+var WXMeshVertexLayout = /*#__PURE__*/function () {
+  function WXMeshVertexLayout(mesh) {
+    _classCallCheck(this, WXMeshVertexLayout);
+
+    this.POSITION = false;
+    this.NORMAL = false;
+    this.COLOR = false;
+    this.UV = false;
+    this.UV1 = false;
+    this.TANGENT = false;
+    this.BONE = false;
+    this.layoutSize = 0;
+
+    if (mesh.vertices != null && mesh.vertices.length != 0) {
+      this.POSITION = true;
+      this.layoutSize += 12;
+    }
+
+    if (mesh.normals != null && mesh.normals.length != 0) {
+      this.NORMAL = true;
+      this.layoutSize += 12;
+    }
+
+    if (mesh.colors != null && mesh.colors.length != 0) {
+      this.COLOR = true;
+      this.layoutSize += 16;
+    }
+
+    if (mesh.uv != null && mesh.uv.length != 0) {
+      this.UV = true;
+      this.layoutSize += 8;
+    }
+
+    if (mesh.uv2 != null && mesh.uv2.length != 0) {
+      this.UV1 = true;
+      this.layoutSize += 8;
+    }
+
+    if (mesh.boneWeights != null && mesh.boneWeights.length != 0) {
+      this.BONE = true;
+      this.layoutSize += 32;
+    }
+
+    if (mesh.tangents != null && mesh.tangents.length != 0) {
+      this.TANGENT = true;
+      this.layoutSize += 16;
+    }
+  }
+
+  _createClass(WXMeshVertexLayout, [{
+    key: "GetLayoutString",
+    value: function GetLayoutString() {
+      var layout = [];
+
+      if (this.POSITION) {
+        layout.push("POSITION");
+      }
+
+      if (this.NORMAL) {
+        layout.push("NORMAL");
+      }
+
+      if (this.COLOR) {
+        layout.push("COLOR");
+      }
+
+      if (this.UV) {
+        layout.push("UV");
+      }
+
+      if (this.UV1) {
+        layout.push("UV1");
+      }
+
+      if (this.BONE) {
+        layout.push("BLENDWEIGHT,BLENDINDICES");
+      }
+
+      if (this.TANGENT) {
+        layout.push("TANGENT");
+      }
+
+      return layout.join(',');
+    }
+  }]);
+
+  return WXMeshVertexLayout;
+}();
+
+function createEngineMesh(mesh) {
+  var vertexLayout = new WXMeshVertexLayout(mesh);
+  var vertexStart = 0;
+  var vertexLength = vertexLayout.layoutSize * mesh.vertexCount;
+  var indiceStart = vertexLength;
+  var indiceLength = mesh.triangles.length * 2;
+  var array = new Float32Array(mesh.vertexCount * vertexLayout.layoutSize / 4);
+  var start = 0;
+
+  for (var i = 0; i < mesh.vertexCount; i++) {
+    var vector = mesh.vertices[i];
+    array[start++] = -vector.x;
+    array[start++] = vector.y;
+    array[start++] = vector.z;
+
+    if (vertexLayout.NORMAL) {
+      var vector2 = mesh.normals[i];
+      array[start++] = vector2.x;
+      array[start++] = vector2.y;
+      array[start++] = vector2.z;
+    } // 如果vertexLayout有color，写入color
+
+
+    if (vertexLayout.COLOR) {
+      var color = mesh.colors[i];
+    } // 如果vertexLayout有uv，写入uv
+
+
+    if (vertexLayout.UV) {
+      var vector3 = mesh.uv[i];
+      array[start++] = vector3.x;
+      array[start++] = vector3.y * -1 + 1;
+    } // 如果vertexLayout有uv1，写入uv1
+
+
+    if (vertexLayout.UV1) {
+      var vector4 = mesh.uv2[i];
+      array[start++] = vector4.x;
+      array[start++] = vector4.y * -1 + 1;
+    } // 如果vertexLayout有tangent，写入tangent
+
+
+    if (vertexLayout.TANGENT) {
+      var vector5 = mesh.tangents[i];
+      array[start++] = -vector5.x;
+      array[start++] = vector5.y;
+      array[start++] = vector5.z;
+      array[start++] = vector5.w;
+    }
+  } // 将Float32Array转成Uint8Array
+
+
+  var buffer = new ArrayBuffer(array.byteLength);
+  var floatView = new Float32Array(buffer).set(array);
+  var byteView = new Uint8Array(buffer);
+  var indiceArray = new Uint16Array(mesh.triangles.length || 0);
+  /*const indicebuffer = new ArrayBuffer(indiceArray.byteLength);
+  const indicefloatView = new Uint16Array(indicebuffer).set(indiceArray);
+  const indicebyteView = new Uint8Array(indicebuffer);*/
+
+  var iStart = 0;
+  mesh.triangles.forEach(function (item) {
+    indiceArray[iStart++] = item;
+  });
+  var capsule = {
+    x: 1,
+    y: 1,
+    z: 1,
+    radius: 0.5
+  };
+  var metadata = {
+    indiceFormat: 1,
+    vertexLayout: vertexLayout.GetLayoutString(),
+    vertexStart: 0,
+    vertexLength: vertexLength,
+    indiceStart: indiceStart,
+    indiceLength: indiceLength,
+    capsule: capsule,
+    version: 1,
+    boundBox: {
+      center: [1, 1, 1],
+      size: [1, 1, 1]
+    },
+    subMeshs: [{
+      start: 0,
+      length: 852
+    }]
+  };
+  var engineVertexLayout = engine.buildInVertexLayoutFactory3D.getVertexLayout(metadata.vertexLayout);
+  var engineMesh = engine.Mesh.createFromDynamicArrayBuffer(engineVertexLayout, array.buffer, indiceArray.buffer);
+  mesh.engineMesh = engineMesh;
+  mesh.ref = engineMesh;
+  var radius = 1;
+
+  engineMesh._setBoundBall(engine.Vector3.ZERO, 1);
+
+  if (mesh._subMeshs && mesh._subMeshs.length) {
+    mesh._subMeshs.forEach(function (item) {
+      engineMesh._addSubMesh(item.length, item.offset);
+    });
+  }
+
+  return engineMesh;
+}
+
+
+
+/***/ }),
 /* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.BoxCollider", {
+    inherits: [MiniGameAdaptor.Collider],
+    statics: {
+      methods: {
+        Deserialize: function Deserialize(data, comp) {
+          if (typeof data === "number") {
+            return comp;
+          } // 这里兼容不支持native物理引擎的情况
+
+
+          if (!_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"]) {
+            return comp;
+          }
+
+          var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance;
+          var entity = comp.entity;
+          var pos = entity.transform.position;
+          var collider = comp.nativeCollider;
+          var scale = comp.transform.localScale;
+          collider.center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(data.center[0], data.center[1], data.center[2]);
+          collider.isTrigger = data.isTrigger; // collider的scale要和GameObject本身的scale保持一致
+
+          collider.size = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(data.size[0] * scale.x || 0.00001, data.size[1] * scale.y || 0.00001, data.size[2] * scale.z || 0.00001); // 设置material信息
+          // TODO: share
+
+          var materialData = data.material || {};
+          collider.material = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, materialData.dynamicFriction, materialData.staticFriction, materialData.bounciness, materialData.frictionCombine, materialData.bounceCombine);
+          var hasRigidBody = comp.getComponent(MiniGameAdaptor.Rigidbody); // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
+
+          if (!hasRigidBody && _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"]) {
+            _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].addStaticBodyForCollider(comp);
+          } // 为collider绑定事件
+
+
+          Object(_Physx__WEBPACK_IMPORTED_MODULE_0__["bindEventForCollider"])(comp.nativeCollider, comp.gameObject);
+          _Physx__WEBPACK_IMPORTED_MODULE_0__["nativeColliderToAdaptorColliderMap"].set(comp.nativeCollider, comp);
+          return comp;
+        }
+      }
+    },
+    fields: {
+      _isTrigger: false,
+      _center: null,
+      _size: null
+    },
+    props: {
+      isTrigger: {
+        get: function get() {
+          return this.nativeCollider.isTrigger;
+        },
+        set: function set(value) {
+          this.nativeRigidBody.isTrigger = value;
+        }
+      },
+      center: {
+        get: function get() {
+          var center = this.nativeCollider.center;
+          return new MiniGameAdaptor.Vector3.$ctor3(center.x, center.y, center.z);
+        },
+        set: function set(value) {
+          this.nativeCollider.center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(value.x, value.y, value.z);
+        }
+      },
+      size: {
+        get: function get() {
+          var size = this.nativeCollider.size;
+          return new MiniGameAdaptor.Vector3.$ctor3(size.x, size.y, size.z);
+        },
+        set: function set(value) {
+          this.nativeCollider.size = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(value.x, value.y, value.z);
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+        MiniGameAdaptor.Collider.ctor.call(this);
+
+        if (_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"]) {
+          var physCenter = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(0, 0, 0);
+          var physSize = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(1, 1, 1);
+          this.nativeCollider = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].BoxCollider(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, physCenter, physSize);
+        }
+      }
+    }
+  });
+});
+engine.decorators.serialize('MiniGameAdaptor.BoxCollider')(MiniGameAdaptor.BoxCollider);
+Object.defineProperty(MiniGameAdaptor.BoxCollider.prototype, '__properties', {
+  enumerable: false,
+  configurable: true,
+  writable: false,
+  value: _objectSpread({}, MiniGameAdaptor.BoxCollider.prototype.__properties)
+});
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.SphereCollider", {
+    inherits: [MiniGameAdaptor.Collider],
+    statics: {
+      methods: {
+        Deserialize: function Deserialize(data, comp) {
+          if (typeof data === "number") {
+            return comp;
+          }
+
+          var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance;
+          var entity = comp.entity;
+          var scale = comp.transform.localScale;
+          var center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(data.center[0], data.center[1], data.center[2]);
+          comp.nativeCollider = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].SphereCollider(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, center, data.radius);
+          comp.nativeCollider.isTrigger = data.isTrigger; // 设置material信息
+
+          var materialData = data.material || {};
+          comp.nativeCollider.material = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, materialData.dynamicFriction, materialData.staticFriction, materialData.bounciness, materialData.frictionCombine, materialData.bounceCombine);
+          comp.nativeCollider.scale = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(scale.x, scale.y, scale.z);
+          comp.isTrigger = data.isTrigger;
+          var hasRigidBody = comp.getComponent(MiniGameAdaptor.Rigidbody); // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
+
+          if (!hasRigidBody) {
+            _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].addStaticBodyForCollider(comp);
+          } // 为collider绑定事件
+
+
+          Object(_Physx__WEBPACK_IMPORTED_MODULE_0__["bindEventForCollider"])(comp.nativeCollider, comp.gameObject);
+          _Physx__WEBPACK_IMPORTED_MODULE_0__["nativeColliderToAdaptorColliderMap"].set(comp.nativeCollider, comp);
+          return comp;
+        }
+      }
+    },
+    fields: {
+      _isTrigger: false,
+      _center: null,
+      _radius: 0
+    },
+    props: {
+      isTrigger: {
+        get: function get() {
+          return this.nativeCollider.isTrigger;
+        },
+        set: function set(value) {
+          this.nativeCollider.isTrigger = value;
+        }
+      },
+      center: {
+        get: function get() {
+          var RawVec3f = this.nativeCollider.center;
+          return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
+        },
+        set: function set(value) {
+          this.nativeCollider.center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-value.x, value.y, value.z);
+        }
+      },
+      radius: {
+        get: function get() {
+          return this.nativeCollider.radius;
+        },
+        set: function set(value) {
+          this.nativeCollider.radius = value;
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+        MiniGameAdaptor.Collider.ctor.call(this);
+      }
+    }
+  });
+});
+engine.decorators.serialize('MiniGameAdaptor.SphereCollider')(MiniGameAdaptor.SphereCollider);
+Object.defineProperty(MiniGameAdaptor.SphereCollider.prototype, '__properties', {
+  enumerable: false,
+  configurable: true,
+  writable: false,
+  value: _objectSpread({}, MiniGameAdaptor.SphereCollider.prototype.__properties)
+});
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.CapsuleCollider", {
+    inherits: [MiniGameAdaptor.Collider],
+    statics: {
+      methods: {
+        Deserialize: function Deserialize(data, comp) {
+          if (typeof data === "number") {
+            return comp;
+          }
+
+          console.log(data);
+          var instance = _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance;
+          var entity = comp.entity;
+          var scale = comp.transform.localScale;
+          var center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(data.center[0], data.center[1], data.center[2]);
+          comp.nativeCollider = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].CapsuleCollider(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, center, data.height, data.radius);
+          comp.nativeCollider.direction = data.direction; // 设置material信息
+
+          var materialData = data.material || {};
+          comp.nativeCollider.material = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].Material(_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, materialData.dynamicFriction, materialData.staticFriction, materialData.bounciness, materialData.frictionCombine, materialData.bounceCombine);
+          comp.isTrigger = data.isTrigger;
+          var hasRigidBody = comp.getComponent(MiniGameAdaptor.Rigidbody);
+          comp.nativeCollider.scale = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(scale.x, scale.y, scale.z); // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
+
+          if (!hasRigidBody) {
+            _Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].addStaticBodyForCollider(comp);
+          } // 为collider绑定事件
+
+
+          Object(_Physx__WEBPACK_IMPORTED_MODULE_0__["bindEventForCollider"])(comp.nativeCollider, comp.gameObject);
+          _Physx__WEBPACK_IMPORTED_MODULE_0__["nativeColliderToAdaptorColliderMap"].set(comp.nativeCollider, comp);
+          return comp;
+        }
+      }
+    },
+    fields: {
+      _isTrigger: false,
+      _center: null,
+      _radius: 0,
+      _height: 0,
+      _direction: 1
+    },
+    props: {
+      isTrigger: {
+        get: function get() {
+          return this.nativeCollider.isTrigger;
+        },
+        set: function set(value) {
+          this.nativeCollider.isTrigger = value;
+        }
+      },
+      center: {
+        get: function get() {
+          var RawVec3f = this.nativeCollider.center;
+          return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
+        },
+        set: function set(value) {
+          this.nativeCollider.center = new _Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-value.x, value.y, value.z);
+        }
+      },
+      radius: {
+        get: function get() {
+          return this.nativeCollider.radius;
+        },
+        set: function set(value) {
+          this.nativeCollider.radius = value;
+        }
+      },
+      height: {
+        get: function get() {
+          return this.nativeCollider.height;
+        },
+        set: function set(value) {
+          this.nativeCollider.height = value;
+        }
+      },
+      direction: {
+        get: function get() {
+          return this.nativeCollider.direction;
+        },
+        set: function set(value) {
+          this.nativeCollider.direction = value;
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+        MiniGameAdaptor.Collider.ctor.call(this);
+      }
+    },
+    methods: {}
+  });
+});
+engine.decorators.serialize('MiniGameAdaptor.CapsuleCollider')(MiniGameAdaptor.CapsuleCollider);
+Object.defineProperty(MiniGameAdaptor.CapsuleCollider.prototype, '__properties', {
+  enumerable: false,
+  configurable: true,
+  writable: false,
+  value: _objectSpread({}, MiniGameAdaptor.CapsuleCollider.prototype.__properties)
+});
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+Bridge.assembly("unity-script-converter", function ($asm, globals) {
+  "use strict";
+
+  Bridge.define("MiniGameAdaptor.RaycastHit", {
+    $kind: "struct",
+    statics: {
+      methods: {
+        getDefaultValue: function getDefaultValue() {
+          return new MiniGameAdaptor.RaycastHit();
+        }
+      }
+    },
+    props: {
+      barycentricCoordinate: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      },
+      collider: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      distance: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      },
+      lightmapCoord: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      normal: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      },
+      point: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        },
+        set: function set(value) {
+          throw new System.Exception("not impl");
+        }
+      },
+      rigidbody: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      textureCoord: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      textureCoord2: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      transform: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      },
+      triangleIndex: {
+        get: function get() {
+          throw new System.Exception("not impl");
+        }
+      }
+    },
+    ctors: {
+      ctor: function ctor() {
+        this.$initialize();
+      }
+    },
+    methods: {
+      $clone: function $clone(to) {
+        return this;
+      }
+    }
+  });
+});
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
 
 var autoSimulation = true;
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11441,7 +12205,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 53 */
+/* 57 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11453,7 +12217,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 54 */
+/* 58 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11472,7 +12236,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 55 */
+/* 59 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11517,7 +12281,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 56 */
+/* 60 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11547,7 +12311,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 57 */
+/* 61 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11570,7 +12334,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 58 */
+/* 62 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11596,7 +12360,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 59 */
+/* 63 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11630,7 +12394,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 60 */
+/* 64 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11816,7 +12580,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 61 */
+/* 65 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11853,7 +12617,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 62 */
+/* 66 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11873,7 +12637,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 63 */
+/* 67 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -11960,7 +12724,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 64 */
+/* 68 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12051,7 +12815,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 65 */
+/* 69 */
 /***/ (function(module, exports) {
 
 /**
@@ -12167,7 +12931,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 66 */
+/* 70 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12179,7 +12943,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 67 */
+/* 71 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12192,7 +12956,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 68 */
+/* 72 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12205,7 +12969,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 69 */
+/* 73 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12218,7 +12982,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 70 */
+/* 74 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12231,7 +12995,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 71 */
+/* 75 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12244,7 +13008,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 72 */
+/* 76 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12257,7 +13021,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 73 */
+/* 77 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12270,7 +13034,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 74 */
+/* 78 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12283,7 +13047,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 75 */
+/* 79 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12296,7 +13060,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 76 */
+/* 80 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12309,7 +13073,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 77 */
+/* 81 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12322,7 +13086,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 78 */
+/* 82 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12335,7 +13099,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 79 */
+/* 83 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12348,7 +13112,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 80 */
+/* 84 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12361,7 +13125,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 81 */
+/* 85 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12374,7 +13138,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 82 */
+/* 86 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12387,7 +13151,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 83 */
+/* 87 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12400,7 +13164,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 84 */
+/* 88 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12526,7 +13290,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 85 */
+/* 89 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12548,7 +13312,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 86 */
+/* 90 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12569,7 +13333,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 87 */
+/* 91 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12656,7 +13420,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 88 */
+/* 92 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12676,7 +13440,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 89 */
+/* 93 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12713,7 +13477,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 90 */
+/* 94 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12757,7 +13521,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 91 */
+/* 95 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -12978,7 +13742,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 92 */
+/* 96 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -13190,7 +13954,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 93 */
+/* 97 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -13466,7 +14230,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 94 */
+/* 98 */
 /***/ (function(module, exports) {
 
 /**
@@ -13640,7 +14404,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 95 */
+/* 99 */
 /***/ (function(module, exports) {
 
 /**
@@ -13723,7 +14487,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 96 */
+/* 100 */
 /***/ (function(module, exports) {
 
 /**
@@ -13808,12 +14572,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 97 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(102);
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
   "use strict";
@@ -13871,7 +14635,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 98 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13887,7 +14651,7 @@ function getWxSystemInfo() {
 }
 
 /***/ }),
-/* 99 */
+/* 103 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -13895,6 +14659,10 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
+    screenHeight = _wx$getSystemInfoSync.screenHeight,
+    screenWidth = _wx$getSystemInfoSync.screenWidth;
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
   "use strict";
@@ -14482,7 +15250,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         throw new System.Exception("not impl");
       },
       ScreenToWorldPoint: function ScreenToWorldPoint(position) {
-        return this.ref.convertWorldPositionToViewport(position.ref);
+        var clipX = 2 * position.x / screenWidth - 1;
+        var clipY = 2 * position.y / screenHeight - 1;
+        return new MiniGameAdaptor.Vector3.$ctor4(this.ref.convertClipPositionToWorld(engine.Vector3.createFromNumber(clipX, clipY, -1)))._FlipX();
       },
       ScreenToWorldPoint$1: function ScreenToWorldPoint$1(position, eye) {
         throw new System.Exception("not impl");
@@ -14518,7 +15288,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         throw new System.Exception("not impl");
       },
       WorldToScreenPoint: function WorldToScreenPoint(position) {
-        return this.ref.convertWorldPositionToClip(position.ref);
+        var clipPos = this.ref.convertWorldPositionToClip(position._FlipX().ref);
+        var screenX = (clipPos.x + 1) / 2 * screenWidth;
+        var screenY = (clipPos.y + 1) / 2 * screenHeight;
+        return new MiniGameAdaptor.Vector3.$ctor2(screenX, screenY, clipPos.z);
       },
       WorldToScreenPoint$1: function WorldToScreenPoint$1(position, eye) {
         throw new System.Exception("not impl");
@@ -14541,7 +15314,7 @@ Object.defineProperty(MiniGameAdaptor.Camera.prototype, '__properties', {
 }); // MiniGameAdaptor.Camera.prototype.__properties.ref = { type: "Camera" };
 
 /***/ }),
-/* 100 */
+/* 104 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -14852,7 +15625,7 @@ Object.defineProperty(MiniGameAdaptor.ParticleSystem.prototype, '__properties', 
 }); // MiniGameAdaptor.ParticleSystem.prototype.__properties.ref = { type: "Particle" };
 
 /***/ }),
-/* 101 */
+/* 105 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -15125,7 +15898,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 102 */
+/* 106 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -15179,7 +15952,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 103 */
+/* 107 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -15198,7 +15971,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 104 */
+/* 108 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -15490,7 +16263,7 @@ Object.defineProperty(MiniGameAdaptor.Light.prototype, '__properties', {
 });
 
 /***/ }),
-/* 105 */
+/* 109 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -15583,7 +16356,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 106 */
+/* 110 */
 /***/ (function(module, exports) {
 
 var networkType = '';
@@ -15850,12 +16623,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 107 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _System_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98);
+/* harmony import */ var _System_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(102);
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
   "use strict";
@@ -15985,7 +16758,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 108 */
+/* 112 */
 /***/ (function(module, exports) {
 
 function isNumber(x) {
@@ -16132,7 +16905,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 109 */
+/* 113 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -16213,7 +16986,7 @@ MiniGameAdaptor.TextAsset.prototype.__properties.text = {
 };
 
 /***/ }),
-/* 110 */
+/* 114 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -16233,9 +17006,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         }
       },
       methods: {
-        MinMaxRect: function MinMaxRect(xmin, ymin, xmax, ymax) {
-          throw new System.Exception("not impl");
-        },
+        MinMaxRect: function MinMaxRect(xmin, ymin, xmax, ymax) {},
         NormalizedToPoint: function NormalizedToPoint(rectangle, normalizedRectCoordinates) {
           throw new System.Exception("not impl");
         },
@@ -16382,7 +17153,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         this.$initialize();
         throw new System.Exception("not impl");
       },
-      ctor: function ctor() {
+      ctor: function ctor(x, y, width, height) {
         this.$initialize();
         this._x = x;
         this._y = y;
@@ -16435,7 +17206,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 111 */
+/* 115 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -16475,7 +17246,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       extents: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this.m_Extents;
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -16499,7 +17270,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       size: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this.m_Size;
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -16514,7 +17285,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       ctor: function ctor(center, size) {
         this.$initialize();
         this.m_Center = center;
-        this.m_Extents = size * 0.5;
+        this.m_Size = size;
       }
     },
     methods: {
@@ -16577,7 +17348,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 112 */
+/* 116 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -16596,7 +17367,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 113 */
+/* 117 */
 /***/ (function(module, exports) {
 
 /**
@@ -16704,7 +17475,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 114 */
+/* 118 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -16933,7 +17704,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 115 */
+/* 119 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -17382,7 +18153,7 @@ Object.defineProperty(MiniGameAdaptor.Material.prototype, '__properties', {
 });
 
 /***/ }),
-/* 116 */
+/* 120 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -17516,9 +18287,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         set: function set(value) {
           var _this2 = this;
 
-          this.ref.materials.clear();
+          /*this.ref.materials.clear();
+          value.forEach(mat => {
+              this.ref.materials.push(mat.ref);
+          });*/
+          this.ref.clearAllMaterials();
           value.forEach(function (mat) {
-            _this2.ref.materials.push(mat.ref);
+            _this2.ref.addMaterial(mat.ref);
           });
         }
       },
@@ -17641,7 +18416,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       }
     },
     ctors: {
-      ctor: function ctor() {
+      ctor: function ctor(entity) {
         this.$initialize();
         MiniGameAdaptor.Component.ctor.call(this);
       }
@@ -17683,7 +18458,7 @@ Object.defineProperty(MiniGameAdaptor.Renderer.prototype, '__properties', {
 });
 
 /***/ }),
-/* 117 */
+/* 121 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -17888,7 +18663,7 @@ MiniGameAdaptor.LineRenderer.prototype.__properties.ref = {
 };
 
 /***/ }),
-/* 118 */
+/* 122 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -17928,9 +18703,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       }
     },
     ctors: {
-      ctor: function ctor() {
+      ctor: function ctor(entity) {
         this.$initialize();
         MiniGameAdaptor.Renderer.ctor.call(this);
+
+        if (!entity.getComponent(engine.MeshRenderer)) {
+          this.ref = entity.addComponent(engine.MeshRenderer);
+        }
       }
     }
   });
@@ -17947,7 +18726,7 @@ MiniGameAdaptor.MeshRenderer.prototype.__properties.ref = {
 };
 
 /***/ }),
-/* 119 */
+/* 123 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -18065,8 +18844,19 @@ Object.defineProperty(MiniGameAdaptor.SkinnedMeshRenderer.prototype, '__properti
 }); // MiniGameAdaptor.SkinnedMeshRenderer.prototype.__properties.ref = { type: "SkinnedMeshRenderer" };
 
 /***/ }),
-/* 120 */
-/***/ (function(module, exports) {
+/* 124 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
+/* harmony import */ var _MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+
+
+
+function propsChecker(mesh) {
+  return mesh.vertices.length && mesh.normals.length && mesh.uv.length && mesh.tangents.length && mesh.ref._subMeshs.length && mesh.ref._subMeshs.length === mesh.subMeshCount && !mesh.engineMesh;
+}
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
   "use strict";
@@ -18092,7 +18882,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       boneWeights: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18100,7 +18890,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       bounds: {
         get: function get() {
-          throw new System.Exception("not impl");
+          var center = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.center)._FlipX();
+          /*const size = new MiniGameAdaptor.Vector3.$ctor3(this.ref.boundBox.size)._FlipX();*/
+
+
+          var size = new MiniGameAdaptor.Vector3.$ctor2(1, 1, 1);
+          return new MiniGameAdaptor.Bounds.ctor(center, size);
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18108,7 +18903,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       colors: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18137,47 +18932,63 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       normals: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._normals || [];
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          this._normals = value;
+
+          if (propsChecker(this)) {
+            Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["createEngineMesh"])(this);
+          }
         }
       },
       subMeshCount: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._subMeshCount || this.ref.getSubMeshCount();
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          this._subMeshCount = value;
         }
       },
       tangents: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._tangents || [];
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          this._tangents = value;
+
+          if (propsChecker(this)) {
+            Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["createEngineMesh"])(this);
+          }
         }
       },
       triangles: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._triangles || [];
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          this._triangles = value;
+
+          if (propsChecker(this)) {
+            Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["createEngineMesh"])(this);
+          }
         }
       },
       uv: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._uv || [];
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          this._uv = value;
+
+          if (propsChecker(this)) {
+            Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["createEngineMesh"])(this);
+          }
         }
       },
       uv2: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18185,7 +18996,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       uv3: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18193,7 +19004,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       uv4: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18201,7 +19012,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       uv5: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18209,7 +19020,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       uv6: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18217,7 +19028,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       uv7: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
           throw new System.Exception("not impl");
@@ -18225,28 +19036,32 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       uv8: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return [];
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          return [];
         }
       },
       vertexBufferCount: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return 0;
         }
       },
       vertexCount: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._vertices.length;
         }
       },
       vertices: {
         get: function get() {
-          throw new System.Exception("not impl");
+          return this._vertices || [];
         },
         set: function set(value) {
-          throw new System.Exception("not impl");
+          this._vertices = value;
+
+          if (propsChecker(this)) {
+            Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["createEngineMesh"])(this);
+          }
         }
       }
     },
@@ -18254,7 +19069,25 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       ctor: function ctor(ref) {
         this.$initialize();
         MiniGameAdaptor.Object.ctor.call(this);
-        this.ref = ref;
+
+        if (ref) {
+          this.ref = ref;
+          this._buffer = ref._getRawVertexBuffer();
+          this._vertexLayout = ref._vertexLayout; // 顶点数据
+
+          this._vertices = Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["getPointDataByUsage"])(this._buffer, this._vertexLayout, _MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["EnumVertexLayoutUsage"].POSITION); // uv数据
+
+          this._uv = Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["getPointDataByUsage"])(this._buffer, this._vertexLayout, _MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["EnumVertexLayoutUsage"].UV0); // normals数据
+
+          this._normals = Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["getPointDataByUsage"])(this._buffer, this._vertexLayout, _MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["EnumVertexLayoutUsage"].NORMAL); // tangents数据
+
+          this._tangents = Object(_MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["getPointDataByUsage"])(this._buffer, this._vertexLayout, _MeshHelper_js__WEBPACK_IMPORTED_MODULE_1__["EnumVertexLayoutUsage"].TANGENT); // 三角形数据
+
+          this._triangles = ref._getRawIndiceBuffer();
+        } else {
+          // 这里先临时创建一个空的引擎Mesh实例，等Mesh数据补齐的时候会执行真正的引擎Mesh创建逻辑
+          this.ref = new engine.Mesh();
+        }
       }
     },
     methods: {
@@ -18340,7 +19173,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         throw new System.Exception("not impl");
       },
       GetTriangles: function GetTriangles(submesh) {
-        throw new System.Exception("not impl");
+        if (this.subMeshCount === 1 && submesh === 0) {
+          return this._triangles;
+        } else {
+          throw new System.Exception("not impl");
+        }
       },
       GetTriangles$1: function GetTriangles$1(submesh, applyBaseVertex) {
         throw new System.Exception("not impl");
@@ -18412,7 +19249,20 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         throw new System.Exception("not impl");
       },
       SetTriangles$4: function SetTriangles$4(triangles, submesh, calculateBounds) {
-        throw new System.Exception("not impl");
+        if (!this._subMeshs) {
+          this._subMeshs = [];
+        }
+
+        var offset = submesh === 0 ? 0 : this.ref.getIndiceLength(submesh - 1);
+
+        this.ref._addSubMesh(triangles.length, offset);
+
+        this.triangles = (this.triangles || []).concat(triangles);
+
+        this._subMeshs.push({
+          length: triangles.length,
+          offset: offset
+        });
       },
       SetTriangles$5: function SetTriangles$5(triangles, submesh, calculateBounds, baseVertex) {
         throw new System.Exception("not impl");
@@ -18431,13 +19281,38 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
       },
       UploadMeshData: function UploadMeshData(markNoLongerReadable) {
         throw new System.Exception("not impl");
+      },
+      test: function test(vertices, triangles) {
+        var phyMesh = new _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].PhysMesh(_Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance);
+        var float32 = new Float32Array(vertices.length * 3);
+        var index = 0;
+        vertices.forEach(function (item) {
+          float32[index] = item.x;
+          index++;
+          float32[index] = item.y;
+          index++;
+          float32[index] = item.z;
+          index++;
+        });
+        phyMesh.SetVertices(float32, vertices.length);
+        var indices = new Float32Array(triangles.length);
+        triangles.forEach(function (item, index) {
+          indices[index] = triangles[index];
+        });
+        phyMesh.SetTriangles(indices, triangles.length / 3);
+        var nativeCollider = new _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].MeshCollider(_Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, true, 14, phyMesh);
+        /*const rigidBody = new Phys3D.StaticRigidbody(physx.Phys3dInstance);*/
+
+        var rigidBody = new _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].DynamicRigidbody(_Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["physx"].Phys3dInstance, 10);
+        rigidBody.position = new _Physics_Physx__WEBPACK_IMPORTED_MODULE_0__["Phys3D"].RawVec3f(-2, 0, 0);
+        nativeCollider.attachedRigidbody = rigidBody;
       }
     }
   });
 });
 
 /***/ }),
-/* 121 */
+/* 125 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -18469,7 +19344,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
           return this._mesh;
         },
         set: function set(value) {
-          this.mesh.ref = value.ref;
+          this._mesh = value;
+          this.entity.getComponent(engine.MeshRenderer).mesh = value.ref;
+          /*this.mesh.ref = value.ref;*/
         }
       },
       sharedMesh: {
@@ -18486,6 +19363,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
           return this._sharedMesh;
         },
         set: function set(value) {
+          debugger;
           this.sharedMesh.ref = value.ref;
         }
       }
@@ -18506,7 +19384,7 @@ Object.defineProperty(MiniGameAdaptor.MeshFilter.prototype, '__properties', {
 });
 
 /***/ }),
-/* 122 */
+/* 126 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -18542,7 +19420,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 123 */
+/* 127 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -18598,7 +19476,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 124 */
+/* 128 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -18651,7 +19529,7 @@ Object.defineProperty(MiniGameAdaptor.LightmapData.prototype, '__properties', {
 });
 
 /***/ }),
-/* 125 */
+/* 129 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -18699,7 +19577,7 @@ Object.defineProperty(MiniGameAdaptor.LightmapSettings.prototype, '__properties'
 });
 
 /***/ }),
-/* 126 */
+/* 130 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -18718,7 +19596,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 127 */
+/* 131 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -18737,7 +19615,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 128 */
+/* 132 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -18755,7 +19633,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 129 */
+/* 133 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -18767,7 +19645,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 130 */
+/* 134 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -18908,7 +19786,7 @@ Object.defineProperty(MiniGameAdaptor.AnimationClip.prototype, '__properties', {
 }); // MiniGameAdaptor.AnimationClip.prototype.__properties.ref = { type: "AnimationClip" };
 
 /***/ }),
-/* 131 */
+/* 135 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -19607,7 +20485,7 @@ Object.defineProperty(MiniGameAdaptor.Animator.prototype, '__properties', {
 }); // MiniGameAdaptor.Animator.prototype.__properties.ref = { type: "Animator" };
 
 /***/ }),
-/* 132 */
+/* 136 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -19628,7 +20506,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 133 */
+/* 137 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -19660,7 +20538,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 134 */
+/* 138 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -19802,7 +20680,7 @@ Object.defineProperty(MiniGameAdaptor.AnimationState.prototype, '__properties', 
 });
 
 /***/ }),
-/* 135 */
+/* 139 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -19875,7 +20753,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 136 */
+/* 140 */
 /***/ (function(module, exports) {
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -20140,7 +21018,7 @@ MiniGameAdaptor.Animation.prototype.__properties.ref = {
 };
 
 /***/ }),
-/* 137 */
+/* 141 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20159,18 +21037,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 138 */
+/* 142 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _MissingReferenceException_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(139);
+/* harmony import */ var _MissingReferenceException_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(143);
 /* harmony import */ var _MissingReferenceException_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_MissingReferenceException_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _MissingReferenceException_js__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _MissingReferenceException_js__WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
-/* 139 */
+/* 143 */
 /***/ (function(module, exports) {
 
 Bridge.define("MiniGameAdaptor.MissingReferenceException", {
@@ -20183,7 +21061,7 @@ Bridge.define("MiniGameAdaptor.MissingReferenceException", {
 });
 
 /***/ }),
-/* 140 */
+/* 144 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20203,7 +21081,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 141 */
+/* 145 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20225,7 +21103,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 142 */
+/* 146 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20243,7 +21121,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 143 */
+/* 147 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20265,7 +21143,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 144 */
+/* 148 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20283,7 +21161,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 145 */
+/* 149 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20301,7 +21179,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 146 */
+/* 150 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20331,7 +21209,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 147 */
+/* 151 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20362,7 +21240,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 148 */
+/* 152 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20384,7 +21262,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 149 */
+/* 153 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20415,7 +21293,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 150 */
+/* 154 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20437,7 +21315,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 151 */
+/* 155 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20459,7 +21337,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 152 */
+/* 156 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20481,7 +21359,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 153 */
+/* 157 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20505,7 +21383,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 154 */
+/* 158 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20531,7 +21409,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 155 */
+/* 159 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20560,7 +21438,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 156 */
+/* 160 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20590,7 +21468,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 157 */
+/* 161 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity_project", function ($asm, globals) {
@@ -20622,7 +21500,7 @@ Bridge.assembly("unity_project", function ($asm, globals) {
 });
 
 /***/ }),
-/* 158 */
+/* 162 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20634,7 +21512,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 159 */
+/* 163 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20646,7 +21524,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 160 */
+/* 164 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20673,7 +21551,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 161 */
+/* 165 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20724,7 +21602,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 162 */
+/* 166 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20736,7 +21614,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 163 */
+/* 167 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20758,7 +21636,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 164 */
+/* 168 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20865,7 +21743,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 165 */
+/* 169 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20877,7 +21755,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 166 */
+/* 170 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20896,7 +21774,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 167 */
+/* 171 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20916,7 +21794,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 168 */
+/* 172 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20928,7 +21806,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 169 */
+/* 173 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20940,7 +21818,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 170 */
+/* 174 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20952,7 +21830,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 171 */
+/* 175 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -20972,7 +21850,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 172 */
+/* 176 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21059,7 +21937,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 173 */
+/* 177 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21080,7 +21958,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 174 */
+/* 178 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21111,7 +21989,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 175 */
+/* 179 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21130,7 +22008,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 176 */
+/* 180 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21149,7 +22027,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 177 */
+/* 181 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21169,7 +22047,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 178 */
+/* 182 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21233,7 +22111,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 179 */
+/* 183 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21251,7 +22129,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 180 */
+/* 184 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21329,7 +22207,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 181 */
+/* 185 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21379,7 +22257,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 182 */
+/* 186 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21430,7 +22308,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 183 */
+/* 187 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21507,7 +22385,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 184 */
+/* 188 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21519,7 +22397,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 185 */
+/* 189 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21532,7 +22410,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 186 */
+/* 190 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21552,7 +22430,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 187 */
+/* 191 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21572,7 +22450,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 188 */
+/* 192 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21592,7 +22470,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 189 */
+/* 193 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21612,7 +22490,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 190 */
+/* 194 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21632,7 +22510,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 191 */
+/* 195 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21652,7 +22530,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 192 */
+/* 196 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21675,7 +22553,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 193 */
+/* 197 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21832,7 +22710,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 194 */
+/* 198 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -21999,7 +22877,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 195 */
+/* 199 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22125,7 +23003,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 196 */
+/* 200 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22457,7 +23335,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 197 */
+/* 201 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22499,7 +23377,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 198 */
+/* 202 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22535,7 +23413,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 199 */
+/* 203 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22612,7 +23490,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 200 */
+/* 204 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22684,7 +23562,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 201 */
+/* 205 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22728,7 +23606,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 202 */
+/* 206 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -22861,7 +23739,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 203 */
+/* 207 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -23009,7 +23887,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 204 */
+/* 208 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -23084,7 +23962,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 205 */
+/* 209 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -23323,7 +24201,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 206 */
+/* 210 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -23341,7 +24219,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 207 */
+/* 211 */
 /***/ (function(module, exports) {
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -23579,7 +24457,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 });
 
 /***/ }),
-/* 208 */
+/* 212 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

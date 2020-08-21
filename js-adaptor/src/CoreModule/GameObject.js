@@ -216,10 +216,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 }
             },
 
-            BroadcastMessage$3: function (methodName, options) {
+            BroadcastMessage$3: function (methodName, options, parameter) {
                 hasBroadcastMessageReceiver = false;
 
-                this._BroadcastMessage(this.ref, methodName);
+                this._BroadcastMessage(this.ref, methodName, parameter);
 
                 if ( !hasBroadcastMessageReceiver && options === MiniGameAdaptor.SendMessageOptions.RequireReceiver ) {
                     console.error(`BroadcastMessage ${ methodName } has no receiver!`);

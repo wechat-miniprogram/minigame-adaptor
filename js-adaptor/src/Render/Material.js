@@ -35,7 +35,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 set: function (value) {
                     if (value && value instanceof MiniGameAdaptor.Color) {
                         this._color = value;
-                        const remap = value.__remap0255();
+                        // const remap = value.__remap0255();
+                        const remap = value.__remap01();
                         const vec4 = engine.Vector4.createFromNumber(remap.r, remap.g, remap.b, remap.a);
 
                         if (!this.ref.setVector("_Color", vec4)) {

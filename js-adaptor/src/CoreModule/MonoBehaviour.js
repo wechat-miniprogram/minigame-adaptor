@@ -151,19 +151,29 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     throw e;
                 }
             },
-            
+
             // simple iteration trying to invoke overload method
             // cuz reflection costs much more time
-            _OverloadMethodInvoke(methodName) {
+            _OverloadMethodInvoke(methodName, parameter) {
                 if (this[methodName]) {
-                    this[methodName]();
+                    if (parameter) {
+                        this[methodName](parameter)
+                    } else {
+                        this[methodName]()
+                    }
+                    // this[methodName]();
                     return;
                 }
                 // bridge overload
                 for(let i = 0; i < 5; i++) {
                     let overloadName = methodName + "$" + i;
                     if (this[overloadName]) {
-                        this[overloadName]();
+                        // this[overloadName]();
+                        if (parameter) {
+                            this[methodName](parameter)
+                        } else {
+                            this[methodName]()
+                        }
                         return;
                     }
                 }
@@ -227,6 +237,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 // this._BridgeInvokeInstanceMethodIfHas("OnDestroy");
                 this._OverloadMethodInvoke("OnDestroy")
 
+            },
+
+            onTriggerEnter(parameter){
+                this._OverloadMethodInvoke("OnTriggerEnter", parameter)
             }
         }
     });

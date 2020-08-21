@@ -24,11 +24,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             tag: {
                 get: function () {
-                    
+
                     return this.gameObject.tag;
                 },
                 set: function (value) {
-                    
+
                     this.gameObject.tag = value;
                 }
             },
@@ -63,8 +63,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             BroadcastMessage$2: function (methodName, parameter, options) {
                 this.gameObject.BroadcastMessage$2(methodName, parameter, options);
             },
-            BroadcastMessage$3: function (methodName, options) {
-                this.gameObject.BroadcastMessage$3(methodName, options);
+            BroadcastMessage$3: function (methodName, options, comp) {
+                this.gameObject.BroadcastMessage$3(methodName, options, comp);
             },
             CompareTag: function (tag) {
                 return this.tag === tag;
