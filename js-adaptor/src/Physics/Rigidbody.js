@@ -329,10 +329,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 return this.ref.IsSleeping();
             },
             MovePosition: function (position) {
-                this.ref.MovePosition(position._FlipX().ref);
+                this.ref.movePosition(position._FlipX().ref);
             },
             MoveRotation: function (rot) {
-                this.ref.MoveRotation(rot._FlipXnW().ref)
+                this.ref.moveRotation(rot._FlipXnW().ref)
             },
             ResetCenterOfMass: function () {
                 this.ref.ResetCenterOfMass();
