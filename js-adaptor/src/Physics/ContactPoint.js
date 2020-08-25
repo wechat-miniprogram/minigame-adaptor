@@ -1,3 +1,5 @@
+import { engineColliderToAdaptorColliderMap } from '../Physics/Physx.js';
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
     Bridge.define("MiniGameAdaptor.ContactPoint", {
@@ -15,7 +17,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             otherCollider: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return engineColliderToAdaptorColliderMap.get(this.nativeData.otherCollider);
                 }
             },
             point: {
@@ -30,7 +32,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             thisCollider: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return engineColliderToAdaptorColliderMap.get(this.nativeData.thisCollider);
                 }
             }
         },
@@ -40,8 +42,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 this.nativeData = nativeData || {};
 
-                this._point = new MiniGameAdaptor.Vector3.$ctor3(this.nativeData.point)._FlipX();
-                this._normal = new MiniGameAdaptor.Vector3.$ctor3(this.nativeData.normal)._FlipX();
+                const _point = this.nativeData.point;
+                this._point = new MiniGameAdaptor.Vector3.$ctor2(_point.x, _point.y, _point.z)._FlipX();
+
+                const _normal = this.nativeData.normal;
+                this._normal = new MiniGameAdaptor.Vector3.$ctor2(_normal.x, _normal.y, _normal.z)._FlipX();
             }
         },
         methods: {

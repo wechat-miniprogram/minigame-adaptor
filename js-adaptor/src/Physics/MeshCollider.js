@@ -1,7 +1,5 @@
-/**
- * 创建Mesh是有性能开销的，不同的MeshCollider可能共用一个PhyMesh，这里加个weakmap做池
- */
-const meshMap = new WeakMap();
+
+import { engineColliderToAdaptorColliderMap } from './Physx.js';
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
@@ -10,7 +8,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         statics: {
             methods: {
                 Deserialize: function(data, comp, context, builtContext) {
-                    return MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
+                    const res = MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
+
+                    engineColliderToAdaptorColliderMap.set(res.ref, comp);
+
+                    return res;
                 },
             }
         },

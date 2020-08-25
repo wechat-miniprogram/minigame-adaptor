@@ -60,10 +60,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         ctors: {
-            ctor: function () {
+            ctor: function (ref) {
                 this.$initialize();
                 MiniGameAdaptor.Object.ctor.call(this);
-                this.ref = new engine.PhysicMaterial();
+
+                if (ref) {
+                    this.ref = ref;
+                } else {
+                    this.ref = new engine.PhysicMaterial();
+                }
             },
             $ctor1: function (name) {
                 this.$initialize();

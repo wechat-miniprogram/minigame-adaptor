@@ -1,3 +1,5 @@
+import { engineColliderToAdaptorColliderMap } from '../Physics/Physx.js';
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
@@ -239,8 +241,38 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
             },
 
-            onTriggerEnter(parameter){
-                this._OverloadMethodInvoke("OnTriggerEnter", parameter)
+            // 下面是物理组件才会用到的生命周期函数
+            onTriggerEnter(other){
+                const collider = engineColliderToAdaptorColliderMap.get(other.collider);
+                this._OverloadMethodInvoke("OnTriggerEnter", collider);
+            },
+
+            onTriggerExit(other){
+                const collider = engineColliderToAdaptorColliderMap.get(other.collider);
+                this._OverloadMethodInvoke("OnTriggerExit", collider);
+            },
+
+            onTriggerStay(other){
+                const collider = engineColliderToAdaptorColliderMap.get(other.collider);
+                this._OverloadMethodInvoke("OnTriggerStay", collider);
+            },
+
+            onCollisionEnter(other){
+                const collision = new MiniGameAdaptor.Collision.$ctor1(other);
+                console.log('onCollisionEnter',other,  collision)
+                this._OverloadMethodInvoke("OnCollisionEnter", collision);
+            },
+
+            onCollisionExit(other){
+                const collision = new MiniGameAdaptor.Collision.$ctor1(other);
+                /*console.log('onCollisionExit', other,  collision)*/
+                this._OverloadMethodInvoke("OnCollisionExit", collision);
+            },
+
+            onCollisionStay(other){
+                const collision = new MiniGameAdaptor.Collision.$ctor1(other);
+                /*console.log('onCollisionStay', other,  collision)*/
+                this._OverloadMethodInvoke("OnCollisionStay", collision);
             }
         }
     });

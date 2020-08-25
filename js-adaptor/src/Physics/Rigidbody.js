@@ -1,3 +1,5 @@
+import { engineRigidBodyToAdaptorRigidBodyMap } from './Physx.js';
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
     Bridge.define("MiniGameAdaptor.ForceMode", {
@@ -42,7 +44,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         statics: {
             methods: {
                 Deserialize: function(data, comp, context, builtContext) {
-                    return MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
+                    const res = MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
+
+                    engineRigidBodyToAdaptorRigidBodyMap.set(res.ref, comp);
+
+                    return res;
                 },
             }
         },

@@ -1,3 +1,4 @@
+import { engineRigidBodyToAdaptorRigidBodyMap } from './Physx.js';
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
@@ -7,7 +8,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             attachedRigidbody: {
                 get: function () {
-                    return this.nativeCollider.adaptorRigidBody;
+                    return engineRigidBodyToAdaptorRigidBodyMap.get(this.ref.adaptorRigidBody);
                 }
             },
             bounds: {
@@ -41,23 +42,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             material: {
                 get: function () {
-                    const material = this.ref.material;
+                    if (!this.__material) {
+                        this.__material = new MiniGameAdaptor.PhysicMaterial(this.ref.material)
+                    }
 
-                    const res = new MiniGameAdaptor.PhysicMaterial()
-
-                    res.bounceCombine = material.bounceCombine;
-                    res.bounciness = material.bounciness;
-                    res.dynamicFriction = material.dynamicFriction;
-                    res.frictionCombine = material.frictionCombine;
-                    res.staticFriction = material.staticFriction;
-
-                    return res;
+                    return this.__material;
                 },
                 set: function (value) {
-                    var material = new MiniGameAdaptor.PhysicMaterial();
-                    Object.assign(material, value);
-
-                    this.ref.material = material.ref;
+                    Object.assign(this.__material, value);
                 }
             },
             sharedMaterial: {

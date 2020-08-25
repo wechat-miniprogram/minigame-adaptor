@@ -1,10 +1,12 @@
+import { engineColliderToAdaptorColliderMap } from './Physx.js';
+
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
     Bridge.define("MiniGameAdaptor.Collision", {
         props: {
             collider: {
                 get: function () {
-                    return nativeColliderToAdaptorColliderMap.get(this._collider);
+                    return this._collider;
                 }
             },
             contactCount: {
@@ -24,17 +26,19 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             impulse: {
                 get: function () {
-                    return new MiniGameAdaptor.Vector3.$ctor3(this._nativeData.impulse)._FlipX();
+                    const tmp = this._data.impulse;
+                    return new MiniGameAdaptor.Vector3.$ctor2(tmp.x, tmp.y, tmp.z)._FlipX();
                 }
             },
             relativeVelocity: {
                 get: function () {
-                    return new MiniGameAdaptor.Vector3.$ctor3(this._nativeData.relative_velocity)._FlipX();
+                    const tmp = this._data.relativeVelocity;
+                    return new MiniGameAdaptor.Vector3.$ctor2(tmp.x, tmp.y, tmp.z)._FlipX();
                 }
             },
             rigidbody: {
                 get: function () {
-                    return nativeColliderToAdaptorColliderMap.get(this._collider).attachedRigidbody || null;
+                    return this._collider.attachedRigidbody || null;
                 }
             },
             transform: {
@@ -49,16 +53,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
 
             // 通过native创建一个Collision
-            $ctor1: function (nativeData) {
-                this._nativeData = nativeData;
+            $ctor1: function (data) {
+                this._data= data;
 
-                this._collider = nativeData.collider;
+                this._collider = engineColliderToAdaptorColliderMap.get(data.collider);
 
-                this._gameObject = this._collider.userData;
+                this._gameObject = this._collider.gameObject;
 
-                this._contactCount = nativeData.contacts && this._nativeData.contacts.length || 0;
+                this._contactCount = this._data.contacts && this._data.contacts.length || 0;
 
-                this._contacts = nativeData.contacts.map(item => {
+                this._contacts = this._data.contacts.map(item => {
                     return new MiniGameAdaptor.ContactPoint.ctor(item);
                 });
             }
