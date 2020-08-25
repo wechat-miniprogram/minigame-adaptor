@@ -1,7 +1,7 @@
 let Phys3D;
 import {onRootMonoBehaviourUpdate} from '../Extend/RootMonoBehaviour'
 
-try {
+/*try {
     if (typeof NativeGlobal !== 'undefined' && NativeGlobal.Phys3D) {
         Phys3D = NativeGlobal.Phys3D;
     } else if (__global && __global.require &&  __global.require('physicsEngine')) {
@@ -10,7 +10,7 @@ try {
     console.log('Phys3D', Phys3D)
 } catch(e) {
     console.log('load Phys3D error', e)
-}
+}*/
 
 class Physx {
     constructor() {
@@ -162,13 +162,10 @@ class Physx {
     }
 }
 
-const physx = new Physx();
-
-let count = 0;
+/*const physx = new Physx();*/
 
 // 跟随引擎的update执行Simulate逻辑
 onRootMonoBehaviourUpdate((dt) => {
-    physx.loop(dt);
 });
 
 const nativeColliderToAdaptorColliderMap = new WeakMap();
@@ -205,5 +202,5 @@ function bindEventForCollider(nativeCollider, gameObject) {
 }
 
 
-export {Phys3D, physx, bindEventForCollider, nativeColliderToAdaptorColliderMap};
+export {Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap};
 

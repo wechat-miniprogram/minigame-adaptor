@@ -1,5 +1,3 @@
-import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from './Physx';
-
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
@@ -7,48 +5,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         inherits: [MiniGameAdaptor.Collider],
         statics: {
             methods: {
-                Deserialize: function(data, comp) {
-                    if (typeof(data) === "number") {
-                        return comp;
-                    }
-
-                    const instance = physx.Phys3dInstance;
-                    const entity = comp.entity;
-
-                    const scale = comp.transform.localScale;
-                    const center = new Phys3D.RawVec3f(data.center[0], data.center[1], data.center[2]);
-
-                    comp.nativeCollider = new Phys3D.CapsuleCollider(physx.Phys3dInstance, center, data.height, data.radius);
-                    comp.nativeCollider.direction = data.direction;
-
-                    // 设置material信息
-                    const materialData = data.material || {};
-                    comp.nativeCollider.material = new Phys3D.Material(
-                        physx.Phys3dInstance,
-                        materialData.dynamicFriction,
-                        materialData.staticFriction,
-                        materialData.bounciness,
-                        materialData.frictionCombine,
-                        materialData.bounceCombine,
-                    );
-
-                    comp.isTrigger = data.isTrigger;
-
-                    const hasRigidBody = comp.getComponent(MiniGameAdaptor.Rigidbody);
-
-                    comp.nativeCollider.scale = new Phys3D.RawVec3f(scale.x, scale.y, scale.z);
-
-                    // 如果gameObject没有设置RigidBody，为他创建静态刚体，用于碰撞
-                    if (!hasRigidBody) {
-                        physx.addStaticBodyForCollider(comp)
-                    }
-
-                    // 为collider绑定事件
-                    bindEventForCollider(comp.nativeCollider, comp.gameObject)
-
-                    nativeColliderToAdaptorColliderMap.set(comp.nativeCollider, comp);
-
-                    return comp;
+                Deserialize: function(data, comp, context, builtContext) {
+                    return MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
                 }
             }
         },
@@ -62,43 +20,42 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             isTrigger: {
                 get: function () {
-                    return this.nativeCollider.isTrigger;
+                    return this.ref.isTrigger;
                 },
                 set: function (value) {
-                    this.nativeCollider.isTrigger = value;
+                    this.ref.isTrigger = value;
                 }
             },
             center: {
                 get: function () {
-                    const RawVec3f = this.nativeCollider.center;
-                    return new MiniGameAdaptor.Vector3.$ctor3(RawVec3f)._FlipX();
+                    return new MiniGameAdaptor.Vector3.$ctor3(this.ref.center)._FlipX();
                 },
                 set: function (value) {
-                    this.nativeCollider.center = new Phys3D.RawVec3f(-value.x, value.y, value.z);
+                    this.ref.center = value._FlipX().ref;
                 }
             },
             radius: {
                 get: function () {
-                    return this.nativeCollider.radius;
+                    return this.ref.radius;
                 },
                 set: function (value) {
-                    this.nativeCollider.radius = value;
+                    this.ref.radius = value;
                 }
             },
             height: {
                 get: function () {
-                    return this.nativeCollider.height;
+                    return this.ref.height;
                 },
                 set: function (value) {
-                    this.nativeCollider.height = value;
+                    this.ref.height = value;
                 }
             },
             direction: {
                 get: function () {
-                    return this.nativeCollider.direction;
+                    return this.ref.direction;
                 },
                 set: function (value) {
-                    this.nativeCollider.direction = value;
+                    this.ref.direction = value;
                 }
             }
         },

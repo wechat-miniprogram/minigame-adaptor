@@ -1,4 +1,3 @@
-import {physx, Phys3D, bindEventForCollider} from './Physx';
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
@@ -13,37 +12,39 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             bounds: {
                 get: function () {
-                    return this.nativeCollider.bounds;
+                    return this.ref.bounds;
                 }
             },
             contactOffset: {
                 get: function () {
-                    return this.nativeCollider.contactOffset;
+                    return this.ref.contactOffset;
                 },
                 set: function (value) {
-                    this.nativeCollider.contactOffset = value;
+                    this.ref.contactOffset = value;
                 }
             },
             enabled: {
                 get: function () {
-                    return this.nativeCollider.enabled;
+                    return this.ref.active;
                 },
                 set: function (value) {
-                    this.nativeCollider.enabled = value;
+                    this.ref.active = value;
                 }
             },
             isTrigger: {
                 get: function () {
-                    return this.nativeCollider.isTrigger;
+                    return this.ref.isTrigger;
                 },
                 set: function (value) {
-                    this.nativeRigidBody.isTrigger = value;
+                    this.ref.isTrigger = value;
                 }
             },
             material: {
                 get: function () {
-                    const material = this.nativeCollider.material;
+                    const material = this.ref.material;
+
                     const res = new MiniGameAdaptor.PhysicMaterial()
+
                     res.bounceCombine = material.bounceCombine;
                     res.bounciness = material.bounciness;
                     res.dynamicFriction = material.dynamicFriction;
@@ -53,15 +54,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     return res;
                 },
                 set: function (value) {
-                    const instance = physx.Phys3dInstance;
-                    this.nativeCollider.material = new Phys3D.Material(
-                                                                    instance,
-                                                                    value.dynamicFriction,
-                                                                    value.staticFriction,
-                                                                    value.bounciness,
-                                                                    value.frictionCombine,
-                                                                    value.bounceCombine
-                                                   );
+                    var material = new MiniGameAdaptor.PhysicMaterial();
+                    Object.assign(material, value);
+
+                    this.ref.material = material.ref;
                 }
             },
             sharedMaterial: {
@@ -81,16 +77,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         },
         methods: {
             ClosestPoint: function (position) {
-                const RawVec3f = new Phys3D.RawVec3f(position.x, position.y, position.z);
-                const resRawVec3f = this.nativeCollider.ClosestPoint(RawVec3f)
+                const resRawVec3f = this.ref.ClosestPoint(position._FlipX().ref)
 
-                return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z);
+                return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z)._FlipX();
             },
             ClosestPointOnBounds: function (position) {
-                const RawVec3f = new Phys3D.RawVec3f(position.x, position.y, position.z);
-                const resRawVec3f = this.nativeCollider.ClosestPointOnBounds(RawVec3f)
+                const resRawVec3f = this.ref.ClosestPointOnBounds(position._FlipX().ref)
 
-                return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z);
+                return new MiniGameAdaptor.Vector3.$ctor3(resRawVec3f.x, resRawVec3f.y, resRawVec3f.z)._FlipX();
             },
             Raycast: function (ray, hitInfo, maxDistance) {
                 throw new System.Exception("not impl");
@@ -98,3 +92,4 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         }
     });
 });
+

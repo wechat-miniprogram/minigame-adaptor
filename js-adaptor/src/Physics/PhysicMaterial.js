@@ -1,5 +1,3 @@
-import {physx, Phys3D} from './Physx';
-
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
     Bridge.define("MiniGameAdaptor.PhysicMaterialCombine", {
@@ -22,42 +20,42 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             bounceCombine: {
                 get: function () {
-                    return this.nativeMaterial.bounceCombine;
+                    return this.ref.bounceCombine;
                 },
                 set: function (value) {
-                    this.nativeMaterial.bounceCombine = value;
+                    this.ref.bounceCombine = value;
                 }
             },
             bounciness: {
                 get: function () {
-                    return this.nativeMaterial.bounciness;
+                    return this.ref.bounciness;
                 },
                 set: function (value) {
-                    this.nativeMaterial.bounciness = value;
+                    this.ref.bounciness = value;
                 }
             },
             dynamicFriction: {
                 get: function () {
-                    return this.nativeMaterial.dynamicFriction;
+                    return this.ref.dynamicFriction;
                 },
                 set: function (value) {
-                    this.nativeMaterial.dynamicFriction = value;
+                    this.ref.dynamicFriction = value;
                 }
             },
             frictionCombine: {
                 get: function () {
-                    return this.nativeMaterial.frictionCombine;
+                    return this.ref.frictionCombine;
                 },
                 set: function (value) {
-                    this.nativeMaterial.frictionCombine = value;
+                    this.ref.frictionCombine = value;
                 }
             },
             staticFriction: {
                 get: function () {
-                    return this.nativeMaterial.staticFriction;
+                    return this.ref.staticFriction;
                 },
                 set: function (value) {
-                    this.nativeMaterial.staticFriction = value;
+                    this.ref.staticFriction = value;
                 }
             }
         },
@@ -65,18 +63,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function () {
                 this.$initialize();
                 MiniGameAdaptor.Object.ctor.call(this);
-
-                const instance = physx.Phys3dInstance;
-
-                // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
-                this.nativeMaterial = new Phys3D.Material(instance);
+                this.ref = new engine.PhysicMaterial();
             },
             $ctor1: function (name) {
                 this.$initialize();
                 MiniGameAdaptor.Object.ctor.call(this);
 
-                // https://docs.unity3d.com/Manual/class-PhysicMaterial.html
-                this.nativeMaterial = new Phys3D.Material(instance);
+                this.ref = new engine.PhysicMaterial();
             }
         }
     });

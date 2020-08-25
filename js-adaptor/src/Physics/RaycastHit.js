@@ -88,4 +88,4 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     });
 });
 
- 
+

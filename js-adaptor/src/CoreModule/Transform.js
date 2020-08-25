@@ -1,4 +1,3 @@
-import {Phys3D, physx} from '../Physics/Physx';
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
@@ -127,10 +126,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         this.hasChanged = true;
                     }
 
-                    // 有物理刚体的情况同步旋转到物理引擎
-                    if (this.gameObject.nativeRigidBody) {
-                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
-                    }
                 }
             },
             localPosition: {
@@ -149,10 +144,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         this.hasChanged = true;
                     }
 
-                    // 如果gameObject存在物理刚体，需要将位置同步过去
-                    if (this.gameObject.nativeRigidBody) {
-                        physx.syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
-                    }
                 }
             },
             localRotation: {
@@ -165,10 +156,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         this.hasChanged = true;
                     }
 
-                    // 有物理刚体的情况同步旋转到物理引擎
-                    if (this.gameObject.nativeRigidBody) {
-                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
-                    }
                 }
             },
             localScale: {
@@ -183,7 +170,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     if (!this.hasChanged) {
                         this.hasChanged = true;
                     }
-                    // TODO for physx
                 }
             },
             localToWorldMatrix: {
@@ -211,12 +197,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 },
                 set: function (value) {
                     this.SetParent(value);
-
-                    // 如果gameObject存在物理刚体，需要将位置同步过去
-                    if (this.gameObject.nativeRigidBody) {
-                        physx.syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
-                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
-                    }
                 }
             },
             position: {
@@ -236,11 +216,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     if (!this.hasChanged) {
                         this.hasChanged = true;
-                    }
-
-                    // 如果gameObject存在物理刚体，需要将位置同步过去
-                    if (this.gameObject.nativeRigidBody) {
-                        physx.syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
                     }
                 }
             },
@@ -266,11 +241,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     this.ref.quaternion = local._FlipXnW().ref;
                     if (!this.hasChanged) {
                         this.hasChanged = true;
-                    }
-
-                    // 如果gameObject存在物理刚体，需要将位置同步过去
-                    if (this.gameObject.nativeRigidBody) {
-                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
                     }
                 }
             },

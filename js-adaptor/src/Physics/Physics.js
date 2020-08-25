@@ -1,5 +1,3 @@
-import {Phys3D, physx, } from './Physx';
-
 let autoSimulation = true;
 
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
@@ -477,7 +475,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     throw new System.Exception("not impl");
                 },
                 Simulate: function (step) {
-                    physx.simulate(step);
+                    /*physx.simulate(step);*/
                 },
                 SphereCast: function (ray, radius) {
                     throw new System.Exception("not impl");

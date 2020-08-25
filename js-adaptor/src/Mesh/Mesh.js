@@ -1,6 +1,3 @@
-import {physx, Phys3D, bindEventForCollider, nativeColliderToAdaptorColliderMap} from '../Physics/Physx';
-import { EnumVertexLayoutUsage, getPointDataByUsage, createEngineMesh} from './MeshHelper.js';
-
 function propsChecker(mesh) {
     return ( mesh.vertices.length
              && mesh.normals.length

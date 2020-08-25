@@ -53,13 +53,13 @@ Object.defineProperty(engine.Prefab.prototype, 'gameObject', {
         return this;
     }
     });
-    
+
     Object.defineProperty(engine.Prefab.prototype, 'transform', {
     get() {
         return this;
     }
     });
-    
+
     Object.defineProperty(engine.Prefab.prototype, 'name', {
     get() {
         return this.data.meta.name;
