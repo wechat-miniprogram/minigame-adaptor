@@ -259,7 +259,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
             onCollisionEnter(other){
                 const collision = new MiniGameAdaptor.Collision.$ctor1(other);
-                console.log('onCollisionEnter',other,  collision)
+                /*console.log('onCollisionEnter',other,  collision)*/
                 this._OverloadMethodInvoke("OnCollisionEnter", collision);
             },
 

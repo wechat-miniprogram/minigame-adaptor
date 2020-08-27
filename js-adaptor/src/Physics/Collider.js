@@ -8,7 +8,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             attachedRigidbody: {
                 get: function () {
-                    return engineRigidBodyToAdaptorRigidBodyMap.get(this.ref.adaptorRigidBody);
+                    return engineRigidBodyToAdaptorRigidBodyMap.get(this.ref.attachedRigidbody);
                 }
             },
             bounds: {

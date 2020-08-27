@@ -10,7 +10,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 Deserialize: function(data, comp, context, builtContext) {
                     const res = MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
 
-                    engineColliderToAdaptorColliderMap.set(res.ref, comp);
+                    if (res.ref) {
+                        engineColliderToAdaptorColliderMap.set(res.ref, comp);
+                    }
 
                     return res;
                 }

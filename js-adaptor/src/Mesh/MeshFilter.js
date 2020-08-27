@@ -14,6 +14,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         let renderer = this.GetComponent(MiniGameAdaptor.Renderer);
                         if (renderer) {
                             this._mesh = new MiniGameAdaptor.Mesh(renderer.ref.mesh);
+                        } else {
+                            let renderer = this.addComponent(MiniGameAdaptor.MeshRenderer);
+                            this._mesh = new MiniGameAdaptor.Mesh(renderer.ref.mesh);
                         }
                     }
                     return this._mesh;

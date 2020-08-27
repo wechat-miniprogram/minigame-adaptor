@@ -1,3 +1,12 @@
+import {
+    EnumVertexLayoutUsage,
+    EnumVertexFormat,
+    getPointDataByUsage,
+    WXMeshVertexLayout,
+    createEngineMesh,
+    getPointBuffer
+} from './MeshHelper';
+
 function propsChecker(mesh) {
     return ( mesh.vertices.length
              && mesh.normals.length
