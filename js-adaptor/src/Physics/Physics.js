@@ -418,7 +418,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     throw new System.Exception("not impl");
                 },
                 Raycast$14: function (origin, direction, hitInfo, maxDistance, layerMask) {
-                    throw new System.Exception("not impl");
+                    /*throw new System.Exception("not impl");*/
+                    return engine.game.physicsSystem.raycast(origin._FlipX().ref, direction._FlipX().ref, maxDistance, hitInfo.v.ref, layerMask);
                 },
                 Raycast$15: function (origin, direction, hitInfo, maxDistance, layerMask, queryTriggerInteraction) {
                     throw new System.Exception("not impl");

@@ -5,29 +5,30 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         $kind: "struct",
         statics: {
             methods: {
-                getDefaultValue: function () { return new MiniGameAdaptor.RaycastHit(); }
+                getDefaultValue: function () { return new MiniGameAdaptor.RaycastHit();}
             }
         },
         props: {
             barycentricCoordinate: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    const tmp = this.ref.barycentricCoordinate;
+
+                    return new MiniGameAdaptor.Vector3.$ctor3(tmp.x, tmp.y, tmp.z)._FlipX();
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this.ref.barycentricCoordinate = value._FlipX().ref;
                 }
             },
             collider: {
                 get: function () {
                     throw new System.Exception("not impl");
                 }
-            },
-            distance: {
+            }, distance: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this.ref.distance;
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this.ref.distance = value;
                 }
             },
             lightmapCoord: {
@@ -80,6 +81,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         ctors: {
             ctor: function () {
                 this.$initialize();
+
+                this.ref = new engine.RaycastHit();
             }
         },
         methods: {

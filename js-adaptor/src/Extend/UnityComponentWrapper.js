@@ -11,7 +11,7 @@ function UnityComponentWrapper(_type) {
             }
             let type = data.type;
             let item = data.value;
-            
+
             // 特殊处理GameObject的反序列化
             if (type === 'MiniGameAdaptor.GameObject') {
                 let transform = MiniGameAdaptor.UnityDeserializeHelper.Deserialize({type: 'Transform3D', data: item}, comp, context, builtContext);
@@ -21,7 +21,7 @@ function UnityComponentWrapper(_type) {
             return MiniGameAdaptor.UnityDeserializeHelper.Deserialize({ type: type, data: item }, comp, context, builtContext);
         }
     }
-    let __type = 'ComponentWrapper'; 
+    let __type = 'ComponentWrapper';
     if (_type)
         __type += '_' + _type;
     engine.decorators.serialize(__type)(ComponentWrapper);
