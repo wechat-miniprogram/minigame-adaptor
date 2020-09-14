@@ -1,0 +1,10 @@
+module.exports = {
+    pluginConfig: {
+        userMiniGameAdaptorPlugin: true,
+        userMiniGameAdaptorJs: true,
+        pluginAlias: "WXBridge"
+    },
+    sceneConfig: {
+
+    }
+}
