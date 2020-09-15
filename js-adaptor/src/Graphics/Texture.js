@@ -97,9 +97,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 SetGlobalAnisotropicFilteringLimits: function (forcedMin, globalMax) {
                     throw new System.Exception("not impl");
                 },
-           SetStreamingTextureMaterialDebugProperties: function () {
+                SetStreamingTextureMaterialDebugProperties: function () {
                     throw new System.Exception("not impl");
+                },
+                Deserialize: function (data, comp, context, builtContext) {
+                    let ref = builtContext.components.data[data.ref];
+                    if(ref && ref.spriteFrame && ref.spriteFrame.texture)
+                        comp._texture = ref.spriteFrame.texture;
+                    return comp;
                 }
+            },
+            fields: {
+                _texture: null
             }
         },
         props: {

@@ -128,7 +128,7 @@ Shader设置完成之后就可以执行资源导出操作了。
   "engine":true,
   "plugins":{
       "WXEngine":{
-          "version":"0.7.5",
+          "version":"0.7.2",
           "provider":"wx20afc706a711eefc",
           "contexts":[
               {
@@ -149,13 +149,9 @@ Shader设置完成之后就可以执行资源导出操作了。
 }
 ```
 
-**特别提示：在小游戏项目里面，务必要开启ES6转ES5选项**
-<img src="./image/es6.png" width="400">
-
 ### 6.真机预览
 最后在工具上预览成功，点击**预览**就可真机预览游戏
 ![流程概览](./image/quickstart10.png)
 
 真机预览结果如下：
 ![流程概览](./image/quickstart11.png)
-

@@ -13,7 +13,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             bounds: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this.nativeCollider.bounds;
                 }
             },
             contactOffset: {
@@ -77,10 +77,6 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function () {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
-
-                /*const physCenter = new Phys3D.RawVec3f(0, 0, 0);
-                const physSize = new Phys3D.RawVec3f(1, 1, 1);
-                this.nativeCollider = new Phys3D.BoxCollider(physx.Phys3dInstance, physCenter, physSize);*/
             }
         },
         methods: {

@@ -2,8 +2,23 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
     Bridge.define("MiniGameAdaptor.UI.Graphic", {
-        inherits: [MiniGameAdaptor.EventSystems.UIBehaviour,MiniGameAdaptor.UI.ICanvasElement],
+        inherits: [MiniGameAdaptor.EventSystems.UIBehaviour, MiniGameAdaptor.UI.ICanvasElement],
         statics: {
+            methods: {
+                Deserialize: function (data, comp, context, builtContext) {
+                    
+                    let rect = new MiniGameAdaptor.RectTransform();
+                    rect._transform = comp.transform;
+                    comp._rectTransform = rect;
+
+                    return comp;
+                },
+                // formatRectTransForm: function (comp) {
+                //     let rect = new MiniGameAdaptor.RectTransform();
+                //     rect._transform = comp.transform;
+                //     comp._rectTransform = rect;
+                // }
+            },
             props: {
                 defaultGraphicMaterial: {
                     get: function () {
@@ -12,7 +27,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 }
             }
         },
+        fields: {
+            _grphic: null,
+            _rectTransform: null,
+        },
         props: {
+            
             canvas: {
                 get: function () {
                     throw new System.Exception("not impl");
@@ -25,10 +45,23 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             color: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this.ref.color;
+                    // throw new System.Exception("not impl");
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    if (this.name == "Text") {
+                        this.ref.fontColor.r = value.r;
+                        this.ref.fontColor.g = value.g;
+                        this.ref.fontColor.b = value.b;
+                        this.ref.fontColor.a = value.a * 255;
+                    } else if (this.name = "Image") {
+                        this.ref.color.r = value.r;
+                        this.ref.color.g = value.g;
+                        this.ref.color.b = value.b;
+                        this.ref.color.a = value.a * 255;
+                    }
+
+                    // throw new System.Exception("not impl");
                 }
             },
             defaultMaterial: {
@@ -69,7 +102,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             rectTransform: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this._rectTransform;
+                    // throw new System.Exception("not impl");
                 }
             },
             MiniGameAdaptor$UI$ICanvasElement$transform: {
@@ -160,5 +194,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         }
     });
 });
+engine.decorators.serialize('MiniGameAdaptor.UI.Graphic')(MiniGameAdaptor.UI.Graphic);
+Object.defineProperty(MiniGameAdaptor.UI.Graphic.prototype, '__properties', {
+    enumerable: false,
+    configurable: true,
+    writable: false,
+    value: { ...MiniGameAdaptor.UI.Graphic.prototype.__properties }
+})
 
- 

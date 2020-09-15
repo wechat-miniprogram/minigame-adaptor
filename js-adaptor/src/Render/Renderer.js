@@ -108,16 +108,25 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 get: function () {
                     if (!this._materials) {
                         this._materials = [];
-                        this.ref.materials.forEach(mat => {
+                        // 新版引擎改了materials
+                        let source = Array.isArray(this.ref.materials) ? this.ref.materials : this.ref.materials.data;
+
+                        source.forEach(mat => {
                             this._materials.push(new MiniGameAdaptor.Material.$ctor2(mat));
                         });
                     }
+
                     return this._materials;
                 },
                 set: function (value) {
-                    this.ref.materials.clear();
+                    /*this.ref.materials.clear();
                     value.forEach(mat => {
                         this.ref.materials.push(mat.ref);
+                    });*/
+
+                    this.ref.clearAllMaterials();
+                    value.forEach(mat => {
+                        this.ref.addMaterial(mat.ref);
                     });
                 }
             },
@@ -240,7 +249,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         ctors: {
-            ctor: function () {
+            ctor: function (entity) {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
             }

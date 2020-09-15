@@ -29,9 +29,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         ctors: {
-            ctor: function () {
+            ctor: function (entity) {
                 this.$initialize();
                 MiniGameAdaptor.Renderer.ctor.call(this);
+
+                if (!entity.getComponent(engine.MeshRenderer)) {
+                    this.ref = entity.addComponent(engine.MeshRenderer);
+                }
             }
         }
     });

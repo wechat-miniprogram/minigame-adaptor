@@ -2,11 +2,19 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
     Bridge.define("MiniGameAdaptor.UI.Text", {
-        inherits: [MiniGameAdaptor.UI.MaskableGraphic,MiniGameAdaptor.UI.ILayoutElement],
+        inherits: [MiniGameAdaptor.UI.MaskableGraphic, MiniGameAdaptor.UI.ILayoutElement],
         statics: {
             methods: {
                 GetTextAnchorPivot: function (anchor) {
                     throw new System.Exception("not impl");
+                },
+                Deserialize: function (data, comp, context, builtContext) {
+                    // console.log('des',data, comp);
+                    MiniGameAdaptor.UI.UGUIEvenSystemHandler.register(data, comp, context, builtContext);
+                    comp.ref = builtContext.components.data[data.ref];
+                    // MiniGameAdaptor.UI.Graphic.formatRectTransForm(comp);
+                    MiniGameAdaptor.UI.Graphic.Deserialize(data, comp, context, builtContext);
+                    return comp;
                 }
             }
         },
@@ -21,10 +29,50 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             alignment: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    if (this.ref.align == 1) {
+                        if (this.ref.valign == 1) {
+                            return MiniGameAdaptor.TextAnchor.UpperLeft;
+                        } else if (this.ref.valign == 2) {
+                            return MiniGameAdaptor.TextAnchor.UpperCenter;
+                        } else if (this.ref.valign == 3) {
+                            return MiniGameAdaptor.TextAnchor.UpperRight;
+                        }
+                    } else if (this.ref.align == 2) {
+                        if (this.ref.valign == 1) {
+                            return MiniGameAdaptor.TextAnchor.MiddleLeft;
+                        } else if (this.ref.valign == 2) {
+                            return MiniGameAdaptor.TextAnchor.MiddleCenter;
+                        } else if (this.ref.valign == 3) {
+                            return MiniGameAdaptor.TextAnchor.MiddleRight;
+                        }
+                    } else if (this.ref.align == 3) {
+                        if (this.ref.valign == 1) {
+                            return MiniGameAdaptor.TextAnchor.LowerLeft;
+                        } else if (this.ref.valign == 2) {
+                            return MiniGameAdaptor.TextAnchor.LowerCenter;
+                        } else if (this.ref.valign == 3) {
+                            return MiniGameAdaptor.TextAnchor.LowerRight;
+                        }
+                    }
+                    // throw new System.Exception("not impl");
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    if (value == MiniGameAdaptor.TextAnchor.UpperLeft || value == MiniGameAdaptor.TextAnchor.MiddleLeft || value == MiniGameAdaptor.TextAnchor.LowerLeft) {
+                        this.ref.align = 1;
+                    } else if (value == MiniGameAdaptor.TextAnchor.UpperCenter || value == MiniGameAdaptor.TextAnchor.MiddleCenter || value == MiniGameAdaptor.TextAnchor.LowerCenter) {
+                        this.ref.align = 2;
+                    } else if (value == MiniGameAdaptor.TextAnchor.UpperRight || value == MiniGameAdaptor.TextAnchor.MiddleRight || value == MiniGameAdaptor.TextAnchor.LowerRight) {
+                        this.ref.align = 3;
+                    }
+
+                    if (value == MiniGameAdaptor.TextAnchor.LowerLeft || value == MiniGameAdaptor.TextAnchor.LowerCenter || value == MiniGameAdaptor.TextAnchor.LowerRight) {
+                        this.ref.valign = 1;
+                    } else if (value == MiniGameAdaptor.TextAnchor.MiddleLeft || value == MiniGameAdaptor.TextAnchor.MiddleCenter || value == MiniGameAdaptor.TextAnchor.MiddleRight) {
+                        this.ref.valign = 2;
+                    } else if (value == MiniGameAdaptor.TextAnchor.UpperLeft || value == MiniGameAdaptor.TextAnchor.UpperCenter || value == MiniGameAdaptor.TextAnchor.UpperRight) {
+                        this.ref.valign = 3;
+                    }
+                    // throw new System.Exception("not impl");
                 }
             },
             cachedTextGenerator: {
@@ -156,7 +204,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             text: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this.entity.getComponent(engine.UILabel).text;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -206,6 +254,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 }
             }
         },
+        ctors: {
+            get $ctorDefault() { return this.ctor },
+            ctor: function () {
+                this.$initialize();
+                // throw new System.Exception("not impl");
+            }
+        },
         methods: {
             CalculateLayoutInputHorizontal: function () {
                 throw new System.Exception("not impl");
@@ -231,5 +286,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         }
     });
 });
-
- 
+engine.decorators.serialize('MiniGameAdaptor.UI.Text')(MiniGameAdaptor.UI.Text);
+Object.defineProperty(MiniGameAdaptor.UI.Text.prototype, '__properties', {
+    enumerable: false,
+    configurable: true,
+    writable: false,
+    value: { ...MiniGameAdaptor.UI.Text.prototype.__properties }
+})

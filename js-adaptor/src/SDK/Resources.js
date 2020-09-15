@@ -17,14 +17,18 @@ class Resources {
                 });
             }
             else if(type === "AudioClip"){
-                var isLocal = (engine.settings.baseURL === "file:///assets/");
-                var url = isLocal ? "assets/"+fullpath : engine.settings.baseURL + fullpath;
-                var clip = new MiniGameAdaptor.AudioClip();
-                clip.SetSrc(url);
-                callback(clip);
+                var url = fullpath+".raw";
+                engine.loader.load(url).promise.then(function(raw){ 
+                    var clip = new MiniGameAdaptor.AudioClip();
+                    clip.SetSrc(raw.value);
+                    callback(clip);
+                }).catch((error)=>{
+                    console.error(error);
+                    callback(null);
+                });
             }
             else if(type === "TextAsset"){
-                Resources.LoadRes(fullpath, MiniGameAdaptor.TextAsset, callback);
+                Resources.LoadRes(path, MiniGameAdaptor.TextAsset, callback);
             }
             else if(type == "Texture2D"){
                 //TODO
@@ -66,9 +70,9 @@ class Resources {
         path = path.toLowerCase();
         if(type === MiniGameAdaptor.TextAsset){
             Resources.getFilePathByKey(path, "TextAsset", function(realPath){
-                var url = engine.settings.baseURL + realPath;
-                engine.loader.loadFile(url, {filetype:"config"}).then(function(obj){ 
-                    callback(new MiniGameAdaptor.TextAsset.$ctor1(obj, url));
+                var url = realPath+".raw";
+                engine.loader.load(url).promise.then(function(raw){ 
+                    callback(new MiniGameAdaptor.TextAsset.$ctor1(raw.value, url));
                 }).catch((error)=>{
                     console.error(error);
                     callback(null);
@@ -77,10 +81,15 @@ class Resources {
         }
         else if(type === MiniGameAdaptor.AudioClip){
             Resources.getFilePathByKey(path, "AudioClip", function(realPath){
-                var url = engine.settings.baseURL + realPath;
-                var clip = new MiniGameAdaptor.AudioClip();
-                clip.SetSrc(url);
-                callback(clip);
+                var url = realPath+".raw";
+                engine.loader.load(url).promise.then(function(raw){ 
+                    var clip = new MiniGameAdaptor.AudioClip();
+                    clip.SetSrc(raw.value);
+                    callback(clip);
+                }).catch((error)=>{
+                    console.error(error);
+                    callback(null);
+                });
             });
         }
         else if(type === MiniGameAdaptor.GameObject){
@@ -113,10 +122,10 @@ class Resources {
                         }
                         else{
                             total_cnt++;
-                            var url = engine.settings.baseURL + value;
-                            engine.loader.loadFile(url, {filetype:"config"}).then(function(obj){ 
+                            var url = value + ".raw";
+                            engine.loader.load(url).promise.then(function(raw){ 
                                 down_cnt++;
-                                retObjs.push(obj);
+                                retObjs.push(raw.value);
                                 if(down_cnt == total_cnt){
                                     callback(retObjs);
                                 }
@@ -163,10 +172,10 @@ class Resources {
         }
         if(Resources.mapRes == null){
             Resources.mapRes = new Map();
-            var url = engine.settings.baseURL + "Assets/Resources.json";
+            var url = "Assets/Resources.json";
             Resources.mapCallback.push(callback);
-            engine.loader.loadFile(url, {filetype:"config"}).then(function(obj){ 
-                var resObj = JSON.parse(obj);
+            engine.loader.load(url).promise.then(function(raw){ 
+                var resObj = raw.value;
                 for(var i=0; i<resObj.length; i++){
                     var category = resObj[i];
                     var type = category.type;

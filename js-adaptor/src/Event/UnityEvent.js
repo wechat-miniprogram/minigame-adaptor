@@ -7,21 +7,30 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function () {
                 this.$initialize();
                 MiniGameAdaptor.Events.UnityEventBase.ctor.call(this);
-                throw new System.Exception("not impl");
+                this.eventList = [];
             }
         },
         methods: {
-            AddListener: function (call) {
+            FindMethod_Impl: function (name, targetObj) {
                 throw new System.Exception("not impl");
             },
-            Invoke: function () {
-                throw new System.Exception("not impl");
+            AddListener$1: function (call) {
+                this.eventList.push(call);
             },
-            RemoveListener: function (call) {
-                throw new System.Exception("not impl");
+            Invoke$1: function () {
+                this.eventList.forEach(v=>v(...arguments));
+            },
+            RemoveListener$1: function (call) {
+                const index = this.eventList.findIndex(v=>{
+                    return v === call;
+                });
+                if(index >-1){
+                    this.eventList.splice(index);
+                }
             }
         }
     });
 });
+
 
  

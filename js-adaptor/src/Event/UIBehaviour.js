@@ -5,7 +5,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         inherits: [MiniGameAdaptor.MonoBehaviour],
         methods: {
             IsActive: function () {
-                throw new System.Exception("not impl");
+                return this.entity.active;
             },
             IsDestroyed: function () {
                 throw new System.Exception("not impl");

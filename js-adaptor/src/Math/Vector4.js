@@ -353,7 +353,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 s.z = this.z;
                 s.w = this.w;
                 return s;
-            }
+            },
+            _FlipX() {
+                this.x *= -1;
+                return this;
+            },
         }
     });
 });

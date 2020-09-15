@@ -3,6 +3,54 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
     Bridge.define("MiniGameAdaptor.UI.ScrollRect", {
         inherits: [MiniGameAdaptor.EventSystems.UIBehaviour,MiniGameAdaptor.EventSystems.IEndDragHandler,MiniGameAdaptor.EventSystems.IScrollHandler,MiniGameAdaptor.UI.ICanvasElement,MiniGameAdaptor.UI.ILayoutElement,MiniGameAdaptor.UI.ILayoutGroup,MiniGameAdaptor.EventSystems.IBeginDragHandler,MiniGameAdaptor.EventSystems.IInitializePotentialDragHandler,MiniGameAdaptor.EventSystems.IDragHandler],
+        statics: {
+            methods: {
+                Deserialize: function (data, comp, context, builtContext) {
+                    MiniGameAdaptor.UI.UGUIEvenSystemHandler.register(data, comp, context, builtContext);
+                    const touchEvent = comp.entity.getComponent(engine.TouchInputComponent);
+                    const scriptList = data.scriptList || [];
+                    const targetList = scriptList.map(v=>builtContext.components.data[v.target]);
+
+                    touchEvent.onTouchMove.add((c,e)=>{
+                        targetList.forEach(v=>{
+                            if(v.OnDrag){
+                                v.OnDrag.apply(v);
+                            }
+                        });
+                    });
+
+                    touchEvent.onTouchEnd.add((c,e)=>{
+                        targetList.forEach(v=>{
+                            if(v.OnEndDrag){
+                                v.OnEndDrag.apply(v);
+                            }
+                        });
+                    });
+
+
+                    touchEvent.onTouchStart.add((c,e)=>{
+                        targetList.forEach(v=>{
+                            if(v.OnInitializePotentialDrag){
+                                v.OnInitializePotentialDrag.apply(v);
+                            }
+                        });
+                    });
+
+                    touchEvent.onTouchStart.add((c,e)=>{
+                        targetList.forEach(v=>{
+                            if(v.OnBeginDrag){
+                                v.OnBeginDrag.apply(v);
+                            }
+                        });
+                    });
+
+                    return comp;
+                }
+            }
+        },
+        fields: {
+            _sw: null,
+        },
         props: {
             content: {
                 get: function () {
@@ -48,10 +96,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             horizontalNormalizedPosition: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    if(!this._sw){
+                        this._sw = this.entity.getComponent(engine.UIScrollView);
+                    }
+                    const max = this._sw.entity.transform2D.children[0].size.x;
+                    return 1 - this._sw.moveDistance/max;
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    if(!this._sw){
+                        this._sw = this.entity.getComponent(engine.UIScrollView);
+                    }
+                    const max = this._sw.entity.transform2D.children[0].size.x;
+                    this._sw.scrollTo((1-value)*max);
                 }
             },
             horizontalScrollbar: {
@@ -161,10 +217,18 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             verticalNormalizedPosition: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    if(!this._sw){
+                        this._sw = this.entity.getComponent(engine.UIScrollView);
+                    }
+                    const max = this._sw.entity.transform2D.children[0].size.y;
+                    return 1 - this._sw.moveDistance/max;
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    if(!this._sw){
+                        this._sw = this.entity.getComponent(engine.UIScrollView);
+                    }
+                    const max = this._sw.entity.transform2D.children[0].size.y;
+                    this._sw.scrollTo((1-value)*max);
                 }
             },
             verticalScrollbar: {
@@ -269,28 +333,28 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 throw new System.Exception("Exception");
             },
             OnBeginDrag: function (eventData) {
-                throw new System.Exception("not impl");
+            //    throw new System.Exception("not impl");
             },
             MiniGameAdaptor$EventSystems$IBeginDragHandler$OnBeginDrag: function (eventData) {
-                throw new System.Exception("Exception");
+            //    throw new System.Exception("Exception");
             },
             OnDrag: function (eventData) {
-                throw new System.Exception("not impl");
+            //    throw new System.Exception("not impl");
             },
             MiniGameAdaptor$EventSystems$IDragHandler$OnDrag: function (eventData) {
-                throw new System.Exception("Exception");
+            //    throw new System.Exception("Exception");
             },
             OnEndDrag: function (eventData) {
-                throw new System.Exception("not impl");
+            //    throw new System.Exception("not impl");
             },
             MiniGameAdaptor$EventSystems$IEndDragHandler$OnEndDrag: function (eventData) {
-                throw new System.Exception("Exception");
+           //     throw new System.Exception("Exception");
             },
             OnInitializePotentialDrag: function (eventData) {
-                throw new System.Exception("not impl");
+           //     throw new System.Exception("not impl");
             },
             MiniGameAdaptor$EventSystems$IInitializePotentialDragHandler$OnInitializePotentialDrag: function (eventData) {
-                throw new System.Exception("Exception");
+           //     throw new System.Exception("Exception");
             },
             OnScroll: function (data) {
                 throw new System.Exception("not impl");
@@ -326,4 +390,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     });
 });
 
- 
+
+engine.decorators.serialize('MiniGameAdaptor.UI.ScrollRect')(MiniGameAdaptor.UI.ScrollRect);
+Object.defineProperty(MiniGameAdaptor.UI.ScrollRect.prototype, '__properties', {
+    enumerable: false,
+    configurable: true,
+    writable: false,
+    value: { ...MiniGameAdaptor.UI.ScrollRect.prototype.__properties }
+});

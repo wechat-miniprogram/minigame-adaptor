@@ -1,3 +1,4 @@
+import {Phys3D, physx} from '../Physics/Physx';
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
 
@@ -11,6 +12,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         fields: {
+            _isTransform2D:false, //todo 很多方法要兼容自研引擎2D的api都还没有实现，需要补充
             ref: null,
             _localPosition : null,
             _worldPosition : null,
@@ -27,7 +29,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     this.ref = transform;
                 } else if (transform instanceof engine.Entity) {
                     this.ref = transform.transform;
+                }else if (transform instanceof engine.Transform2D) {
+                    this.ref = transform;
+                    this._isTransform2D = true;
                 }
+
                 MiniGameAdaptor.Component.ctor.call(this);
 
 
@@ -57,6 +63,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 set: function (value) {
                     if (!value) { return; }
                     this.rotation = MiniGameAdaptor.Quaternion.Euler$1(value);
+
                     if (!this.hasChanged) {
                         this.hasChanged = true;
                     }
@@ -124,10 +131,20 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     if (!this.hasChanged) {
                         this.hasChanged = true;
                     }
+
+                    // 有物理刚体的情况同步旋转到物理引擎
+                    if (this.gameObject.nativeRigidBody) {
+                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
+                    }
                 }
             },
             localPosition: {
                 get: function () {
+
+                    if(this._isTransform2D){
+                        return new MiniGameAdaptor.Vector2.$ctor2(this.ref.position);
+                    }
+
                     return new MiniGameAdaptor.Vector3.$ctor4(this.ref.position)._FlipX();
                 },
                 set: function (value) {
@@ -137,9 +154,20 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     //         console.log('!!!');
                     //     }
                     // }
+                    if(this._isTransform2D){
+                        this.ref.positionX = value.x;
+                        this.ref.positionY = value.y;
+                        return false;
+                    }
+
                     this.ref.position = value.$clone()._FlipX().ref;
                     if (!this.hasChanged) {
                         this.hasChanged = true;
+                    }
+
+                    // 如果gameObject存在物理刚体，需要将位置同步过去
+                    if (this.gameObject.nativeRigidBody) {
+                        physx.syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
                     }
                 }
             },
@@ -151,6 +179,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     this.ref.quaternion = value.$clone()._FlipXnW().ref;
                     if (!this.hasChanged) {
                         this.hasChanged = true;
+                    }
+
+                    // 有物理刚体的情况同步旋转到物理引擎
+                    if (this.gameObject.nativeRigidBody) {
+                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
                     }
                 }
             },
@@ -166,6 +199,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     if (!this.hasChanged) {
                         this.hasChanged = true;
                     }
+                    // TODO for physx
                 }
             },
             localToWorldMatrix: {
@@ -193,13 +227,33 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 },
                 set: function (value) {
                     this.SetParent(value);
+
+                    // 如果gameObject存在物理刚体，需要将位置同步过去
+                    if (this.gameObject.nativeRigidBody) {
+                        physx.syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
+                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
+                    }
                 }
             },
             position: {
                 get: function () {
+
+                    if(this._isTransform2D){
+                        return new MiniGameAdaptor.Vector2.$ctor2(this.ref.worldPosition);
+                    }
+
                     return new MiniGameAdaptor.Vector3.$ctor4(this.ref.worldPosition)._FlipX();
                 },
                 set: function (value) {
+
+                    if(this._isTransform2D){
+                        const distX = value.x - this.ref.worldPosition.x;
+                        const distY = value.y - this.ref.worldPosition.y;
+                        this.ref.positionX += distX;
+                        this.ref.positionY += distY;
+                        return false;
+                    }
+
                     var m;
                     if (this.ref.parent) {
                         m = this.ref.parent.worldMatrix.inverse();
@@ -212,6 +266,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                     if (!this.hasChanged) {
                         this.hasChanged = true;
+                    }
+
+                    // 如果gameObject存在物理刚体，需要将位置同步过去
+                    if (this.gameObject.nativeRigidBody) {
+                        physx.syncPosition(this.gameObject.ref, this.gameObject.nativeRigidBody);
                     }
                 }
             },
@@ -237,6 +296,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     this.ref.quaternion = local._FlipXnW().ref;
                     if (!this.hasChanged) {
                         this.hasChanged = true;
+                    }
+
+                    // 如果gameObject存在物理刚体，需要将位置同步过去
+                    if (this.gameObject.nativeRigidBody) {
+                        physx.syncRotation(this.gameObject.ref, this.gameObject.nativeRigidBody);
                     }
                 }
             },
@@ -359,9 +423,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             Rotate$4: function (axis, angle, relativeTo) {
                 if (relativeTo === MiniGameAdaptor.Space.Self) {
-                    this.__RotateAround(this.TransformDirection$1(axis), MiniGameAdaptor.Vector3.op_Multiply$1(angle, MiniGameAdaptor.Mathf.Deg2Rad));
+                    this.__RotateAround$1(this.TransformDirection$1(axis), angle * MiniGameAdaptor.Mathf.Deg2Rad);
                 } else {
-                    this.__RotateAround(axis, MiniGameAdaptor.Vector3.op_Multiply$1(angle, MiniGameAdaptor.Mathf.Deg2Rad));
+                    this.__RotateAround$1(axis, angle * MiniGameAdaptor.Mathf.Deg2Rad);
                 }
             },
             Rotate$5: function (eulers, relativeTo) {
@@ -401,6 +465,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 // this.localPosition = MiniGameAdaptor.Vector3.op_Addition(point, dir);
                 this.__RotateAround(rot);
             },
+            __RotateAround$1: function(axis, angle) {
+                let local = this.InverseTransformDirection$1(axis);
+                let q = MiniGameAdaptor.Quaternion.__axisAngle2Quat(local, angle);
+                this.localRotation = MiniGameAdaptor.Quaternion.Normalize(MiniGameAdaptor.Quaternion.op_Multiply(this.localRotation, q));
+            },
             __RotateAround:function(rot) {
                 let myRot = this.rotation;
                 // let myRot = this.localRotation;
@@ -428,6 +497,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.SetParent$1(p, true);
             },
             SetParent$1: function (parent, worldPositionStays) {
+                debugger
                 // set one's parent to null means set its parent to the root
                 if (parent === null) {
                     this.ref.parent.removeChild(this.ref);
@@ -435,7 +505,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                     return;
                 }
 
-                if (worldPositionStays) {
+                if (!worldPositionStays) {
                     this.position.x += parent.position.x;
                     this.position.y += parent.position.y;
                     this.position.z += parent.position.z;

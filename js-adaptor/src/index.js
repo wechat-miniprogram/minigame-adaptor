@@ -59,11 +59,17 @@ import './Input/Touch'
 import './Input/TouchPhase'
 import './Input/TouchType'
 
+// Geometry
+import './Geometry/Plane'
+
 // SDK
 import './SDK/SceneManager'
 import './SDK/Resources'
 
 // Physics
+import './Physics/ContactPoint'
+import './Physics/Collision'
+import './Physics/Rigidbody'
 import './Physics/PhysicMaterial'
 import './Physics/Collider'
 import './Physics/MeshCollider'
@@ -71,7 +77,6 @@ import './Physics/BoxCollider'
 import './Physics/SphereCollider'
 import './Physics/CapsuleCollider'
 import './Physics/RaycastHit'
-import './Physics/Rigidbody'
 import './Physics/Physics'
 
 // Event
@@ -249,7 +254,16 @@ import './UGUI/Toggle.js'
 import './UGUI/Image.js'
 import './UGUI/Outline.js'
 import './UGUI/Text.js'
+import './UGUI/TextAnchor.js'
+import './UGUI/Sprite.js'
+import './UGUI/CanvasScaler'
+import './UGUI/InputField'
+import './UGUI/UGUIEventSystemHandler'
+import './UGUI/RectTransform'
 
+
+// NGUI
+import './NGUI/index.js'
 
 import './Debug/WADebugger'
 

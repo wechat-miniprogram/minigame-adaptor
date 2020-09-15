@@ -3,6 +3,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
     Bridge.define("MiniGameAdaptor.UI.ToggleGroup", {
         inherits: [MiniGameAdaptor.EventSystems.UIBehaviour],
+        statics: {
+            methods: {
+                Deserialize: function(data, comp, context, builtContext) {
+                    return comp;
+                }
+            }
+        },
         props: {
             allowSwitchOff: {
                 get: function () {
@@ -36,4 +43,10 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     });
 });
 
- 
+engine.decorators.serialize('MiniGameAdaptor.UI.ToggleGroup')(MiniGameAdaptor.UI.ToggleGroup);
+Object.defineProperty(MiniGameAdaptor.UI.ToggleGroup.prototype, '__properties', {
+    enumerable: false,
+    configurable: true,
+    writable: false,
+    value: { ...MiniGameAdaptor.UI.ToggleGroup.prototype.__properties }
+});

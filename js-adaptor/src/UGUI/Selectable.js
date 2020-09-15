@@ -10,7 +10,31 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         throw new System.Exception("not impl");
                     }
                 }
+            },
+            methods: {
+                Deserialize: function (data, comp, context, builtContext) {
+                    let ref = builtContext.components.data[data.ref];
+
+                    // comp.ref = builtContext.components.data[data.ref];
+                    let graphic = builtContext.components.data[data.graphic];
+                    comp._graphic = new MiniGameAdaptor.UI.Graphic();
+                    comp._graphic = MiniGameAdaptor.UI.Graphic.Deserialize(data, graphic, context, builtContext);
+                    comp._graphic._graphic = graphic;
+                   
+                    //todo 初始化graphic
+                    // MiniGameAdaptor.UI.Graphic.Deserialize(comp);
+
+                    // GetComponent<Graphic>()
+                    // comp.ref = builtContext.components.data[data.ref];
+                    // comp._sprite = new MiniGameAdaptor.Sprite();
+                    // MiniGameAdaptor.Sprite.Deserialize(data, comp._sprite, context, builtContext);
+
+                    return comp;
+                }
             }
+        },
+        fields: {
+            _graphic: null
         },
         props: {
             animationTriggers: {
@@ -36,10 +60,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             image: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    // throw new System.Exception("not impl");
+                    return Bridge.as(this._graphic, MiniGameAdaptor.UI.Image);
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    // throw new System.Exception("not impl");
+                    this._graphic = value;
                 }
             },
             interactable: {

@@ -4,7 +4,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
     Bridge.define("MiniGameAdaptor.EventSystems.PointerEventData", {
         inherits: [MiniGameAdaptor.EventSystems.BaseEventData],
         fields: {
-            hovered: null
+            hovered: null,
+            _position:null
         },
         props: {
             button: {
@@ -115,7 +116,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             position: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this._position;
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -162,8 +163,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         ctors: {
             ctor: function (eventSystem) {
                 this.$initialize();
-                MiniGameAdaptor.EventSystems.BaseEventData.ctor.call(this, null);
-                throw new System.Exception("not impl");
+                //MiniGameAdaptor.EventSystems.BaseEventData.ctor.call(this, null);
+                this._position = new MiniGameAdaptor.Vector2.$ctor1(eventSystem.touches[0].pageX, eventSystem.touches[0].pageY)
+                //throw new System.Exception("not impl");
             }
         },
         methods: {

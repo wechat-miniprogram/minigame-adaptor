@@ -2,6 +2,9 @@ import MiniGameAdaptor from '../MiniGameAdaptor.js';
 
 class UnityDeserializeHelper {
     static Deserialize(info, comp, context, builtContext) {
+        if (!info) {
+            throw new Error(`Deserialize info is  ${ info }`);
+        }
         const type = info.type;
         const data = info.data;
         if (!type) {

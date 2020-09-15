@@ -10,6 +10,28 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                         throw new System.Exception("not impl");
                     }
                 }
+            },
+            methods: {
+                Deserialize: function (data, comp, context, builtContext) {
+                    // console.log('des img');
+
+                    MiniGameAdaptor.UI.UGUIEvenSystemHandler.register(data, comp, context, builtContext);
+
+                    comp.ref = builtContext.components.data[data.ref];
+                    comp._sprite = new MiniGameAdaptor.Sprite();
+                    MiniGameAdaptor.Sprite.Deserialize(data, comp._sprite, context, builtContext);
+
+                    comp._texture = new MiniGameAdaptor.Texture();
+                    MiniGameAdaptor.Texture.Deserialize(data, comp._texture, context, builtContext);
+
+                    // MiniGameAdaptor.UI.Graphic.formatRectTransForm(comp);
+                    MiniGameAdaptor.UI.Graphic.Deserialize(data, comp, context, builtContext);
+                    return comp;
+                }
+            },
+            fields: {
+                _sprite: null,
+                _texture: null
             }
         },
         props: {
@@ -23,10 +45,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             fillAmount: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    // throw new System.Exception("not impl");
+                    return this.ref.fillAmount;
                 },
                 set: function (value) {
-                    throw new System.Exception("not impl");
+                    this.ref.fillAmount = value;
+                    // throw new System.Exception("not impl");
                 }
             },
             fillCenter: {
@@ -83,7 +107,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             mainTexture: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    if(this._texture) {
+                        return this._texture;
+                    }
+
+                    return null;
+                    // throw new System.Exception("not impl");
                 }
             },
             material: {
@@ -137,7 +166,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             },
             sprite: {
                 get: function () {
-                    throw new System.Exception("not impl");
+                    return this._sprite;
+                    // throw new System.Exception("not impl");
                 },
                 set: function (value) {
                     throw new System.Exception("not impl");
@@ -231,6 +261,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         }
     });
+});
+
+engine.decorators.serialize('MiniGameAdaptor.UI.Image')(MiniGameAdaptor.UI.Image);
+Object.defineProperty(MiniGameAdaptor.UI.Image.prototype, '__properties', {
+    enumerable: false,
+    configurable: true,
+    writable: false,
+    value: { ...MiniGameAdaptor.UI.Image.prototype.__properties }
 });
 
  

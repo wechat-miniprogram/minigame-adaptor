@@ -38,6 +38,15 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                             return;
                         }
                     });
+
+                    const root2d = game.activeScene2D.root.transform2D;
+                    root2d.travelChild(child => {
+                        if(child.entity.name === name) {
+                            result = MiniGameAdaptor.engineToAdaptorMap.get(child.entity);
+                            return;
+                        }
+                    });
+
                     return result;
                 },
                 FindGameObjectsWithTag: function (tag) {
@@ -121,6 +130,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 this.__tag = 'Untagged';
                 this._transform = new MiniGameAdaptor.Transform(this.ref.transform);
+                if(!this._transform.entity && this.ref.transform2D && this.ref.transform2D.entity){
+                    this._transform.entity = this.ref.transform2D.entity;
+                }
             },
             $ctor1: function (name) {
                 this.$initialize();
@@ -131,6 +143,9 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 this.__tag = 'Untagged';
                 this._transform = new MiniGameAdaptor.Transform(this.ref.transform);
+                if(!this._transform.entity && this.ref.transform2D && this.ref.transform2D.entity){
+                    this._transform.entity = this.ref.transform2D.entity;
+                }
             },
             $ctor2: function (name, components) {
                 if (components === void 0) { components = []; }
@@ -140,9 +155,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 this.ref = engine.Entity.createEntity3D(name);
                 MiniGameAdaptor.engineToAdaptorMap.set(this.ref, this);
-
                 this.__tag = 'Untagged';
                 this._transform = new MiniGameAdaptor.Transform(this.ref.transform);
+                if(!this._transform.entity && this.ref.transform2D && this.ref.transform2D.entity){
+                    this._transform.entity = this.ref.transform2D.entity;
+                }
             },
             $ctor3: function(ref) {
                 this.$initialize();
@@ -151,12 +168,16 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
 
                 this.__tag = 'Untagged';
 
+
                 let __transform = this.ref.getComponent(MiniGameAdaptor.Transform);
+
                 if (__transform) {
                     this._transform = __transform;
                 } else {
-                    this._transform = new MiniGameAdaptor.Transform(this.ref.transform);
+
+                    this._transform = new MiniGameAdaptor.Transform(this.ref.transform || this.ref.transform2D);
                 }
+
             }
         },
         methods: {
