@@ -46,7 +46,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 Deserialize: function(data, comp, context, builtContext) {
                     const res = MiniGameAdaptor.Component.Deserialize(data, comp, context, builtContext);
 
-                    engineRigidBodyToAdaptorRigidBodyMap.set(res.ref, comp);
+                    if (res.ref) {
+                        engineRigidBodyToAdaptorRigidBodyMap.set(res.ref, comp);
+                    } else {
+                        console.log('entity不存在rigidbody', comp.name)
+                    }
+
 
                     return res;
                 },
