@@ -1,5 +1,7 @@
 import MiniGameAdaptor from '../MiniGameAdaptor.js';
 
+const pool = [];
+
 function UnityComponentWrapper(_type) {
     class ComponentWrapper {
         static Deserialize(data, comp, context, builtContext) {
@@ -24,7 +26,12 @@ function UnityComponentWrapper(_type) {
     let __type = 'ComponentWrapper';
     if (_type)
         __type += '_' + _type;
-    engine.decorators.serialize(__type)(ComponentWrapper);
+
+    if (pool.indexOf(__type) === -1) {
+        pool.push(__type);
+        engine.decorators.serialize(__type)(ComponentWrapper);
+    }
+
     return __type;
 }
 
