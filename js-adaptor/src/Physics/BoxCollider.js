@@ -58,6 +58,14 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.$initialize();
                 MiniGameAdaptor.Collider.ctor.call(this);
             }
+        },
+        methods: {
+            onStart:function() {
+                const box= this.gameObject.ref.getComponent(engine.BoxCollider);
+                if (box && !this.ref) {
+                    this.ref = box;
+                }
+            },
         }
     });
 });

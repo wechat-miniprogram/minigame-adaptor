@@ -43,7 +43,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 set: function (value) {
                     let c = this.clip;
                     // if (c) {
-                    //     this.ref.clip = 
+                    //     this.ref.clip =
                     // }
                 }
             },

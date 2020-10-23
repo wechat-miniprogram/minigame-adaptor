@@ -288,7 +288,8 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 return null;
             },
             GetEnumerator: function () {
-                throw new System.Exception("not impl");
+                /*throw new System.Exception("not impl");*/
+                return new (MiniGameAdaptor.Transform.Enumerator()).$ctor1(this);
             },
             System$Collections$IEnumerable$GetEnumerator: function () {
                 throw new System.Exception("Exception");

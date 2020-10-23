@@ -247,6 +247,12 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             }
         },
         methods: {
+            onStart:function() {
+                const body = this.gameObject.ref.getComponent(engine.Rigidbody);
+                if (body && !this.ref) {
+                    this.ref = body;
+                }
+            },
             AddExplosionForce: function (explosionForce, explosionPosition, explosionRadius) {
                 this.ref.AddExplosionForce(explosionForce, explosionPosition._FlipX().ref, explosionRadius, 0, 0);
             },
@@ -257,25 +263,39 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             AddExplosionForce$2: function (explosionForce, explosionPosition, explosionRadius, upwardsModifier, mode) {
                 this.ref.AddExplosionForce(explosionForce, explosionPosition._FlipX().ref, explosionRadius, upwardsModifier, mode);
             },
+
+            getRef: function() {
+                if (this.ref) {
+                    return this.ref;
+                } else {
+                    const body = this.gameObject.ref.getComponent(engine.Rigidbody);
+                    if (body) {
+                        this.ref = body;
+                        return this.ref;
+                    }
+                }
+            },
+
             AddForce: function (x, y, z) {
                 const vec = engine.Vector3.createFromNumber(-x, y, z);
-                this.ref.AddForce(vec, MiniGameAdaptor.ForceMode.Force)
+                const ref = this.gameObject.ref.getComponent(engine.Rigidbody);
+                ref && ref.addForce(vec, MiniGameAdaptor.ForceMode.Force)
             },
             AddForce$1: function (x, y, z, mode) {
                 const vec = engine.Vector3.createFromNumber(-x, y, z);
-                this.ref.AddForce(vec, mode)
+                this.ref.addForce(vec, mode)
             },
             AddForce$2: function (force) {
-                this.ref.AddForce(force._FlipX().ref, MiniGameAdaptor.ForceMode.Force)
+                this.ref.addForce(force._FlipX().ref, MiniGameAdaptor.ForceMode.Force)
             },
             AddForce$3: function (force, mode) {
-                this.ref.AddForce(force._FlipX().ref, mode)
+                this.ref.addForce(force._FlipX().ref, mode)
             },
             AddForceAtPosition: function (force, position) {
-                this.ref.AddForceAtPosition(force._FlipX().ref, position._FlipX().ref,  MiniGameAdaptor.ForceMode.force);
+                this.ref.addForceAtPosition(force._FlipX().ref, position._FlipX().ref,  MiniGameAdaptor.ForceMode.force);
             },
             AddForceAtPosition$1: function (force, position, mode) {
-                this.ref.AddForceAtPosition(force._FlipX().ref, position._FlipX().ref,  mode);
+                this.ref.addForceAtPosition(force._FlipX().ref, position._FlipX().ref,  mode);
             },
             AddRelativeForce: function (x, y, z) {
                 const vec = engine.Vector3.createFromNumber(-x, y, z);

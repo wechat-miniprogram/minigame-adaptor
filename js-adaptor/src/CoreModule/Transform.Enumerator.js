@@ -1,11 +1,11 @@
 Bridge.assembly("unity-script-converter", function ($asm, globals) {
     "use strict";
-    Bridge.define("MiniGameAdaptor.Animation.Enumerator", function () { return {
+    Bridge.define("MiniGameAdaptor.Transform.Enumerator", function () { return {
         inherits: [System.Collections.IEnumerator],
         $kind: "nested struct",
         statics: {
             methods: {
-                getDefaultValue: function () { return new (MiniGameAdaptor.Animation.Enumerator())(); }
+                getDefaultValue: function () { return new (MiniGameAdaptor.Transform.Enumerator())(); }
             }
         },
         fields: {
@@ -15,7 +15,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         props: {
             Current: {
                 get: function () {
-                    return this.m_Outer.__getStateAtIndex(this.m_CurrentIndex);
+                    return this.m_Outer.GetChild(this.m_CurrentIndex);
                 }
             },
             System$Collections$IEnumerator$Current: {
@@ -41,7 +41,7 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
         methods: {
             Dispose: function () { },
             moveNext: function () {
-                let childCount = this.m_Outer.__getStateCount();
+                let childCount = this.m_Outer.childCount;
                 this.m_CurrentIndex++;
                 return this.m_CurrentIndex < childCount;
             },
@@ -49,13 +49,13 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
                 this.m_CurrentIndex = -1;
             },
             equals: function (o) {
-                if (!Bridge.is(o, MiniGameAdaptor.Animation.Enumerator())) {
+                if (!Bridge.is(o, MiniGameAdaptor.Transform.Enumerator())) {
                     return false;
                 }
                 return Bridge.equals(this.m_Outer, o.m_Outer) && Bridge.equals(this.m_CurrentIndex, o.m_CurrentIndex);
             },
             $clone: function (to) {
-                var s = to || new (MiniGameAdaptor.Animation.Enumerator())();
+                var s = to || new (MiniGameAdaptor.Transform.Enumerator())();
                 s.m_Outer = this.m_Outer;
                 s.m_CurrentIndex = this.m_CurrentIndex;
                 return s;
