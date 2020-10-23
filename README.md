@@ -42,6 +42,7 @@ Unity插件下载链接: [点我下载](https://dldir1.qq.com/WechatWebDev/plugi
 
 对于该项目有疑问或建议，可关注“做个小游戏”公众号，在对话框中留言联系我们
 ![扫码联系](./docs/image/qrcode.png)
+
 也可以加QQ群讨论：818683846
 
 ## 名词
