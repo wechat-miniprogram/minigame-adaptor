@@ -244,6 +244,11 @@ Bridge.assembly("unity-script-converter", function ($asm, globals) {
             ctor: function (entity) {
                 this.$initialize();
                 MiniGameAdaptor.Component.ctor.call(this);
+
+                if (!entity.getComponent(engine.Rigidbody)) {
+                    console.log('手动添加引擎Rigidbody', entity.name);
+                    this.ref = entity.addComponent(engine.Rigidbody);
+                }
             }
         },
         methods: {
