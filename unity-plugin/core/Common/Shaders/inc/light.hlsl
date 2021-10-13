@@ -1,14 +1,6 @@
-/*
-* @Athour: kumozheng
-* @Date: 2020-08-13 08:15:55
- * @LastEditors: kumozheng
- * @LastEditTime: 2020-08-15 17:19:30
-* @Description: 
- * @FilePath: /UnityWork/Assets/unity-plugin/core/Common/Shaders/Forward.cginc
-*/
 
-
-#define HALF_MIN 6.103515625e-5
+#ifndef __LIGHT_HLSL_
+#define __LIGHT_HLSL_
 
 struct Light{
     half3 direction;
@@ -85,3 +77,5 @@ Light GetAdditionalLight(float4 posWorld){
 
     return light;
 }
+
+#endif // __LIGHT_HLSL_

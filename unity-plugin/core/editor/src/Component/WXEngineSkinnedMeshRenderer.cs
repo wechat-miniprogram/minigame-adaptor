@@ -63,6 +63,8 @@ namespace WeChat
 
       // Mesh mesh = (renderer.gameObject.GetComponent (typeof(MeshFilter)) as MeshFilter).sharedMesh;
       // SkinnedMeshRenderer component = renderer.gameObject.GetComponent<SkinnedMeshRenderer>();
+      data.AddField("active", renderer.enabled);
+
       Mesh mesh = renderer.sharedMesh;
       if (mesh != null)
       {

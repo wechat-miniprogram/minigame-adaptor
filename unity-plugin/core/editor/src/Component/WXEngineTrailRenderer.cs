@@ -27,6 +27,7 @@ namespace WeChat
             json.AddField("type", "TrailRenderer");
             json.AddField("data", data);
 
+            data.AddField("active", renderer.enabled);
             JSONObject materialArray = new JSONObject(JSONObject.Type.ARRAY);
             Material[] materials = renderer.sharedMaterials;
             foreach (Material material in materials)
@@ -40,7 +41,11 @@ namespace WeChat
 
             ShadowCastingMode mode = renderer.shadowCastingMode;
             StaticEditorFlags shadowFlags = GameObjectUtility.GetStaticEditorFlags(renderer.gameObject);
+#if UNITY_2019_2_OR_NEWER
+            if (mode == ShadowCastingMode.Off || (shadowFlags & StaticEditorFlags.ContributeGI) != 0)
+#else
             if (mode == ShadowCastingMode.Off || (shadowFlags & StaticEditorFlags.LightmapStatic) != 0)
+#endif
             {
                 data.AddField("castShadow", false);
             }
@@ -60,15 +65,15 @@ namespace WeChat
                 case LineAlignment.View:
                     alignmentNum = 0;
                     break;
-    #if UNITY_2018_2_OR_NEWER
+#if UNITY_2018_2_OR_NEWER
                 case LineAlignment.TransformZ:
                     alignmentNum = 1;
                     break;
-    #else
+#else
                 case LineAlignment.Local:
                     alignmentNum = 1;
                     break;
-    #endif
+#endif
             }
             data.AddField("alignment", alignmentNum);
 #endif

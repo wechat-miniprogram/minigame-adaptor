@@ -26,22 +26,27 @@ namespace WeChat
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromAssetPath(avatarAssetPath);
+            return WXUtility.GetMD5FromAssetPath(unityAssetPath) + WXUtility.GetMD5FromString(avatar.name); ;
         }
 
-        private string avatarAssetPath;
-        public WXAvatar(Avatar _avatar, GameObject _gameObject)
+        public WXAvatar(Avatar _avatar, GameObject _gameObject) : base(AssetDatabase.GetAssetPath(_avatar.GetInstanceID()))
         {
             avatar = _avatar;
             gameObject = _gameObject;
-            AssetDatabase.GetAssetPath(avatar.GetInstanceID());
-
-            avatarAssetPath = AssetDatabase.GetAssetPath(avatar.GetInstanceID());
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .setGameObject(_gameObject)
+                .error(ErrorUtil.ErrorCode.Avatar_PathError, "avatar文件的unity路径为空");
+            }
         }
 
         public override string GetExportPath()
         {
-            return wxFileUtil.cleanIllegalChar(avatarAssetPath.Split('.')[0], false) + "-" + wxFileUtil.cleanIllegalChar(gameObject.name, true) + ".avatar";
+            int index = unityAssetPath.LastIndexOf('.');
+            string filename = index == -1 ? unityAssetPath : unityAssetPath.Substring(0, index);
+            return wxFileUtil.cleanIllegalChar(filename, false) + ".avatar";
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)
@@ -85,7 +90,7 @@ namespace WeChat
                     paths.Add(mImporter.extraExposedTransformPaths[k]);
                 }
             }
-            avatarJSON.AddField("version", "1");
+            avatarJSON.AddField("name", avatar.name);
             avatarJSON.AddField("rootNode", avatarRootNodeJSON);
             avatarJSON.AddField("optimized", mImporter.optimizeGameObjects);
             string avatarPath = Path.GetFullPath(Directory.GetParent(Application.dataPath) + "/" + AssetDatabase.GetAssetPath(avatar.GetInstanceID()));
@@ -93,7 +98,15 @@ namespace WeChat
             avatarJSON.AddField("scaleFactor", succ ? scale : 1.0f);
             avatarJSON.AddField("paths", paths);
 
-            avatarJSON.AddField("version", 2);
+            // 在importsetting里关联fbx文件
+            if (Path.GetExtension(avatarPath).ToLower() == ".fbx")
+            {
+                importSetting = new JSONObject();
+                WXRawResource fbx = new WXRawResource(AssetDatabase.GetAssetPath(avatar.GetInstanceID()));
+                string fbxExportedPath = fbx.Export(preset);
+                importSetting.AddField("associateFbx", fbxExportedPath);
+                AddDependencies(fbxExportedPath);
+            }
             return avatarJSON;
         }
 
@@ -223,8 +236,8 @@ namespace WeChat
             string avatarPath = Path.GetFullPath(Directory.GetParent(Application.dataPath) + "/" + AssetDatabase.GetAssetPath(avatar.GetInstanceID()));
             if (Path.GetExtension(avatarPath).ToLower() == ".fbx")
             {
-                string toolDir = WXConfig.GetModelToolPath();;
-               
+                string toolDir = WXConfig.GetModelToolPath();
+
                 if (toolDir != null)
                 {
                     string result = WXUtility.ExecProcess(

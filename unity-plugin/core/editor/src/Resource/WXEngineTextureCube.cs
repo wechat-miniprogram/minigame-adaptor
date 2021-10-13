@@ -8,29 +8,33 @@ namespace WeChat
     class WXTextureCube : WXResource
     {
         private Cubemap _cubemap;
-        private string path;
 
-        public WXTextureCube(Cubemap cubemap)
+        public WXTextureCube(Cubemap cubemap) : base(AssetDatabase.GetAssetPath(cubemap.GetInstanceID()))
         {
             _cubemap = (Cubemap)cubemap;
-            path = AssetDatabase.GetAssetPath(cubemap.GetInstanceID());
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .error(ErrorUtil.ErrorCode.TextureCube_PathError, "TextureCube文件的unity路径为空");
+            }
         }
 
         private static readonly string[] faceNames =
         {
-            "right", "left",
+            "left", "right",
             "top", "bottom",
-            "front", "back"
+            "back", "front"
         };
 
         public override string GetExportPath()
         {
-            return wxFileUtil.cleanIllegalChar(path.Split('.')[0], false) + ".texturecube";
+            return wxFileUtil.cleanIllegalChar(unityAssetPath.Split('.')[0], false) + ".texturecube";
         }
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromAssetPath(path);
+            return WXUtility.GetMD5FromAssetPath(unityAssetPath) + WXUtility.GetMD5FromString(_cubemap.name);
         }
 
         protected override string GetResourceType()
@@ -58,7 +62,7 @@ namespace WeChat
                 and this is exactly what cubemap inspector does with images you assign to slots. 
                When you copy textures you will get "mirrored" reflection (and you can see this in the preview too)
                */
-                if (faceNames[i] != "top" && faceNames[i] != "bottom")
+                // if (faceNames[i] != "top" && faceNames[i] != "bottom")
                 {
                     Color[] colors = texture2D.GetPixels(0, 0, texture2D.width, texture2D.height);
                     System.Array.Reverse(colors, 0, colors.Length);
@@ -73,12 +77,12 @@ namespace WeChat
                 m_files.AddField(
                     faceNames[i],
                     AddFile(
-                        new WXCubeMapTextureImage(texture2D, ext, faceNames[i], path)
+                        new WXCubeMapTextureImage(texture2D, ext, faceNames[i], unityAssetPath)
                     )
                 );
             }
-			
-			
+
+
             jsonFile.AddField("files", m_files);
 
             jsonFile.AddField("version", 2);
@@ -89,56 +93,8 @@ namespace WeChat
         {
             Texture2D texture2D = new Texture2D(source.width, source.height, source.format, false);
             Graphics.CopyTexture(source, face, 0, texture2D, 0, 0);
-            return texture2D;
+            return TextureUtil.DuplicateTexture2D(texture2D);
         }
 
-
-
-
-        // 被cubemap所使用的图片文件
-        private class WXCubeMapTextureImage : WXEngineImageFile
-        {
-            private TextureUtil.EnumTexFileExt ext;
-            private Texture2D texture;
-            private string faceName;
-
-            public WXCubeMapTextureImage(
-                Texture2D texture,
-                TextureUtil.EnumTexFileExt ext,
-                string faceName,
-                string texturePath
-            ) : base(texturePath)
-            {
-                this.ext = ext;
-                this.texture = texture;
-                this.faceName = faceName;
-            }
-
-            protected override byte[] GetContent()
-            {
-                switch (ext)
-                {
-                    case TextureUtil.EnumTexFileExt.JPG:
-                        return texture.EncodeToJPG();
-                    case TextureUtil.EnumTexFileExt.PNG:
-                        return texture.EncodeToPNG();
-                    default:
-                        return null;
-                }
-            }
-
-            public override string GetExportPath()
-            {
-                switch (ext)
-                {
-                    case TextureUtil.EnumTexFileExt.JPG:
-                        return wxFileUtil.cleanIllegalChar(unityAssetPath.Split('.')[0], false) + '.' + faceName + ".jpg";
-                    case TextureUtil.EnumTexFileExt.PNG:
-                        return wxFileUtil.cleanIllegalChar(unityAssetPath.Split('.')[0], false) + '.' + faceName + ".png";
-                    default:
-                        return "";
-                }
-            }
-        }
     }
 }

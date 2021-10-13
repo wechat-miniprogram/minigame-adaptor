@@ -10,7 +10,7 @@ namespace WeChat
 {
 
     [InitializeOnLoad]
-    [DeclarePreset("project-config", typeof(HierarchyExportConfig))]
+    [DeclarePreset("project-config", null)]
     public class ProjectConfigExportPreset : ExportPreset
     {
 
@@ -90,7 +90,8 @@ namespace WeChat
             SerializedObject tagManager = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath("ProjectSettings/TagManager.asset")[0]);
             SerializedProperty layersProp = tagManager.FindProperty("layers");
             project_layers = new JSONObject(JSONObject.Type.ARRAY);
-            for (int i = 0; i < layersProp.arraySize; i++)
+            int layersSize = layersProp.arraySize > 32 ? 32 : layersProp.arraySize;
+            for (int i = 0; i < layersSize; i++)
             {
                 SerializedProperty t = layersProp.GetArrayElementAtIndex(i);
                 project_layers.Add(t.stringValue);
@@ -112,9 +113,10 @@ namespace WeChat
 
             SerializedObject physics2DSettings = new SerializedObject(AssetDatabase.LoadAllAssetsAtPath(settingFile)[0]);
             SerializedProperty physics2DMatrix = physics2DSettings.FindProperty("m_LayerCollisionMatrix");
+            int layersSize = physics2DMatrix.arraySize > 32 ? 32 : physics2DMatrix.arraySize;
             // 按照unity存储的方式序列化
             string matrixStr = "";
-            for (int i = 0; i < physics2DMatrix.arraySize; i++)
+            for (int i = 0; i < layersSize; i++)
             {
                 SerializedProperty t = physics2DMatrix.GetArrayElementAtIndex(i);
                 string oldStr = System.Convert.ToString(t.intValue,2).PadLeft(32, '0');
@@ -126,7 +128,7 @@ namespace WeChat
                 for(int j = 0; j < oldStr.Length; j = j + 8){
                     char[] tempSubArr = oldStr.Substring(j,8).ToCharArray();
                     System.Array.Reverse(tempSubArr);
-                    matrixStr += System.Convert.ToString(System.Convert.ToInt32(new string(tempSubArr),2),16);
+                    matrixStr += System.Convert.ToString(System.Convert.ToInt32(new string(tempSubArr),2),16).PadLeft(2, '0');
                 }
             }
             // 添加field

@@ -88,5 +88,5 @@ Shader "WXBBShader/Line" {
 			ENDCG
 		}
 	}
-	CustomEditor "LineGUI"
+	CustomEditor "WeChat.LineGUI"
 }

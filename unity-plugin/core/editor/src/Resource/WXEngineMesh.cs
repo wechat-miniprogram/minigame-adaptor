@@ -23,9 +23,11 @@ namespace WeChat
         public bool BONE = false;
 
         public int layoutSize = 0;
+        protected bool isSkinned = false;
 
-        public WXMeshVertexLayout(Mesh mesh)
+        public WXMeshVertexLayout(Mesh mesh, bool isSkinned = false)
         {
+            this.isSkinned = isSkinned;
             if (mesh.vertices != null && mesh.vertices.Length != 0)
             {
                 POSITION = true;
@@ -51,7 +53,7 @@ namespace WeChat
                 UV1 = true;
                 layoutSize += 8;
             }
-            if (mesh.boneWeights != null && mesh.boneWeights.Length != 0)
+            if (mesh.boneWeights != null && mesh.boneWeights.Length != 0 && isSkinned)
             {
                 BONE = true;
                 layoutSize += 32;
@@ -87,7 +89,7 @@ namespace WeChat
             {
                 layout.Add("UV1");
             }
-            if (BONE)
+            if (BONE && isSkinned)
             {
                 layout.Add("BLENDWEIGHT,BLENDINDICES");
             }
@@ -103,11 +105,17 @@ namespace WeChat
     class WXMesh : WXResource
     {
         private Mesh mesh;
-        string unityAssetPath;
-        public WXMesh(Mesh _mesh)
+        private int materialCount = 0;
+        public WXMesh(Mesh _mesh, int matCount = 0): base(AssetDatabase.GetAssetPath(_mesh.GetInstanceID()))
         {
             this.mesh = _mesh;
-            unityAssetPath = AssetDatabase.GetAssetPath(mesh.GetInstanceID());
+            this.materialCount = matCount;
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                    .setResource(this)
+                    .error(ErrorUtil.ErrorCode.Mesh_PathError, "Mesh文件的unity路径为空");
+            }
         }
 
         protected override string GetResourceType()
@@ -127,6 +135,18 @@ namespace WeChat
                 }
             }
             return MaxRadius;
+        }
+
+        public static Vector3 GetVertexPositionMax(Mesh mesh)
+        {
+            Vector3 vertexPositionMax = new Vector3(0, 0, 0);
+            for (int i = 0; i < mesh.vertexCount; i++)
+            {
+                Vector3 vector = mesh.vertices[i];
+                vertexPositionMax.Set(vertexPositionMax.x + vector.x * -1f, vertexPositionMax.y + vector.y, vertexPositionMax.z + vector.z);
+            }
+            vertexPositionMax.Set(vertexPositionMax.x / mesh.vertices.Length, vertexPositionMax.y / mesh.vertices.Length, vertexPositionMax.z / mesh.vertices.Length);
+            return vertexPositionMax;
         }
 
         protected string GetExportPathRaw()
@@ -162,8 +182,6 @@ namespace WeChat
                 "src",
                 AddFile(new WXEngineMeshFile(unityAssetPath, mesh.name, content))
             );
-
-            meta.AddField("version", 2);
             return meta;
         }
 
@@ -283,16 +301,19 @@ namespace WeChat
 #if !UNITY_2017_1_OR_NEWER
             int indexStart = 0;
 #endif
-            for (int i = 0; i < subMeshCount; i++)
+            // If a Mesh contains more Materials than sub-Meshes, Unity renders the last sub-Mesh with each of the remaining Materials
+            int subMeshCountRender = Math.Max(materialCount, subMeshCount);
+            for (int i = 0; i < subMeshCountRender; i++)
             {
+                int index = Math.Min(i, subMeshCount - 1);
                 JSONObject subMeshObj = new JSONObject(JSONObject.Type.OBJECT);
 #if UNITY_2017_1_OR_NEWER
-                subMeshObj.AddField("start", mesh.GetIndexStart(i));
-                subMeshObj.AddField("length", mesh.GetIndexCount(i));
+                subMeshObj.AddField("start", mesh.GetIndexStart(index));
+                subMeshObj.AddField("length", mesh.GetIndexCount(index));
 #else
                 subMeshObj.AddField("start", indexStart);
-                subMeshObj.AddField("length", mesh.GetIndices(i).Length);
-                indexStart += mesh.GetIndices(i).Length;
+                subMeshObj.AddField("length", mesh.GetIndices(index).Length);
+                indexStart += mesh.GetIndices(index).Length;
 #endif
                 subMeshs.Add(subMeshObj);
             }

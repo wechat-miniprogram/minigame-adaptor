@@ -1,77 +1,74 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace WeChat
-{
-    public static class TextureUtil
-    {
+namespace WeChat {
+    public static class TextureUtil {
 
-        public enum EnumTexFileExt
-        {
+        public enum EnumTexFileExt {
             JPG = 1,
             PNG = 2
         }
-        public static JSONObject getMeta(Texture tex)
-        {
-            var res = new JSONObject(JSONObject.Type.OBJECT);
-            res.AddField("width", tex.width);
-            res.AddField("height", tex.height);
-            if (tex is Texture2D)
-            {
-                res.AddField("mipmap", ((Texture2D)tex).mipmapCount);
-            } else if (tex is Cubemap)
-            {
-                res.AddField("mipmap", ((Cubemap)tex).mipmapCount);
-            } else
-            {
-                res.AddField("mipmap", 1);
+        public static JSONObject getMeta (Texture tex) {
+            var res = new JSONObject (JSONObject.Type.OBJECT);
+            res.AddField ("width", tex.width);
+            res.AddField ("height", tex.height);
+            if (tex is Texture2D) {
+                res.AddField ("mipmap", ((Texture2D) tex).mipmapCount);
+            } else if (tex is Cubemap) {
+                res.AddField ("mipmap", ((Cubemap) tex).mipmapCount);
+            } else {
+                res.AddField ("mipmap", 1);
             }
             bool m_useMipmap = false;
             bool m_sRGB = false;
             if (tex is Texture2D) {
-                TextureImporter importer = (TextureImporter)TextureImporter.GetAtPath(AssetDatabase.GetAssetPath(tex.GetInstanceID()));
-                m_useMipmap = importer == null ? false : importer.mipmapEnabled;
-                m_sRGB = importer == null ? false : importer.sRGBTexture;
+                AssetImporter importer = TextureImporter.GetAtPath(AssetDatabase.GetAssetPath(tex.GetInstanceID()));
+                if (importer is TextureImporter || importer == null)
+                {
+                    TextureImporter textureImporter = (TextureImporter)importer;
+                    m_useMipmap = importer == null ? false : textureImporter.mipmapEnabled;
+                    m_sRGB = importer == null ? false : textureImporter.sRGBTexture;
+                }
+                else 
+                {
+                    ErrorUtil.ExportErrorReporter.create()
+                        .error(ErrorUtil.ErrorCode.Texture_TypeUnsupported, "遇到了不支持的纹理类型:" + AssetDatabase.GetAssetPath(tex.GetInstanceID()));
+                }
             }
-            res.AddField("useMipmap", m_useMipmap);
-            res.AddField("sRGB", m_sRGB);
-            res.AddField("needPremultiplyAlpha", false);
+            res.AddField ("useMipmap", m_useMipmap);
+            res.AddField ("sRGB", m_sRGB);
+            res.AddField ("needPremultiplyAlpha", false);
 #if UNITY_2017_1_OR_NEWER
-            res.AddField("wrapU", ResolveTextureWrapMode(tex.wrapModeU));
-            res.AddField("wrapV", ResolveTextureWrapMode(tex.wrapModeV));
+            res.AddField ("wrapU", ResolveTextureWrapMode (tex.wrapModeU));
+            res.AddField ("wrapV", ResolveTextureWrapMode (tex.wrapModeV));
 #else
-			res.AddField("wrapU", ResolveTextureWrapMode(tex.wrapMode));
-            res.AddField("wrapV", ResolveTextureWrapMode(tex.wrapMode));
+            res.AddField ("wrapU", ResolveTextureWrapMode (tex.wrapMode));
+            res.AddField ("wrapV", ResolveTextureWrapMode (tex.wrapMode));
 #endif
 
             FilterMode minF = tex.filterMode;
-            if (minF == FilterMode.Bilinear)
-            {
-                res.AddField("filterMode", 1);
+            if (minF == FilterMode.Bilinear) {
+                res.AddField ("filterMode", 1);
             }
-            if (minF == FilterMode.Point)
-            {
-                res.AddField("filterMode", 0);
+            if (minF == FilterMode.Point) {
+                res.AddField ("filterMode", 0);
             }
-            if (minF == FilterMode.Trilinear)
-            {
+            if (minF == FilterMode.Trilinear) {
                 if (m_useMipmap) {
-                    res.AddField("filterMode", 2);
+                    res.AddField ("filterMode", 2);
                 } else {
-                    res.AddField("filterMode", 0);
+                    res.AddField ("filterMode", 0);
                 }
             }
-            res.AddField("anisoLevel", tex.anisoLevel);
-            var sformat = ResolveTexturePixelFormat(GetTextureFormat(tex));
-            res.AddField("pixelFormat", sformat);
+            res.AddField ("anisoLevel", tex.anisoLevel);
+            var sformat = ResolveTexturePixelFormat (GetTextureFormat (tex));
+            res.AddField ("pixelFormat", sformat);
 
             return res;
         }
 
-        public static EnumTexFileExt ResolveFileExt(TextureFormat format)
-        {
-            switch (format)
-            {
+        public static EnumTexFileExt ResolveFileExt (TextureFormat format) {
+            switch (format) {
                 case TextureFormat.ASTC_RGB_10x10:
                 case TextureFormat.ASTC_RGB_12x12:
                 case TextureFormat.ASTC_RGB_4x4:
@@ -95,23 +92,17 @@ namespace WeChat
             }
         }
 
-        public static TextureFormat GetTextureFormat(Texture tex)
-        {
-            if (tex is Texture2D)
-            {
-                return ((Texture2D)tex).format;
-            }
-            else if (tex is Cubemap)
-            {
-                return ((Cubemap)tex).format;
+        public static TextureFormat GetTextureFormat (Texture tex) {
+            if (tex is Texture2D) {
+                return ((Texture2D) tex).format;
+            } else if (tex is Cubemap) {
+                return ((Cubemap) tex).format;
             }
             return TextureFormat.RGBA32;
         }
 
-        public static int ResolveTextureWrapMode(TextureWrapMode mode)
-        {
-            switch (mode)
-            {
+        public static int ResolveTextureWrapMode (TextureWrapMode mode) {
+            switch (mode) {
                 case TextureWrapMode.Repeat:
                     return 1;
                 case TextureWrapMode.Clamp:
@@ -128,12 +119,10 @@ namespace WeChat
             }
         }
 
-        public static int ResolveTexturePixelFormat(TextureFormat format)
-        {
+        public static int ResolveTexturePixelFormat (TextureFormat format) {
             // 保留了原来判断PixelFormat的逻辑，统一输出RGBA8
             return 2;
-            switch (format)
-            {
+            switch (format) {
                 case TextureFormat.Alpha8:
                 case TextureFormat.ARGB4444:
                 case TextureFormat.RGB24:
@@ -204,17 +193,33 @@ namespace WeChat
             }
         }
 
-        public static Texture2D DuplicateTexture(this Texture2D source)
-        {
-            RenderTexture renderTex = RenderTexture.GetTemporary(source.width, source.height, 0, RenderTextureFormat.Default, RenderTextureReadWrite.Linear);
-            Graphics.Blit(source, renderTex);
+        public static Texture2D DuplicateTexture2D (Texture2D source, bool autoRect = true, int x = 0, int y = 0, int w = 0, int h = 0) {
+            RenderTexture renderTex = RenderTexture.GetTemporary (
+                source.width,
+                source.height,
+                0,
+                RenderTextureFormat.Default,
+                RenderTextureReadWrite.Linear);
+
+            Graphics.Blit (source, renderTex);
             RenderTexture previous = RenderTexture.active;
             RenderTexture.active = renderTex;
-            Texture2D readableText = new Texture2D(source.width, source.height);
-            readableText.ReadPixels(new Rect(0, 0, renderTex.width, renderTex.height), 0, 0);
-            readableText.Apply();
+
+            if (autoRect) {
+                x = 0;
+                y = 0;
+                w = source.width;
+                h = source.height;
+            }
+
+            Rect sourceRect = new Rect (x, y, w, h);
+
+            Texture2D readableText = new Texture2D ((int) sourceRect.width, (int) sourceRect.height);
+            // readableText.ReadPixels (new Rect (0, 0, renderTex.width, renderTex.height), 0, 0);
+            readableText.ReadPixels (sourceRect, 0, 0);
+            readableText.Apply ();
             RenderTexture.active = previous;
-            RenderTexture.ReleaseTemporary(renderTex);
+            RenderTexture.ReleaseTemporary (renderTex);
             return readableText;
         }
     }

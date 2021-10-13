@@ -10,11 +10,16 @@ namespace WeChat
      */
     public abstract class ExportPluginModule
     {
-        // TODO refactor
+        // 核心模块
         public static ExportPluginModule coreModule;
+        // ngui模块
         public static ExportPluginModule nguiModule;
-        public static ExportPluginModule uguiModule;
+        // 组件属性导出模块
+        public static ExportPluginModule behaviourModule;
+        // 脚本导出模块
         public static ExportPluginModule scriptModule;
+        // ugui导出模块
+        public static ExportPluginModule uguiModule;
         public static void registerExportPluginModule(string name, ExportPluginModule pluginModule)
         {
             if (name == "core")
@@ -25,13 +30,17 @@ namespace WeChat
             {
                 nguiModule = pluginModule;
             }
-            if (name == "ugui")
+            if (name == "behaviour") 
             {
-                uguiModule = pluginModule;
+                behaviourModule = pluginModule;
             }
             if (name == "script")
             {
                 scriptModule = pluginModule;
+            }
+            if (name == "ugui")
+            {
+                uguiModule = pluginModule;
             }
         }
 

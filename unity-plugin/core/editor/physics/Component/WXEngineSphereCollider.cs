@@ -8,32 +8,21 @@ using UnityEditor.Animations;
 using UnityEngine;
 
 namespace WeChat {
-
-    public class WXMeshCollider : WXComponent {
-        private bool convex;
-        private bool isTrigger;
-        private int cookingOptions;
+    public class WXSphereCollider : WXComponent {
+        private Boolean isTrigger;
         private PhysicMaterial material;
-        private Mesh sharedMesh;
+        private Vector3 center;
+        private float radius;
 
         public override string getTypeName () {
-            return "MeshCollider";
-            // var result = collider ? collider.GetType().ToString() : "UnityEngine.MeshCollider";
-            // return Utils.EscapeNamespace(result);
+            return "SphereCollider";
         }
 
-        public WXMeshCollider (bool convex, bool isTrigger,
-         #if UNITY_2017_1_OR_NEWER
-         int cookingOptions, 
-         #endif
-         PhysicMaterial material, Mesh mesh) {
-            this.convex = convex;
+        public WXSphereCollider (Boolean isTrigger, PhysicMaterial material, Vector3 center, float radius) {
+            this.center = center;
+            this.radius = radius;
             this.isTrigger = isTrigger;
-            #if UNITY_2017_1_OR_NEWER
-            this.cookingOptions = cookingOptions;
-            #endif
             this.material = material;
-            this.sharedMesh = mesh;
         }
 
         protected override JSONObject ToJSON (WXHierarchyContext context) {
@@ -45,11 +34,7 @@ namespace WeChat {
 
             // if (this.collider != null)
             {
-                data.AddField ("convex", this.convex);
                 data.AddField ("isTrigger", this.isTrigger);
-                 #if UNITY_2017_1_OR_NEWER
-                data.AddField ("cookingOptions", (int) this.cookingOptions);
-                #endif
                 if (material != null) {
                     WXPhysicsMaterial materialConverter = new WXPhysicsMaterial (material);
                     string materialPath = materialConverter.Export (context.preset);
@@ -59,13 +44,13 @@ namespace WeChat {
                     }
                 }
 
-                Mesh mesh = this.sharedMesh;
-                if (mesh != null) {
-                    WXMesh meshConverter = new WXMesh (mesh);
-                    string meshPath = meshConverter.Export (context.preset);
-                    data.AddField ("mesh", meshPath);
-                    context.AddResource (meshPath);
-                }
+                JSONObject center = new JSONObject (JSONObject.Type.ARRAY);
+                center.Add (-this.center.x);
+                center.Add (this.center.y);
+                center.Add (this.center.z);
+                data.AddField ("center", center);
+
+                data.AddField ("radius", this.radius);
             }
 
             return json;

@@ -18,8 +18,6 @@ namespace WeChat {
 
         public override string getTypeName () {
             return "BoxCollider";
-            // var result = collider ? collider.GetType().ToString() : "UnityEngine.BoxCollider";
-            // return Utils.EscapeNamespace(result);
         }
 
         public WXBoxCollider (Vector3 center, Vector3 size, bool isTrigger, PhysicMaterial material) {
@@ -47,7 +45,7 @@ namespace WeChat {
             }
 
             JSONObject center = new JSONObject (JSONObject.Type.ARRAY);
-            center.Add (this.center.x);
+            center.Add (-this.center.x);
             center.Add (this.center.y);
             center.Add (this.center.z);
             data.AddField ("center", center);

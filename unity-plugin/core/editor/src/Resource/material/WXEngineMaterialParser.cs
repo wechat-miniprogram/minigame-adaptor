@@ -17,6 +17,7 @@ namespace WeChat
             WXMaterial.registerParser("WXBBShader/BlinnPhong", new WXBlinnPhongNewParser());
             WXMaterial.registerParser("WXBBShader/Effect", new WXEffectParser());
             WXMaterial.registerParser("WXBBShader/ShurikenParticle", new WXShurikenParticleParser());
+            WXMaterial.registerParser("WXBBShader/StandardLit", new WXStandardLitParser());
 			WXMaterial.registerParser("WXBBShader/Skybox", new WXSkyBoxParser());
         }
 
@@ -37,6 +38,7 @@ namespace WeChat
             ONE_MINUS_BLEND_COLOR = 13,
             BLEND_ALPHA = 14,
             ONE_MINUS_BLEND_ALPHA = 15,
+
         }
 
         public enum EnumGfxBlendOp
@@ -180,8 +182,9 @@ namespace WeChat
         }
         protected void SetBlendFactor(EnumGfxBlendFactor blendSrc, EnumGfxBlendFactor blendDst)
         {
-            m_renderStates.AddField("blendSrc", (int)blendSrc);
-            m_renderStates.AddField("blendDst", (int)blendDst);
+            m_renderStates.AddField("blendSrcRGB", (int)blendSrc);
+            m_renderStates.AddField("blendDstAlpha", (int)blendDst);
+
         }
         protected void SetDepthWrite(bool on)
         {
@@ -235,7 +238,7 @@ namespace WeChat
         /*
             Convert Unity Compare Function To Gfx (eg. ZTest/StencilTest)
          */
-        protected EnumGfxCompareFunc ConvertCompareFunc(int unityFactor)
+       protected EnumGfxCompareFunc ConvertCompareFunc(int unityFactor)
         {
             switch ((UnityEngine.Rendering.CompareFunction)unityFactor)
             {

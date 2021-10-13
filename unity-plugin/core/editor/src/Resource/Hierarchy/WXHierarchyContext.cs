@@ -18,7 +18,6 @@ namespace WeChat
         public readonly List<string> resourceList;
         public ExportPreset preset;
         public string resourcePath;
-        public bool is2d = false;
         public Type prefab2dType;
 
         // 排重用，同一个gameObject可能被转换过两次
@@ -98,7 +97,7 @@ namespace WeChat
             foreach (WXComponent component in componentList)
             {
                 var result = component.GetJSON();
-                if (component.filePath != null && component.filePath != "") { // 只有prefab中的component可以获取其filePath
+                if (component.filePath != null && component.filePath != "" && component.filePath != ".prefab") { // 只有prefab中的component可以获取其filePath
                     result.AddField("__prefab", component.filePath);
                 }
                 result.AddField("__fileId", WXUtility.GenerateLongByString(component.objectId.ToString() + component.getTypeName()).ToString());
@@ -234,13 +233,13 @@ namespace WeChat
                         component.filePath = path;
                         component.objectId = fileId;
                     }
-                    Debug.Log("UNITY_2018_1_OR_NEWER component objectID" + fileId);
+                    // Debug.Log("UNITY_2018_1_OR_NEWER component objectID" + fileId);
                 }
                 catch { 
                     // 如果导出一个prefab，这个在场景中给这个prefab加了一个entity，那么这个entity中的component其实不在unity prefab文件中，
                     // 而是在scene的diffData中，因此调用PrefabUtility.GetCorrespondingObjectFromOriginalSource这个方法时会抛异常，
                     // 就直接用inspector中的m_LocalIdentfierInFile即可。
-                    Debug.LogWarning("UNITY_2018_1_OR_NEWER prefab component objectID " + component.objectId);
+                    // Debug.LogWarning("UNITY_2018_1_OR_NEWER prefab component objectID " + component.objectId);
                 }
             }
 #else 
@@ -261,15 +260,15 @@ namespace WeChat
                     if (localIdProp!= null) {
                         long localId = localIdProp.longValue;
                         component.objectId = localId;
-                        Debug.LogWarning("component localId " + localIdProp.longValue);
+                        // Debug.LogWarning("component localId " + localIdProp.longValue);
                     } else {
                         component.objectId = 0;
-                        Debug.LogWarning("can't get component localId");
+                        // Debug.LogWarning("can't get component localId");
                     }
                 }
                 catch { 
-                    // 应该不会走道这里单独导出prefab时，nativeComponent已经是一个实例了，会被GetCorrespondingObjectFromOriginalSource方法抛错
-                    Debug.LogWarning("component use default localId " + component.objectId);
+                    // 应该不会走道这里。单独导出prefab时，nativeComponent已经是一个实例了，会被GetCorrespondingObjectFromOriginalSource方法抛错
+                    // Debug.LogWarning("component use default localId " + component.objectId);
                 }
             }
 #endif
@@ -345,19 +344,20 @@ namespace WeChat
         private void exportPrefabResource(GameObject go, WXEntity entity) {
 #if UNITY_2018_4_OR_NEWER
             GameObject sourceObj = PrefabUtility.GetCorrespondingObjectFromOriginalSource(go);
-            if (is2d) {
+            if (preset.is2d) {
                 // Debug.LogError("preset.is2d" + preset.is2d);
                 // Debug.LogError(prefab2dType);
+                // prefabPath
                 WXResource prefabInstance = (WXResource)Activator.CreateInstance(prefab2dType, new object[] {sourceObj, entity.prefabPath, false, false});
                 AddResource(prefabInstance.Export(preset));
             } else {
                 // Debug.LogError("preset.is2d" + preset.is2d);
-                WXPrefab prefab = new WXPrefab(sourceObj, entity.prefabPath);
+                WXPrefab prefab = new WXPrefab(sourceObj, entity.unityAssetPath);
                 AddResource(prefab.Export(preset));
             }
 #else
             GameObject sourceObj = PrefabUtility.GetPrefabParent(go) as GameObject;
-            if (is2d) {
+            if (preset.is2d) {
                 // Debug.LogError("preset.is2d" + preset.is2d);
                 // Debug.LogError(prefab2dType);
                 WXResource prefabInstance = (WXResource)Activator.CreateInstance(prefab2dType, new object[] {sourceObj, entity.prefabPath, false, false});
@@ -366,7 +366,7 @@ namespace WeChat
                 // AddResource(prefab.Export(preset));
             } else {
                 // Debug.LogError("preset.is2d" + preset.is2d);
-                WXPrefab prefab = new WXPrefab(sourceObj, entity.prefabPath);
+                WXPrefab prefab = new WXPrefab(sourceObj, entity.unityAssetPath);
                 AddResource(prefab.Export(preset));
             }
 #endif

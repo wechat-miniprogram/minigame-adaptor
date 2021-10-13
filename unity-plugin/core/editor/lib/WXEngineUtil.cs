@@ -91,38 +91,7 @@ namespace WeChat
         }
 
         private static string hashMap = "0123456789abcdefghijklmnopqrstuvwxyz";
-        public static string GetMD5FromHierarchyResourceAssetPath(string assetPath)
-        {
-
-            string[] deps = AssetDatabase.GetDependencies(assetPath);
-
-            List<char> result = new List<char>();
-
-            foreach (string dep in deps)
-            {
-                string depHash = GetMD5FromAssetPath(dep);
-                
-                for (int j = 0; j < result.Count || j < depHash.Length; j++)
-                {
-                    if (j < result.Count && j < depHash.Length) {
-                        result[j] = (char)(result[j] ^ depHash[j]);
-                    }
-                    else if (j < depHash.Length) {
-                        result.Add(depHash[j]);
-                    }
-                }
-            }
-
-            for (int i = 0; i < result.Count; i++)
-            {
-                result[i] = hashMap[result[i] % 36];
-            }
-
-            return new string(result.ToArray());
-
-        }
-
-        public static string GetMD5FromAssetPath(string assetPath)
+        protected static string GetMD5FromAssetPathSingle(string assetPath)
         {
             if (assetPath == "")
             {
@@ -145,6 +114,35 @@ namespace WeChat
                 File.GetLastWriteTime(assetPath).Ticks +
                 AssetDatabase.GetAssetDependencyHash(assetPath).ToString()
             );
+        }
+
+        public static string GetMD5FromAssetPath(string assetPath)
+        {
+            string[] deps = AssetDatabase.GetDependencies(assetPath);
+
+            List<char> result = new List<char>();
+
+            foreach (string dep in deps)
+            {
+                string depHash = GetMD5FromAssetPathSingle(dep);
+                
+                for (int j = 0; j < result.Count || j < depHash.Length; j++)
+                {
+                    if (j < result.Count && j < depHash.Length) {
+                        result[j] = (char)(result[j] ^ depHash[j]);
+                    }
+                    else if (j < depHash.Length) {
+                        result.Add(depHash[j]);
+                    }
+                }
+            }
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                result[i] = hashMap[result[i] % 36];
+            }
+
+            return new string(result.ToArray());
         }
 
         public static string GetMD5FromString(string anyString)

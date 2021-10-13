@@ -261,6 +261,13 @@ namespace WeChat
                 {
                     rendererData.AddField("allowRoll", false);
                 }
+            } else {
+                String info = "entity: " + particleSys.gameObject.name + " 的粒子组件没有renderer模块，不可导出;请加上renderer模块，或删除该粒子组件";
+                
+                ErrorUtil.ExportErrorReporter.create()
+                    .setGameObject(particleSys.gameObject)
+                    .setHierarchyContext(context)
+                    .error(ErrorUtil.ErrorCode.Particle_RendererNotFound, "粒子组件没有renderer模块，不可导出;请加上renderer模块，或删除该粒子组件");
             }
 
             if (particleSys.rotationOverLifetime.enabled)
@@ -384,7 +391,7 @@ namespace WeChat
             {
                 JSONObject shapeData = new JSONObject(JSONObject.Type.OBJECT);
                 var haveShape = true;
-                if (particleSys.shape.shapeType == ParticleSystemShapeType.Cone || particleSys.shape.shapeType == ParticleSystemShapeType.ConeVolume || particleSys.shape.shapeType == ParticleSystemShapeType.ConeVolumeShell)
+                if (particleSys.shape.shapeType == ParticleSystemShapeType.Cone || particleSys.shape.shapeType == ParticleSystemShapeType.ConeVolume || particleSys.shape.shapeType == ParticleSystemShapeType.ConeVolumeShell || particleSys.shape.shapeType == ParticleSystemShapeType.ConeShell)
                 {
                     shapeData.AddField("shape", ParseConeShape(particleSys.shape));
                 }

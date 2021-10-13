@@ -16,15 +16,20 @@ namespace WeChat
     {
         private Mesh mesh;
         private SkinnedMeshRenderer renderer;
-        string unityAssetPath;
         string meshName;
 
-        public WXSkinnedMesh(Mesh _mesh, SkinnedMeshRenderer renderer)
+        public WXSkinnedMesh(Mesh _mesh, SkinnedMeshRenderer renderer) : base(AssetDatabase.GetAssetPath(_mesh.GetInstanceID()))
         {
             mesh = _mesh;
-            this.meshName =  wxFileUtil.cleanIllegalChar(_mesh.name, true);
+            this.meshName = wxFileUtil.cleanIllegalChar(_mesh.name, true);
             this.renderer = renderer;
-            unityAssetPath = AssetDatabase.GetAssetPath(mesh.GetInstanceID());
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .setGameObject(renderer.gameObject)
+                .error(ErrorUtil.ErrorCode.SkinnedMesh_PathError, "SkinnedMesh文件的unity路径为空");
+            }
         }
 
         protected override string GetResourceType()
@@ -81,7 +86,16 @@ namespace WeChat
                 AddFile(new WXEngineMeshFile(unityAssetPath, meshName, content))
             );
 
-            meta.AddField("version", 2);
+            // 在importsetting里关联fbx文件
+            if (Path.GetExtension(unityAssetPath).ToLower() == ".fbx")
+            {
+                importSetting = new JSONObject();
+                WXRawResource fbx = new WXRawResource(unityAssetPath);
+                string fbxExportedPath = fbx.Export(preset);
+                importSetting.AddField("associateFbx", fbxExportedPath);
+                AddDependencies(fbxExportedPath);
+            }
+
             return meta;
         }
 
@@ -218,7 +232,7 @@ namespace WeChat
             string item = meshName;
 
             // 分析vertexLayout
-            WXMeshVertexLayout vertexLayout = new WXMeshVertexLayout(mesh);
+            WXMeshVertexLayout vertexLayout = new WXMeshVertexLayout(mesh, true);
 
             List<Transform> bones = new List<Transform>();
             for (int j = 0; j < renderer.bones.Length; j++)
@@ -330,7 +344,6 @@ namespace WeChat
             long vertexLength = 0L;
             long indiceStart = 0L;
             long indiceLength = 0L;
-            long boneEndPosition = 0L;
             // 记录vertexBuffer在总buffer里的起始位置,一般是0
             vertexStart = fileStream.Position;
             // 用于算包围球，计算模型的重心（所有点的位置均值）
@@ -417,6 +430,7 @@ namespace WeChat
             }
 
             long boneStartPosition = fileStream.Position;
+            long boneEndPosition = boneStartPosition;
             if (mesh.bindposes != null && mesh.bindposes.Length != 0)
             {
                 Matrix4x4[] bonePoses = new Matrix4x4[mesh.bindposes.Length];
@@ -489,6 +503,7 @@ namespace WeChat
             // submesh一般指的是mesh里的其中一部分，所以用indiceBuffer的区间表示
             metadata.AddField("subMeshs", subMeshs);
 
+
             return fileStream.ToArray();
         }
 
@@ -517,52 +532,112 @@ namespace WeChat
                     animator = trans.GetComponent(typeof(Animator)) as Animator;
                 }
             }
-            JSONObject bonesObject = new JSONObject(JSONObject.Type.ARRAY);
             if (animator)
             {
                 string filePath = Path.GetFullPath(Directory.GetParent(Application.dataPath) + "/" + AssetDatabase.GetAssetPath(renderer.sharedMesh.GetInstanceID()));
                 if (Path.GetExtension(filePath).ToLower() == ".fbx")
                 {
-                    string toolDir = WXConfig.GetModelToolPath();
-                    if (toolDir != null)
+
+                    bool useFBXSDK = false;
+                    AssetImporter importer = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(renderer.sharedMesh.GetInstanceID()));
+                    ModelImporter mImporter = importer as ModelImporter;
+                    if (mImporter != null && mImporter.optimizeGameObjects) {
+                        useFBXSDK = true;
+                    }
+
+                    if (useFBXSDK)
                     {
-                        string result = WXUtility.ExecProcess(
-                                toolDir,
-                                "\"" + filePath + "\" --skin=\"" + name + "\"",
-                                out succ
-                            );
-                        if (succ)
+                        string toolDir = WXConfig.GetModelToolPath();
+                        if (toolDir != null)
                         {
-                            return JSONObject.Create(result);
-                        } else {
-                            EditorUtility.DisplayDialog("Error", "导出骨骼模型失败:" + result, "确定");
+                            string result = WXUtility.ExecProcess(
+                                    toolDir,
+                                    "\"" + filePath + "\" --skin=\"" + name + "\"",
+                                    out succ
+                                );
+                            if (succ)
+                            {
+                                return JSONObject.Create(result);
+                            }
+                            else
+                            {
+                                ErrorUtil.ExportErrorReporter.create()
+                                    .setGameObject(trans.gameObject)
+                                    .setResource(this)
+                                    .error(ErrorUtil.ErrorCode.SkinnedMesh_FBXToolInvokeFailed, "导出骨骼模型失败:" + result);
+                            }
                         }
-                    } else {
-                        EditorUtility.DisplayDialog("Error", "模型导出工具缺失", "确定");
+                        else
+                        {
+                            ErrorUtil.ExportErrorReporter.create()
+                                .setGameObject(trans.gameObject)
+                                .setResource(this)
+                                .error(ErrorUtil.ErrorCode.SkinnedMesh_FBXToolMissed, "模型导出工具缺失");
+                        }
+                    }
+                    else
+                    {
+                        return GetSkinPathsOnScene(trans);
                     }
                 }
                 else
                 {
-                    EditorUtility.DisplayDialog("Error", "导出的模型格式不支持", "确定");
+                    ErrorUtil.ExportErrorReporter.create()
+                        .setGameObject(trans.gameObject)
+                        .setResource(this)
+                        .error(ErrorUtil.ErrorCode.SkinnedMesh_MeshFormatUnsupported, "导出的模型格式不支持");
                 }
                 succ = false;
-                for (int i = 0; i < renderer.bones.Length; i++)
+                return GetSkinPathsOnScene(trans);
+            }
+            else
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                    .setGameObject(renderer.gameObject)
+                    .setResource(this)
+                    .error(ErrorUtil.ErrorCode.SkinnedMesh_AnimatorNotFound, "MeshRenderer导出的时候没有找到对应Animator");
+            }
+            return new JSONObject(JSONObject.Type.OBJECT);
+        }
+
+        private JSONObject GetSkinPathsOnScene(Transform trans)
+        {
+            JSONObject bonesObject = new JSONObject(JSONObject.Type.ARRAY);
+            string rootBone = null;
+            if (renderer.rootBone)
+            {
+                Transform node = renderer.rootBone;
+                List<string> pathArray = new List<string>();
+                while (node != null && node != trans)
                 {
-                    Transform node = renderer.bones[i];
-                    List<string> pathArray = new List<string>();
-                    while (node != null && node != trans)
-                    {
-                        pathArray.Add(node.name);
-                        node = node.parent;
-                    }
-                    if (node != null)
-                    {
-                        pathArray.Reverse();
-                        bonesObject.Add("/" + String.Join("/", pathArray.ToArray()));
-                    }
+                    pathArray.Add(node.name);
+                    node = node.parent;
+                }
+                if (node != null)
+                {
+                    pathArray.Reverse();
+                    rootBone = "/" + String.Join("/", pathArray.ToArray());
                 }
             }
-            return bonesObject;
+            for (int i = 0; i < renderer.bones.Length; i++)
+            {
+                Transform node = renderer.bones[i];
+                List<string> pathArray = new List<string>();
+                while (node != null && node != trans)
+                {
+                    pathArray.Add(node.name);
+                    node = node.parent;
+                }
+                if (node != null)
+                {
+                    pathArray.Reverse();
+                    bonesObject.Add("/" + String.Join("/", pathArray.ToArray()));
+                }
+            }
+            JSONObject resultObject = new JSONObject(JSONObject.Type.OBJECT);
+            resultObject.AddField("root", rootBone);
+            resultObject.AddField("bones", bonesObject);
+            return resultObject;
         }
     }
 }

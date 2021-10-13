@@ -51,12 +51,17 @@ namespace WeChat
             Avatar avatar = animator.avatar;
             if ((UnityEngine.Object)avatar != (UnityEngine.Object)null)
             {
-                WXAvatar converter = new WXAvatar(avatar, gameObject);
-                string avatarPath = converter.Export(context.preset);
-                if (avatarPath != null && avatarPath != "")
+                AssetImporter importer = AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(avatar.GetInstanceID()));
+                ModelImporter mImporter = importer as ModelImporter;
+                if (mImporter && mImporter.optimizeGameObjects)
                 {
-                    data.AddField("avatar", avatarPath);
-                    context.AddResource(avatarPath);
+                    WXAvatar converter = new WXAvatar(avatar, gameObject);
+                    string avatarPath = converter.Export(context.preset);
+                    if (avatarPath != null && avatarPath != "")
+                    {
+                        data.AddField("avatar", avatarPath);
+                        context.AddResource(avatarPath);
+                    }
                 }
             }
 
@@ -71,7 +76,7 @@ namespace WeChat
                 data.AddField("controller", animatorControllerPath);
                 context.AddResource(animatorControllerPath);
             }
-
+            data.AddField("cullingMode", (uint)animator.cullingMode);
             return json;
         }
     }

@@ -12,7 +12,7 @@ namespace WeChat
         private GameObject prefabRoot;
         private string exportName;
         private string prefabPath;
-        public WXPrefab(GameObject prefabRoot, string prefabPath)
+        public WXPrefab(GameObject prefabRoot, string prefabPath): base(prefabPath)
         {
             if (!prefabPath.EndsWith(".prefab")) {
                 this.prefabPath = prefabPath + ".prefab";
@@ -22,6 +22,14 @@ namespace WeChat
 
             this.prefabRoot = prefabRoot;
             exportName = WXUtility.GetFileNameFromPath(prefabPath);
+
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                    .setResource(this)
+                    .setGameObject(prefabRoot)
+                    .error(ErrorUtil.ErrorCode.Prefab_PathError, "Prefab文件的unity路径为空");
+            }
         }
 
         protected override string GetResourceType()
@@ -36,7 +44,7 @@ namespace WeChat
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromHierarchyResourceAssetPath(prefabPath);
+            return WXUtility.GetMD5FromAssetPath(unityAssetPath);
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)

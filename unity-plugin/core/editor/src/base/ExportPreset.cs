@@ -42,9 +42,15 @@ namespace WeChat
 
         private void InitExportConfig()
         {
+            if (exportConfigs != null)
+            {
+                return;
+            }
             // 从attribute中取得key和ScriptableObject的类型
             GetType().GetCustomAttributes(true);
             Type scriptableObjectType = null;
+
+            // 从Attribute里获得ScriptableObject
 #if UNITY_5_5_OR_NEWER
             IList<CustomAttributeData> attributes = CustomAttributeData.GetCustomAttributes(GetType());
             foreach (CustomAttributeData data in attributes) {
@@ -80,8 +86,22 @@ namespace WeChat
         public abstract bool WillPresetShow();
 
         public void Export() {
-            AssetDatabase.ExportPackage("Assets", "dummy_package");
+            try
+            {
+                // 尝试更新dependencyHash
+                AssetDatabase.ExportPackage("Assets", "dummy_package");
+            }
+            catch (Exception)
+            { }
+
+            ErrorUtil.ExportErrorReporter.cleanWarnCount();
             DoExport();
+            if (ErrorUtil.ExportErrorReporter.warnCount != 0)
+            {
+                Debug.LogError(
+                    string.Format("本次导出产生了{0}个警告，请注意修复", ErrorUtil.ExportErrorReporter.warnCount)
+                );
+            }
         }
 
         public void Draw()

@@ -9,7 +9,6 @@ namespace WeChat
     {
         public Shader shader;
         public int property_count;
-        private string unityAssetPath;
         public struct property
         {
             public string key;
@@ -19,13 +18,11 @@ namespace WeChat
         public List<property> properties;
         public List<property> textures;
 
-        public WXEffect(Shader _shader)
+        public WXEffect(Shader _shader) : base(AssetDatabase.GetAssetPath(_shader.GetInstanceID()))
         {
             this.shader = (Shader)_shader;
             this.properties = new List<property>();
             this.textures = new List<property>();
-            int instanceID = shader.GetInstanceID();
-            unityAssetPath = AssetDatabase.GetAssetPath(instanceID);
 
             this.property_count = ShaderUtil.GetPropertyCount(shader);
 
@@ -157,10 +154,10 @@ namespace WeChat
             m_compileFlags.Add("Particle");
             m_compileFlags.Add("Line");
             m_compileFlags.Add("Trail");
-            m_pass.SetField("compileFlags",m_compileFlags);
+            m_pass.SetField("compileFlags", m_compileFlags);
 
             JSONObject m_multiCompile = new JSONObject(JSONObject.Type.ARRAY);
-            m_pass.SetField("multiCompile",m_multiCompile);
+            m_pass.SetField("multiCompile", m_multiCompile);
 
             m_passes.Add(m_pass);
             jsonFile.SetField("passes", m_passes);

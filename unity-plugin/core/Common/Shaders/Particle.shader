@@ -88,5 +88,5 @@ Shader "WXBBShader/ShurikenParticle" {
 			ENDCG
 		}
 	}
-	CustomEditor "EffectGUI"
+	CustomEditor "WeChat.EffectGUI"
 }

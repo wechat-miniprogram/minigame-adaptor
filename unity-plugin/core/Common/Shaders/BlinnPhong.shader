@@ -2,7 +2,7 @@
 
 Shader "WXBBShader/BlinnPhong" {
 
-    Properties{
+	Properties{
 		_MainTex("Albedo Texture", 2D) = "white" {}
 		_Color("Albedo Color", Color) = (1,1,1,1)
 		_AlbedoIntensity("Albedo Intensity", Range(1.0, 4.0)) = 1.0
@@ -29,7 +29,7 @@ Shader "WXBBShader/BlinnPhong" {
 		[HideInInspector] _RenderQueue("__rq", Float) = 2000.0
 	}
 
-    SubShader{
+	SubShader{
 		Tags {"IgnoreProjector" = "True" "RenderType" = "Opaque"}
 
 		Pass {
@@ -61,7 +61,6 @@ Shader "WXBBShader/BlinnPhong" {
 
 			float4 _Color;
 			float4 _EmissionColor;
-			float4 _ColorCustom;
 			sampler2D _MainTex;
 			float _AlbedoIntensity;
 			float4 _MainTex_ST;
@@ -96,55 +95,55 @@ Shader "WXBBShader/BlinnPhong" {
 			};
 
 			#if UNITY_VERSION < 560
-			#define unity_ShadowColor fixed4(0.42,0.48,0.63,1.0)
+				#define unity_ShadowColor fixed4(0.42,0.48,0.63,1.0)
 			#endif
 			
-             // from UnityGlobalIllumination.cginc
-            inline half3 MixLightmapWithRealtimeAttenuation(half3 lightmap, half attenuation, half3 normalWorld)
-            {
-	            // Let's try to make realtime shadows work on a surface, which already contains
-	            // baked lighting and shadowing from the main sun light.
-	            half3 shadowColor = unity_ShadowColor.rgb;
-	            half shadowStrength = _LightShadowData.x;
+			// from UnityGlobalIllumination.cginc
+			inline half3 MixLightmapWithRealtimeAttenuation(half3 lightmap, half attenuation, half3 normalWorld)
+			{
+				// Let's try to make realtime shadows work on a surface, which already contains
+				// baked lighting and shadowing from the main sun light.
+				half3 shadowColor = unity_ShadowColor.rgb;
+				half shadowStrength = _LightShadowData.x;
 
-	            // Summary:
-	            // 1) Calculate possible value in the shadow by subtracting estimated light contribution from the places occluded by realtime shadow:
-	            //      a) preserves other baked lights and light bounces
-	            //      b) eliminates shadows on the geometry facing away from the light
-	            // 2) Clamp against user defined ShadowColor.
-	            // 3) Pick original lightmap value, if it is the darkest one.
+				// Summary:
+				// 1) Calculate possible value in the shadow by subtracting estimated light contribution from the places occluded by realtime shadow:
+				//      a) preserves other baked lights and light bounces
+				//      b) eliminates shadows on the geometry facing away from the light
+				// 2) Clamp against user defined ShadowColor.
+				// 3) Pick original lightmap value, if it is the darkest one.
 
 
-	            // 1) Gives good estimate of illumination as if light would've been shadowed during the bake.
-	            //    Preserves bounce and other baked lights
-	            //    No shadows on the geometry facing away from the light
-	            half ndotl = saturate(dot(normalWorld, _WorldSpaceLightPos0.xyz));
-	            half3 estimatedLightContributionMaskedByInverseOfShadow = ndotl * (1 - attenuation) * _LightColor0.rgb;
-	            half3 subtractedLightmap = lightmap - estimatedLightContributionMaskedByInverseOfShadow;
+				// 1) Gives good estimate of illumination as if light would've been shadowed during the bake.
+				//    Preserves bounce and other baked lights
+				//    No shadows on the geometry facing away from the light
+				half ndotl = saturate(dot(normalWorld, _WorldSpaceLightPos0.xyz));
+				half3 estimatedLightContributionMaskedByInverseOfShadow = ndotl * (1 - attenuation) * _LightColor0.rgb;
+				half3 subtractedLightmap = lightmap - estimatedLightContributionMaskedByInverseOfShadow;
 
-	            // 2) Allows user to define overall ambient of the scene and control situation when realtime shadow becomes too dark.
-	            half3 realtimeShadow = max(subtractedLightmap, shadowColor);
-	            realtimeShadow = lerp(realtimeShadow, lightmap, shadowStrength);
+				// 2) Allows user to define overall ambient of the scene and control situation when realtime shadow becomes too dark.
+				half3 realtimeShadow = max(subtractedLightmap, shadowColor);
+				realtimeShadow = lerp(realtimeShadow, lightmap, shadowStrength);
 
-	            // 3) Pick darkest color
-	            return min(lightmap, realtimeShadow);
-            }
+				// 3) Pick darkest color
+				return min(lightmap, realtimeShadow);
+			}
 
-            inline half3 ReadNormal(half4 color)
-            {
-	            half2 normalxy = (color.rg - 0.5f)*2.0f;
-	            half normalz = sqrt(max(1e-3, 1.0f - dot(normalxy, normalxy)));
-	            return half3(normalxy, normalz);
-            }
+			inline half3 ReadNormal(half4 color)
+			{
+				half2 normalxy = (color.rg - 0.5f)*2.0f;
+				half normalz = sqrt(max(1e-3, 1.0f - dot(normalxy, normalxy)));
+				return half3(normalxy, normalz);
+			}
 
-            void BlinnPhongLighting(in half3 lightColor, in half3 lightDir, in half3 normal, in half3 viewDir, in float specularFactor, out float3 diffuseOut, out float3 specularOut)
-            {
-	            half3 h = normalize(viewDir + lightDir);
-	            half ln = max(0.0, dot(+lightDir, normal));
-	            float nh = max(0.0, dot(h, normal));
-	            diffuseOut = lightColor * ln;
-	            specularOut = lightColor * pow(nh, specularFactor * 128.0);
-            }
+			void BlinnPhongLighting(in half3 lightColor, in half3 lightDir, in half3 normal, in half3 viewDir, in float specularFactor, out float3 diffuseOut, out float3 specularOut)
+			{
+				half3 h = normalize(viewDir + lightDir);
+				half ln = max(0.0, dot(+lightDir, normal));
+				float nh = max(0.0, dot(h, normal));
+				diffuseOut = lightColor * ln;
+				specularOut = lightColor * pow(nh, specularFactor * 128.0);
+			}
 
 			v2f vert(a2v v) {
 
@@ -175,77 +174,77 @@ Shader "WXBBShader/BlinnPhong" {
 
 				#endif
 
-					// Pass shadow coordinates to pixel shader
-					TRANSFER_SHADOW(o);
-					UNITY_TRANSFER_FOG(o, o.pos);
+				// Pass shadow coordinates to pixel shader
+				TRANSFER_SHADOW(o);
+				UNITY_TRANSFER_FOG(o, o.pos);
 
-					return o;
-				}
+				return o;
+			}
 
-			    fixed4 frag(v2f i) : SV_Target {
+			fixed4 frag(v2f i) : SV_Target {
 
-				    fixed4 mainTexColor = tex2D(_MainTex, i.uv);
-				    fixed4 texAlbedo = mainTexColor * _Color;
-				    fixed4 albedo = texAlbedo * _AlbedoIntensity;
+				fixed4 mainTexColor = tex2D(_MainTex, i.uv);
+				fixed4 texAlbedo = mainTexColor * _Color;
+				fixed4 albedo = texAlbedo * _AlbedoIntensity;
 
-				    #if EnableAlphaCutoff
-					    clip(albedo.a - _Cutoff);
-				    #endif
+				#if EnableAlphaCutoff
+					clip(albedo.a - _Cutoff);
+				#endif
 
-				    fixed3 diffuse = fixed3(0.0, 0.0, 0.0);
-				    fixed3 specular = fixed3(0.0, 0.0, 0.0);
+				fixed3 diffuse = fixed3(0.0, 0.0, 0.0);
+				fixed3 specular = fixed3(0.0, 0.0, 0.0);
 
-				    half3 lightDir = normalize(i.lightDir);
-				    half3 viewDir = normalize(i.viewDir);
-				    half3 worldNormal = normalize(i.worldNormal);
-				    #if defined(NormalTexture)
-					    fixed3 normal = ReadNormal(tex2D(_BumpMap, i.uv));
-					    BlinnPhongLighting(_LightColor0, lightDir, normal, viewDir, _Shininess, diffuse, specular);
-				    #else
-				    	BlinnPhongLighting(_LightColor0, lightDir, worldNormal, viewDir, _Shininess, diffuse, specular);
-				    #endif
-
-
-				    float attenuation = SHADOW_ATTENUATION(i);
-
-				    fixed3 finalDiffuse = fixed3(0.0,0.0,0.0);
-
-				    #if defined(LIGHTMAP_ON) && !defined(SHADOWS_SHADOWMASK)
-				    // only support substractive mode
-				    // shadowMask mode is not supported now
-				    fixed3 lightMapColor = fixed4(DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.uv2)), 1.0);
-				    finalDiffuse = MixLightmapWithRealtimeAttenuation(lightMapColor, attenuation, i.worldNormal);
-			    #else
-				    finalDiffuse = fixed3(UNITY_LIGHTMODEL_AMBIENT.rgb) + diffuse.rgb * attenuation;
-			    #endif
-
-			    #if defined(SpecularTexture)
-				    specular = specular * tex2D(_SpecGlossMap, i.uv) * _SpecColor;
-			    #else
-				    specular = specular * mainTexColor.a * _SpecColor;
-			    #endif
-
-			    fixed4 color = fixed4(albedo.rgb * (finalDiffuse + specular), albedo.a);
-
-			    #if defined(EmissiveTexture)
-				    fixed4 emissionTexColor = tex2D(_EmissionMap, i.uv);
-				    fixed3 emission = _EmissionColor.rgb * emissionTexColor.r;
-				    color.rgb += emission;
-			    #endif
-
-			    #if EnableFog
-				    UNITY_APPLY_FOG(i.fogCoord, color);
-			    #endif
-
-			    return color;
-		        }
-
-			    ENDCG
-		    }
+				half3 lightDir = normalize(i.lightDir);
+				half3 viewDir = normalize(i.viewDir);
+				half3 worldNormal = normalize(i.worldNormal);
+				#if defined(NormalTexture)
+					fixed3 normal = ReadNormal(tex2D(_BumpMap, i.uv));
+					BlinnPhongLighting(_LightColor0, lightDir, normal, viewDir, _Shininess, diffuse, specular);
+				#else
+					BlinnPhongLighting(_LightColor0, lightDir, worldNormal, viewDir, _Shininess, diffuse, specular);
+				#endif
 
 
-        
-		 
+				float attenuation = SHADOW_ATTENUATION(i);
+
+				fixed3 finalDiffuse = fixed3(0.0,0.0,0.0);
+
+				#if defined(LIGHTMAP_ON) && !defined(SHADOWS_SHADOWMASK) && defined(SHADOWS_SCREEN)
+					// only support substractive mode
+					// shadowMask mode is not supported now
+					fixed3 lightMapColor = fixed4(DecodeLightmap(UNITY_SAMPLE_TEX2D(unity_Lightmap, i.uv2)), 1.0);
+					finalDiffuse = MixLightmapWithRealtimeAttenuation(lightMapColor, attenuation, i.worldNormal);
+				#else
+					finalDiffuse = fixed3(UNITY_LIGHTMODEL_AMBIENT.rgb) + diffuse.rgb * attenuation;
+				#endif
+
+				#if defined(SpecularTexture)
+					specular = specular * tex2D(_SpecGlossMap, i.uv) * _SpecColor;
+				#else
+					specular = specular * mainTexColor.a * _SpecColor;
+				#endif
+
+				fixed4 color = fixed4(albedo.rgb * (finalDiffuse + specular), albedo.a);
+
+				#if defined(EmissiveTexture)
+					fixed4 emissionTexColor = tex2D(_EmissionMap, i.uv);
+					fixed3 emission = _EmissionColor.rgb * emissionTexColor.r;
+					color.rgb += emission;
+				#endif
+
+				#if EnableFog
+					UNITY_APPLY_FOG(i.fogCoord, color);
+				#endif
+
+				return color;
+			}
+
+			ENDCG
+		}
+
+
+		
+		
 		Pass {
 			Tags { "LightMode" = "ForwardAdd" }
 			Blend One One
@@ -276,7 +275,6 @@ Shader "WXBBShader/BlinnPhong" {
 
 			float4 _Color;
 			float4 _EmissionColor;
-			float4 _ColorCustom;
 			sampler2D _MainTex;
 			float _AlbedoIntensity;
 			float4 _MainTex_ST;
@@ -307,10 +305,10 @@ Shader "WXBBShader/BlinnPhong" {
 				float3 worldNormal:TEXCOORD7;
 			};
 
-				#if UNITY_VERSION < 560
+			#if UNITY_VERSION < 560
 				#define unity_ShadowColor fixed4(0.42,0.48,0.63,1.0)
-				#endif
-				 
+			#endif
+			
 
 			inline half3 ReadNormal(half4 color)
 			{
@@ -404,6 +402,6 @@ Shader "WXBBShader/BlinnPhong" {
 			ENDCG
 		} 
 	}
-	CustomEditor "BlinnPhongGUI"
+	CustomEditor "WeChat.BlinnPhongGUI"
 	FallBack "Standard"
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -33,11 +34,15 @@ namespace WeChat
     {
         static WXAnimatorController()
         {
-            resourcesConverters.Add(typeof(AnimatorController), (GameObject go)=> {
+            resourcesConverters.Add(typeof(AnimatorController), (GameObject go) =>
+            {
+                return new WXAnimatorController(go.GetComponent<Animator>(), go);
+            });
+            resourcesConverters.Add(typeof(AnimatorOverrideController), (GameObject go) =>
+            {
                 return new WXAnimatorController(go.GetComponent<Animator>(), go);
             });
         }
-
         protected override string GetResourceType()
         {
             return "animatorcontroller";
@@ -66,13 +71,34 @@ namespace WeChat
         private List<string> dependencies = new List<string>();
 
         private string originPath;
-        private AnimatorController controller;
-        public WXAnimatorController(Animator animator, GameObject gameObject)
+        private AnimatorController controller = null;
+        public WXAnimatorController(Animator animator, GameObject gameObject) : base(null)
         {
             this.gameObject = gameObject;
             this.animator = animator;
-            controller = (AnimatorController)gameObject.GetComponent<Animator>().runtimeAnimatorController;
-            originPath = AssetDatabase.GetAssetPath(controller.GetInstanceID());
+
+            if (gameObject.GetComponent<Animator>().runtimeAnimatorController.GetType() == typeof(AnimatorOverrideController))
+            {
+                controller = (AnimatorController)((AnimatorOverrideController)gameObject.GetComponent<Animator>().runtimeAnimatorController).runtimeAnimatorController;
+                originPath = AssetDatabase.GetAssetPath(gameObject.GetComponent<Animator>().runtimeAnimatorController.GetInstanceID());
+            }
+            else if (gameObject.GetComponent<Animator>().runtimeAnimatorController.GetType() == typeof(AnimatorController))
+            {
+                controller = (AnimatorController)gameObject.GetComponent<Animator>().runtimeAnimatorController;
+                originPath = AssetDatabase.GetAssetPath(controller.GetInstanceID());
+            }
+            else
+            {
+                throw new Exception("Unknown controller type.");
+            }
+            unityAssetPath = originPath;
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .setGameObject(gameObject)
+                .error(ErrorUtil.ErrorCode.AnimationController_PathError, "animatorController文件的unity路径为空");
+            }
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)
@@ -141,8 +167,6 @@ namespace WeChat
                         layerJSON.AddField("blending", 1);
                     }
                     // layerJSON.AddField("IKPass", layer.iKPass);
-                    // todo mask feature
-                    // layerJSON.AddField("mask", layer.avatarMask);
                     if (i == 0)
                     {
                         layerJSON.AddField("weight", 1);
@@ -151,8 +175,19 @@ namespace WeChat
                     {
                         layerJSON.AddField("weight", layer.defaultWeight);
                     }
+                    if (layer.avatarMask != null)
+                    {
+                        WXAvatarMask mask = new WXAvatarMask(layer.avatarMask);
+                        string uid = AddDependencies(mask);
+                        layerJSON.AddField("mask", uid);
+                    }
+                    else
+                    {
+                        layerJSON.AddField("mask", new JSONObject(JSONObject.Type.NULL));
+                    }
                     controllerInfo.layers.Add(layerJSON);
                 }
+
 
                 HandleStatesPositionInfo(layers);
 
@@ -160,7 +195,14 @@ namespace WeChat
                 editorInfoJson.AddField("stateMachines", controllerInfo.stateMachinesPositionInfo.ToJSON());
                 editorInfoJson.AddField("states", controllerInfo.statesPositionInfo);
 
-                controllerJson.AddField("name", controller.name);
+                if (gameObject.GetComponent<Animator>().runtimeAnimatorController.GetType() == typeof(AnimatorOverrideController))
+                {
+                    controllerJson.AddField("name", ((AnimatorOverrideController)gameObject.GetComponent<Animator>().runtimeAnimatorController).name);
+                }
+                else if (gameObject.GetComponent<Animator>().runtimeAnimatorController.GetType() == typeof(AnimatorController))
+                {
+                    controllerJson.AddField("name", ((AnimatorController)gameObject.GetComponent<Animator>().runtimeAnimatorController).name);
+                }
                 controllerJson.AddField("layers", controllerInfo.layers);
                 controllerJson.AddField("stateMachines", controllerInfo.machines.ToJSON());
                 controllerJson.AddField("states", controllerInfo.states.ToJSON());
@@ -168,20 +210,18 @@ namespace WeChat
                 controllerJson.AddField("blendTrees", controllerInfo.blendTrees.ToJSON());
                 controllerJson.AddField("parameters", controllerInfo.parameters.ToJSON());
                 controllerJson.AddField("editorInfo", editorInfoJson);
-
-                controllerJson.AddField("version", 2);
                 return controllerJson;
             }
         }
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromAssetPath(originPath);
+            return WXUtility.GetMD5FromAssetPath(unityAssetPath);
         }
 
         public override string GetExportPath()
         {
-            return GetExportPathRaw(AssetDatabase.GetAssetPath(controller.GetInstanceID())) + ".animatorcontroller";
+            return GetExportPathRaw(originPath) + ".animatorcontroller";
         }
         protected string GetExportPathRaw(string unityAssetPath)
         {
@@ -426,6 +466,7 @@ namespace WeChat
             transitionJSON.AddField("orderedInterruption", transition.orderedInterruption);
             transitionJSON.AddField("hasExitTime", transition.hasExitTime);
             transitionJSON.AddField("exitTime", transition.exitTime);
+            transitionJSON.AddField("canTransitionToSelf", transition.canTransitionToSelf);
             if (transition.destinationState != null)
             {
                 var state = transition.destinationState;
@@ -492,6 +533,23 @@ namespace WeChat
                 }
                 childJSON.AddField("motion", motionJSON);
                 childJSON.AddField("timeScale", children[i].timeScale);
+                childJSON.AddField("cycleOffset", children[i].cycleOffset);
+                childJSON.AddField("mirror", children[i].mirror);
+                if (tree.blendType == BlendTreeType.Simple1D)
+                {
+                    childJSON.AddField("threshold", children[i].threshold);
+                }
+                else if (tree.blendType == BlendTreeType.SimpleDirectional2D || tree.blendType == BlendTreeType.FreeformDirectional2D || tree.blendType == BlendTreeType.FreeformCartesian2D)
+                {
+                    var posJSON = new JSONObject(JSONObject.Type.ARRAY);
+                    posJSON.Add(children[i].position.x);
+                    posJSON.Add(children[i].position.y);
+                    childJSON.AddField("position", posJSON);
+                }
+                if (children[i].directBlendParameter != null)
+                {
+                    childJSON.AddField("directBlendParameter", children[i].directBlendParameter);
+                }
             }
 
             var blendJSON = new JSONObject(JSONObject.Type.OBJECT);
@@ -501,12 +559,6 @@ namespace WeChat
             {
                 bool temp;
                 blendJSON.AddField("parameter", controllerInfo.parameters.AddObject(tree.blendParameter, out temp).Key);
-                var thresholdsJSON = new JSONObject(JSONObject.Type.ARRAY);
-                blendJSON.AddField("thresholds", thresholdsJSON);
-                for (int i = 0; i < children.Length; i++)
-                {
-                    thresholdsJSON.Add(children[i].threshold);
-                }
                 blendJSON.AddField("minThreshold", tree.minThreshold);
                 blendJSON.AddField("maxThreshold", tree.maxThreshold);
             }
@@ -515,32 +567,6 @@ namespace WeChat
                 bool temp;
                 blendJSON.AddField("parameterX", controllerInfo.parameters.AddObject(tree.blendParameter, out temp).Key);
                 blendJSON.AddField("parameterY", controllerInfo.parameters.AddObject(tree.blendParameterY, out temp).Key);
-                var positionsJSON = new JSONObject(JSONObject.Type.ARRAY);
-                blendJSON.AddField("positions", positionsJSON);
-                for (int i = 0; i < children.Length; i++)
-                {
-                    var pos = children[i].position;
-                    var posJSON = new JSONObject(JSONObject.Type.ARRAY);
-                    positionsJSON.Add(posJSON);
-                    posJSON.Add(pos.x);
-                    posJSON.Add(pos.y);
-                }
-            }
-            else if (tree.blendType == BlendTreeType.Direct)
-            {
-                var paramJSON = new JSONObject(JSONObject.Type.ARRAY);
-                blendJSON.AddField("parameters", paramJSON);
-                for (int i = 0; i < children.Length; i++)
-                {
-                    if (children[i].directBlendParameter != null)
-                    {
-                        paramJSON.Add(children[i].directBlendParameter);
-                    }
-                    else
-                    {
-                        paramJSON.Add(new JSONObject(JSONObject.Type.NULL));
-                    }
-                }
             }
             return treeInfo.Key;
         }

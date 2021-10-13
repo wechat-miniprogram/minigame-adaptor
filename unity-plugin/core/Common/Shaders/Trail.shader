@@ -88,5 +88,5 @@ Shader "WXBBShader/Trail" {
 			ENDCG
 		}
 	}
-	CustomEditor "EffectGUI"
+	CustomEditor "WeChat.EffectGUI"
 }

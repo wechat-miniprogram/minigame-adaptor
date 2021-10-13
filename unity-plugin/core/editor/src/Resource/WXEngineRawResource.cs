@@ -13,11 +13,14 @@ namespace WeChat
     internal class WXRawResource : WXResource
     {
 
-        private string asset_path_;
-
-        public WXRawResource(string iPath)
+        public WXRawResource(string iPath): base(iPath)
         {
-            asset_path_ = iPath;
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                    .setResource(this)
+                    .error(ErrorUtil.ErrorCode.RawResource_PathError, "RawResource文件的unity路径为空");
+            }
         }
 
         private static string GetFileType(string path)
@@ -26,7 +29,7 @@ namespace WeChat
             string[] audio_video_formats = { ".map", ".ogg", ".wav", ".aiff", ".aif", ".mod", ".it", ".s3m", ".xm", // audio
             ".mp4", ".asf", ".avi", ".dv", ".m4v", ".mov", ".mpg", ".mpeg", ".ogv", ".vp8", ".webm", ".wmv" // video
              };
-             
+
             // unity supported text formats
             string[] text_formats = { ".txt", ".html", ".htm", ".xml", ".bytes", ".csv", ".yaml", ".fnt" };
 
@@ -46,13 +49,15 @@ namespace WeChat
             else if (Array.IndexOf(text_formats, suffix_name) != -1) return "text";
             else if (Array.IndexOf(image_formats, suffix_name) != -1) return "image";
             else if (Array.IndexOf(json_formats, suffix_name) != -1) return "json";
+            // 为了做fbx导出做的逻辑 详讯jasonjwang
+            else if (suffix_name == ".fbx") return "url";
 
             return "";
         }
 
         public override string GetHash()
         {
-            string asset_version = WXUtility.GetMD5FromAssetPath(asset_path_);
+            string asset_version = WXUtility.GetMD5FromAssetPath(unityAssetPath);
             return asset_version;
         }
 
@@ -63,16 +68,15 @@ namespace WeChat
 
         public override string GetExportPath()
         {
-            return asset_path_ + ".raw";
+            return unityAssetPath + ".raw";
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)
         {
             JSONObject metadata = JSONObject.Create("{\"file\": {}}");
-            metadata.AddField("version", 2);
 
-            string file_type = GetFileType(asset_path_);
-            metadata.GetField("file").SetField("src", AddFile(new WXEngineCopyFile(asset_path_, file_type)));
+            string file_type = GetFileType(unityAssetPath);
+            metadata.GetField("file").SetField("src", AddFile(new WXEngineCopyFile(unityAssetPath, file_type)));
 
             return metadata;
         }

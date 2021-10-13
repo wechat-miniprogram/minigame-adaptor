@@ -8,24 +8,26 @@ using UnityEditor.Animations;
 using UnityEngine;
 
 namespace WeChat {
-    public class WXSphereCollider : WXComponent {
-        // private SphereCollider collider;
+
+    public class WXCapsuleCollider : WXComponent {
         private Boolean isTrigger;
         private PhysicMaterial material;
         private Vector3 center;
         private float radius;
+        private float height;
+        private int direction;
 
         public override string getTypeName () {
-            return "SphereCollider";
-            // var result = collider ? collider.GetType().ToString() : "UnityEngine.SphereCollider";
-            // return Utils.EscapeNamespace(result);
+            return "CapsuleCollider";
         }
 
-        public WXSphereCollider (Boolean isTrigger, PhysicMaterial material, Vector3 center, float radius) {
-            this.center = center;
-            this.radius = radius;
+        public WXCapsuleCollider (Boolean isTrigger, PhysicMaterial material, Vector3 center, float radius, float height, int dir) {
             this.isTrigger = isTrigger;
             this.material = material;
+            this.center = center;
+            this.radius = radius;
+            this.height = height;
+            this.direction = dir;
         }
 
         protected override JSONObject ToJSON (WXHierarchyContext context) {
@@ -35,11 +37,10 @@ namespace WeChat {
             json.AddField ("data", data);
             data.AddField ("active", true);
 
-            // if (this.collider != null)
             {
                 data.AddField ("isTrigger", this.isTrigger);
                 if (material != null) {
-                    WXPhysicsMaterial materialConverter = new WXPhysicsMaterial (material);
+                    WXPhysicsMaterial materialConverter = new WXPhysicsMaterial (this.material);
                     string materialPath = materialConverter.Export (context.preset);
                     if (materialPath != null && materialPath != "") {
                         data.AddField ("material", materialPath);
@@ -48,12 +49,14 @@ namespace WeChat {
                 }
 
                 JSONObject center = new JSONObject (JSONObject.Type.ARRAY);
-                center.Add (this.center.x);
+                center.Add (-this.center.x);
                 center.Add (this.center.y);
                 center.Add (this.center.z);
                 data.AddField ("center", center);
 
                 data.AddField ("radius", this.radius);
+                data.AddField ("height", this.height);
+                data.AddField ("direction", this.direction);
             }
 
             return json;

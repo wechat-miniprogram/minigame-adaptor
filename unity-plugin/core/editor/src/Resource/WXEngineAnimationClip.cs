@@ -75,6 +75,15 @@ namespace WeChat
             public Keyframe[] keys;
         }
 
+        public struct AniEvent
+        {
+            public int frameId;
+            public string functionName;
+            public int intParameter;
+            public float floatParameter;
+            public string stringParameter;
+        }
+
         public struct CustomAnimationClipCurveData
         {
             public CustomAnimationCurve curve;
@@ -88,7 +97,7 @@ namespace WeChat
 
         public static Dictionary<string, string> UnityTypeMap = new Dictionary<string, string>
     {
-        { "UnityEngine.GameObject", "" },
+        { "UnityEngine.GameObject", "Entity" },
         { "UnityEngine.Transform", "Transform" },
         { "UnityEngine.MeshRenderer", "MeshRenderer" },
         { "UnityEngine.SkinnedMeshRenderer",  "SkinnedMeshRenderer" },
@@ -128,13 +137,20 @@ namespace WeChat
 
         public static Dictionary<string, WXAnimationClip> Instances = new Dictionary<string, WXAnimationClip>();
 
-        public WXAnimationClip(AnimationClip _animationClip/*, GameObject _gameObject*/)
+        public WXAnimationClip(AnimationClip _animationClip) : base(AssetDatabase.GetAssetPath(_animationClip.GetInstanceID()))
         {
             animationClip = _animationClip;
             //gameObject = _gameObject;
             string animationClipName = wxFileUtil.cleanIllegalChar(_animationClip.name, true);
-            string relativePath = wxFileUtil.cleanIllegalChar(AssetDatabase.GetAssetPath(_animationClip.GetInstanceID()).Split('.')[0], false) + "-" + animationClipName;
+            string relativePath = wxFileUtil.cleanIllegalChar(unityAssetPath.Split('.')[0], false) + "-" + animationClipName;
             _fileName = relativePath;
+
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .error(ErrorUtil.ErrorCode.AnimationClip_PathError, "animationClip文件的unity路径为空");
+            }
         }
 
         private AnimationClip animationClip = null;
@@ -147,22 +163,32 @@ namespace WeChat
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromAssetPath(AssetDatabase.GetAssetPath(animationClip.GetInstanceID()));
+            return WXUtility.GetMD5FromAssetPath(AssetDatabase.GetAssetPath(animationClip.GetInstanceID())) + WXUtility.GetMD5FromString(animationClip.name);
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)
         {
+            return GenerateResourceData();
+        }
+
+        public JSONObject GenerateResourceData()
+        {
             _UpdateClip();
-            JSONObject meta = JSONObject.Create("{\"file\": {}}");
+            JSONObject meta = JSONObject.Create("{\"keyframeData\": {}}");
+            JSONObject keyframeData = meta.GetField("keyframeData");
             JSONObject metadata = new JSONObject(JSONObject.Type.OBJECT);
             meta.AddField("data", metadata);
 
-            byte[] content = _writeFile(ref metadata);
-            meta.GetField("file").AddField(
-                "src",
-                AddFile(new WXEngineAnimationClipFile(AssetDatabase.GetAssetPath(animationClip.GetInstanceID()), animationClip.name, content))
-            );
-            meta.AddField("version", 2);
+            // byte[] content = _writeFile(ref metadata, ref keyframeData);
+            _writeFile(ref metadata, ref keyframeData);
+
+            JSONObject editorInfo = new JSONObject(JSONObject.Type.OBJECT);
+            editorInfo.AddField("assetVersion", 2);
+            meta.AddField("editorInfo", editorInfo);
+            // meta.GetField("file").AddField(
+            //     "src",
+            //     AddFile(new WXEngineAnimationClipFile(AssetDatabase.GetAssetPath(animationClip.GetInstanceID()), animationClip.name, content))
+            // );
 
             return meta;
         }
@@ -188,22 +214,122 @@ namespace WeChat
             }
         }
 
-        private byte[] _writeFile(ref JSONObject metadata)
+        private void _writeFile(ref JSONObject metadata, ref JSONObject keyframeData)
         {
-            MemoryStream fileStream = new MemoryStream();
+            metadata.AddField("name", animationClip.name);
+            // MemoryStream fileStream = new MemoryStream();
 
             JSONObject pathArray = new JSONObject(JSONObject.Type.ARRAY);
             metadata.AddField("paths", pathArray);
-            JSONObject propArray = new JSONObject(JSONObject.Type.ARRAY);
-            metadata.AddField("props", propArray);
+            // JSONObject propArray = new JSONObject(JSONObject.Type.ARRAY);
+            // metadata.AddField("props", propArray);
             AnimationClipSettings settings = AnimationUtility.GetAnimationClipSettings(animationClip);
             metadata.AddField("wrapMode", (int)animationClip.wrapMode);
             metadata.AddField("startTime", settings.startTime);
             metadata.AddField("stopTime", settings.stopTime);
             metadata.AddField("loopTime", settings.loopTime);
             metadata.AddField("cycleOffset", settings.cycleOffset);
-            metadata.AddField("version", 1);
 
+            JSONObject bone = new JSONObject(JSONObject.Type.OBJECT);
+            keyframeData.AddField("bone", bone); // 骨骼动画keyframe信息
+            JSONObject meta = new JSONObject(JSONObject.Type.OBJECT);
+            keyframeData.AddField("meta", meta); // 元动画（如材质、active等）keyframe信息
+            JSONObject eventList = new JSONObject(JSONObject.Type.ARRAY);
+            keyframeData.AddField("eventList", eventList);
+
+            keyframeData.AddField("frameRate", (float)FrameRate);
+            float duration = (keyFrameTimes.Count == 0) ? 0f : ((float)keyFrameTimes[keyFrameTimes.Count - 1]);
+            int total = (int)Math.Round(duration * FrameRate, 0);
+            keyframeData.AddField("totalFrameCount", total + 1);
+
+            JSONObject boneSampleInfoList = new JSONObject(JSONObject.Type.ARRAY);
+            bone.AddField("sampleList", boneSampleInfoList);
+            JSONObject boneContentList = new JSONObject(JSONObject.Type.ARRAY);
+            bone.AddField("contentList", boneContentList);
+
+            JSONObject metaSampleInfoList = new JSONObject(JSONObject.Type.ARRAY);
+            meta.AddField("sampleList", metaSampleInfoList);
+            JSONObject metaContentList = new JSONObject(JSONObject.Type.ARRAY);
+            meta.AddField("contentList", metaContentList);
+
+            List<string> pathList = new List<string>();
+            // bool hasMeta = false;
+            foreach (var info in pathInfoArray)
+            {
+                int index = pathList.IndexOf(info.Key);
+                if (index < 0)
+                {
+                    pathList.Add(info.Key);
+                    index = pathList.Count - 1;
+                }
+                for (int j = 0; j < info.Value.prop.Count; j++)
+                {
+                    if (!info.Value.isMeta)
+                    {
+                        JSONObject boneSampleInfo = new JSONObject(JSONObject.Type.OBJECT);
+                        boneSampleInfo.AddField("pathIndex", index);
+                        boneSampleInfo.AddField("type", info.Value.prop[j].type);
+                        boneSampleInfo.AddField("keyframeCount", info.Value.prop[j].keyFrameCount);
+                        boneSampleInfoList.Add(boneSampleInfo);
+                        // sampleLength++;
+                    }
+                    else
+                    {
+                        JSONObject metaSampleInfo = new JSONObject(JSONObject.Type.OBJECT);
+                        metaSampleInfo.AddField("pathIndex", index);
+                        metaSampleInfo.AddField("type", info.Value.name);
+                        metaSampleInfo.AddField("keyframeCount", info.Value.prop[j].keyFrameCount);
+                        metaSampleInfoList.Add(metaSampleInfo);
+                    }
+                }
+            }
+
+            foreach (var info in pathInfoArray)
+            {
+                for (int j = 0; j < info.Value.curve.Count; j++)
+                {
+                    if (!info.Value.isMeta)
+                    {
+                        JSONObject boneContent = new JSONObject(JSONObject.Type.OBJECT);
+                        boneContent.AddField("frameId", info.Value.curve[j].frameId);
+                        boneContent.AddField("value", info.Value.curve[j].valueNumber);
+                        boneContent.AddField("inTangent", info.Value.curve[j].inTangentNumber);
+                        boneContent.AddField("outTangent", info.Value.curve[j].outTangentNumber);
+                        boneContentList.Add(boneContent);
+                    }
+                    else
+                    {
+                        JSONObject metaContent = new JSONObject(JSONObject.Type.OBJECT);
+                        metaContent.AddField("frameId", info.Value.curve[j].frameId);
+                        metaContent.AddField("value", info.Value.curve[j].valueNumber);
+                        metaContent.AddField("inTangent", info.Value.curve[j].inTangentNumber);
+                        metaContent.AddField("outTangent", info.Value.curve[j].outTangentNumber);
+                        metaContentList.Add(metaContent);
+                    }
+                }
+            }
+
+            foreach (AniEvent e in aniEvents)
+            {
+                JSONObject eventObj = new JSONObject(JSONObject.Type.OBJECT);
+                float numberParameter = e.intParameter;
+                if (numberParameter == 0)
+                {
+                    numberParameter = e.floatParameter;
+                }
+                eventObj.AddField("frameId", e.frameId);
+                eventObj.AddField("functionName", e.functionName);
+                eventObj.AddField("numberParameter", numberParameter);
+                eventObj.AddField("stringParameter", e.stringParameter);
+                eventList.Add(eventObj);
+            }
+
+            for (int i = 0; i < pathList.Count; i++)
+            {
+                pathArray.Add(pathList[i]);
+            }
+
+            /*
             //1.headerBuffer.length + samplesBuffer.length 4λ
             wxFileUtil.WriteData(fileStream, default(uint));
             //2.frameRate
@@ -252,7 +378,7 @@ namespace WeChat
                 {
                     if (!info.Value.isMeta)
                     {
-                        wxFileUtil.WriteData(fileStream, info.Value.curve[j].keyId);
+                        wxFileUtil.WriteData(fileStream, info.Value.curve[j].frameId);
                         wxFileUtil.WriteData(fileStream, info.Value.curve[j].valueNumber);
                         wxFileUtil.WriteData(fileStream, info.Value.curve[j].inTangentNumber);
                         wxFileUtil.WriteData(fileStream, info.Value.curve[j].outTangentNumber);
@@ -310,7 +436,7 @@ namespace WeChat
                     {
                         if (info.Value.isMeta)
                         {
-                            wxFileUtil.WriteData(fileStream, info.Value.curve[j].keyId);
+                            wxFileUtil.WriteData(fileStream, info.Value.curve[j].frameId);
                             wxFileUtil.WriteData(fileStream, info.Value.curve[j].valueNumber);
                             wxFileUtil.WriteData(fileStream, info.Value.curve[j].inTangentNumber);
                             // wxFileUtil.WriteData(fileStream, info.Value.curve[j].inWeight);
@@ -335,6 +461,7 @@ namespace WeChat
             metadata.AddField("pathHash", GetHashString(String.Join(",", pathList.ToArray())));
 
             return fileStream.ToArray();
+            */
         }
 
         private struct PropInfo
@@ -345,7 +472,7 @@ namespace WeChat
 
         private struct CurveInfo
         {
-            public uint keyId;
+            public uint frameId;
             public float valueNumber;
             // public float inWeight;
             public float inTangentNumber;
@@ -364,14 +491,32 @@ namespace WeChat
 
         private List<double> keyFrameTimes = new List<double>();
 
+        private List<AniEvent> aniEvents = new List<AniEvent>();
+
         private List<KeyValuePair<string, PathInfo>> pathInfoArray = new List<KeyValuePair<string, PathInfo>>();
 
         private void _UpdateClip()
         {
-            List<string> names = new List<string> { "ANIMATIONS" };
-            //string objectName = gameObject.name;
             int frameRate = (int)animationClip.frameRate;
             FrameRate = frameRate;
+
+            foreach (AnimationEvent e in animationClip.events)
+            {
+                double frameId = Math.Round(e.time * frameRate, 0);
+                AniEvent aniEvent = new AniEvent
+                {
+                    frameId = (int)frameId,
+                    functionName = e.functionName,
+                    intParameter = e.intParameter,
+                    floatParameter = e.floatParameter,
+                    stringParameter = e.stringParameter,
+                };
+                aniEvents.Add(aniEvent);
+            }
+
+            //List<WXBeefBallComponent.ComponentType> list = WXBeefBallComponent.componentsOnGameObject(gameObject);
+            List<string> names = new List<string> { "ANIMATIONS" };
+            //string objectName = gameObject.name;
             string animationClipName = wxFileUtil.cleanIllegalChar(animationClip.name, true);
             names.Add(animationClipName);
             EditorCurveBinding[] curveBindings = AnimationUtility.GetCurveBindings(animationClip);
@@ -422,7 +567,7 @@ namespace WeChat
                         case "SkinnedMeshRenderer":
                         case "ParticleRenderer":
                         case "TrailRenderer":
-                        case "":
+                        case "Entity":
                             //case "":
                             {
                                 CustomAnimationCurve renderCurve = default(CustomAnimationCurve);
@@ -672,7 +817,7 @@ namespace WeChat
                     aniNodeData.propertyNameLength = 1;
                     aniNodeData.propertyNameIndex = propIndices;
                 }
-                else if (typeName == "MeshRenderer" || typeName == "SkinnedMeshRenderer" || typeName == "ParticleRenderer" || typeName == "TrailRenderer" || typeName == "")
+                else if (typeName == "MeshRenderer" || typeName == "SkinnedMeshRenderer" || typeName == "ParticleRenderer" || typeName == "TrailRenderer" || typeName == "Entity")
                 {
                     if (propArray.Length == 1)
                     {
@@ -1010,12 +1155,12 @@ namespace WeChat
                         {
                             AniNodeFrameData aniNodeFrameData = aniNodeData.aniNodeFrameDatas[k];
                             ushort timeIndex = aniNodeFrameData.startTimeIndex;
-                            double keyId = Math.Round(keyFrameTimes[timeIndex] * frameRate, 0);
+                            double frameId = Math.Round(keyFrameTimes[timeIndex] * frameRate, 0);
 
                             CurveInfo data = new CurveInfo
                             {
                                 // keyframe.time * frameRate Int32
-                                keyId = (uint)keyId,
+                                frameId = (uint)frameId,
                                 // keyframe.value[typeindex]
                                 valueNumber = (float)aniNodeFrameData.valueNumbers[j],
                                 // keyframe.inTangent[typeindex]
@@ -1036,12 +1181,12 @@ namespace WeChat
                     {
                         AniNodeFrameData aniNodeFrameData = aniNodeData.aniNodeFrameDatas[k];
                         ushort timeIndex = aniNodeFrameData.startTimeIndex;
-                        double keyId = Math.Round(keyFrameTimes[timeIndex] * frameRate, 0);
+                        double frameId = Math.Round(keyFrameTimes[timeIndex] * frameRate, 0);
 
                         CurveInfo data = new CurveInfo
                         {
                             // keyframe.time * frameRate Int32
-                            keyId = (uint)keyId,
+                            frameId = (uint)frameId,
                             // keyframe.value[typeindex]
                             valueNumber = (float)aniNodeFrameData.valueNumbers[0],
                             // keyframe.inTangent[typeindex]
@@ -1062,11 +1207,6 @@ namespace WeChat
             }
         }
 
-
-        private WXAnimationClip(string fileName)
-        {
-            _fileName = fileName;
-        }
 
         private string _fileName = null;
 

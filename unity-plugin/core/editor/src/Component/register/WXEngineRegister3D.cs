@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Playables;
 
 namespace WeChat
 {
@@ -74,6 +75,12 @@ namespace WeChat
                 obj.components.Add(context.AddComponent(new WXSkinnedMeshRenderer(skinnedMeshRenderer), skinnedMeshRenderer));
             }
 
+            LODGroup lodGroup = go.GetComponent(typeof(LODGroup)) as LODGroup;
+            if ((UnityEngine.Object)lodGroup != (UnityEngine.Object)null)
+            {
+                obj.components.Add(context.AddComponent(new WXLODGroup(lodGroup), lodGroup));
+            }
+
             Animator animator = go.GetComponent(typeof(Animator)) as Animator;
             if ((UnityEngine.Object)animator != (UnityEngine.Object)null)
             {
@@ -85,6 +92,47 @@ namespace WeChat
             {
                 obj.components.Add(context.AddComponent(new WXAnimation(animation, go), animation));
             }
+
+            PlayableDirector playableDirector = go.GetComponent(typeof(PlayableDirector)) as PlayableDirector;
+            if ((UnityEngine.Object)playableDirector != (UnityEngine.Object)null)
+            {
+                obj.components.Add(context.AddComponent(new WXPlayableDirector(playableDirector, go), playableDirector));
+            }
+            
+            // 导出所有音频相关的component. 可能会有重复的component，且音频的component顺序要保持不变
+            Component[] compList = go.GetComponents(typeof(Component));
+            foreach (Component tmpComp in compList)
+            {   
+                if (tmpComp.GetType() == typeof(AudioListener))
+                {
+                    obj.components.Add(context.AddComponent(new WXAudioListener((tmpComp as AudioListener), go), (tmpComp as AudioListener)));
+                }
+
+                if (tmpComp.GetType() == typeof(AudioHighPassFilter))
+                {
+                    obj.components.Add(context.AddComponent(new WXAudioHighPassFilter((tmpComp as AudioHighPassFilter), go), (tmpComp as AudioHighPassFilter)));
+                }
+
+                if (tmpComp.GetType() == typeof(AudioLowPassFilter))
+                {
+                    obj.components.Add(context.AddComponent(new WXAudioLowPassFilter((tmpComp as AudioLowPassFilter), go), (tmpComp as AudioLowPassFilter)));
+                }
+                
+                if (tmpComp.GetType() == typeof(AudioDistortionFilter))
+                {
+                    obj.components.Add(context.AddComponent(new WXAudioDistortionFilter((tmpComp as AudioDistortionFilter), go), (tmpComp as AudioDistortionFilter)));
+                }
+                
+                if (tmpComp.GetType() == typeof(AudioEchoFilter))
+                {
+                    obj.components.Add(context.AddComponent(new WXAudioEchoFilter((tmpComp as AudioEchoFilter), go), (tmpComp as AudioEchoFilter)));
+                }
+                
+                if (tmpComp.GetType() == typeof(AudioSource))
+                {
+                    obj.components.Add(context.AddComponent(new WXAudioSource((tmpComp as AudioSource), go), (tmpComp as AudioSource)));
+                }
+            }            
 
             // DirectionalLight,
             // PointLight,
@@ -118,7 +166,7 @@ namespace WeChat
             }
 
             // obj.active = go.activeSelf;
-            if (!preset.is2d)
+            if (!preset.presetKey.Contains("ngui"))
             {
                 obj.components.Add(context.AddComponent(new WXTransform3DComponent(go.transform), go.transform));
             }

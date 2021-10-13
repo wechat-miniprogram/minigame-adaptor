@@ -7,9 +7,9 @@ namespace WeChat {
         private PhysicMaterial material;
         string path;
         string _fileName;
-        public WXPhysicsMaterial (PhysicMaterial mat) {
+        public WXPhysicsMaterial (PhysicMaterial mat): base(AssetDatabase.GetAssetPath(mat.GetInstanceID())) {
             this.material = mat;
-            this.path = wxFileUtil.cleanIllegalChar(AssetDatabase.GetAssetPath(mat.GetInstanceID()), false);
+            this.path = wxFileUtil.cleanIllegalChar(unityAssetPath, false);
             _fileName = this.path.Split('.')[0];
         }
 
@@ -37,6 +37,7 @@ namespace WeChat {
 
             if (this.material != null)
             {
+                data.AddField("name", this.material.name);
                 data.AddField("dynamicFriction", this.material.dynamicFriction);
                 data.AddField("staticFriction", this.material.staticFriction);
                 data.AddField("bounciness", this.material.bounciness);

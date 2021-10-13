@@ -16,8 +16,6 @@ namespace WeChat
 
         public override string getTypeName() {
             return "Rigidbody";
-            // var result = rigidbody ? rigidbody.GetType().ToString() : "UnityEngine.Rigidbody";
-            // return Utils.EscapeNamespace(result);
         }
 
         public WXRigidbody(Rigidbody rigidbody)

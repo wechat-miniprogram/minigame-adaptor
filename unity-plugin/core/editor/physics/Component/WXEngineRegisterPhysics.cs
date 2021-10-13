@@ -52,6 +52,12 @@ namespace WeChat
                 obj.components.Add(context.AddComponent(new WXSphereCollider(sphereCollider.isTrigger, sphereCollider.sharedMaterial, sphereCollider.center, sphereCollider.radius), sphereCollider));
             }
 
+            CharacterController characterController = go.GetComponent<CharacterController>();
+            
+            if (characterController != null) {
+                obj.components.Add(context.AddComponent(new WXCharactorController(characterController.slopeLimit, characterController.stepOffset, characterController.skinWidth, characterController.minMoveDistance, characterController.center, characterController.radius, characterController.height)));
+            }
+      
         }   
 
     }

@@ -63,21 +63,33 @@ namespace WeChat
 
     /**
      * WXResource
-     * 使用GetResrouce可以得到unity资源对应的WXResource子类,
-     * 使用GetExport可以导出unity资源，得到对应的导出路径,
      * 无论如何同一个unity资源只会被导出一次.
      */
     public abstract class WXResource : WXExportable
     {
+        // 存储所有WXResource的地方
         public delegate WXResource ConverterFactory(GameObject go);
         public static Dictionary<Type, ConverterFactory> resourcesConverters = new Dictionary<Type, ConverterFactory>();
         public static WXResource getConverter(UnityEngine.Object obj, GameObject go)
         {
             return resourcesConverters[obj.GetType()](go);
-        } 
+        }
 
-        private List<string> dependencies = new List<string>();
-        private List<string> useFile = new List<string>();
+        // 对应的unity资源路径。当然也可能没有。
+        protected string unityAssetPath;
+        public WXResource(string unityAssetPath)
+        {
+            this.unityAssetPath = unityAssetPath;
+            // if (unityAssetPath == "")
+            // {
+            //     ErrorUtil.ExportErrorReporter.create()
+            //         .error(0, "资源转换失败，没法拿到对应的unity资源。");
+            // }
+        }
+
+        protected List<string> dependencies = new List<string>();
+        protected List<string> useFile = new List<string>();
+        protected JSONObject importSetting = null;
 
         // 添加一个依赖资源
         protected string AddDependencies(WXResource resource)
@@ -137,48 +149,13 @@ namespace WeChat
                 exportPath,
                 GetResourceType(),
                 dependencies,
-                useFile
+                useFile,
+                // 有importSetting的时候才传importSetting
+                importSetting == null ? null : importSetting
             );
 
             return true;
         }
-        //private static Dictionary<int, WXResource> resources = new Dictionary<int, WXResource>();
-        //private static Dictionary<int, string> exports = new Dictionary<int, string>();
-
-        //public static void Clear()
-        //{
-        //resources.Clear();
-        //exports.Clear();
-        //}
-        //public static T GetResource<T>(UnityEngine.Object obj) where T : WXResource, new()
-        //{
-        //    WXResource resource;
-        //    if (resources.TryGetValue(obj.GetInstanceID(), out resource))
-        //    {
-        //        return (T)resource;
-        //    }
-        //    T instance = new T();
-        //    instance._init(obj);
-        //    resources.Add(obj.GetInstanceID(), instance);
-        //    return instance;
-        //}
-
-        //public static string GetExport<T>(UnityEngine.Object obj) where T : WXResource, new()
-        //{
-        //    string export;
-        //    if (exports.TryGetValue(obj.GetInstanceID(), out export))
-        //    {
-        //        return export;
-        //    }
-        //    T instance = GetResource<T>(obj);
-        //    export = instance.Export();
-        //    exports.Add(obj.GetInstanceID(), export);
-        //    return export;
-        //}
-
-        //public virtual void _init(UnityEngine.Object obj) { }
-        //public abstract string Export(ExportPreset preset);
-
     }
 
     /**
@@ -196,6 +173,7 @@ namespace WeChat
         public long fileIdInOriginalSource = -1; // is fileId in unity
         public long prefabRootInstanceFileId = -1;
         public string prefabPath;
+        public string unityAssetPath;
         // ---------end------------
 
         public string name;
@@ -247,6 +225,7 @@ namespace WeChat
                     GameObject sourceObj = PrefabUtility.GetCorrespondingObjectFromOriginalSource(gameObject);
                     if (sourceObj != null && AssetDatabase.TryGetGUIDAndLocalFileIdentifier(sourceObj, out guid, out fileId)) {
                         string path = AssetDatabase.GUIDToAssetPath(guid);
+                        unityAssetPath = path;
                         if (!path.EndsWith(".prefab")) {
                             path = path + ".prefab";
                         }
@@ -255,18 +234,41 @@ namespace WeChat
                         if (_resourcePath != prefabPath) {
                             isPrefabNodeInParentInstance = PrefabUtility.IsPartOfPrefabInstance(gameObject);
 
-                            isOutermostPrefabRoot = PrefabUtility.IsOutermostPrefabInstanceRoot(gameObject);
-                            prefabRootInstanceFileId = WXUtility.GetFileIdInInspector(gameObject.transform);
+                            GameObject sourceGameObject = gameObject;
+                            try {
+                                // 处理S1->P1->P2的场景下，导出P1，P2应该是P1的outermostPrefabRoot
+                                if (!_resourcePath.EndsWith(".scene")) {
+                                    GameObject source = PrefabUtility.GetCorrespondingObjectFromSourceAtPath(sourceGameObject, _resourcePath);
+                                    if (source) {
+                                        sourceGameObject = source;
+                                    }
+                                }
+                            } catch {
+
+                            }
+                            isOutermostPrefabRoot = PrefabUtility.IsOutermostPrefabInstanceRoot(sourceGameObject);
+                            prefabRootInstanceFileId = WXUtility.GetFileIdInInspector(sourceGameObject.transform);
 
                             bool isAnyPrefabInstanceRoot = PrefabUtility.IsAnyPrefabInstanceRoot(gameObject);
-                            Debug.Log("prefabObj: " + gameObject.name + " isAnyPrefabInstanceRoot: " + isAnyPrefabInstanceRoot + " isOutermostPrefabRoot: " + isOutermostPrefabRoot);
+                            // Debug.Log("prefabObj: " + gameObject.name + " isAnyPrefabInstanceRoot: " + isAnyPrefabInstanceRoot + " isOutermostPrefabRoot: " + isOutermostPrefabRoot);
                             if (isAnyPrefabInstanceRoot && !isOutermostPrefabRoot) { // 如果不是最外层的prefabRoot
-                                GameObject instanceRoot = PrefabUtility.GetCorrespondingObjectFromSource(gameObject);
+                                //  处理S1->P1->P2的场景下，计算P2的prefabInstanceLocalId时，先找到P2的父节点，再通过父节点找到所在的P1文件，再拿到P2在P1中的Instance，再通过其transform的fileId作为prefabInstanceLocalId
+                                string prefabAssetPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(gameObject.transform.parent.gameObject);
+                                // GameObject instanceRoot = PrefabUtility.GetCorrespondingObjectFromSource(gameObject);
+                                GameObject instanceRoot = PrefabUtility.GetCorrespondingObjectFromSourceAtPath(gameObject, prefabAssetPath);
                                 isNestedPrefabRoot = true;
                                 if (instanceRoot != null) {
                                     prefabRootInstanceFileId = WXUtility.GetFileIdInInspector(instanceRoot.transform);
                                 }
                             }
+
+                            // string prefabAssetPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(gameObject);
+                            // bool isModelPrefabInstance = prefabAssetPath.EndsWith(".FBX");
+                            // // 对于model的根节点，统一设置其prefabRootInstanceFileId
+                            // if (isModelPrefabInstance && isAnyPrefabInstanceRoot) {
+                            //     GameObject instanceRoot = PrefabUtility.GetCorrespondingObjectFromOriginalSource(gameObject);
+                            //     prefabRootInstanceFileId = WXUtility.GetFileIdInInspector(instanceRoot.transform);
+                            // }
                         }
                         // Debug.Log("sourceObj: " + sourceObj.name + " guid: " + guid + " fileID: " + fileIdInOriginalSource + " path: " + prefabPath);
                     } else {
@@ -279,13 +281,16 @@ namespace WeChat
             if (gameObject != null && PrefabUtility.GetPrefabParent(gameObject) != null) {
                 try {
                     PrefabType type = PrefabUtility.GetPrefabType(gameObject);
-                    if (type == PrefabType.DisconnectedPrefabInstance) {
+                    if (type == PrefabType.DisconnectedPrefabInstance || 
+                        type == PrefabType.DisconnectedModelPrefabInstance || 
+                        type == PrefabType.MissingPrefabInstance) {
                         return;
                     }
 
                     UnityEngine.Object prefabGameObject = PrefabUtility.GetPrefabParent(gameObject);
                     
                     string path = AssetDatabase.GetAssetPath(prefabGameObject);
+                    unityAssetPath = path;
                     if (!path.EndsWith(".prefab")) {
                         path = path + ".prefab";
                     }

@@ -17,11 +17,15 @@ namespace WeChat
         }
 
         private Texture2D lightmapColor;
-        private string unityAssetPath;
-        public WXLightMap(Texture2D _lightmapColor)
+        public WXLightMap(Texture2D _lightmapColor): base(AssetDatabase.GetAssetPath(_lightmapColor.GetInstanceID()))
         {
             lightmapColor = _lightmapColor;
-            unityAssetPath = AssetDatabase.GetAssetPath(lightmapColor.GetInstanceID());
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .error(ErrorUtil.ErrorCode.LightMap_PathError, "Lightmap文件的unity路径为空");
+            }
         }
 
         public override string GetExportPath()

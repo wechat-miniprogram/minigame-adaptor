@@ -9,11 +9,15 @@ namespace WeChat
     {
 
         private Texture2D texture2D;
-        string path;
-        public WXTexture(Texture2D _texture)
+        public WXTexture(Texture2D _texture) : base(AssetDatabase.GetAssetPath(_texture.GetInstanceID()))
         {
             texture2D = _texture;
-            path = AssetDatabase.GetAssetPath(texture2D.GetInstanceID());
+            if (unityAssetPath == null || unityAssetPath == "")
+            {
+                ErrorUtil.ExportErrorReporter.create()
+                .setResource(this)
+                .error(ErrorUtil.ErrorCode.Texture_PathError, "Texture文件的unity路径为空");
+            }
         }
 
         protected override string GetResourceType()
@@ -23,12 +27,12 @@ namespace WeChat
 
         public override string GetExportPath()
         {
-            return wxFileUtil.cleanIllegalChar(path.Split('.')[0], false) + ".texture2d";
+            return wxFileUtil.cleanIllegalChar(unityAssetPath.Split('.')[0], false) + ".texture2d";
         }
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromAssetPath(path);
+            return WXUtility.GetMD5FromAssetPath(unityAssetPath) + WXUtility.GetMD5FromString(texture2D.name);
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)
