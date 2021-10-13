@@ -60,8 +60,5 @@ namespace WeChat {
         public static int versionIndex = 0;
         public static ExportPluginModule coreModule = null;
         public static ExportPluginModule nguiModule = null;
-        public static ExportPluginModule scriptModule = null;
-        public static ExportPluginModule behaviourModule = null;
-        public static ExportPluginModule uguiModule = null;
     }
 }

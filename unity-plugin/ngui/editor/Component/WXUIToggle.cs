@@ -28,7 +28,7 @@ namespace WeChat
         public string getStateSprite(WXHierarchyContext context, UISprite uiSprite, string spriteName)
         {
 
-            string uuid = WXSpriteFrame.getSprite(uiSprite.atlas as UIAtlas, spriteName, context.preset);
+            string uuid = WXSpriteFrame.getSprite(uiSprite.atlas, spriteName, context.preset);
             return uuid;
         }
 

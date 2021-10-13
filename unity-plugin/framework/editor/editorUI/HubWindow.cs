@@ -20,15 +20,7 @@ namespace WeChat {
             if (ExportPluginModule.nguiModule != null && PluginHub.nguiModule == null) {
                 PluginHub.nguiModule = ExportPluginModule.nguiModule;
             }
-            if (ExportPluginModule.scriptModule != null && PluginHub.scriptModule == null) {
-                PluginHub.scriptModule = ExportPluginModule.scriptModule;
-            }
-            if (ExportPluginModule.behaviourModule != null && PluginHub.behaviourModule == null) {
-                PluginHub.behaviourModule = ExportPluginModule.behaviourModule;
-            }
-            if (ExportPluginModule.uguiModule != null && PluginHub.uguiModule == null) {
-                PluginHub.uguiModule = ExportPluginModule.uguiModule;
-            }
+
 
             // 只有一项代表还没初始化
             if (PluginHub.versionList.Count == 1) {
@@ -216,103 +208,6 @@ namespace WeChat {
 
                 GUILayout.EndHorizontal ();
             }
-
-            {
-                //ugui
-                EditorGUILayout.Space ();
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label ("【选装】UGUI导出", fontStyle, GUILayout.Height (24));
-                string uguiStatusText = "";
-                if (PluginHub.uguiModule != null) {
-                    if (PluginHub.uguiModule.ModuleVersion == PluginHub.frameworkVersion) {
-                        uguiStatusText = "已安装";
-                    } else {
-                        uguiStatusText = "非法版本";
-                    }
-                } else {
-                    uguiStatusText = "未安装";
-                    // uguiStatusText = "请联系我们获取";
-                }
-                GUILayout.Label (
-                    uguiStatusText,
-                    installStatusStyle, GUILayout.Width (80), GUILayout.Height (24)
-                );
-                GUILayout.EndHorizontal ();
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label ("提供把UGUI节点导出为2D场景的能力；");
-                // if (uguiStatusText != "已安装") {
-                //     if (GUILayout.Button ("安装", moduleButtonStyle, GUILayout.Width (50))) {
-                //         InstallModule (ModulePackageName.UGUI);
-                //     }
-                // }
-                GUILayout.EndHorizontal ();
-            }
-
-            {
-                // component
-                EditorGUILayout.Space ();
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label ("【选装】behaviour导出", fontStyle, GUILayout.Height (24));
-                string componentStatusText = "";
-                if (PluginHub.behaviourModule != null) {
-                    if (PluginHub.behaviourModule.ModuleVersion == PluginHub.frameworkVersion) {
-                        componentStatusText = "已安装";
-                    } else {
-                        componentStatusText = "非法版本"; 
-                    }
-                } else {
-                    componentStatusText = "未安装";
-
-                }
-                GUILayout.Label (
-                    componentStatusText,
-                    installStatusStyle, GUILayout.Width (80), GUILayout.Height (24)
-                );
-                GUILayout.EndHorizontal ();
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label ("提供把monobebaviour属性导出的能力（不含代码）");
-
-                if (componentStatusText != "已安装" && componentStatusText != "未检测到NGUI") {
-                    if (GUILayout.Button ("安装", moduleButtonStyle, GUILayout.Width (50))) {
-                        InstallModule (ModulePackageName.NGUI);
-                    }
-                }
-
-                GUILayout.EndHorizontal ();
-            }
-
-            if (UnityVersion.UNITY_2017_1_OR_NEWER) {
-                EditorGUILayout.Space ();
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label ("【内测】脚本导出", fontStyle, GUILayout.Height (24));
-                string scriptStatusText = "";
-                if (PluginHub.scriptModule != null) {
-                    if (PluginHub.scriptModule.ModuleVersion == PluginHub.frameworkVersion) {
-                        scriptStatusText = "已安装";
-                    } else {
-                        scriptStatusText = "非法版本";
-                    }
-                } else {
-                    // 暂不广泛对外提供
-                    // scriptStatusText = "未安装";
-                    scriptStatusText = "请联系我们获取";
-                }
-                GUILayout.Label (
-                    scriptStatusText,
-                    installStatusStyle, GUILayout.Width (80), GUILayout.Height (24)
-                );
-                GUILayout.EndHorizontal ();
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label ("提供把c#代码转换成js并导出的能力。");
-
-                // if (scriptStatusText != "已安装") {
-                //     if (GUILayout.Button ("安装", moduleButtonStyle, GUILayout.Width (50))) {
-                //         InstallModule (ModulePackageName.SCRIPT);
-                //     }
-                // }
-
-                GUILayout.EndHorizontal ();
-            }
             // 模块列表 end
 
             GUILayout.EndVertical ();
@@ -348,33 +243,6 @@ namespace WeChat {
                 if (success == false)
                 {
                     Debug.LogError("NGUI切换版本失败");
-                }
-            }
-            if (PluginHub.scriptModule != null)
-            {
-                PluginHub.scriptModule.OnModuleVersionChange();
-                success = ChangeModuleVersion(ModulePackageName.SCRIPT, version);
-                if (success == false)
-                {
-                    Debug.LogError("ScriptExport切换版本失败");
-                }
-            }
-            if (PluginHub.behaviourModule != null)
-            {
-                PluginHub.behaviourModule.OnModuleVersionChange();
-                success = ChangeModuleVersion(ModulePackageName.BEHAVIOUR, version);
-                if (success == false)
-                {
-                    Debug.LogError("Bebaviour导出切换版本失败");
-                }
-            }
-            if (PluginHub.uguiModule != null)
-            {
-                PluginHub.uguiModule.OnModuleVersionChange();
-                success = ChangeModuleVersion(ModulePackageName.UGUI, version);
-                if (success == false)
-                {
-                    Debug.LogError("UGUI切换版本失败");
                 }
             }
             if (success == true)
@@ -467,7 +335,7 @@ namespace WeChat {
 
         private static string GetModulePackageName(ModulePackageName name, bool includeSuffix = true)
         {
-            string[] packageNames = { "core", "ngui", "script", "UnityTool", "behaviour", "ugui" };
+            string[] packageNames = { "core", "ngui", "UnityTool", };
             if (includeSuffix)
             {
                 for (int i = 0; i < packageNames.Length; i++)
@@ -485,22 +353,14 @@ namespace WeChat {
                 case ModulePackageName.NGUI:
                     index = 1;
                     break;
-                case ModulePackageName.SCRIPT:
-                    index = 2;
-                    break;
-                case ModulePackageName.BEHAVIOUR:
-                    index = 4;
-                    break;
-                case ModulePackageName.UGUI:
-                    index = 5;
-                    break;
+
             }
             return packageNames[index];
         }
 
         private static string GetModuleName(ModulePackageName name)
         {
-            string[] packageNames = { "core", "ngui", "script", "framework", "behaviour", "ugui" };
+            string[] packageNames = { "core", "ngui","framework" };
           
             int index = 3;
             switch (name)
@@ -511,15 +371,6 @@ namespace WeChat {
                 case ModulePackageName.NGUI:
                     index = 1;
                     break;
-                case ModulePackageName.SCRIPT:
-                    index = 2;
-                    break;
-                case ModulePackageName.BEHAVIOUR:
-                    index = 4;
-                    break;
-                case ModulePackageName.UGUI:
-                    index = 5;
-                    break;
             }
             return packageNames[index];
         }
@@ -528,10 +379,7 @@ namespace WeChat {
         {
             CORE = 0,
             NGUI = 1,
-            SCRIPT = 2,
             FRAMEWORK = 3,
-            BEHAVIOUR = 4,
-            UGUI = 5,
         }
     }
 }

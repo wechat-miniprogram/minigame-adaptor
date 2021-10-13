@@ -9,15 +9,13 @@ namespace WeChat
 {
 	class WXFont : WXResource
 	{
-		string _fontPath;
-		public WXFont(string fontPath)
+		public WXFont(string fontPath): base(fontPath)
 		{
-			_fontPath = fontPath;
 		}
 
         public override string GetHash()
         {
-            return WXUtility.GetMD5FromAssetPath(_fontPath);
+            return WXUtility.GetMD5FromAssetPath(unityAssetPath);
 		}
 
         protected override string GetResourceType()
@@ -27,14 +25,14 @@ namespace WeChat
 
         public override string GetExportPath()
         {
-            return _fontPath + ".font";
+            return unityAssetPath + ".font";
         }
 
         protected override JSONObject ExportResource(ExportPreset preset)
 		{
-            string fileName = Path.GetFileName(_fontPath);
+            string fileName = Path.GetFileName(unityAssetPath);
             string lowerFileName = fileName.ToLower();
-            _fontPath = _fontPath.Replace(fileName, lowerFileName);
+            string _fontPath = unityAssetPath.Replace(fileName, lowerFileName);
 
             JSONObject jsonFile = JSONObject.Create("{\"file\": {}}");
             jsonFile.GetField("file").AddField(

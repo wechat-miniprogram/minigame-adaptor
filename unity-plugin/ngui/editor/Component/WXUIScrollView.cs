@@ -113,7 +113,7 @@ namespace WeChat
 			subJSON.AddField("cellAlignmentX", cellAlignmentX);
 			subJSON.AddField("cellAlignmentY", cellAlignmentY);
 
-			subJSON.AddField("autoFix", true);
+
 
 			json.AddField("data", subJSON);
 			return json;

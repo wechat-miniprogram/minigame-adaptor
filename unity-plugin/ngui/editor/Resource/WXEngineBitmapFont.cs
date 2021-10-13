@@ -9,17 +9,15 @@ namespace WeChat
     class WXBitmapFont : WXResource
     {
         private UIFont _bitmapFont;
-        private string unityAssetPath;
 
-        public WXBitmapFont(UIFont bitmapFont)
+        public WXBitmapFont(UIFont bitmapFont): base(AssetDatabase.GetAssetPath(bitmapFont))
         {
             // 处理reference的情况
             while (bitmapFont.replacement != null)
             {
-                bitmapFont = bitmapFont.replacement as UIFont;
+                bitmapFont = bitmapFont.replacement;
             }
             _bitmapFont = bitmapFont;
-            unityAssetPath = AssetDatabase.GetAssetPath(_bitmapFont);
         }
 
         public override string GetExportPath()

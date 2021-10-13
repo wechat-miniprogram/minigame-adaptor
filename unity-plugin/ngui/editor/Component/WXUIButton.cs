@@ -27,7 +27,7 @@ namespace WeChat
 		public string getStateSprite(WXHierarchyContext context, UISprite uiSprite, string spriteName)
 		{
 
-			string uuid = WXSpriteFrame.getSprite(uiSprite.atlas as UIAtlas, spriteName, context.preset);
+			string uuid = WXSpriteFrame.getSprite(uiSprite.atlas, spriteName, context.preset);
 			context.AddResource(uuid);
 			return uuid;
 		}
@@ -62,18 +62,12 @@ namespace WeChat
 			colorDisabledColor.Add(255f * uiButton.disabledColor.a);
 			subJSON.AddField("disabledColor", colorDisabledColor);
 
-
 			JSONObject colorNormal = new JSONObject(JSONObject.Type.ARRAY);
-			
-			if(uiButton.tweenTarget != null){
-				var mWidget = uiButton.tweenTarget.GetComponent<UIWidget>();
-				colorNormal.Add(255f * mWidget.color.r);
-				colorNormal.Add(255f * mWidget.color.g);
-				colorNormal.Add(255f * mWidget.color.b);
-				colorNormal.Add(255f * mWidget.color.a);
-				subJSON.AddField("normalColor", colorNormal);
-			}
-
+			colorNormal.Add(255f * uiButton.defaultColor.a);
+			colorNormal.Add(255f * uiButton.defaultColor.g);
+			colorNormal.Add(255f * uiButton.defaultColor.b);
+			colorNormal.Add(255f * uiButton.defaultColor.a);
+			subJSON.AddField("normalColor", colorNormal);
 
 			UISprite uiSprite = uiButton.GetComponent(typeof(UISprite)) as UISprite;
 			if (uiSprite != null && uiSprite.atlas != null)

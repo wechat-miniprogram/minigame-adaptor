@@ -75,7 +75,7 @@ namespace WeChat
 
 				if (uiSprite.atlas != null)
 				{
-					string uuid = WXSpriteFrame.getSprite(uiSprite.atlas as UIAtlas, uiSprite.spriteName, context.preset);
+					string uuid = WXSpriteFrame.getSprite(uiSprite.atlas, uiSprite.spriteName, context.preset);
 					if (uuid == null)
 					{
 						Debug.LogWarning("获取sprite失败: " + uiSprite.spriteName);

@@ -14,7 +14,7 @@ namespace WeChat
         private string prefabPath;
         private bool exportAsScene;
         private bool exportSceneRoot;
-        public WXNGUITree(GameObject prefabRoot, string prefabPath, bool exportAsScene, bool rootExport = false)
+        public WXNGUITree(GameObject prefabRoot, string prefabPath, bool exportAsScene, bool rootExport = false): base(prefabPath)
         {
             this.prefabRoot = prefabRoot;
             this.prefabPath = prefabPath;
@@ -54,7 +54,6 @@ namespace WeChat
         {
             WXHierarchyContext hierarchyContext = new WXHierarchyContext(preset, prefabPath);
 
-            hierarchyContext.is2d = true;
             hierarchyContext.prefab2dType = typeof(WXNGUITree);
 
             // 初始化输出的JSON对象

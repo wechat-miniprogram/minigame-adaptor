@@ -13,10 +13,10 @@ namespace WeChat
         private string texturePath;
         private string picturePath;
 
-        public WXSpriteFrame(UISpriteData spriteData, string texturePath, string picturePath)
+        public WXSpriteFrame(UISpriteData spriteData, string wxTexturePath, string picturePath): base(picturePath)
         {
             data = spriteData;
-            this.texturePath = texturePath;
+            this.texturePath = wxTexturePath;
             this.picturePath = picturePath;
         }
 

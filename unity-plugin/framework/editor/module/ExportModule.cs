@@ -14,12 +14,8 @@ namespace WeChat
         public static ExportPluginModule coreModule;
         // ngui模块
         public static ExportPluginModule nguiModule;
-        // 组件属性导出模块
-        public static ExportPluginModule behaviourModule;
-        // 脚本导出模块
-        public static ExportPluginModule scriptModule;
-        // ugui导出模块
-        public static ExportPluginModule uguiModule;
+
+ 
         public static void registerExportPluginModule(string name, ExportPluginModule pluginModule)
         {
             if (name == "core")
@@ -29,18 +25,6 @@ namespace WeChat
             if (name == "ngui")
             {
                 nguiModule = pluginModule;
-            }
-            if (name == "behaviour") 
-            {
-                behaviourModule = pluginModule;
-            }
-            if (name == "script")
-            {
-                scriptModule = pluginModule;
-            }
-            if (name == "ugui")
-            {
-                uguiModule = pluginModule;
             }
         }
 

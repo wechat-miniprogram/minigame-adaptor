@@ -54,10 +54,10 @@ namespace WeChat
                     Debug.LogWarning("UI Label:" + name + " use system font!!");
                 }
             }
-            else if (uiLabel.bitmapFont as UIFont)
+            else if (uiLabel.bitmapFont)
             {
                 fontFamily = "";
-                WXBitmapFont bitmapFont = new WXBitmapFont(uiLabel.bitmapFont as UIFont);
+                WXBitmapFont bitmapFont = new WXBitmapFont(uiLabel.bitmapFont);
                 string path = bitmapFont.Export(context.preset);
                 context.AddResource(path);
                 subJSON.AddField("bitmapFont", path);
