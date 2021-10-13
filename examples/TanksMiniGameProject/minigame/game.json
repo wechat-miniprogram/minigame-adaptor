@@ -1,1 +1,0 @@
-{"deviceOrientation":"landscape","engine":true,"plugins":{"WXBridge":{"provider":"wxe92a56f105f5963d","version":"0.0.2","contexts":[{"type":"gameContext"}]},"WXEngine":{"version":"0.7.5","provider":"wx20afc706a711eefc","contexts":[{"type":"isolatedContext"}]}}}

@@ -1,1 +1,0 @@
-throw new Error('converted script not found');
