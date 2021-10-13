@@ -3,6 +3,7 @@ using UnityEditor;
 
 namespace WeChat
 {
+	
 	/**
      * 
      *
