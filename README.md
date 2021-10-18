@@ -40,10 +40,10 @@ Unity插件下载链接: [点我下载](https://dldir1.qq.com/WechatWebDev/plugi
 
 ## 联系我们
 
-对于该项目有疑问或建议，可关注“做个小游戏”公众号，在对话框中留言联系我们
-![扫码联系](./docs/image/qrcode.png)
+对于该项目有疑问或建议，可加入我们的官方微信群进行讨论：
+![扫码联系](./docs/image/wxqrcode.png)
 
-也可以加QQ群讨论：818683846
+也可以加QQ群：945479925
 
 ## 名词
 - 微信小游戏性能优化方案：该方案是整个工具链的核心，后续简称"微信方案"，详见 [该文档](https://developers.weixin.qq.com/minigame/dev/game-engine/)
