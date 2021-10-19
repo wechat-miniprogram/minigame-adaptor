@@ -241,19 +241,39 @@ namespace WeChat {
             propsObj.AddField ("lightMapType", shadowMaskFlag ? (int) LightMapType.ShadowMask : (int) LightMapType.Subtractive);
 
             // reflection probe
-             // reflection probe
             JSONObject reflectionCubeDataObj = new JSONObject (JSONObject.Type.ARRAY);
-            Debug.Log (scenePath);
-            List<Cubemap> reflectionMaps = ReflectionProbeUtil.getEnvironmentMapByScene (scenePath);
+            List<string> reflectionMaps = ReflectionProbeUtil.getReflectionEquirectangular (scenePath);
             if (reflectionMaps.Count > 0) {
                 for (int i = 0; i < reflectionMaps.Count; i++) {
                     JSONObject reflectionMapDescObj = new JSONObject (JSONObject.Type.OBJECT);
-                    WXEnvironmentMap mapConverter = new WXEnvironmentMap(reflectionMaps[i]);
-                    reflectionMapDescObj.AddField("color", AddDependencies(mapConverter));
-                    reflectionCubeDataObj.Add(reflectionMapDescObj);
+                    WXEnvironmentMap mapConverter = new WXEnvironmentMap (reflectionMaps[i]);
+                    reflectionMapDescObj.AddField ("color", AddDependencies (mapConverter));
+                    reflectionCubeDataObj.Add (reflectionMapDescObj);
                 }
             }
-            propsObj.AddField ("reflectionCubeDatas", reflectionCubeDataObj);
+            propsObj.AddField ("panoramaDatas", reflectionCubeDataObj);
+
+            // Spherical Harmonics
+            JSONObject shDataObj = new JSONObject (JSONObject.Type.ARRAY);
+            var coefficients = new float[9][];
+            UnityEngine.Rendering.SphericalHarmonicsL2 shs;
+            LightProbes.GetInterpolatedProbe (new UnityEngine.Vector3 (), null, out shs);
+            if (shs != null) {
+                for (int i = 0; i < 9; i++) {
+                    coefficients[i] = new float[3];
+                    for (var j = 0; j < 3; j++)
+                    {
+                        coefficients[i][j] = shs[j, i];
+                        Debug.Log (coefficients[i][j]);
+                        shDataObj.Add(coefficients[i][j]);
+                    }
+                }
+                propsObj.AddField ("shCoefficients", shDataObj);
+            } else {
+                Debug.LogWarning ("There is no baked light probe.");
+            }
+
+
         }
 
         private void GetPhysicsConfig (JSONObject phyObj, WXHierarchyContext context) {

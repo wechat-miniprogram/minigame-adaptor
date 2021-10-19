@@ -3,20 +3,30 @@
 Shader "WXBBShader/StandardLit" {
 
 	Properties{
+		[HideInInspector] _WorkflowMode("WorkflowMode", Float) = 1.0
 		_MainTex("Main Map", 2D) = "white" {}
-		_Color("Base Color", Color) = (1,1,1,1)
+		_Color("Base Color", Color) = (0.5,0.5,0.5,1)
+
 		_NormalMap("Normal", 2D) = "bump" {}
-		_MetallicGlossMap("MatallicGloss", 2D) = "black" {}
-		_Metallic("Metallic", Range(0.0, 1.0)) = 1.0
+
+		_Glossiness("Smoothness", Range(0.0, 1.0)) = 0.5
 		_GlossMapScale("Smoothness Scale", Range(0.0, 1.0)) = 1.0
-		_OcclusionMap("Occlusion", 2D) = "black" {}
-		_EmissionMap("Emissive Texture", 2D) = "black" {}
-		_EmissionColor("Emissive Color", Color) = (1.0, 1.0, 1.0, 1.0)
-		[HideInInspector] _SpecularSource("__source", Float) = 0.0
+		_SmoothnessTextureChannel("Smoothness texture channel", Float) = 0
+
+		_Metallic("Metallic", Range(0.0, 1.0)) = 0.0
+		_MetallicGlossMap("Metallic", 2D) = "white" {}
+
+		_Specular("Specular", Color) = (0.2, 0.2, 0.2)
+		_SpecGlossMap("Specular", 2D) = "white" {}
+		
+		_OcclusionMap("Occlusion", 2D) = "white" {}
+
+		_EmissionColor("Color", Color) = (0,0,0)
+		_EmissionMap("Emission", 2D) = "black" {}
 
 		[ToggleOff] _AlphaTest("AlphaTest", Float) = 0.0
-		_Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.01
 		[ToggleOff] _AlphaBlend("AlphaBlend", Float) = 0.0
+		_Cutoff("Alpha Cutoff", Range(0.0, 1.0)) = 0.5
 
 		[HideInInspector] _Lighting("__Lighting", Float) = 0.0
 		[HideInInspector] _Fog("__Fog", Float) = 0.0
@@ -41,11 +51,17 @@ Shader "WXBBShader/StandardLit" {
 			Cull[_Cull]
 
 			CGPROGRAM
-			#pragma shader_feature USE_NORMAL_MAP
-			#pragma shader_feature USE_EMISSIVE_MAP
-			#pragma shader_feature USE_AO_MAP
-			#pragma shader_feature USE_METALLIC_MAP
+			#pragma shader_feature _SPECULAR_SETUP
+			#pragma shader_feature USE_METALLICSPECGLOSSMAP
+			#pragma shader_feature USE_SPECGLOSSMAP
+			#pragma shader_feature USE_METALLICGLOSSMAP
+			#pragma shader_feature _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+			#pragma shader_feature USE_NORMALMAP
+			#pragma shader_feature USE_EMISSIONMAP
+			#pragma shader_feature USE_AOMAP
 			#pragma shader_feature ENABLE_ALPHA_CUTOFF
+			#pragma shader_feature _ALPHABLEND_ON
+			#pragma shader_feature _ALPHATEST_ON
 			#pragma shader_feature EnableLighting
 			#pragma shader_feature EnableFog
 
@@ -58,9 +74,34 @@ Shader "WXBBShader/StandardLit" {
 
 			#include "Lighting.cginc"
 			#include "AutoLight.cginc"
-			#include "./inc/brdf.hlsl"
-			#include "./inc/unityUtils.hlsl"
-			#include "./inc/dataStruct.hlsl"
+
+			struct a2v {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 tangent : TANGENT;
+				float4 texcoord : TEXCOORD0;
+				float4 texcoord1: TEXCOORD1;
+			};
+
+			struct v2f {
+				float4 pos : SV_POSITION;
+				float2 uv : TEXCOORD0;
+				float2 uv2: TEXCOORD1; // lightmap uv
+				float3 normalWS: TEXCOORD2;
+				float3 viewDirWS: TEXCOORD3;
+				float3 lightDirWS: TEXCOORD4;
+				#if defined(USE_NORMALMAP)
+					float3 tangentWS: TEXCOORD5;
+					float3 bitangentWS: TEXCOORD6;
+				#endif
+				float4 positionWS: TEXCOORD7;
+				SHADOW_COORDS(8)
+				UNITY_FOG_COORDS(9)
+			};
+
+			#include "./ForwardLit/material.hlsl"
+			#include "./ForwardLit/input.hlsl"
+			#include "./ForwardLit/lit.hlsl"
 			
 			v2f vert(a2v v) {
 
@@ -82,12 +123,11 @@ Shader "WXBBShader/StandardLit" {
 
 				o.lightDirWS = normalize(UnityWorldSpaceLightDir(o.positionWS));
 
-				#if defined(USE_NORMAL_MAP)
+				#if defined(USE_NORMALMAP)
 					o.tangentWS = UnityObjectToWorldDir(v.tangent.xyz);
 					o.bitangentWS = cross(o.normalWS, o.tangentWS) * v.tangent.w;
 				#endif
 
-				// Pass shadow coordinates to pixel shader
 				TRANSFER_SHADOW(o);
 				UNITY_TRANSFER_FOG(o, o.pos);
 
@@ -96,15 +136,22 @@ Shader "WXBBShader/StandardLit" {
 			
 			fixed4 frag(v2f i) : SV_Target {
 
-				SurfaceData surfaceData = (SurfaceData)0;;
-				InitializeSurfaceData(i.uv, surfaceData);
+				Material material = (Material)0;
+				InitMaterial(i.uv, material);
 
 				PixelInput pixelInput = (PixelInput)0;
-				InitializePixelInput(i, surfaceData.normalTS, pixelInput);
+				InitPixelInput(i, material.normalTS, pixelInput);
 
-				fixed3 color = StandardLightingBase(surfaceData, pixelInput, _LightColor0.xyz, i.lightDirWS);
+				BRDFData brdfData = (BRDFData)0;;
+				InitializeBRDFData(material.albedo, material.metallic, material.specular, material.smoothness, brdfData);
+
+				half3 color = LightingPhysicallyBased(brdfData, _LightColor0.xyz, i.lightDirWS, 1.0, pixelInput.normalWS, pixelInput.viewDirWS);
+
+				color += GlobalIllumination(brdfData, pixelInput.bakedGI, material.occlusion, pixelInput.normalWS, pixelInput.viewDirWS);
 				
-				fixed4 finalColor = fixed4(color, surfaceData.alpha);
+				color += material.emission;
+
+				fixed4 finalColor = fixed4(color, material.alpha);
 				
 				#if EnableFog
 					UNITY_APPLY_FOG(i.fogCoord, finalColor);
@@ -117,92 +164,114 @@ Shader "WXBBShader/StandardLit" {
 			ENDCG
 		}
 
-		// Pass {
-		// 	Tags { "LightMode" = "ForwardAdd" }
+		Pass {
+			Tags { "LightMode" = "ForwardAdd" }
 
-		// 	Blend One One
-		// 	ZWrite[_ZWrite]
-		// 	ZTest[_ZTest]
-		// 	Cull[_Cull]
+			Blend One One
+			ZWrite[_ZWrite]
+			ZTest[_ZTest]
+			Cull[_Cull]
 
-		// 	CGPROGRAM
-		// 	#pragma shader_feature USE_NORMAL_MAP
-		// 	#pragma shader_feature USE_EMISSIVE_MAP
-		// 	#pragma shader_feature USE_AO_MAP
-		// 	#pragma shader_feature USE_METALLIC_MAP
-		// 	#pragma shader_feature ENABLE_ALPHA_CUTOFF
-		// 	#pragma shader_feature EnableLighting
-		// 	#pragma shader_feature EnableFog
+			CGPROGRAM
+			#pragma shader_feature _SPECULAR_SETUP
+			#pragma shader_feature USE_METALLICSPECGLOSSMAP
+			#pragma shader_feature USE_SPECGLOSSMAP
+			#pragma shader_feature USE_METALLICGLOSSMAP
+			#pragma shader_feature _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+			#pragma shader_feature USE_NORMALMAP
+			#pragma shader_feature USE_EMISSIONMAP
+			#pragma shader_feature USE_AOMAP
+			#pragma shader_feature ENABLE_ALPHA_CUTOFF
+			#pragma shader_feature _ALPHABLEND_ON
+			#pragma shader_feature _ALPHATEST_ON
+			#pragma shader_feature EnableLighting
+			#pragma shader_feature EnableFog
 
-		// 	#pragma multi_compile_fwdadd
-		// 	#pragma multi_compile_fog
-		// 	#pragma multi_compile POINT SPOT
+			#pragma multi_compile_fwdadd
+			#pragma multi_compile_fog
+			#pragma multi_compile POINT SPOT
 
-		// 	#pragma vertex vert
-		// 	#pragma fragment frag
+			#pragma vertex vert
+			#pragma fragment frag
 
-		// 	#include "Lighting.cginc"
-		// 	#include "AutoLight.cginc"
-		// 	#include "./inc/brdf.hlsl"
-		// 	#include "./inc/unityUtils.hlsl"
-		// 	#include "./inc/dataStruct.hlsl"
-		// 	#include "./inc/light.hlsl"
+			#include "Lighting.cginc"
+			#include "AutoLight.cginc"
+			struct a2v {
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
+				float4 tangent : TANGENT;
+				float4 texcoord : TEXCOORD0;
+				float4 texcoord1: TEXCOORD1;
+			};
 
-		// 	v2f vert(a2v v) {
+			struct v2f {
+				float4 pos : SV_POSITION;
+				float2 uv : TEXCOORD0;
+				float3 normalWS: TEXCOORD1;
+				float3 viewDirWS: TEXCOORD2;
+				#if defined(USE_NORMALMAP)
+					float3 tangentWS: TEXCOORD3;
+					float3 bitangentWS: TEXCOORD4;
+				#endif
+				float4 positionWS: TEXCOORD5;
+				UNITY_FOG_COORDS(6)
+			};
 
-		// 		v2f o;
+			#include "./ForwardLit/material.hlsl"
+			#include "./ForwardLit/input.hlsl"
+			#include "./ForwardLit/lit.hlsl"
+			#include "./ForwardLit/light.hlsl"
 
-		// 		o.pos = UnityObjectToClipPos(v.vertex);
+			v2f vert(a2v v) {
 
-		// 		o.positionWS = mul(unity_ObjectToWorld, v.vertex);
+				v2f o;
 
-		// 		o.viewDirWS = UnityWorldSpaceViewDir(o.positionWS);
+				o.pos = UnityObjectToClipPos(v.vertex);
 
-		// 		o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
+				o.positionWS = mul(unity_ObjectToWorld, v.vertex);
+
+				o.viewDirWS = UnityWorldSpaceViewDir(o.positionWS);
+
+				o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
 				
-		// 		o.normalWS = UnityObjectToWorldNormal(v.normal);
+				o.normalWS = UnityObjectToWorldNormal(v.normal);
 
-		// 		#ifdef LIGHTMAP_ON
-		// 			o.uv2 = v.texcoord1.xy * unity_LightmapST.xy + unity_LightmapST.zw;
-		// 		#endif
+				#if defined(USE_NORMALMAP)
+					o.tangentWS = UnityObjectToWorldDir(v.tangent.xyz);
+					o.bitangentWS = cross(o.normalWS, o.tangentWS) * v.tangent.w;
+				#endif
 
-		// 		o.lightDirWS = normalize(UnityWorldSpaceLightDir(o.positionWS));
+				UNITY_TRANSFER_FOG(o, o.pos);
 
-		// 		#if defined(USE_NORMAL_MAP)
-		// 			o.tangentWS = UnityObjectToWorldDir(v.tangent.xyz);
-		// 			o.bitangentWS = cross(o.normalWS, o.tangentWS) * v.tangent.w;
-		// 		#endif
-
-		// 		// Pass shadow coordinates to pixel shader
-		// 		UNITY_TRANSFER_FOG(o, o.pos);
-
-		// 		return o;
-		// 	}
+				return o;
+			}
 			
-		// 	fixed4 frag(v2f i) : SV_Target {
+			fixed4 frag(v2f i) : SV_Target {
 
-		// 		SurfaceData surfaceData = (SurfaceData)0;;
-		// 		InitializeSurfaceData(i.uv, surfaceData);
+				Material material = (Material)0;
+				InitMaterial(i.uv, material);
 
-		// 		PixelInput pixelInput = (PixelInput)0;
-		// 		InitializePixelInputCore(i, surfaceData.normalTS, pixelInput);
+				PixelInput pixelInput = (PixelInput)0;
+				InitPixelInputAddPass(i, material.normalTS, pixelInput);
 
-		// 		Light light = GetAdditionalLight(i.positionWS);
-		// 		half3 lightDir = light.direction;
+				BRDFData brdfData = (BRDFData)0;;
+				InitializeBRDFData(material.albedo, material.metallic, material.specular, material.smoothness, brdfData);
 
-		// 		fixed3 color = StandardLightingAdd(surfaceData, pixelInput, _LightColor0.xyz, i.lightDirWS, light.attenuation);
+				Light light = GetAdditionalLight(i.positionWS);
+
+				half3 color = LightingPhysicallyBased(brdfData, _LightColor0.xyz, light.direction, light.attenuation, pixelInput.normalWS, pixelInput.viewDirWS);
 				
-		// 		fixed4 finalColor = fixed4(color, surfaceData.alpha);
+				fixed4 finalColor = fixed4(color, material.alpha);
 				
-		// 		#if EnableFog
-		// 			UNITY_APPLY_FOG(i.fogCoord, finalColor);
-		// 		#endif
+				#if EnableFog
+					UNITY_APPLY_FOG(i.fogCoord, finalColor);
+				#endif
 				
-		// 		return finalColor;
-		// 	}
+				return finalColor;
+			}
 
-		// 	ENDCG
-		// }
+			ENDCG
+		}
 	}
 	CustomEditor "WeChat.StandardLitGUI"
 	FallBack "Standard"

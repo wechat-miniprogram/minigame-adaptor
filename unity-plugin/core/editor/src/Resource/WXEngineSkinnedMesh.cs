@@ -344,6 +344,7 @@ namespace WeChat
             long vertexLength = 0L;
             long indiceStart = 0L;
             long indiceLength = 0L;
+            long boneEndPosition = 0L;
             // 记录vertexBuffer在总buffer里的起始位置,一般是0
             vertexStart = fileStream.Position;
             // 用于算包围球，计算模型的重心（所有点的位置均值）
@@ -430,7 +431,6 @@ namespace WeChat
             }
 
             long boneStartPosition = fileStream.Position;
-            long boneEndPosition = boneStartPosition;
             if (mesh.bindposes != null && mesh.bindposes.Length != 0)
             {
                 Matrix4x4[] bonePoses = new Matrix4x4[mesh.bindposes.Length];

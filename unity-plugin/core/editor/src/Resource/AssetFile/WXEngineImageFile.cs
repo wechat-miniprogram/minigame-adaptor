@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 namespace WeChat {
-    internal abstract class WXEngineImageFile : WXAssetFile {
+    public abstract class WXEngineImageFile : WXAssetFile {
         public WXEngineImageFile (string unityAssetPath) : base (unityAssetPath) { }
 
         protected override bool DoExport () {

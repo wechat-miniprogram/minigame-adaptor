@@ -98,25 +98,35 @@ namespace WeChat {
             OFF = 1,
         }
 
+        public enum WorkflowMode {
+            Specular = 0,
+            Metallic
+        }
+
+        public enum SmoothnessMapChannel {
+            SpecularMetallicAlpha,
+            AlbedoAlpha,
+        }
+        MaterialProperty workflowMode;
+
         MaterialProperty fog = null;
-
-        MaterialProperty albedoTexture = null;
+        MaterialProperty albedoMap = null;
         MaterialProperty albedoColor = null;
-
-        MaterialProperty emissiveTexture = null;
-        MaterialProperty emissiverColor = null;
-
-        MaterialProperty normalTexture = null;
-        MaterialProperty metallicTexture = null;
-        MaterialProperty smoothnessScale = null;
+        MaterialProperty emissionMap = null;
+        MaterialProperty emissionColorForRendering = null;
+        MaterialProperty normalMap = null;
         MaterialProperty metallic = null;
-        MaterialProperty occlusionTexture = null;
+        MaterialProperty metallicGlossMap;
+        MaterialProperty specColor;
+        MaterialProperty specGlossMap;
+        MaterialProperty smoothness;
+        MaterialProperty smoothnessScale;
+        MaterialProperty smoothnessMapChannel;
+        MaterialProperty occlusionMap = null;
         MaterialProperty clearCoat = null;
         MaterialProperty clearCoatRoughness = null;
-
         MaterialProperty cullMode = null;
         MaterialProperty renderMode = null;
-
         MaterialProperty alphaTest = null;
         MaterialProperty alphaCutoff = null;
         MaterialProperty alphaBlend = null;
@@ -124,30 +134,30 @@ namespace WeChat {
         MaterialProperty dstBlendMode = null;
         MaterialProperty depthWrite = null;
         MaterialProperty depthTest = null;
-
         MaterialEditor m_MaterialEditor;
 
         bool m_FirstTimeApply = true;
         bool m_ClearCoatMode = false;
 
         public void FindProperties (MaterialProperty[] props) {
+
+            workflowMode = FindProperty ("_WorkflowMode", props);
             fog = FindProperty ("_Fog", props);
-
-            albedoTexture = FindProperty ("_MainTex", props);
+            albedoMap = FindProperty ("_MainTex", props);
             albedoColor = FindProperty ("_Color", props);
-
-            emissiveTexture = FindProperty ("_EmissionMap", props);
-            emissiverColor = FindProperty ("_EmissionColor", props);
-
-            normalTexture = FindProperty ("_NormalMap", props);
-
-            metallicTexture = FindProperty ("_MetallicGlossMap", props);
-
-            smoothnessScale = FindProperty ("_GlossMapScale", props, false);
-
+            emissionMap = FindProperty ("_EmissionMap", props);
+            emissionColorForRendering = FindProperty ("_EmissionColor", props);
+            normalMap = FindProperty ("_NormalMap", props);
+            metallicGlossMap = FindProperty ("_MetallicGlossMap", props);
             metallic = FindProperty ("_Metallic", props, false);
+            specGlossMap = FindProperty ("_SpecGlossMap", props);
+            specColor = FindProperty ("_Specular", props);
+            smoothness = FindProperty ("_Glossiness", props);
+            smoothnessScale = FindProperty ("_GlossMapScale", props, false);
+            smoothnessMapChannel = FindProperty ("_SmoothnessTextureChannel", props, false);
 
-            occlusionTexture = FindProperty ("_OcclusionMap", props);
+            occlusionMap = FindProperty ("_OcclusionMap", props);
+
             try {
                 clearCoat = FindProperty ("_ClearCoat", props, false);
                 clearCoatRoughness = FindProperty ("_ClearCoatRoughness", props, false);
@@ -174,192 +184,62 @@ namespace WeChat {
             // render the default gui
             FindProperties (props);
             m_MaterialEditor = materialEditor;
-            Material material = materialEditor.target as Material;
+            Material material = m_MaterialEditor.target as Material;
 
             if (m_FirstTimeApply) {
                 onChangeRender (material, (RenderMode) material.GetFloat ("_Mode"));
                 m_FirstTimeApply = false;
             }
-
             ShaderPropertiesGUI (material);
-            Debug.Log("133231");
         }
 
         public void ShaderPropertiesGUI (Material material) {
             // Use default labelWidth
             EditorGUIUtility.labelWidth = 0f;
 
-            // Detect any changes to the material
+            // // Detect any changes to the material
             EditorGUI.BeginChangeCheck (); {
-                //renderMode
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label (Styles.renderModeText, GUILayout.Width (120));
-                var mode = (RenderMode) renderMode.floatValue;
-                mode = (RenderMode) EditorGUILayout.Popup ((int) mode, Styles.renderModeNames);
-                GUILayout.EndHorizontal ();
+                //WorkFlow
+                DoPopup (Styles.workflowModeText, workflowMode, Styles.workflowNames);
 
-                //fogMode
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label (Styles.fogModeText, GUILayout.Width (120));
-                var fogValue = (LightingMode) fog.floatValue;
-                fogValue = (LightingMode) EditorGUILayout.Popup ((int) fogValue, Styles.lightingNames);
-                GUILayout.EndHorizontal ();
+                //RenderMode
+                DoPopup (Styles.renderModeText, renderMode, Styles.renderModeNames);
 
-                //Primary properties
+                //FogMode
+                DoPopup (Styles.fogModeText, fog, Styles.lightingNames);
+
+                //Primary props
                 GUILayout.Label (Styles.PrimaryText, EditorStyles.boldLabel);
 
-                //albedo
-                m_MaterialEditor.TexturePropertySingleLine (Styles.albedoText, albedoTexture, albedoColor);
+                DoAlbedoArea ();
 
-                //mormal
-                m_MaterialEditor.TexturePropertySingleLine (Styles.normalMapText, normalTexture);
+                DoMetallicSpecularArea ();
 
-                // metallic
-                bool hasGlossMap = metallicTexture.textureValue != null;
-                m_MaterialEditor.TexturePropertySingleLine (Styles.metallicMapText, metallicTexture, hasGlossMap ? null : metallic);
+                DoNormalArea ();
 
-                int indentation = 2; // align with labels of texture properties
-                m_MaterialEditor.ShaderProperty (smoothnessScale, Styles.smoothnessScaleText, indentation);
+                m_MaterialEditor.TexturePropertySingleLine (Styles.occlusionText, occlusionMap, null);
 
-                m_MaterialEditor.TexturePropertySingleLine (Styles.occlusionMapText, occlusionTexture);
-
-                m_MaterialEditor.TexturePropertySingleLine (Styles.emissiveMapText, emissiveTexture, emissiverColor);
+                DoEmissionArea ();
 
                 if (m_ClearCoatMode && clearCoat != null && clearCoatRoughness != null) {
                     m_MaterialEditor.ShaderProperty (clearCoat, Styles.clearCoatText);
                     m_MaterialEditor.ShaderProperty (clearCoatRoughness, Styles.clearCoatRoughnessText);
                 }
 
-                //scaleAndOffset
-                m_MaterialEditor.TextureScaleOffsetProperty (albedoTexture);
+                //ScaleAndOffset
+                m_MaterialEditor.TextureScaleOffsetProperty (albedoMap);
 
                 GUILayout.Box ("", GUILayout.Height (1), GUILayout.ExpandWidth (true));
 
-                //Advanced properties
-                GUILayout.Label (Styles.AdvancedText, EditorStyles.boldLabel);
-                //alphaTest
-                m_MaterialEditor.ShaderProperty (alphaTest, Styles.alphaTestText);
-                if (alphaTest.floatValue == 1) {
-                    m_MaterialEditor.ShaderProperty (alphaCutoff, Styles.alphaCutoffText, MaterialEditor.kMiniTextureFieldLabelIndentLevel + 1);
-                }
-
-                //alphaBlend
-                m_MaterialEditor.ShaderProperty (alphaBlend, Styles.alphaBlendText);
-                var dstMode = (DstBlendMode) dstBlendMode.floatValue;
-                var srcMode = (SrcBlendMode) srcBlendMode.floatValue;
-                if (alphaBlend.floatValue == 1) {
-                    GUILayout.BeginHorizontal ();
-                    GUILayout.Label ("", GUILayout.Width (20));
-                    srcMode = (SrcBlendMode) EditorGUILayout.Popup ((int) srcMode, Styles.srcBlendNames);
-                    dstMode = (DstBlendMode) EditorGUILayout.Popup ((int) dstMode, Styles.dstBlendNames);
-                    GUILayout.EndHorizontal ();
-                }
-
-                //depthWrite
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label (Styles.depthWriteText, GUILayout.Width (120));
-                var depthW = (DepthWrite) depthWrite.floatValue;
-                depthW = (DepthWrite) EditorGUILayout.Popup ((int) depthW, Styles.depthWriteNames);
-                GUILayout.EndHorizontal ();
-
-                //depthTest
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label (Styles.depthTestText, GUILayout.Width (120));
-                var depthT = (DepthTest) depthTest.floatValue;
-                depthT = (DepthTest) EditorGUILayout.Popup ((int) depthT, Styles.depthTestNames);
-                GUILayout.EndHorizontal ();
-
-                //cullMode
-                GUILayout.BeginHorizontal ();
-                GUILayout.Label (Styles.cullModeText, GUILayout.Width (120));
-                var cull = (CullMode) cullMode.floatValue;
-                cull = (CullMode) EditorGUILayout.Popup ((int) cull, Styles.cullModeNames);
-                GUILayout.EndHorizontal ();
+                DoRenderStates (material);
 
                 if (EditorGUI.EndChangeCheck ()) {
-                    m_MaterialEditor.RegisterPropertyChangeUndo ("Rendering Mode");
-
-                    //renderMode
-                    renderMode.floatValue = (float) mode;
-
-                    //lightMode
-                    fog.floatValue = (float) fogValue;
-                    material.SetInt ("_Fog", (int) fogValue);
-
-                    if (fog.floatValue == 0) {
-                        material.EnableKeyword ("EnableFog");
-                    } else {
-                        material.DisableKeyword ("EnableFog");
-                    }
-
-                    //cullMode
-                    cullMode.floatValue = (float) cull;
-                    material.SetInt ("_Cull", (int) cull);
-
-                    if ((RenderMode) material.GetFloat ("_Mode") == RenderMode.Custom) {
-                        //alphaTest
-                        if (alphaTest.floatValue == 1) {
-                            material.EnableKeyword ("ENABLE_ALPHA_CUTOFF");
-                            material.EnableKeyword ("_ALPHATEST_ON");
-                        } else {
-                            material.DisableKeyword ("ENABLE_ALPHA_CUTOFF");
-                            material.DisableKeyword ("_ALPHATEST_ON");
-                        }
-
-                        //alphaBlend
-                        if (alphaBlend.floatValue == 1) {
-                            srcBlendMode.floatValue = (float) srcMode;
-                            dstBlendMode.floatValue = (float) dstMode;
-                            material.SetInt ("_SrcBlend", (int) srcMode);
-                            material.SetInt ("_DstBlend", (int) dstMode);
-                            material.EnableKeyword ("_ALPHABLEND_ON");
-                            material.SetInt ("_AlphaBlend", 1);
-                        } else {
-                            material.DisableKeyword ("_ALPHABLEND_ON");
-                            material.SetInt ("_AlphaBlend", 0);
-                            material.SetInt ("_SrcBlend", (int) 1);
-                            material.SetInt ("_DstBlend", (int) 0);
-                        }
-
-                        //depthWrite
-                        depthWrite.floatValue = (float) depthW;
-                        material.SetInt ("_ZWrite", (int) depthW);
-
-                        //depthTest
-                        depthTest.floatValue = (float) depthT;
-                        material.SetInt ("_ZTest", (int) depthT);
-
-                    }
-
-                    if (normalTexture.textureValue != null) {
-                        material.EnableKeyword ("USE_NORMAL_MAP");
-                    } else {
-                        material.DisableKeyword ("USE_NORMAL_MAP");
-                    }
-
-                    if (occlusionTexture.textureValue != null) {
-                        material.EnableKeyword ("USE_AO_MAP");
-                    } else {
-                        material.DisableKeyword ("USE_AO_MAP");
-                    }
-
-                    if (metallicTexture.textureValue != null) {
-                        material.EnableKeyword ("USE_METALLIC_MAP");
-                        Debug.Log ("hi");
-                    } else {
-                        material.DisableKeyword ("USE_METALLIC_MAP");
-                        Debug.Log ("no");
-                    }
-
-                    if (emissiveTexture.textureValue != null) {
-                        material.EnableKeyword ("USE_EMISSIVE_MAP");
-                    } else {
-                        material.DisableKeyword ("USE_EMISSIVE_MAP");
-                    }
-
+                    SetMaterialKeywords (material);
                     onChangeRender (material, (RenderMode) material.GetFloat ("_Mode"));
                 }
+
             }
+
             m_MaterialEditor.RenderQueueField ();
         }
 
@@ -432,26 +312,30 @@ namespace WeChat {
             public static string emptyTootip = "";
             public static GUIContent albedoText = new GUIContent ("Albedo", "Albedo (RGB) and Transparency (A)");
             public static GUIContent normalMapText = new GUIContent ("Normal", "Normal");
-            public static GUIContent occlusionMapText = new GUIContent ("Occlusion", "Occlusion");
+            public static GUIContent occlusionText = new GUIContent ("Occlusion", "Occlusion");
             public static GUIContent metallicMapText = new GUIContent ("Metallic", "Metallic");
             public static GUIContent clearCoatText = new GUIContent ("ClearCoat", "ClearCoat");
             public static GUIContent clearCoatRoughnessText = new GUIContent ("ClearCoatRoughness", "ClearCoatRoughness");
-            public static GUIContent fogIntensityText = new GUIContent ("Fog Intensity", "Fog Intensity");
-            public static GUIContent emissiveMapText = new GUIContent ("Emissive", "Emissive");
-
-            public static GUIContent fogModeText = new GUIContent ("Fog", "Fog");
-            public static GUIContent cullModeText = new GUIContent ("Cull", "CullMode");
-            public static GUIContent renderModeText = new GUIContent ("RenderMode", "RenderMode");
+            public static GUIContent emissionText = new GUIContent ("Emissive", "Emissive");
             public static GUIContent alphaTestText = new GUIContent ("AlphaTest", "AlphaTest");
             public static GUIContent alphaCutoffText = new GUIContent ("Alpha Cutoff", "Threshold for alpha cutoff");
             public static GUIContent alphaBlendText = new GUIContent ("AlphaBlend", "AlphaBlend");
-            public static GUIContent depthWriteText = new GUIContent ("DepthWrite", "DepthWrite");
-            public static GUIContent depthTestText = new GUIContent ("DepthTest", "DepthTest");
+            public static string depthWriteText = "DepthWrite";
+            public static string depthTestText = "DepthTest";
+            public static string cullModeText = "CullMode";
             public static GUIContent smoothnessScaleText = new GUIContent ("Smoothness", "Smoothness scale factor");
-
+            public static GUIContent specularMapText = new GUIContent ("Specular", "Specular (RGB) and Smoothness (A)");
+            public static GUIContent smoothnessText = new GUIContent ("Smoothness", "Smoothness value");
+            public static GUIContent smoothnessMapChannelText = new GUIContent ("Source", "Smoothness texture and channel");
             public static string whiteSpaceString = " ";
             public static string PrimaryText = "Primary Properties";
             public static string AdvancedText = "Advanced Properties";
+            public static string workflowModeText = "WorkFlow";
+            public static string renderModeText = "RenderMode";
+            public static string fogModeText = "Fog";
+            public static readonly string[] workflowNames = Enum.GetNames (typeof (WorkflowMode));
+            public static readonly string[] metallicSmoothnessChannelNames = { "Metallic Alpha", "Albedo Alpha" };
+            public static readonly string[] specularSmoothnessChannelNames = { "Specular Alpha", "Albedo Alpha" };
 
             public static readonly string[] srcBlendNames = Enum.GetNames (typeof (SrcBlendMode));
             public static readonly string[] dstBlendNames = Enum.GetNames (typeof (DstBlendMode));
@@ -461,6 +345,168 @@ namespace WeChat {
             public static readonly string[] depthTestNames = Enum.GetNames (typeof (DepthTest));
             public static readonly string[] lightingNames = Enum.GetNames (typeof (LightingMode));
         }
+
+        protected void DoPopup (string label, MaterialProperty property, string[] options) {
+            if (property == null)
+                throw new ArgumentNullException ("property");
+
+            EditorGUI.showMixedValue = property.hasMixedValue;
+
+            var mode = property.floatValue;
+            EditorGUI.BeginChangeCheck ();
+            mode = EditorGUILayout.Popup (label, (int) mode, options);
+            if (EditorGUI.EndChangeCheck ()) {
+                m_MaterialEditor.RegisterPropertyChangeUndo (label);
+                property.floatValue = (float) mode;
+            }
+
+            EditorGUI.showMixedValue = false;
+        }
+
+        // Do Material Properties
+        void DoAlbedoArea () {
+            m_MaterialEditor.TexturePropertySingleLine (Styles.albedoText, albedoMap, albedoColor);
+        }
+
+        void DoMetallicSpecularArea () {
+            string[] metallicSpecSmoothnessChannelName;
+            bool hasGlossMap = false;
+            if ((WorkflowMode) workflowMode.floatValue == WorkflowMode.Metallic) {
+                hasGlossMap = metallicGlossMap.textureValue != null;
+                metallicSpecSmoothnessChannelName = Styles.metallicSmoothnessChannelNames;
+                m_MaterialEditor.TexturePropertySingleLine (Styles.metallicMapText, metallicGlossMap, hasGlossMap ? null : metallic);
+            } else {
+                hasGlossMap = specGlossMap.textureValue != null;
+                metallicSpecSmoothnessChannelName = Styles.specularSmoothnessChannelNames;
+                m_MaterialEditor.TexturePropertySingleLine (Styles.specularMapText, specGlossMap, hasGlossMap ? null : specColor);
+            }
+
+            bool showSmoothnessScale = hasGlossMap;
+            if (smoothnessMapChannel != null) {
+                int smoothnessChannel = (int) smoothnessMapChannel.floatValue;
+                if (smoothnessChannel == (int) SmoothnessMapChannel.AlbedoAlpha)
+                    showSmoothnessScale = true;
+            }
+
+            int indentation = 2; // align with labels of texture props
+            m_MaterialEditor.ShaderProperty (showSmoothnessScale ? smoothnessScale : smoothness, showSmoothnessScale ? Styles.smoothnessScaleText : Styles.smoothnessText, indentation);
+
+            int prevIndentLevel = EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 3;
+            if (smoothnessMapChannel != null)
+                DoPopup (Styles.smoothnessMapChannelText.text, smoothnessMapChannel, metallicSpecSmoothnessChannelName);
+            EditorGUI.indentLevel = prevIndentLevel;
+        }
+
+        void DoNormalArea () {
+            m_MaterialEditor.TexturePropertySingleLine (Styles.normalMapText, normalMap);
+        }
+
+        void DoEmissionArea () {
+            bool hadEmissionTexture = emissionMap.textureValue != null;
+
+            // Texture and HDR color controls
+            m_MaterialEditor.TexturePropertySingleLine (Styles.emissionText, emissionMap, emissionColorForRendering);
+
+            // If texture was assigned and color was black set color to white
+            float brightness = emissionColorForRendering.colorValue.maxColorComponent;
+            if (emissionMap.textureValue != null && !hadEmissionTexture && brightness <= 0f) {
+                emissionColorForRendering.colorValue = Color.white;
+            }
+        }
+
+        void DoRenderStates (Material material) {
+            //Advanced props
+            GUILayout.Label (Styles.AdvancedText, EditorStyles.boldLabel);
+
+            //AlphaTest
+            m_MaterialEditor.ShaderProperty (alphaTest, Styles.alphaTestText);
+            if (alphaTest.floatValue == 1) {
+                m_MaterialEditor.ShaderProperty (alphaCutoff, Styles.alphaCutoffText, MaterialEditor.kMiniTextureFieldLabelIndentLevel + 1);
+            }
+
+            //AlphaBlend
+            m_MaterialEditor.ShaderProperty (alphaBlend, Styles.alphaBlendText);
+            var dstMode = (DstBlendMode) dstBlendMode.floatValue;
+            var srcMode = (SrcBlendMode) srcBlendMode.floatValue;
+            if (alphaBlend.floatValue == 1) {
+                GUILayout.BeginHorizontal ();
+                GUILayout.Label ("", GUILayout.Width (20));
+                srcMode = (SrcBlendMode) EditorGUILayout.Popup ((int) srcMode, Styles.srcBlendNames);
+                dstMode = (DstBlendMode) EditorGUILayout.Popup ((int) dstMode, Styles.dstBlendNames);
+                GUILayout.EndHorizontal ();
+            }
+            if ((RenderMode) material.GetFloat ("_Mode") == RenderMode.Custom) {
+                //alphaBlend
+                if (alphaBlend.floatValue == 1) {
+                    srcBlendMode.floatValue = (float) srcMode;
+                    dstBlendMode.floatValue = (float) dstMode;
+                    material.SetInt ("_SrcBlend", (int) srcMode);
+                    material.SetInt ("_DstBlend", (int) dstMode);
+                    material.SetInt ("_AlphaBlend", 1);
+                } else {
+                    material.SetInt ("_AlphaBlend", 0);
+                    material.SetInt ("_SrcBlend", (int) 1);
+                    material.SetInt ("_DstBlend", (int) 0);
+                }
+            }
+
+            //DepthWrite
+            DoPopup (Styles.depthWriteText, depthWrite, Styles.depthWriteNames);
+
+            //DepthTest
+            DoPopup (Styles.depthTestText, depthTest, Styles.depthTestNames);
+
+            //CullMode
+            DoPopup (Styles.cullModeText, cullMode, Styles.cullModeNames);
+
+        }
+
+        static void SetKeyword(Material material, string keyword, bool enableValue){
+            if(enableValue){
+                material.EnableKeyword(keyword);
+            }else{
+                material.DisableKeyword(keyword);
+            }
+        }
+        
+        void SetMaterialKeywords (Material material) {
+            m_MaterialEditor.RegisterPropertyChangeUndo ("Rendering Mode");
+            
+            if ((RenderMode) material.GetFloat ("_Mode") == RenderMode.Custom) {
+                SetKeyword(material, "ENABLE_ALPHA_CUTOFF", alphaTest.floatValue == 1);
+                SetKeyword(material, "_ALPHATEST_ON", alphaTest.floatValue == 1);
+                SetKeyword(material, "_ALPHABLEND_ON", alphaBlend.floatValue == 1);
+            }
+
+            //Fog
+            SetKeyword(material, "EnableFog", fog.floatValue == 0);
+
+            // workflow
+            bool isSpecularWorkFlow = (WorkflowMode)material.GetFloat("_WorkflowMode") == WorkflowMode.Specular;
+            
+            // glossmap
+            bool hasGlossMap = false;
+            if (isSpecularWorkFlow)
+                hasGlossMap = material.GetTexture("_SpecGlossMap");
+            else
+                hasGlossMap = material.GetTexture("_MetallicGlossMap");
+
+            SetKeyword(material, "_SPECULAR_SETUP", isSpecularWorkFlow);
+            SetKeyword(material, "USE_METALLICSPECGLOSSMAP", hasGlossMap);
+            SetKeyword(material, "USE_SPECGLOSSMAP", hasGlossMap && isSpecularWorkFlow);
+            SetKeyword(material, "USE_METALLICGLOSSMAP", hasGlossMap && !isSpecularWorkFlow);
+            
+            SetKeyword(material, "USE_NORMALMAP", normalMap.textureValue != null);
+            SetKeyword(material, "USE_AOMAP", occlusionMap.textureValue != null);
+            SetKeyword(material, "USE_EMISSIONMAP", emissionMap.textureValue != null);
+
+            if (material.HasProperty("_SmoothnessTextureChannel"))
+            {
+                SetKeyword(material, "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A", (SmoothnessMapChannel)smoothnessMapChannel.floatValue == SmoothnessMapChannel.AlbedoAlpha);
+            }
+        }
+
     }
 }
 

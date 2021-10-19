@@ -15,7 +15,7 @@ namespace WeChat
         private static Dictionary<string, string> buildInEffectNameToUUIDMap = new Dictionary<string, string>(){
             {"@system/blinnPhong3d", "c7fb21R-abb109E-a8e91bS-54b4baR"},
             {"@system/blinnPhongNew", "c7fb21R-abb109E-a8e91bS-54b4baR"},
-            {"@system/standardLit", "65a8a7R-238beeE-76ecf2S-c46e83R"},
+            {"@system/standardLit", "44e0e0R-db917aE-769d71S-5eff01R"},
             {"@system/blit", "998444R-4e8cd1E-52b60bS-d1c239R"},
             {"@system/bloom", "405eabR-ca288aE-5bf4f3S-3b3bd3R"},
             {"@system/effect3d", "f75b6eR-26db4aE-74d251S-b121f3R"},
