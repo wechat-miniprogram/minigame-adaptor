@@ -182,8 +182,8 @@ namespace WeChat
         }
         protected void SetBlendFactor(EnumGfxBlendFactor blendSrc, EnumGfxBlendFactor blendDst)
         {
-            m_renderStates.AddField("blendSrcRGB", (int)blendSrc);
-            m_renderStates.AddField("blendDstAlpha", (int)blendDst);
+            m_renderStates.AddField("blendSrc", (int)blendSrc);
+            m_renderStates.AddField("blendDst", (int)blendDst);
 
         }
         protected void SetDepthWrite(bool on)
