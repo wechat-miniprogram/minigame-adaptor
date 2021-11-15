@@ -53,13 +53,11 @@ Shader "WXBBShader/StandardLit" {
 			CGPROGRAM
 			#pragma shader_feature _SPECULAR_SETUP
 			#pragma shader_feature USE_METALLICSPECGLOSSMAP
-			#pragma shader_feature USE_SPECGLOSSMAP
-			#pragma shader_feature USE_METALLICGLOSSMAP
 			#pragma shader_feature _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
 			#pragma shader_feature USE_NORMALMAP
 			#pragma shader_feature USE_EMISSIONMAP
 			#pragma shader_feature USE_AOMAP
-			#pragma shader_feature ENABLE_ALPHA_CUTOFF
+			#pragma shader_feature USE_ALPHA_TEST
 			#pragma shader_feature _ALPHABLEND_ON
 			#pragma shader_feature _ALPHATEST_ON
 			#pragma shader_feature EnableLighting
@@ -175,13 +173,11 @@ Shader "WXBBShader/StandardLit" {
 			CGPROGRAM
 			#pragma shader_feature _SPECULAR_SETUP
 			#pragma shader_feature USE_METALLICSPECGLOSSMAP
-			#pragma shader_feature USE_SPECGLOSSMAP
-			#pragma shader_feature USE_METALLICGLOSSMAP
 			#pragma shader_feature _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
 			#pragma shader_feature USE_NORMALMAP
 			#pragma shader_feature USE_EMISSIONMAP
 			#pragma shader_feature USE_AOMAP
-			#pragma shader_feature ENABLE_ALPHA_CUTOFF
+			#pragma shader_feature USE_ALPHA_TEST
 			#pragma shader_feature _ALPHABLEND_ON
 			#pragma shader_feature _ALPHATEST_ON
 			#pragma shader_feature EnableLighting

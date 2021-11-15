@@ -104,8 +104,8 @@ namespace WeChat {
         }
 
         public enum SmoothnessMapChannel {
-            SpecularMetallicAlpha,
-            AlbedoAlpha,
+            SpecularMetallicAlpha
+            // AlbedoAlpha
         }
         MaterialProperty workflowMode;
 
@@ -256,7 +256,7 @@ namespace WeChat {
                     material.SetInt ("_ZTest", 4);
                     material.DisableKeyword ("_ALPHATEST_ON");
                     material.DisableKeyword ("_ALPHABLEND_ON");
-                    material.DisableKeyword ("ENABLE_ALPHA_CUTOFF");
+                    material.DisableKeyword ("USE_ALPHA_TEST");
                     material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.Geometry;
                     break;
                 case RenderMode.Cutout:
@@ -269,7 +269,7 @@ namespace WeChat {
                     material.SetInt ("_ZTest", 4);
                     material.EnableKeyword ("_ALPHATEST_ON");
                     material.DisableKeyword ("_ALPHABLEND_ON");
-                    material.EnableKeyword ("ENABLE_ALPHA_CUTOFF");
+                    material.EnableKeyword ("USE_ALPHA_TEST");
                     material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.AlphaTest;
                     break;
                 case RenderMode.Transparent:
@@ -282,7 +282,7 @@ namespace WeChat {
                     material.SetInt ("_ZTest", 4);
                     material.DisableKeyword ("_ALPHATEST_ON");
                     material.EnableKeyword ("_ALPHABLEND_ON");
-                    material.DisableKeyword ("ENABLE_ALPHA_CUTOFF");
+                    material.DisableKeyword ("USE_ALPHA_TEST");
                     material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.Transparent;
                     break;
                 case RenderMode.Custom:
@@ -298,7 +298,7 @@ namespace WeChat {
                     material.SetInt ("_ZTest", 4);
                     material.DisableKeyword ("_ALPHATEST_ON");
                     material.DisableKeyword ("_ALPHABLEND_ON");
-                    material.DisableKeyword ("ENABLE_ALPHA_CUTOFF");
+                    material.DisableKeyword ("USE_ALPHA_TEST");
                     material.renderQueue = (int) UnityEngine.Rendering.RenderQueue.Geometry;
                     break;
             }
@@ -334,8 +334,8 @@ namespace WeChat {
             public static string renderModeText = "RenderMode";
             public static string fogModeText = "Fog";
             public static readonly string[] workflowNames = Enum.GetNames (typeof (WorkflowMode));
-            public static readonly string[] metallicSmoothnessChannelNames = { "Metallic Alpha", "Albedo Alpha" };
-            public static readonly string[] specularSmoothnessChannelNames = { "Specular Alpha", "Albedo Alpha" };
+            public static readonly string[] metallicSmoothnessChannelNames = { "Metallic Alpha"};
+            public static readonly string[] specularSmoothnessChannelNames = { "Specular Alpha"};
 
             public static readonly string[] srcBlendNames = Enum.GetNames (typeof (SrcBlendMode));
             public static readonly string[] dstBlendNames = Enum.GetNames (typeof (DstBlendMode));
@@ -383,9 +383,9 @@ namespace WeChat {
 
             bool showSmoothnessScale = hasGlossMap;
             if (smoothnessMapChannel != null) {
-                int smoothnessChannel = (int) smoothnessMapChannel.floatValue;
-                if (smoothnessChannel == (int) SmoothnessMapChannel.AlbedoAlpha)
-                    showSmoothnessScale = true;
+                //int smoothnessChannel = (int) smoothnessMapChannel.floatValue;
+                //if (smoothnessChannel == (int) SmoothnessMapChannel.AlbedoAlpha)
+                //    showSmoothnessScale = true;
             }
 
             int indentation = 2; // align with labels of texture props
@@ -474,7 +474,7 @@ namespace WeChat {
             m_MaterialEditor.RegisterPropertyChangeUndo ("Rendering Mode");
             
             if ((RenderMode) material.GetFloat ("_Mode") == RenderMode.Custom) {
-                SetKeyword(material, "ENABLE_ALPHA_CUTOFF", alphaTest.floatValue == 1);
+                SetKeyword(material, "USE_ALPHA_TEST", alphaTest.floatValue == 1);
                 SetKeyword(material, "_ALPHATEST_ON", alphaTest.floatValue == 1);
                 SetKeyword(material, "_ALPHABLEND_ON", alphaBlend.floatValue == 1);
             }
@@ -494,17 +494,15 @@ namespace WeChat {
 
             SetKeyword(material, "_SPECULAR_SETUP", isSpecularWorkFlow);
             SetKeyword(material, "USE_METALLICSPECGLOSSMAP", hasGlossMap);
-            SetKeyword(material, "USE_SPECGLOSSMAP", hasGlossMap && isSpecularWorkFlow);
-            SetKeyword(material, "USE_METALLICGLOSSMAP", hasGlossMap && !isSpecularWorkFlow);
             
             SetKeyword(material, "USE_NORMALMAP", normalMap.textureValue != null);
             SetKeyword(material, "USE_AOMAP", occlusionMap.textureValue != null);
             SetKeyword(material, "USE_EMISSIONMAP", emissionMap.textureValue != null);
 
-            if (material.HasProperty("_SmoothnessTextureChannel"))
-            {
-                SetKeyword(material, "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A", (SmoothnessMapChannel)smoothnessMapChannel.floatValue == SmoothnessMapChannel.AlbedoAlpha);
-            }
+            //if (material.HasProperty("_SmoothnessTextureChannel"))
+            //{
+            //    SetKeyword(material, "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A", (SmoothnessMapChannel)smoothnessMapChannel.floatValue == SmoothnessMapChannel.AlbedoAlpha);
+            //}
         }
 
     }

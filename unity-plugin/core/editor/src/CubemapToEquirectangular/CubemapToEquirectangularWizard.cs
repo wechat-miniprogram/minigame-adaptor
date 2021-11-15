@@ -75,6 +75,7 @@ namespace WeChat {
             string assetDir = Path.GetDirectoryName (assetPath);
             string assetName = Path.GetFileNameWithoutExtension (assetPath) + ".png";
             string textureAsset = Path.Combine (assetDir, assetName);
+            textureAsset = textureAsset.Replace ('\\', '/');
             File.WriteAllBytes (textureAsset, bytes);
 
             AssetDatabase.ImportAsset (textureAsset);

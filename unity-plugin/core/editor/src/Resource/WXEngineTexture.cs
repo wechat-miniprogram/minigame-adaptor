@@ -2,8 +2,30 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using System.IO;
 
 namespace WeChat {
+
+    public static class ExtensionMethod {
+        public static Texture2D DeCompress (this Texture2D source) {
+            RenderTexture renderTex = RenderTexture.GetTemporary (
+                source.width,
+                source.height,
+                0,
+                RenderTextureFormat.Default,
+                RenderTextureReadWrite.Linear);
+
+            Graphics.Blit (source, renderTex);
+            RenderTexture previous = RenderTexture.active;
+            RenderTexture.active = renderTex;
+            Texture2D readableText = new Texture2D (source.width, source.height);
+            readableText.ReadPixels (new Rect (0, 0, renderTex.width, renderTex.height), 0, 0);
+            readableText.Apply ();
+            RenderTexture.active = previous;
+            RenderTexture.ReleaseTemporary (renderTex);
+            return readableText;
+        }
+    }
 
     public class TextureImageFile : WXEngineImageFile {
         private Texture2D sourceTexture;
@@ -13,10 +35,14 @@ namespace WeChat {
         }
 
         public override string GetExportPath () {
-            if (TextureUtil.ResolveFileExt (sourceTexture.format) == TextureUtil.EnumTexFileExt.JPG) {
-                return wxFileUtil.cleanIllegalChar (unityAssetPath.Split ('.') [0], false) + ".jpg";
+            return wxFileUtil.cleanIllegalChar (unityAssetPath.Split ('.') [0], false) + "." + GetTextureFormat();
+        }
+
+        public string GetTextureFormat () {
+            if (Path.GetExtension (this.unityAssetPath) == ".jpg") {
+                return "jpg";
             } else {
-                return wxFileUtil.cleanIllegalChar (unityAssetPath.Split ('.') [0], false) + ".png";
+                return "png";
             }
         }
 
@@ -57,17 +83,19 @@ namespace WeChat {
         protected override byte[] GetContent () {
             byte[] content = { };
             DoActionForTexture (ref this.sourceTexture, tex => {
-                if (TextureUtil.ResolveFileExt (tex.format) == TextureUtil.EnumTexFileExt.JPG) {
-                    content = tex.EncodeToJPG ();
+                Texture2D texTemp = ExtensionMethod.DeCompress (tex);
+                // if (TextureUtil.ResolveFileExt (tex.format) == TextureUtil.EnumTexFileExt.JPG) {
+                if (this.GetTextureFormat () == "jpg") {
+                    content = texTemp.EncodeToJPG ();
                 } else {
-                    content = tex.EncodeToPNG ();
+                    content = texTemp.EncodeToPNG ();
                 }
             });
             return content;
 
         }
     }
-    
+
     public class WXTexture : WXResource {
 
         private Texture2D texture2D;

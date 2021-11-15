@@ -52,23 +52,21 @@ namespace WeChat {
             // Specular Gloss Map
             AddShaderParam ("_Specular", material.GetColor ("_Specular"), true);
             if (hasGlossMap && isSpecularWorkFlow) {
-                AddShaderDefination ("USE_SPECGLOSSMAP", true);
                 AddTexture ("_SpecGlossMap", "_SpecGlossMap");
             }
             // Metallic Gloss Map
             AddShaderParam ("_Metallic", material.GetFloat ("_Metallic"));
             if (hasGlossMap && !isSpecularWorkFlow) {
-                AddShaderDefination ("USE_METALLICGLOSSMAP", true);
                 AddTexture ("_MetallicGlossMap", "_MetallicGlossMap");
             }
             
             // Gloss Channel
             if (material.HasProperty ("_SmoothnessTextureChannel")) {
-                MaterialProperty smoothnessMapChannel;
-                bool smoothnessChannelAlbedoA = (double)material.GetFloat("_SmoothnessTextureChannel") == 1.0;
-                if(smoothnessChannelAlbedoA){
-                    AddShaderDefination ("_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A", smoothnessChannelAlbedoA);
-                }
+                // MaterialProperty smoothnessMapChannel;
+                // bool smoothnessChannelAlbedoA = (double)material.GetFloat("_SmoothnessTextureChannel") == 1.0;
+                // if(smoothnessChannelAlbedoA){
+                //     AddShaderDefination ("_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A", smoothnessChannelAlbedoA);
+                // }
             }
 
             // AO Map
@@ -116,13 +114,13 @@ namespace WeChat {
                 case RenderMode.Opaque:
                     break;
                 case RenderMode.Cutout:
-                    AddShaderDefination ("ENABLE_ALPHA_CUTOFF", true);
+                    AddShaderDefination ("USE_ALPHA_TEST", true);
                     break;
                 case RenderMode.Transparent:
                     break;
                 case RenderMode.Custom:
                     if (material.IsKeywordEnabled ("_ALPHABLEND_ON")) {
-                        AddShaderDefination ("ENABLE_ALPHA_CUTOFF", true);
+                        AddShaderDefination ("USE_ALPHA_TEST", true);
                     }
                     break;
                 default:
